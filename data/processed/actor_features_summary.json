@@ -1,0 +1,26 @@
+{
+  "actor_row_count": 1578,
+  "sources": {
+    "dresden.de": 204,
+    "hamburg.de": 319,
+    "hannover.de": 526,
+    "hessen.de": 15,
+    "ms.niedersachsen.de": 40,
+    "saarbruecken.de": 9,
+    "stadt-koeln.de": 247,
+    "stuttgart.de": 218
+  },
+  "sides": {
+    "normal": 747,
+    "simple": 831
+  },
+  "actor_types": {
+    "generic_person_noun": 1260,
+    "person_entity": 318
+  },
+  "main_pronoun_classes": {
+    "unknown": 1578
+  },
+  "spacy_model": "de_core_news_sm",
+  "coreference_enabled": false
+}
