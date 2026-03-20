@@ -1,0 +1,14 @@
+name: easy-language
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - numpy
+  - spacy
+  - matplotlib
+  - seaborn
+  - pandas
+  - jupyter
+  - ipykernel
