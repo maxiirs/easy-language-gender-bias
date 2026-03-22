@@ -35,10 +35,10 @@ IMAGE_OUT_DIR = Path("data/processed/t2i_images")
 
 SAMPLE_SIZE_PER_STRATUM = 10 
 
-# Wir nutzen FLUX.1 [schnell] von Black Forest Labs.
-# Das derzeit beste Open-Source Text-to-Image Modell mit nativ exzellentem
-# Deutschverständnis durch den massiven T5-XXL Text-Encoder.
-MODEL_ID = "black-forest-labs/FLUX.1-schnell"
+# Wir nutzen FLUX.2 [klein] 4B von Black Forest Labs.
+# Das 4-Milliarden-Parameter Modell ist brandneu, versteht Deutsch via T5-XXL 
+# und vor allem: Es nutzt nur ~13 GB VRAM und passt somit als ECHTER Fast-Mode auf deine V100!
+MODEL_ID = "black-forest-labs/FLUX.2-klein-4B"
 
 
 def build_stratified_sample():
@@ -87,15 +87,8 @@ def generate_images(prompts):
     if not DIFFUSERS_AVAILABLE:
         return
 
-    try:
-        from transformers import BitsAndBytesConfig, T5EncoderModel
-        from diffusers import FluxTransformer2DModel
-        BNB_AVAILABLE = True
-    except ImportError:
-        BNB_AVAILABLE = False
-        print("Warning: 'bitsandbytes' not installed. Fallback to slow sequential loading.")
-
     print(f"\nLoading State-of-the-Art T2I Model ({MODEL_ID})...")
+    # V100 unterstützt best-case float16 / bfloat16
     if torch.cuda.is_available():
         device = "cuda"
         dtype = torch.bfloat16
@@ -106,47 +99,18 @@ def generate_images(prompts):
         device = "cpu"
         dtype = torch.float32
 
-    if device == "cuda" and BNB_AVAILABLE:
-        print("Enable 8-bit Quantization for V100 Fast-Inference...")
-        quantization_config = BitsAndBytesConfig(load_in_8bit=True)
-        
-        # Lade speziell die massiven 24GB Bauteile (Transformer & T5) in gecrunchten 8-Bit (jeweils ~12GB und ~4.5GB), 
-        # damit sie voll am Stück in den VRAM der V100 passen.
-        transformer = FluxTransformer2DModel.from_pretrained(
-            MODEL_ID, 
-            subfolder="transformer", 
-            quantization_config=quantization_config, 
-            torch_dtype=dtype
-        )
-        
-        text_encoder_2 = T5EncoderModel.from_pretrained(
-            MODEL_ID, 
-            subfolder="text_encoder_2", 
-            quantization_config=quantization_config, 
-            torch_dtype=dtype
-        )
-        
-        pipe = AutoPipelineForText2Image.from_pretrained(
-            MODEL_ID, 
-            transformer=transformer, 
-            text_encoder_2=text_encoder_2,
-            torch_dtype=dtype
-        )
-        
-        # Model-Offload verschiebt die "Puzzleteile" im Ganzen (schnell), statt Layer-für-Layer (langsam).
-        # Das klappt, weil der größte Block (der 12GB Transformer) nun in die 16GB der V100 passt!
-        pipe.enable_model_cpu_offload()
-    else:
-        # Fallback (Slow Sequential)
-        pipe = AutoPipelineForText2Image.from_pretrained(MODEL_ID, torch_dtype=dtype)
-        if device == "cuda":
-            try:
-                pipe.enable_sequential_cpu_offload()
-                pipe.vae.enable_slicing()
-                pipe.vae.enable_tiling()
-            except Exception as e:
-                print(f"Offload warning: {e}")
-                pipe = pipe.to(device)
+    pipe = AutoPipelineForText2Image.from_pretrained(MODEL_ID, torch_dtype=dtype)
+    
+    # Auto-Detect VRAM für den optimalen FLUX-Offload
+    if device == "cuda":
+        try:
+            # Da FLUX.2-4B nativ nur ~13 GB braucht, können wir den schnellen Model-Offload
+            # direkt auf deiner 16GB Karte erzwingen!
+            print("   Nutze Ultra-Fast Inference (Modell passt in 16GB VRAM)...")
+            pipe.enable_model_cpu_offload()
+        except Exception as e:
+            print(f"Offload warning: {e}")
+            pipe = pipe.to(device)
 
     IMAGE_OUT_DIR.mkdir(parents=True, exist_ok=True)
 
