@@ -4,11 +4,15 @@ channels:
   - defaults
 dependencies:
   - python=3.10
-  - pip
   - numpy
   - spacy
   - matplotlib
   - seaborn
   - pandas
   - jupyter
-  - ipykernel
+  - pip
+  - pip:
+      - transformers
+      - torch
+      - accelerate
+      - tqdm
