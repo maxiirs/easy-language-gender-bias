@@ -35,10 +35,10 @@ IMAGE_OUT_DIR = Path("data/processed/t2i_images")
 
 SAMPLE_SIZE_PER_STRATUM = 10 
 
-# Wir nutzen Kandinsky 2.2 (versteht exzellent Deutsch, 
-# nutzt XLM-Roberta wie AltDiffusion und wurde ebenfalls im MAGBIG Paper verifiziert).
-# Der AltDiffusion-Container auf HF ist derzeit aufgrund fehlerhafter Configs problematisch.
-MODEL_ID = "kandinsky-community/kandinsky-2-2-decoder"
+# Wir nutzen FLUX.1 [schnell] von Black Forest Labs.
+# Das derzeit beste Open-Source Text-to-Image Modell mit nativ exzellentem
+# Deutschverständnis durch den massiven T5-XXL Text-Encoder.
+MODEL_ID = "black-forest-labs/FLUX.1-schnell"
 
 
 def build_stratified_sample():
@@ -87,10 +87,11 @@ def generate_images(prompts):
     if not DIFFUSERS_AVAILABLE:
         return
 
-    print(f"\nLoading Multilingual T2I Model ({MODEL_ID})...")
+    print(f"\nLoading State-of-the-Art T2I Model ({MODEL_ID})...")
+    # V100 unterstützt best-case float16 / bfloat16
     if torch.cuda.is_available():
         device = "cuda"
-        dtype = torch.float16
+        dtype = torch.bfloat16
     elif torch.backends.mps.is_available():
         device = "mps"
         dtype = torch.float16
@@ -100,18 +101,17 @@ def generate_images(prompts):
 
     pipe = AutoPipelineForText2Image.from_pretrained(MODEL_ID, torch_dtype=dtype)
     
-    # Memory Optimizations um OOM / Aborted Fehler in Jupyter-Environments zu vermeiden
+    # Memory Optimizations für FLUX (ca. 23GB Modell!) auf einer 16GB Tesla V100
     if device == "cuda":
-        # Auslagern des Modells auf CPU, wenn es gerade nicht rechnet (spart massiv VRAM)
         try:
-            pipe.enable_model_cpu_offload()
-            # Optional: xformers aktivieren, falls installiert
-            pipe.enable_xformers_memory_efficient_attention()
-        except Exception:
-            # Fallback
+            # Seq-Offload schaufelt Gewichte extrem feingranular ("Layer-by-Layer") aus dem RAM.
+            # Zwingend nötig für FLUX auf <24GB Karten.
+            pipe.enable_sequential_cpu_offload()
+            pipe.vae.enable_slicing()
+            pipe.vae.enable_tiling()
+        except Exception as e:
+            print(f"Offload warning: {e}")
             pipe = pipe.to(device)
-    else:
-        pipe = pipe.to(device)
 
     IMAGE_OUT_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -122,13 +122,24 @@ def generate_images(prompts):
         # 1. Generate image for Standard German (Normal)
         normal_path = IMAGE_OUT_DIR / f"{base_id}_normal.png"
         if not normal_path.exists():
-            image_normal = pipe(item["prompt_normal"], num_inference_steps=25).images[0]
+            # FLUX.1-schnell generiert Bilder extrem schnell in exakt 4 Steps.
+            image_normal = pipe(
+                item["prompt_normal"], 
+                guidance_scale=0.0,
+                num_inference_steps=4,
+                max_sequence_length=256
+            ).images[0]
             image_normal.save(normal_path)
             
         # 2. Generate image for Easy German (Simple)
         simple_path = IMAGE_OUT_DIR / f"{base_id}_simple.png"
         if not simple_path.exists():
-            image_simple = pipe(item["prompt_simple"], num_inference_steps=25).images[0]
+            image_simple = pipe(
+                item["prompt_simple"], 
+                guidance_scale=0.0,
+                num_inference_steps=4,
+                max_sequence_length=256
+            ).images[0]
             image_simple.save(simple_path)
 
 
@@ -138,12 +149,10 @@ def main():
     
     print(f"   Selected {len(prompts)} valid text-pairs for the benchmark.")
     
-    # Save prompts to JSON so they can be reviewed/edited (MAGBIG-style dataset)
     with PROMPT_OUT_FILE.open("w", encoding="utf-8") as f:
         json.dump(prompts, f, indent=2, ensure_ascii=False)
     print(f"   Saved prompts reference to {PROMPT_OUT_FILE}")
 
-    # Generate the actual images if diffusers is installed
     generate_images(prompts)
     print("\nPipeline Complete.")
 
