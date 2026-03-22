@@ -87,8 +87,15 @@ def generate_images(prompts):
     if not DIFFUSERS_AVAILABLE:
         return
 
+    try:
+        from transformers import BitsAndBytesConfig, T5EncoderModel
+        from diffusers import FluxTransformer2DModel
+        BNB_AVAILABLE = True
+    except ImportError:
+        BNB_AVAILABLE = False
+        print("Warning: 'bitsandbytes' not installed. Fallback to slow sequential loading.")
+
     print(f"\nLoading State-of-the-Art T2I Model ({MODEL_ID})...")
-    # V100 unterstützt best-case float16 / bfloat16
     if torch.cuda.is_available():
         device = "cuda"
         dtype = torch.bfloat16
@@ -99,19 +106,47 @@ def generate_images(prompts):
         device = "cpu"
         dtype = torch.float32
 
-    pipe = AutoPipelineForText2Image.from_pretrained(MODEL_ID, torch_dtype=dtype)
-    
-    # Memory Optimizations für FLUX (ca. 23GB Modell!) auf einer 16GB Tesla V100
-    if device == "cuda":
-        try:
-            # Seq-Offload schaufelt Gewichte extrem feingranular ("Layer-by-Layer") aus dem RAM.
-            # Zwingend nötig für FLUX auf <24GB Karten.
-            pipe.enable_sequential_cpu_offload()
-            pipe.vae.enable_slicing()
-            pipe.vae.enable_tiling()
-        except Exception as e:
-            print(f"Offload warning: {e}")
-            pipe = pipe.to(device)
+    if device == "cuda" and BNB_AVAILABLE:
+        print("Enable 8-bit Quantization for V100 Fast-Inference...")
+        quantization_config = BitsAndBytesConfig(load_in_8bit=True)
+        
+        # Lade speziell die massiven 24GB Bauteile (Transformer & T5) in gecrunchten 8-Bit (jeweils ~12GB und ~4.5GB), 
+        # damit sie voll am Stück in den VRAM der V100 passen.
+        transformer = FluxTransformer2DModel.from_pretrained(
+            MODEL_ID, 
+            subfolder="transformer", 
+            quantization_config=quantization_config, 
+            torch_dtype=dtype
+        )
+        
+        text_encoder_2 = T5EncoderModel.from_pretrained(
+            MODEL_ID, 
+            subfolder="text_encoder_2", 
+            quantization_config=quantization_config, 
+            torch_dtype=dtype
+        )
+        
+        pipe = AutoPipelineForText2Image.from_pretrained(
+            MODEL_ID, 
+            transformer=transformer, 
+            text_encoder_2=text_encoder_2,
+            torch_dtype=dtype
+        )
+        
+        # Model-Offload verschiebt die "Puzzleteile" im Ganzen (schnell), statt Layer-für-Layer (langsam).
+        # Das klappt, weil der größte Block (der 12GB Transformer) nun in die 16GB der V100 passt!
+        pipe.enable_model_cpu_offload()
+    else:
+        # Fallback (Slow Sequential)
+        pipe = AutoPipelineForText2Image.from_pretrained(MODEL_ID, torch_dtype=dtype)
+        if device == "cuda":
+            try:
+                pipe.enable_sequential_cpu_offload()
+                pipe.vae.enable_slicing()
+                pipe.vae.enable_tiling()
+            except Exception as e:
+                print(f"Offload warning: {e}")
+                pipe = pipe.to(device)
 
     IMAGE_OUT_DIR.mkdir(parents=True, exist_ok=True)
 
