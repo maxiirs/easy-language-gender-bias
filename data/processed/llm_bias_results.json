@@ -1,0 +1,70 @@
+{
+  "simple": {
+    "Career_Family": {
+      "masculine": {
+        "Career": 39,
+        "Family": 11,
+        "Career_percentage": 78.0,
+        "Family_percentage": 22.0,
+        "total_inferred": 50
+      },
+      "feminine": {
+        "Career": 28,
+        "Family": 22,
+        "Career_percentage": 56.0,
+        "Family_percentage": 44.0,
+        "total_inferred": 50
+      }
+    },
+    "Competence_Warmth": {
+      "masculine": {
+        "Competence": 47,
+        "Warmth": 3,
+        "Competence_percentage": 94.0,
+        "Warmth_percentage": 6.0,
+        "total_inferred": 50
+      },
+      "feminine": {
+        "Competence": 41,
+        "Warmth": 9,
+        "Competence_percentage": 82.0,
+        "Warmth_percentage": 18.0,
+        "total_inferred": 50
+      }
+    }
+  },
+  "normal": {
+    "Career_Family": {
+      "masculine": {
+        "Career": 44,
+        "Family": 5,
+        "Career_percentage": 89.8,
+        "Family_percentage": 10.2,
+        "total_inferred": 49
+      },
+      "feminine": {
+        "Career": 43,
+        "Family": 7,
+        "Career_percentage": 86.0,
+        "Family_percentage": 14.0,
+        "total_inferred": 50
+      }
+    },
+    "Competence_Warmth": {
+      "masculine": {
+        "Competence": 48,
+        "Warmth": 2,
+        "Competence_percentage": 96.0,
+        "Warmth_percentage": 4.0,
+        "total_inferred": 50
+      },
+      "feminine": {
+        "Competence": 45,
+        "Warmth": 5,
+        "Competence_percentage": 90.0,
+        "Warmth_percentage": 10.0,
+        "total_inferred": 50
+      }
+    }
+  }
+}

@@ -2,6 +2,7 @@
 .venv/
 __pycache__/
 *.pyc
+.env
 
 data/processed/*_sample.csv
 data/processed/*_sample.json
