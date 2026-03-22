@@ -121,9 +121,8 @@ def generate_images(prompts):
         # 1. Generate image for Standard German (Normal)
         normal_path = IMAGE_OUT_DIR / f"{base_id}_flux_normal.png"
         if not normal_path.exists():
-            # FLUX.1-schnell generiert Bilder extrem schnell in exakt 4 Steps.
             image_normal = pipe(
-                item["prompt_normal"], 
+                prompt=item["prompt_normal"], 
                 guidance_scale=0.0,
                 num_inference_steps=4,
                 max_sequence_length=256
@@ -134,7 +133,7 @@ def generate_images(prompts):
         simple_path = IMAGE_OUT_DIR / f"{base_id}_flux_simple.png"
         if not simple_path.exists():
             image_simple = pipe(
-                item["prompt_simple"], 
+                prompt=item["prompt_simple"], 
                 guidance_scale=0.0,
                 num_inference_steps=4,
                 max_sequence_length=256
