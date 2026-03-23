@@ -1,30 +1,25 @@
-# Projekt-Status: Gender Bias in Leichter Sprache (easy-language-gender-bias)
+# Forschungsdesign: Multimodale Bias-Analyse (Text-zu-Bild)
+**Projekt:** Gender Bias in Leichter Sprache vs. Standardsprache (easy-language-gender-bias)
 
-## 1. Ausgangslage & Ziel
-Es soll der geschlechtsspezifische Bias in Korpora der "Leichten Sprache" im Vergleich zur "Standardsprache" gemessen werden. Die Ergebnisse dienen als Basis, um später zu testen, ob diese Verzerrungen in der Text-zu-Bild-Generierung (z. B. Stable Diffusion) reproduziert oder verstärkt werden.
+## 1. Theoretischer Rahmen & Forschungsfrage
+Die Untersuchung folgt einem **mehrstufigen Validierungsansatz**. Ziel ist es nachzuweisen, ob geschlechtsspezifische Stereotype (z. B. Karriere/Kompetenz vs. Familie/Wärme) in der Leichten Sprache stärker ausgeprägt sind als in der Standardsprache und ob sich dieser linguistische Bias in der visuellen Modalität (Text-to-Image) manifestiert oder sogar verstärkt.
 
-## 2. Erreichte Meilensteine & Pipelines
-Wir haben zwei parallele, State-of-the-Art (SotA) Bias-Analyse-Pipelines aufgebaut, die auf den extrahierten Akteuren und Prädikationen (`data/processed/actor_features.csv`) arbeiten. Beide Skripte befinden sich im Ordner `src/bias_analysis/`.
+## 2. Phase 1: Textuelle Bias-Exploration (Abgeschlossen)
+Bevor Bilddaten generiert werden, wurde der "Linguistic Ground Truth" isoliert betrachtet. Dies ist essenziell, um die Ursache späterer visueller Verzerrungen eindeutig der Sprache zuordnen zu können.
+* **Pipeline A (WEAT/ML-EAT):** Quantifizierung der impliziten Assoziationen in statischen Word Embeddings (`spaCy`).
+* **Pipeline B (Local LLM):** Zero-Shot Klassifikation mittels `Llama-3.1-8B`, um kontextuelle Verzerrungen in komplexen Sätzen zu messen.
+* **Erkenntnisgewinn:** Diese Phase liefert die Baseline-Werte (Text-Bias) des gesamten Korpus.
 
-### Pipeline A: Statistische Vektoranalyse (WEAT & ML-EAT)
-- **Skript:** `weat_analysis.py`
-- **Methodik:** Nutzt statische Word Embeddings von `spaCy` (`de_core_news_lg`), um den Word Embedding Association Test (Level 1) und den Differential Bias (ML-EAT Level 2) zu berechnen.
-- **SotA-Ground-Truth:** Verwendet offiziell übersetzte, kulturell evaluierte deutsche Wort-Sets von Kurpicz-Briki (2020) für "Karriere vs. Familie" und das Stereotype Content Model für "Kompetenz vs. Wärme".
-- **Fallbacks:** Da in der aktuellen Extraktions-Tabelle keine Pronomen aufgelöst wurden (`main_pronoun_class` = unknown), nutzt das Skript eine robuste lexikalische Deduzierung (z.B. *der Kunde* -> maskulin, *die Bürgerin* -> feminin), um die Akteure zuzuordnen und geschlechtsneutrale Begriffe wie *Fachkraft* sauber herauszufiltern.
-- **Output:** `weat_results.json` sowie generierte Verteilungs-Graphen (`data/processed/plots/`).
+## 3. Phase 2: Visueller Transfer-Test (In Vorbereitung)
+Um den modalitätsübergreifenden Bias unverfälscht zu messen, wird die Pipeline um eine visuelle Komponente erweitert:
+1.  **Prompt-Generierung (Exhaustive Sampling):** Um einen Selektionsbias (Cherry-Picking) zu vermeiden, werden *alle* Sätze aus der LLM-Analyse in Prompts überführt. Die Grundgesamtheit des Textkorpus wird somit 1:1 in die Bildgenerierung übernommen.
+2.  **Bildgenerierung:** Massengenerierung (z. B. n=100 pro Prompt) mittels **Stable Diffusion**, wobei die originalen, neutralen Akteurs-Bezeichnungen beibehalten werden.
+3.  **Automatisierte Klassifikation (MiVOLO):** Einsatz des State-of-the-Art Modells **MiVOLO** (Multi-input Transformer) auf einer **Nvidia Tesla V100**. 
+    * **Vorteil:** MiVOLO kombiniert Gesichts- und Körpermerkmale, was die Analyse von KI-generierten Bildern (die oft Artefakte in Gesichtern aufweisen) hochgradig robust macht.
+    * **Output:** Quantitative Daten zur Geschlechterverteilung (M/F) und Confidence-Scores pro Bild.
 
-### Pipeline B: Generative AI (Local LLM Zero-Shot)
-- **Skript:** `llm_bias_eval.py`
-- **Methodik:** Eine parallele Evaluation durch ein lokales großes Sprachmodell (`meta-llama/Llama-3.1-8B-Instruct`) über die HuggingFace `transformers`-Pipeline.
-- **Logik:** Die extrahierten Sätze werden direkt in einen Forced-Choice-Prompt eingespeist (z.B. "Wird diese Person eher in einen Karriere- oder Familien-Kontext gesetzt?"). Dies liefert eine direkte quantitative Vergleichs-Metrik (generative Klassifikation vs. Embedding-Distanz).
-- **Setup:** Die `.env` wird automatisch ausgelesen (`HFTOKEN=...`), das Modell lädt auf GPUs via `accelerate` und `device_map="auto"`.
-- **Output:** `llm_bias_results.json`
-
-## 3. Aktueller technischer Stand
-- Das Projekt läuft ressourcenschonend in einem Conda-Environment (`environment.yml`).
-- Die Umgebung enthält alle nötigen Deep-Learning-Abhängigkeiten (`torch`, `transformers`, `accelerate`, `tqdm`), womit das Repo nahtlos auf den ressourcenstarken GPU-basierten Jupyter-Hub der Hochschule umgezogen ist.
-- Der Ausführungslauf des Milliarden-Parameter-LLMs auf dem Uni-Cluster war erfolgreich, und die generierten Inference-Ergebnisse (`llm_bias_results.json`) wurden per Git Pull zurück auf den lokalen Rechner migriert (siehe aktuellster Git Commit).
-
-## 4. Nächste Schritte (Next Steps)
-- Die Ergebnisse auswerten: Was sagt der klassische WEAT-Baseline-Test aus, und inwiefern repliziert/verstärkt das LLaMA-Modell diesen Bias in der Leichten Sprache?
-- Herausarbeiten der stärksten Stereotyp-Kontraste (Sätze) aus den Metriken, um daraus Prompts für den Text-to-Image-Transfer (z. B. Stable Diffusion) abzuleiten und den modalitätsübergreifenden Bias zu bewerten.
+## 4. Wissenschaftlicher Mehrwert dieses Designs
+Das Design geht über eine einfache Bildanalyse hinaus, da es die **Kausalkette** abbildet:
+* **Isolierung:** Durch den Vorab-Check der Texte wird sichergestellt, dass der Bias nicht erst im Bildgenerator entsteht, sondern bereits in der Sprache angelegt ist.
+* **Verzerrungsfreiheit:** Das Exhaustive Sampling garantiert, dass das volle Spektrum (von extrem stereotypen bis zu völlig neutralen Sätzen) repräsentativ getestet wird.
+* **Amplification-Messung:** Es lässt sich quantitativ bestimmen, ob der Bildgenerator den bestehenden Text-Bias lediglich reproduziert, abschwächt oder durch "Winner-takes-all"-Effekte signifikant verstärkt.
