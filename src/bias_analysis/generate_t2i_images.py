@@ -19,7 +19,7 @@ from collections import defaultdict
 
 try:
     import torch
-    from diffusers import FluxPipeline
+    from diffusers import AutoPipelineForText2Image
     DIFFUSERS_AVAILABLE = True
 except ImportError:
     DIFFUSERS_AVAILABLE = False
@@ -41,7 +41,7 @@ METADATA_OUT  = Path("data/processed/t2i_metadata.csv")
 DEFAULT_SEEDS = [1000, 2000, 3000, 4000, 5000]
 
 # Flux.1-schnell is the fastest Flux variant and natively supports German
-MODEL_ID = "black-forest-labs/FLUX.1-schnell"
+MODEL_ID = "black-forest-labs/FLUX.2-klein-4B"
 
 
 def load_actor_rows(input_file: Path) -> list[dict]:
@@ -77,7 +77,7 @@ def get_device_and_dtype():
 
 def load_pipeline(device, dtype):
     print(f"Loading Flux pipeline ({MODEL_ID}) on {device}...")
-    pipe = FluxPipeline.from_pretrained(MODEL_ID, torch_dtype=dtype)
+    pipe = AutoPipelineForText2Image.from_pretrained(MODEL_ID, torch_dtype=dtype)
     if device == "cuda":
         pipe.enable_model_cpu_offload()
     else:
