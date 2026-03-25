@@ -1,158 +1,181 @@
 #!/usr/bin/env python3
 """
-Generate Multilingual Text-to-Image (T2I) Pairs based on the MAGBIG Framework.
-This script samples unbiased text pairs from the Simple Language corpus
-and generates images using a multilingual text-to-image model (e.g., AltDiffusion).
+Generate Text-to-Image pairs for gender bias analysis.
+
+Implements two complementary analysis strategies:
+  A1 (Topic-Level): For each pair_id, generate images for ALL actors on both sides
+                    using the same seeds. Enables paired statistical tests per topic.
+  A3 (Global):      Aggregate all LS/NS images for overall bias comparison.
+
+Usage:
+  python src/bias_analysis/generate_t2i_images.py [--dry-run] [--n-seeds 5]
 """
 
-import os
 import csv
 import json
-import random
+import argparse
 from pathlib import Path
+from collections import defaultdict
 
-# Try to import diffusers and torch
 try:
     import torch
-    from diffusers import AutoPipelineForText2Image
+    from diffusers import FluxPipeline
     DIFFUSERS_AVAILABLE = True
-    
-    # Workaround für den "cudnnGetLibConfig" cuDNN Bug auf Tesla V100 Jupyter-Servern
-    torch.backends.cudnn.enabled = False
-    
 except ImportError:
     DIFFUSERS_AVAILABLE = False
-    print("Warning: 'diffusers' or 'torch' not found.")
+    print("Warning: 'diffusers' or 'torch' not found. Install with: pip install diffusers torch")
 
 try:
     from tqdm import tqdm
 except ImportError:
     tqdm = list
 
-INPUT_FILE = Path("data/processed/actor_features.csv")
-PROMPT_OUT_FILE = Path("data/processed/t2i_prompts_sample.json")
+# ── Paths ────────────────────────────────────────────────────────────────────
+INPUT_FILE   = Path("data/processed/actor_prompts.csv")
 IMAGE_OUT_DIR = Path("data/processed/t2i_images")
+METADATA_OUT  = Path("data/processed/t2i_metadata.csv")
 
-SAMPLE_SIZE_PER_STRATUM = 10 
+# ── Configuration ─────────────────────────────────────────────────────────────
+# These seeds are shared between LS and NS images for reproducibility and
+# matched-pair comparison. All seeds produce different latent noise patterns.
+DEFAULT_SEEDS = [1000, 2000, 3000, 4000, 5000]
 
-# Wir nutzen FLUX.2 [klein] 4B von Black Forest Labs.
-# Das 4-Milliarden-Parameter Modell ist brandneu, versteht Deutsch via T5-XXL 
-# und vor allem: Es nutzt nur ~13 GB VRAM und passt somit als ECHTER Fast-Mode auf deine V100!
-MODEL_ID = "black-forest-labs/FLUX.2-klein-4B"
+# Flux.1-schnell is the fastest Flux variant and natively supports German
+MODEL_ID = "black-forest-labs/FLUX.1-schnell"
 
 
-def build_stratified_sample():
-    with INPUT_FILE.open(newline="", encoding="utf-8") as f:
-        rows = list(csv.DictReader(f))
+def load_actor_rows(input_file: Path) -> list[dict]:
+    with input_file.open(newline="", encoding="utf-8") as f:
+        return list(csv.DictReader(f))
 
-    pairs = {}
+
+def build_a1_pairs(rows: list[dict]) -> dict[str, dict]:
+    """
+    Groups all actors by pair_id for A1 Topic-Level analysis.
+    Returns a dict: pair_id -> {simple: [actor_rows], normal: [actor_rows]}
+    """
+    pairs = defaultdict(lambda: {"simple": [], "normal": []})
     for row in rows:
-        key = f"{row['pair_id']}_{row['actor_label']}"
-        if key not in pairs:
-            pairs[key] = {"simple": None, "normal": None, "gender": row["main_pronoun_class"]}
-        
-        preds = [p.strip() for p in row["predications"].split("||") if p.strip()]
-        if preds:
-            pairs[key][row["side"]] = preds[0]  
-
-    valid_pairs = []
-    for key, data in pairs.items():
-        if data["simple"] and data["normal"] and len(data["simple"]) > 10 and len(data["normal"]) > 10:
-            valid_pairs.append({
-                "id": key,
-                "gender_category": data["gender"],
-                "prompt_normal": data["normal"],
-                "prompt_simple": data["simple"]
-            })
-
-    strata = {"masculine": [], "feminine": [], "unknown": [], "mixed_or_unclear": []}
-    for p in valid_pairs:
-        cat = p["gender_category"]
-        if cat in strata:
-            strata[cat].append(p)
-        else:
-            strata["unknown"].append(p)
-
-    random.seed(42)  
-    sampled = []
-    for cat, items in strata.items():
-        if not items: continue
-        chosen = random.sample(items, min(len(items), SAMPLE_SIZE_PER_STRATUM))
-        sampled.extend(chosen)
-
-    return sampled
+        # Only accept rows that have a usable prompt
+        prompt = row.get("prompt_minimal_context", "").strip()
+        if not prompt:
+            continue
+        pairs[row["pair_id"]][row["side"]].append(row)
+    return dict(pairs)
 
 
-def generate_images(prompts):
+def get_device_and_dtype():
     if not DIFFUSERS_AVAILABLE:
+        return "cpu", None
+    if torch.cuda.is_available():
+        return "cuda", torch.bfloat16
+    elif torch.backends.mps.is_available():
+        return "mps", torch.float16
+    else:
+        return "cpu", torch.float32
+
+
+def load_pipeline(device, dtype):
+    print(f"Loading Flux pipeline ({MODEL_ID}) on {device}...")
+    pipe = FluxPipeline.from_pretrained(MODEL_ID, torch_dtype=dtype)
+    if device == "cuda":
+        pipe.enable_model_cpu_offload()
+    else:
+        pipe = pipe.to(device)
+    print("Model loaded.\n")
+    return pipe
+
+
+def generate_one(pipe, prompt: str, seed: int, out_path: Path, device: str):
+    if out_path.exists():
+        return  # Skip already generated images (resume-friendly)
+    generator = torch.Generator(device=device).manual_seed(seed)
+    result = pipe(
+        prompt=prompt,
+        guidance_scale=0.0,       # Flux-schnell requires guidance_scale=0
+        num_inference_steps=4,
+        max_sequence_length=256,
+        generator=generator,
+    )
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    result.images[0].save(out_path)
+
+
+def run(args):
+    rows = load_actor_rows(INPUT_FILE)
+    if not rows:
+        print("No rows found in input CSV. Run extract_actors.py first.")
         return
 
-    print(f"\nLoading State-of-the-Art T2I Model ({MODEL_ID})...")
-    # V100 unterstützt best-case float16 / bfloat16
-    if torch.cuda.is_available():
-        device = "cuda"
-        dtype = torch.bfloat16
-    elif torch.backends.mps.is_available():
-        device = "mps"
-        dtype = torch.float16
-    else:
-        device = "cpu"
-        dtype = torch.float32
+    pairs = build_a1_pairs(rows)
+    seeds = args.seeds
 
-    pipe = AutoPipelineForText2Image.from_pretrained(MODEL_ID, torch_dtype=dtype)
-    
-    # Auto-Detect VRAM für den optimalen FLUX-Offload
-    if device == "cuda":
-        try:
-            # Da FLUX.2-4B nativ nur ~13 GB braucht, können wir den schnellen Model-Offload
-            # direkt auf deiner 16GB Karte erzwingen!
-            print("   Nutze Ultra-Fast Inference (Modell passt in 16GB VRAM)...")
-            pipe.enable_model_cpu_offload()
-        except Exception as e:
-            print(f"Offload warning: {e}")
-            pipe = pipe.to(device)
+    device, dtype = get_device_and_dtype()
+    pipe = load_pipeline(device, dtype) if not args.dry_run and DIFFUSERS_AVAILABLE else None
 
-    IMAGE_OUT_DIR.mkdir(parents=True, exist_ok=True)
+    metadata_rows = []
+    total_images = 0
 
-    print(f"\nGenerating images for {len(prompts)} pairs...")
-    for item in tqdm(prompts):
-        base_id = item["id"]
-        
-        # 1. Generate image for Standard German (Normal)
-        normal_path = IMAGE_OUT_DIR / f"{base_id}_flux_normal.png"
-        if not normal_path.exists():
-            image_normal = pipe(
-                prompt=item["prompt_normal"], 
-                guidance_scale=0.0,
-                num_inference_steps=4,
-                max_sequence_length=256
-            ).images[0]
-            image_normal.save(normal_path)
-            
-        # 2. Generate image for Easy German (Simple)
-        simple_path = IMAGE_OUT_DIR / f"{base_id}_flux_simple.png"
-        if not simple_path.exists():
-            image_simple = pipe(
-                prompt=item["prompt_simple"], 
-                guidance_scale=0.0,
-                num_inference_steps=4,
-                max_sequence_length=256
-            ).images[0]
-            image_simple.save(simple_path)
+    # Only process pairs with at least one actor on both sides (A1 requirement)
+    eligible_pairs = {
+        pid: sides for pid, sides in pairs.items()
+        if sides.get("simple") and sides.get("normal")
+    }
+    skipped = len(pairs) - len(eligible_pairs)
+    print(f"Found {len(pairs)} topic pairs → {len(eligible_pairs)} with actors on both sides ({skipped} skipped). Seeds: {seeds}\n")
+
+    for pair_id, sides in tqdm(eligible_pairs.items()):
+        for side, actors in sides.items():
+            for actor_row in actors:
+                prompt = actor_row.get("prompt_minimal_context", "").strip()
+                actor_label = actor_row.get("actor_lemma") or actor_row.get("actor_label", "")
+                actor_id = actor_row.get("actor_id", "")
+
+                for i, seed in enumerate(seeds):
+                    img_filename = f"{actor_id}_seed{seed:04d}.png"
+                    img_path = IMAGE_OUT_DIR / pair_id / side / img_filename
+
+                    if not args.dry_run and pipe is not None:
+                        generate_one(pipe, prompt, seed, img_path, device)
+
+                    metadata_rows.append({
+                        "pair_id": pair_id,
+                        "side": side,
+                        "source": actor_row.get("source", ""),
+                        "topic": actor_row.get("topic", ""),
+                        "actor_id": actor_id,
+                        "actor_label": actor_label,
+                        "predicted_gender": actor_row.get("predicted_gender", ""),
+                        "seed": seed,
+                        "seed_iteration": i,
+                        "prompt": prompt,
+                        "image_path": str(img_path),
+                        # MiVOLO will fill these in the analysis step:
+                        "mivolo_gender": "",
+                        "mivolo_age": "",
+                    })
+                    total_images += 1
+
+    # Save metadata CSV (includes all planned images, even if dry run)
+    METADATA_OUT.parent.mkdir(parents=True, exist_ok=True)
+    with METADATA_OUT.open("w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=list(metadata_rows[0].keys()))
+        writer.writeheader()
+        writer.writerows(metadata_rows)
+
+    mode = "DRY-RUN planned" if args.dry_run else "Generated"
+    print(f"\n{mode} {total_images} images across {len(pairs)} topic pairs.")
+    print(f"Metadata saved to: {METADATA_OUT}")
+    print("\nNext step: Run MiVOLO on all generated images and fill in mivolo_gender/mivolo_age columns.")
 
 
 def main():
-    print("1. Extracting stratified random sample from actor_features.csv...")
-    prompts = build_stratified_sample()
-    
-    print(f"   Selected {len(prompts)} valid text-pairs for the benchmark.")
-    
-    with PROMPT_OUT_FILE.open("w", encoding="utf-8") as f:
-        json.dump(prompts, f, indent=2, ensure_ascii=False)
-    print(f"   Saved prompts reference to {PROMPT_OUT_FILE}")
-
-    generate_images(prompts)
-    print("\nPipeline Complete.")
+    parser = argparse.ArgumentParser(description="Generate T2I images for gender bias analysis.")
+    parser.add_argument("--dry-run", action="store_true", help="Plan images but skip generation (fast test).")
+    parser.add_argument("--n-seeds", type=int, default=5, help="Number of seeds (images) per actor (default: 5).")
+    args = parser.parse_args()
+    args.seeds = DEFAULT_SEEDS[:args.n_seeds]
+    run(args)
 
 
 if __name__ == "__main__":
