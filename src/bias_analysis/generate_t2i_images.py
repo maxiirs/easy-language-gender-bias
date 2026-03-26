@@ -65,14 +65,8 @@ def build_a1_pairs(rows: list[dict]) -> dict[str, dict]:
 
 
 def get_device_and_dtype():
-    if not DIFFUSERS_AVAILABLE:
-        return "cpu", None
     if torch.cuda.is_available():
-        return "cuda", torch.bfloat16
-    elif torch.backends.mps.is_available():
-        return "mps", torch.float16
-    else:
-        return "cpu", torch.float32
+        return "cuda", torch.float16
 
 
 def load_pipeline(device, dtype):
