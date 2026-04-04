@@ -10,7 +10,7 @@ for direct alignment and Chi-Square statistical testing.
 Prerequisites on your JupyterHub:
 1. Since MiVOLO's pip installer is currently broken in modern Python versions, clone the repo into the project root: 
    `git clone https://github.com/WildChlamydia/MiVOLO.git`
-2. Ensure you have the weights downloaded (yolov8x_person_face.pt and mivolo_imb_weight.pth.tar).
+2. Ensure you have the weights downloaded (yolov8x_person_face.pt and model_imdb_cross_person_4.22_99.46.pth.tar).
 """
 
 import argparse
@@ -185,7 +185,7 @@ if __name__ == "__main__":
     parser.add_argument("--dry-run", action="store_true", help="Run the loop without model execution")
     parser.add_argument("--device", default="cuda", help="cuda or cpu")
     parser.add_argument("--yolo-weights", default="yolov8x_person_face.pt", help="Path to YOLO weights")
-    parser.add_argument("--mivolo-weights", default="mivolo_imb_weight.pth.tar", help="Path to MiVOLO weights")
+    parser.add_argument("--mivolo-weights", default="model_imdb_cross_person_4.22_99.46.pth.tar", help="Path to MiVOLO weights")
     
     args = parser.parse_args()
     run(args)
