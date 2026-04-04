@@ -6,3 +6,8 @@ __pycache__/
 
 data/processed/*_sample.csv
 data/processed/*_sample.json
+
+# Exclude external cloned repositories and heavy model weights
+MiVOLO/
+*.pt
+*.pth.tar

@@ -8,20 +8,26 @@ six identical text categories (e.g., 'weiblich (Singular)', 'Frauengruppe')
 for direct alignment and Chi-Square statistical testing.
 
 Prerequisites on your JupyterHub:
-1. Install MiVOLO cleanly via pip: `pip install git+https://github.com/WildChlamydia/MiVOLO.git`
-2. Ensure you have the weights downloaded (yolov8x_person_face.pt and mivolo_imb_weight.pth.tar) from Hugging Face or the repo.
+1. Since MiVOLO's pip installer is currently broken in modern Python versions, clone the repo into the project root: 
+   `git clone https://github.com/WildChlamydia/MiVOLO.git`
+2. Ensure you have the weights downloaded (yolov8x_person_face.pt and mivolo_imb_weight.pth.tar).
 """
 
 import argparse
 import csv
 import sys
+import os
 from pathlib import Path
 import cv2
+
+# Inject local MiVOLO into python path so we don't have to cleanly pip install it
+sys.path.append(os.path.abspath("MiVOLO"))
 
 # ── YOU MAY NEED TO ADJUST THE IMPORT BASED ON YOUR LOCAL MIVOLO INSTALL ──
 try:
     from mivolo.predictor import Predictor
     import mivolo.structures as mivolo_structs
+
 except ImportError:
     print("WARNING: MiVOLO not found in python path.")
     print("Please ensure you are running this from the MiVOLO directory")
