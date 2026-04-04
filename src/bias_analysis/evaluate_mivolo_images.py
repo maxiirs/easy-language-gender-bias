@@ -83,8 +83,8 @@ def run(args):
         # Note: You might need to supply a dummy config object depending on the MiVOLO version
         class DummyConfig:
             def __init__(self):
-                self.yolo_model = args.yolo_weights
-                self.model = args.mivolo_weights
+                self.detector_weights = args.yolo_weights
+                self.checkpoint = args.mivolo_weights
                 self.device = args.device
                 self.half = True
                 self.with_persons = True
