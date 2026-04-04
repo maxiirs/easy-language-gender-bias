@@ -104,6 +104,9 @@ def run(args):
     updated_rows = []
     
     print(f"Processing {len(rows)} images...")
+    succ_opened = 0
+    skipped = 0
+
     for row in tqdm(rows):
         img_path = Path(row["image_path"])
         
@@ -113,6 +116,7 @@ def run(args):
         if not args.dry_run and img_path.exists():
             img = cv2.imread(str(img_path))
             if img is not None:
+                succ_opened += 1
                 try:
                     detected_objects, _ = predictor.recognize(img)
                     
@@ -133,10 +137,14 @@ def run(args):
                             if person.gender is not None:
                                 if person.gender == "M":
                                     m_count += 1
-                                elif person.gender == "F":
+                                else:
                                     f_count += 1
                 except Exception as e:
                     print(f"Error processing {img_path}: {e}")
+            else:
+                skipped += 1
+        else:
+            skipped += 1
 
         # Determine alignment category
         img_cat = determine_category(m_count, f_count)
@@ -176,6 +184,10 @@ def run(args):
         c = r["image_gender_category"]
         cat_counts[c] = cat_counts.get(c, 0) + 1
         
+    print(f"\nDebug Stats:")
+    print(f" - Successfully Read by OpenCV: {succ_opened}")
+    print(f" - Skipped (File NOT Found or Read Error): {skipped}")
+    
     print("\nGenerated Image Categories Summary:")
     for k, v in cat_counts.items():
         print(f" - {k}: {v}")
