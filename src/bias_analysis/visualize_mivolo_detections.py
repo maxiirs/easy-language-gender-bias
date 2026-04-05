@@ -113,80 +113,63 @@ def build_predictor(args) -> Predictor:
     return Predictor(DummyConfig())
 
 
-def gender_label(detected_objects: "PersonAndFaceResult", idx: int) -> str:
-    """
-    Extract the gender string for detection index *idx*.
-    MiVOLO's PersonAndFaceResult stores results in per-person tensors/lists;
-    'gender' is either a string ('male'/'female') or None.
-    """
-    try:
-        g = detected_objects.gender[idx]
-        if g is None:
-            return "unknown"
-        return str(g).lower()
-    except (IndexError, AttributeError, TypeError):
-        return "unknown"
-
-
-def age_label(detected_objects: "PersonAndFaceResult", idx: int) -> str:
-    """Extract the age value for detection index *idx*."""
-    try:
-        a = detected_objects.ages[idx]
-        if a is None:
-            return "?"
-        return f"{int(round(float(a)))}"
-    except (IndexError, AttributeError, TypeError):
-        return "?"
-
-
 def draw_boxes(img_bgr: np.ndarray, detected_objects: "PersonAndFaceResult") -> np.ndarray:
     """
-    Draw bounding boxes + gender/age labels onto *img_bgr* (in-place copy).
+    Primary path: use MiVOLO's own plot() method, which draws YOLO boxes and
+    overlays age/gender labels using the correct internal indices.
 
-    MiVOLO's PersonAndFaceResult exposes:
-        .yolo_results         – raw ultralytics Results object
-        .persons_bboxes       – list of xyxy tensors for body boxes
-        .faces_bboxes         – list of xyxy tensors for face boxes
-        .gender               – list / 1-D tensor of gender strings or ints
-        .ages                 – list / 1-D tensor of age floats
-    The indices align between persons_bboxes, faces_bboxes, gender, ages.
+    plot() returns an RGB numpy array — convert back to BGR for cv2.
+
+    Fallback: if plot() fails for any reason, manually iterate using the
+    correct MiVOLO API:
+        detected_objects.get_bboxes_inds("person" | "face")  → list of ints
+        detected_objects.get_bbox_by_ind(i)                  → xyxy tensor
+        detected_objects.genders[i]                          → str | None
+        detected_objects.ages[i]                             → float | None
     """
+    # ── Primary: let MiVOLO draw everything ──────────────────────────────────
+    try:
+        # plot() works on the original image stored inside yolo_results;
+        # pass img=img_bgr so it uses our (potentially already-read) frame.
+        rgb = detected_objects.plot(img=img_bgr)
+        canvas = cv2.cvtColor(rgb, cv2.COLOR_RGB2BGR)
+        n = detected_objects.n_objects
+        print(f"       → MiVOLO plot() drew boxes for {n} object(s)")
+        return canvas
+    except Exception as e:
+        print(f"       [WARN] detected_objects.plot() failed ({e}), using manual fallback")
+
+    # ── Fallback: manual drawing with correct MiVOLO API ─────────────────────
     canvas = img_bgr.copy()
-    n_persons = 0
+    n_drawn = 0
 
-    # ── Try persons_bboxes first, fall back to faces_bboxes ──────────────────
-    bboxes = getattr(detected_objects, "persons_bboxes", None) or []
-    source_label = "person"
-    if len(bboxes) == 0:
-        bboxes = getattr(detected_objects, "faces_bboxes", None) or []
-        source_label = "face"
+    # Iterate person boxes first, then face boxes (faces without a paired body)
+    for category in ("person", "face"):
+        for idx in detected_objects.get_bboxes_inds(category):
+            try:
+                x1, y1, x2, y2 = (int(v) for v in detected_objects.get_bbox_by_ind(idx).cpu().numpy())
+            except Exception:
+                continue
 
-    for i, bbox in enumerate(bboxes):
-        # bbox is a tensor or array-like: [x1, y1, x2, y2]
-        try:
-            x1, y1, x2, y2 = (int(v) for v in bbox[:4])
-        except Exception:
-            continue
+            gender = detected_objects.genders[idx]          # str | None
+            age    = detected_objects.ages[idx]             # float | None
 
-        gender = gender_label(detected_objects, i)
-        age    = age_label(detected_objects, i)
-        color  = GENDER_COLORS.get(gender, GENDER_COLORS["unknown"])
-        label  = f"{gender}, {age}y"
+            gender_str = str(gender).lower() if gender else "unknown"
+            age_str    = f"{int(round(float(age)))}y" if age is not None else "?"
+            label      = f"[{category[0].upper()}] {gender_str}, {age_str}"
+            color      = GENDER_COLORS.get(gender_str, GENDER_COLORS["unknown"])
 
-        # Box
-        cv2.rectangle(canvas, (x1, y1), (x2, y2), color, THICKNESS)
+            cv2.rectangle(canvas, (x1, y1), (x2, y2), color, THICKNESS)
+            (tw, th), baseline = cv2.getTextSize(label, FONT, FONT_SCALE, THICKNESS)
+            cv2.rectangle(canvas, (x1, y1 - th - baseline - 4), (x1 + tw + 4, y1), color, -1)
+            cv2.putText(
+                canvas, label,
+                (x1 + 2, y1 - baseline - 2),
+                FONT, FONT_SCALE, (255, 255, 255), THICKNESS, cv2.LINE_AA,
+            )
+            n_drawn += 1
 
-        # Label background
-        (tw, th), baseline = cv2.getTextSize(label, FONT, FONT_SCALE, THICKNESS)
-        cv2.rectangle(canvas, (x1, y1 - th - baseline - 4), (x1 + tw + 4, y1), color, -1)
-        cv2.putText(
-            canvas, label,
-            (x1 + 2, y1 - baseline - 2),
-            FONT, FONT_SCALE, (255, 255, 255), THICKNESS, cv2.LINE_AA,
-        )
-        n_persons += 1
-
-    print(f"       → drew {n_persons} {source_label} box(es)")
+    print(f"       → manual fallback drew {n_drawn} box(es)")
     return canvas
 
 
