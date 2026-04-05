@@ -6,13 +6,15 @@ Picks N random images from the t2i image pool, runs them through MiVOLO,
 and draws person/face bounding boxes annotated with predicted gender and age.
 
 Usage (from the project root, inside the MiVOLO-compatible conda env):
-    python src/bias_analysis/visualize_mivolo_detections.py \
-        --yolo-weights  <path/to/yolov8x_person_face.pt> \
-        --mivolo-weights <path/to/model_imdb_cross_person_4.22_99.46.pth.tar> \
-        --device cpu \
-        --n 3 \
-        --seed 42 \
-        --out data/processed/plots/mivolo_viz.png
+    python src/bias_analysis/visualize_mivolo_detections.py
+
+    # Optional overrides:
+    python src/bias_analysis/visualize_mivolo_detections.py --n 5 --seed 7 --device cuda
+
+Weight file defaults (same as evaluate_mivolo_images.py):
+    YOLO detector : yolov8x_person_face.pt
+    MiVOLO model  : model_imdb_cross_person_4.22_99.46.pth.tar
+Both files are expected to be in the project root (same convention).
 
 Prerequisites
 -------------
@@ -53,6 +55,10 @@ PROJECT_ROOT   = Path(__file__).resolve().parents[2]
 IMAGES_DIR     = PROJECT_ROOT / "data" / "processed" / "t2i_images"
 DEFAULT_OUT    = PROJECT_ROOT / "data" / "processed" / "plots" / "mivolo_viz.png"
 
+# Weight file defaults – mirrors evaluate_mivolo_images.py
+DEFAULT_YOLO_WEIGHTS   = "yolov8x_person_face.pt"
+DEFAULT_MIVOLO_WEIGHTS = "model_imdb_cross_person_4.22_99.46.pth.tar"
+
 # Gender → box colour (BGR)
 GENDER_COLORS = {
     "male":   (255, 100,  50),   # blue-ish
@@ -82,10 +88,21 @@ def load_random_images(n: int, seed: int) -> list[Path]:
 
 def build_predictor(args) -> Predictor:
     """Instantiate the MiVOLO Predictor via a DummyConfig object."""
+    yolo_weights   = args.yolo_weights
+    mivolo_weights = args.mivolo_weights
+
+    # Resolve relative paths against the project root (same as evaluate script)
+    if not Path(yolo_weights).is_absolute():
+        yolo_weights = str(PROJECT_ROOT / yolo_weights)
+    if not Path(mivolo_weights).is_absolute():
+        mivolo_weights = str(PROJECT_ROOT / mivolo_weights)
+
+    print(f"[INFO] YOLO weights  : {yolo_weights}")
+    print(f"[INFO] MiVOLO weights: {mivolo_weights}")
 
     class DummyConfig:
-        detector_weights = args.yolo_weights
-        checkpoint       = args.mivolo_weights
+        detector_weights = yolo_weights
+        checkpoint       = mivolo_weights
         device           = args.device
         half             = False          # safer on CPU / MPS
         with_persons     = True
@@ -254,17 +271,22 @@ def run(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
-        description="Visualise MiVOLO gender/age bounding boxes on random images."
+        description=(
+            "Visualise MiVOLO gender/age bounding boxes on random images.\n"
+            "Weight files default to the same values as evaluate_mivolo_images.py "
+            "and are resolved relative to the project root."
+        )
     )
+    # Weight paths – hidden from the user, defaults match evaluate_mivolo_images.py
     parser.add_argument(
         "--yolo-weights",
-        default="yolov8x_person_face.pt",
-        help="Path to the YOLOv8 person+face detector weights.",
+        default=DEFAULT_YOLO_WEIGHTS,
+        help=argparse.SUPPRESS,
     )
     parser.add_argument(
         "--mivolo-weights",
-        default="model_imdb_cross_person_4.22_99.46.pth.tar",
-        help="Path to the MiVOLO age/gender model weights.",
+        default=DEFAULT_MIVOLO_WEIGHTS,
+        help=argparse.SUPPRESS,
     )
     parser.add_argument(
         "--device",
