@@ -102,7 +102,12 @@ def run(args):
         print("Running in DRY RUN mode (MiVOLO missing or --dry-run specified).")
 
     updated_rows = []
-    
+
+    # ── Optional row limit for quick smoke-tests ──────────────────────────────
+    if args.limit:
+        rows = rows[:args.limit]
+        print(f"[--limit] Processing only the first {len(rows)} rows.")
+
     print(f"Processing {len(rows)} images...")
     succ_opened = 0
     skipped = 0
@@ -124,18 +129,28 @@ def run(args):
                     # or an object possessing vectors of ages/genders
                     # (Implementation might vary slightly per MiVOLO github commit)
                     if hasattr(detected_objects, 'genders'):
-                        # Batch return format
-                        genders = detected_objects.genders
-                        for g in genders:
-                            if g.lower() == "m" or g == 0: # Note: Adjust based on MiVOLO output format
+                        # MiVOLO assigns gender to BOTH the person-box index AND the
+                        # face-box index for the same physical person (see structures.py).
+                        # Iterating detected_objects.genders directly would double-count.
+                        # Fix: count only person-category boxes; for detections where no
+                        # body was found, also count the unmatched face-only boxes.
+                        person_inds = detected_objects.get_bboxes_inds("person")
+                        face_inds   = detected_objects.get_bboxes_inds("face")
+                        unmatched_face_inds = [
+                            fi for fi in face_inds
+                            if detected_objects.face_to_person_map.get(fi) is None
+                        ]
+                        for idx in list(person_inds) + unmatched_face_inds:
+                            g = detected_objects.genders[idx]
+                            if g is not None and g.lower() == "male":
                                 m_count += 1
-                            else:
+                            elif g is not None:
                                 f_count += 1
                     else:
-                        # Iterable Persons format
+                        # Iterable Persons format (older MiVOLO versions)
                         for person in detected_objects.get_results():
                             if person.gender is not None:
-                                if person.gender == "M":
+                                if person.gender.lower() == "male":
                                     m_count += 1
                                 else:
                                     f_count += 1
@@ -168,15 +183,23 @@ def run(args):
         updated_rows.append(out_row)
 
     # Save ready-to-test CSV
+    # Always opened with "w" → overwrites any previous run.
+    # When --limit is active a separate _test file is written so the real
+    # results are never corrupted during a smoke-test.
     fieldnames = list(updated_rows[0].keys())
-    
-    RESULTS_OUT.parent.mkdir(parents=True, exist_ok=True)
-    with RESULTS_OUT.open("w", newline="", encoding="utf-8") as f:
+
+    out_path = RESULTS_OUT
+    if args.limit:
+        out_path = RESULTS_OUT.with_stem(RESULTS_OUT.stem + "_test")
+        print(f"[--limit] Writing test output to: {out_path}")
+
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    with out_path.open("w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows(updated_rows)
 
-    print(f"\nCompleted. Final dataset for Chi-Square tests saved to: {RESULTS_OUT}")
+    print(f"\nCompleted. Dataset saved to: {out_path}")
     
     # Quick Summary Print
     cat_counts = {}
@@ -198,6 +221,8 @@ if __name__ == "__main__":
     parser.add_argument("--device", default="cuda", help="cuda or cpu")
     parser.add_argument("--yolo-weights", default="yolov8x_person_face.pt", help="Path to YOLO weights")
     parser.add_argument("--mivolo-weights", default="model_imdb_cross_person_4.22_99.46.pth.tar", help="Path to MiVOLO weights")
-    
+    parser.add_argument("--limit", type=int, default=None,
+                        help="Only process the first N rows (writes to *_test.csv, safe for smoke-testing).")
+
     args = parser.parse_args()
     run(args)
