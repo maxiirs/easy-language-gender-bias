@@ -69,6 +69,49 @@ def determine_category(males: int, females: int) -> str:
         return "gemischte/generische Gruppe"
 
 
+def get_dominant_person(detected_objects):
+    """
+    Find the most prominent person and return its predicted gender and age.
+
+    Strategy: compare ALL face bounding boxes by area (largest = closest to
+    camera = most prominent).  Face boxes are all the same type of detection
+    so their areas are directly comparable - no scale-mixing issues.
+
+    Why face boxes and not person boxes?
+        - Every MiVOLO-classifiable person must have a face detection
+          (gender is predicted from the face crop, with optional body context).
+        - Face boxes are uniformly sized relative to subject distance, so a
+          larger face bbox reliably means that person is closer / more prominent.
+        - Body boxes vary wildly in aspect ratio and are not comparable to face
+          boxes, so mixing them would let a distant person with a full-body box
+          beat a foreground person detected only by face.
+
+    Returns:
+        dominant_gender (str | None):  "male" / "female" / None
+        dominant_age    (float | None): predicted age or None
+    """
+    face_inds = detected_objects.get_bboxes_inds("face")
+
+    if not face_inds:
+        return None, None
+
+    best_idx, best_area = None, -1
+    for idx in face_inds:
+        try:
+            x1, y1, x2, y2 = (int(v) for v in
+                               detected_objects.get_bbox_by_ind(idx).cpu().numpy())
+            area = (x2 - x1) * (y2 - y1)
+        except Exception:
+            continue
+        if area > best_area:
+            best_area = area
+            best_idx  = idx
+
+    if best_idx is None:
+        return None, None
+
+    return detected_objects.genders[best_idx], detected_objects.ages[best_idx]
+
 def run(args):
     if not METADATA_IN.exists():
         print(f"Input file {METADATA_IN} not found. Generate images first.")
@@ -102,7 +145,12 @@ def run(args):
         print("Running in DRY RUN mode (MiVOLO missing or --dry-run specified).")
 
     updated_rows = []
-    
+
+    # ── Optional row limit for quick smoke-tests ──────────────────────────────
+    if args.limit:
+        rows = rows[:args.limit]
+        print(f"[--limit] Processing only the first {len(rows)} rows.")
+
     print(f"Processing {len(rows)} images...")
     succ_opened = 0
     skipped = 0
@@ -113,29 +161,41 @@ def run(args):
         m_count = 0
         f_count = 0
         
+        dom_gender, dom_age = None, None   # populated when MiVOLO runs
+
         if not args.dry_run and img_path.exists():
             img = cv2.imread(str(img_path))
             if img is not None:
                 succ_opened += 1
                 try:
                     detected_objects, _ = predictor.recognize(img)
-                    
-                    # MiVOLO detected objects usually act as a list of Person objects
-                    # or an object possessing vectors of ages/genders
-                    # (Implementation might vary slightly per MiVOLO github commit)
+
                     if hasattr(detected_objects, 'genders'):
-                        # Batch return format
-                        genders = detected_objects.genders
-                        for g in genders:
-                            if g.lower() == "m" or g == 0: # Note: Adjust based on MiVOLO output format
+                        # MiVOLO assigns gender to BOTH the person-box index AND the
+                        # face-box index for the same physical person (see structures.py).
+                        # Iterating detected_objects.genders directly would double-count.
+                        # Fix: count only person-category boxes; for detections where no
+                        # body was found, also count the unmatched face-only boxes.
+                        person_inds = detected_objects.get_bboxes_inds("person")
+                        face_inds   = detected_objects.get_bboxes_inds("face")
+                        unmatched_face_inds = [
+                            fi for fi in face_inds
+                            if detected_objects.face_to_person_map.get(fi) is None
+                        ]
+                        for idx in list(person_inds) + unmatched_face_inds:
+                            g = detected_objects.genders[idx]
+                            if g is not None and g.lower() == "male":
                                 m_count += 1
-                            else:
+                            elif g is not None:
                                 f_count += 1
+
+                        # Dominant person: largest bbox → fills mivolo_gender / mivolo_age
+                        dom_gender, dom_age = get_dominant_person(detected_objects)
                     else:
-                        # Iterable Persons format
+                        # Iterable Persons format (older MiVOLO versions)
                         for person in detected_objects.get_results():
                             if person.gender is not None:
-                                if person.gender == "M":
+                                if person.gender.lower() == "male":
                                     m_count += 1
                                 else:
                                     f_count += 1
@@ -158,6 +218,8 @@ def run(args):
         
         # Populate our output dictionaries
         out_row = dict(row)
+        out_row["mivolo_gender"] = dom_gender if dom_gender is not None else ""  # dominant face bbox
+        out_row["mivolo_age"]    = round(dom_age, 1) if dom_age is not None else ""  # dominant age
         out_row["mivolo_males"] = m_count
         out_row["mivolo_females"] = f_count
         out_row["mivolo_total_persons"] = m_count + f_count
@@ -168,15 +230,23 @@ def run(args):
         updated_rows.append(out_row)
 
     # Save ready-to-test CSV
+    # Always opened with "w" → overwrites any previous run.
+    # When --limit is active a separate _test file is written so the real
+    # results are never corrupted during a smoke-test.
     fieldnames = list(updated_rows[0].keys())
-    
-    RESULTS_OUT.parent.mkdir(parents=True, exist_ok=True)
-    with RESULTS_OUT.open("w", newline="", encoding="utf-8") as f:
+
+    out_path = RESULTS_OUT
+    if args.limit:
+        out_path = RESULTS_OUT.with_stem(RESULTS_OUT.stem + "_test")
+        print(f"[--limit] Writing test output to: {out_path}")
+
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    with out_path.open("w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows(updated_rows)
 
-    print(f"\nCompleted. Final dataset for Chi-Square tests saved to: {RESULTS_OUT}")
+    print(f"\nCompleted. Dataset saved to: {out_path}")
     
     # Quick Summary Print
     cat_counts = {}
@@ -198,6 +268,8 @@ if __name__ == "__main__":
     parser.add_argument("--device", default="cuda", help="cuda or cpu")
     parser.add_argument("--yolo-weights", default="yolov8x_person_face.pt", help="Path to YOLO weights")
     parser.add_argument("--mivolo-weights", default="model_imdb_cross_person_4.22_99.46.pth.tar", help="Path to MiVOLO weights")
-    
+    parser.add_argument("--limit", type=int, default=None,
+                        help="Only process the first N rows (writes to *_test.csv, safe for smoke-testing).")
+
     args = parser.parse_args()
     run(args)
