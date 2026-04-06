@@ -69,6 +69,49 @@ def determine_category(males: int, females: int) -> str:
         return "gemischte/generische Gruppe"
 
 
+def get_dominant_person(detected_objects):
+    """
+    Find the most prominent person and return its predicted gender and age.
+
+    Strategy: compare ALL face bounding boxes by area (largest = closest to
+    camera = most prominent).  Face boxes are all the same type of detection
+    so their areas are directly comparable - no scale-mixing issues.
+
+    Why face boxes and not person boxes?
+        - Every MiVOLO-classifiable person must have a face detection
+          (gender is predicted from the face crop, with optional body context).
+        - Face boxes are uniformly sized relative to subject distance, so a
+          larger face bbox reliably means that person is closer / more prominent.
+        - Body boxes vary wildly in aspect ratio and are not comparable to face
+          boxes, so mixing them would let a distant person with a full-body box
+          beat a foreground person detected only by face.
+
+    Returns:
+        dominant_gender (str | None):  "male" / "female" / None
+        dominant_age    (float | None): predicted age or None
+    """
+    face_inds = detected_objects.get_bboxes_inds("face")
+
+    if not face_inds:
+        return None, None
+
+    best_idx, best_area = None, -1
+    for idx in face_inds:
+        try:
+            x1, y1, x2, y2 = (int(v) for v in
+                               detected_objects.get_bbox_by_ind(idx).cpu().numpy())
+            area = (x2 - x1) * (y2 - y1)
+        except Exception:
+            continue
+        if area > best_area:
+            best_area = area
+            best_idx  = idx
+
+    if best_idx is None:
+        return None, None
+
+    return detected_objects.genders[best_idx], detected_objects.ages[best_idx]
+
 def run(args):
     if not METADATA_IN.exists():
         print(f"Input file {METADATA_IN} not found. Generate images first.")
@@ -118,16 +161,15 @@ def run(args):
         m_count = 0
         f_count = 0
         
+        dom_gender, dom_age = None, None   # populated when MiVOLO runs
+
         if not args.dry_run and img_path.exists():
             img = cv2.imread(str(img_path))
             if img is not None:
                 succ_opened += 1
                 try:
                     detected_objects, _ = predictor.recognize(img)
-                    
-                    # MiVOLO detected objects usually act as a list of Person objects
-                    # or an object possessing vectors of ages/genders
-                    # (Implementation might vary slightly per MiVOLO github commit)
+
                     if hasattr(detected_objects, 'genders'):
                         # MiVOLO assigns gender to BOTH the person-box index AND the
                         # face-box index for the same physical person (see structures.py).
@@ -146,6 +188,9 @@ def run(args):
                                 m_count += 1
                             elif g is not None:
                                 f_count += 1
+
+                        # Dominant person: largest bbox → fills mivolo_gender / mivolo_age
+                        dom_gender, dom_age = get_dominant_person(detected_objects)
                     else:
                         # Iterable Persons format (older MiVOLO versions)
                         for person in detected_objects.get_results():
@@ -173,6 +218,8 @@ def run(args):
         
         # Populate our output dictionaries
         out_row = dict(row)
+        out_row["mivolo_gender"] = dom_gender if dom_gender is not None else ""  # dominant face bbox
+        out_row["mivolo_age"]    = round(dom_age, 1) if dom_age is not None else ""  # dominant age
         out_row["mivolo_males"] = m_count
         out_row["mivolo_females"] = f_count
         out_row["mivolo_total_persons"] = m_count + f_count
