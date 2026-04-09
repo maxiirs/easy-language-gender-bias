@@ -40,17 +40,20 @@ def normalize_text(text: str) -> str:
     return WHITESPACE_RE.sub(" ", text).strip()
 
 
-def load_pipeline(model: str = "de_core_news_sm", use_gpu: bool = True) -> spacy.Language:
-    """Build a spaCy pipeline with the three LLpro components we need."""
+def load_pipeline(model: str = "de_core_news_sm") -> spacy.Language:
+    """Build a spaCy pipeline with the three LLpro components we need.
+    
+    GPU/CUDA is handled internally by LLpro's components via PyTorch,
+    not via spaCy's CuPy-based GPU support.
+    """
     try:
         import torch
-        if use_gpu and torch.cuda.is_available():
-            spacy.require_gpu()
-            print(f"[GPU] Verwende CUDA ({torch.cuda.get_device_name(0)})")
+        if torch.cuda.is_available():
+            print(f"[GPU] CUDA verfügbar ({torch.cuda.get_device_name(0)}). LLpro nutzt GPU automatisch.")
         else:
-            print("[CPU] Keine GPU gefunden oder deaktiviert.")
+            print("[CPU] Keine GPU gefunden. LLpro läuft auf CPU.")
     except ImportError:
-        print("[CPU] PyTorch nicht gefunden, nutze CPU.")
+        print("[CPU] PyTorch nicht gefunden, LLpro läuft auf CPU.")
 
     nlp = spacy.load(model, disable=["ner"])
 
@@ -145,7 +148,6 @@ def main() -> None:
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument("--summary-output", type=Path, default=DEFAULT_SUMMARY_OUTPUT)
     parser.add_argument("--model", default="de_core_news_sm")
-    parser.add_argument("--no-gpu", action="store_true", help="Disable GPU usage.")
     parser.add_argument("--limit", type=int, default=0, help="Limit number of pairs to process (0 = all).")
     args = parser.parse_args()
 
@@ -159,7 +161,7 @@ def main() -> None:
 
     # 2. Load LLpro pipeline
     print("\n--- Lade LLpro Pipeline ---")
-    nlp = load_pipeline(args.model, use_gpu=not args.no_gpu)
+    nlp = load_pipeline(args.model)
 
     # 3. Prepare text inputs for batch processing via nlp.pipe()
     doc_inputs: list[tuple[str, str, dict[str, str]]] = []
