@@ -9,5 +9,6 @@ data/processed/*_sample.json
 
 # Exclude external cloned repositories and heavy model weights
 MiVOLO/
+LLpro/
 *.pt
 *.pth.tar
