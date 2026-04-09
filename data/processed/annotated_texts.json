@@ -1,0 +1,4007 @@
+[
+  {
+    "pair_id": "pair_0001",
+    "source": "dresden.de",
+    "simple": {
+      "text": "Stadtverwaltung In einer Stadt arbeiten Politik und Verwaltung zusammen. Die Stadtpolitik trifft Entscheidungen und macht Gesetze für Dresden. Die Stadtverwaltung setzt diese Entscheidungen und Gesetze um. Die Politik wird im Stadtrat gemacht. Die Verwaltung wird in den Ämtern gemacht.",
+      "token_count": 44,
+      "sentences": [
+        {
+          "start": 0,
+          "end": 1,
+          "text": "Stadtverwaltung"
+        },
+        {
+          "start": 1,
+          "end": 10,
+          "text": "In einer Stadt arbeiten Politik und Verwaltung zusammen."
+        },
+        {
+          "start": 10,
+          "end": 20,
+          "text": "Die Stadtpolitik trifft Entscheidungen und macht Gesetze für Dresden."
+        },
+        {
+          "start": 20,
+          "end": 29,
+          "text": "Die Stadtverwaltung setzt diese Entscheidungen und Gesetze um."
+        },
+        {
+          "start": 29,
+          "end": 36,
+          "text": "Die Politik wird im Stadtrat gemacht."
+        },
+        {
+          "start": 36,
+          "end": 44,
+          "text": "Die Verwaltung wird in den Ämtern gemacht."
+        }
+      ],
+      "entities": [
+        {
+          "text": "Dresden",
+          "label": "LOC",
+          "start_char": 134,
+          "end_char": 141
+        }
+      ],
+      "characters": [],
+      "coref_clusters": [
+        {
+          "cluster_id": 0,
+          "mentions": [
+            {
+              "text": "Stadtverwaltung",
+              "start": 0,
+              "end": 1
+            }
+          ]
+        },
+        {
+          "cluster_id": 1,
+          "mentions": [
+            {
+              "text": "Stadtrat",
+              "start": 33,
+              "end": 34
+            }
+          ]
+        }
+      ]
+    },
+    "normal": {
+      "text": "Streiflichter aus dem Rathaus © www.deathtothestockphoto.com Was kann ich wo erledigen? Informieren Sie sich von der Abfallberatung bis hin zum Zentralen Adressregister über alles, was Ihnen die Stadt Dresden bietet. Landtagswahlen Ergebnisse der Wahl am 1. September 2024: Wer hat wo wieviele Stimmen erhalten Stadtrat im Livestream Stadtratssitzung verpasst? Hier finden Sie die Aufzeichnungen der Livestreams von den vergangenen Sitzungen. © Michael Schmidt Oberbürgermeister Dirk Hilbert Der Oberbürgermeister ist Vorsitzender des Stadtrates und Leiter der Stadtverwaltung. Stöbern Sie in Reden, Veranstaltungen und Themen des Oberbügermeisters. Aus den Einrichtungen der Stadtverwaltung © Foto: Tierheim Tierheim Eine Auswahl der aktuellen Bewohner stellen wir Ihnen vor. Alle freuen sich über ein neues Zuhause. © Stadtarchiv Dresden Archivalie des Monats Jeden Monat stellt das Stadtarchiv ein spannendes Fundstück vor. Freuen Sie sich über unbekannte Dresdner Geschichte. © velishchuk – stock.adobe.com + die superpixel & Cesar Tezeta Mitmachheft für Kinder Wappentier Leo erklärt den Kindern, wozu man ein Rathaus und seine Mitarbeiter braucht. Viele Mitmachangebote, Rätsel und Bilder zum Aus- und Weitermalen. © Ö GRAFIK Aktuelle Stellenangebote Die Einrichtungen, Ämter und Behörden der Stadtverwaltung sind immer auf der Suche nach klugen Köpfen.",
+      "token_count": 207,
+      "sentences": [
+        {
+          "start": 0,
+          "end": 6,
+          "text": "Streiflichter aus dem Rathaus © www.deathtothestockphoto.com"
+        },
+        {
+          "start": 6,
+          "end": 12,
+          "text": "Was kann ich wo erledigen?"
+        },
+        {
+          "start": 12,
+          "end": 33,
+          "text": "Informieren Sie sich von der Abfallberatung bis hin zum Zentralen Adressregister über alles, was Ihnen die Stadt Dresden bietet."
+        },
+        {
+          "start": 33,
+          "end": 42,
+          "text": "Landtagswahlen Ergebnisse der Wahl am 1. September 2024:"
+        },
+        {
+          "start": 42,
+          "end": 54,
+          "text": "Wer hat wo wieviele Stimmen erhalten Stadtrat im Livestream Stadtratssitzung verpasst?"
+        },
+        {
+          "start": 54,
+          "end": 66,
+          "text": "Hier finden Sie die Aufzeichnungen der Livestreams von den vergangenen Sitzungen."
+        },
+        {
+          "start": 66,
+          "end": 69,
+          "text": "© Michael Schmidt"
+        },
+        {
+          "start": 69,
+          "end": 72,
+          "text": "Oberbürgermeister Dirk Hilbert"
+        },
+        {
+          "start": 72,
+          "end": 83,
+          "text": "Der Oberbürgermeister ist Vorsitzender des Stadtrates und Leiter der Stadtverwaltung."
+        },
+        {
+          "start": 83,
+          "end": 94,
+          "text": "Stöbern Sie in Reden, Veranstaltungen und Themen des Oberbügermeisters."
+        },
+        {
+          "start": 94,
+          "end": 104,
+          "text": "Aus den Einrichtungen der Stadtverwaltung © Foto: Tierheim Tierheim"
+        },
+        {
+          "start": 104,
+          "end": 114,
+          "text": "Eine Auswahl der aktuellen Bewohner stellen wir Ihnen vor."
+        },
+        {
+          "start": 114,
+          "end": 122,
+          "text": "Alle freuen sich über ein neues Zuhause."
+        },
+        {
+          "start": 122,
+          "end": 123,
+          "text": "©"
+        },
+        {
+          "start": 123,
+          "end": 125,
+          "text": "Stadtarchiv Dresden"
+        },
+        {
+          "start": 125,
+          "end": 138,
+          "text": "Archivalie des Monats Jeden Monat stellt das Stadtarchiv ein spannendes Fundstück vor."
+        },
+        {
+          "start": 138,
+          "end": 146,
+          "text": "Freuen Sie sich über unbekannte Dresdner Geschichte."
+        },
+        {
+          "start": 146,
+          "end": 159,
+          "text": "© velishchuk – stock.adobe.com + die superpixel & Cesar Tezeta Mitmachheft für Kinder"
+        },
+        {
+          "start": 159,
+          "end": 160,
+          "text": "Wappentier"
+        },
+        {
+          "start": 160,
+          "end": 174,
+          "text": "Leo erklärt den Kindern, wozu man ein Rathaus und seine Mitarbeiter braucht."
+        },
+        {
+          "start": 174,
+          "end": 185,
+          "text": "Viele Mitmachangebote, Rätsel und Bilder zum Aus- und Weitermalen."
+        },
+        {
+          "start": 185,
+          "end": 187,
+          "text": "© Ö"
+        },
+        {
+          "start": 187,
+          "end": 188,
+          "text": "GRAFIK"
+        },
+        {
+          "start": 188,
+          "end": 190,
+          "text": "Aktuelle Stellenangebote"
+        },
+        {
+          "start": 190,
+          "end": 207,
+          "text": "Die Einrichtungen, Ämter und Behörden der Stadtverwaltung sind immer auf der Suche nach klugen Köpfen."
+        }
+      ],
+      "entities": [
+        {
+          "text": "Dresden",
+          "label": "LOC",
+          "start_char": 201,
+          "end_char": 208
+        },
+        {
+          "text": "Michael Schmidt",
+          "label": "PER",
+          "start_char": 445,
+          "end_char": 460
+        },
+        {
+          "text": "Dirk Hilbert",
+          "label": "PER",
+          "start_char": 479,
+          "end_char": 491
+        },
+        {
+          "text": "Tierheim",
+          "label": "LOC",
+          "start_char": 709,
+          "end_char": 717
+        },
+        {
+          "text": "Stadtarchiv Dresden",
+          "label": "ORG",
+          "start_char": 820,
+          "end_char": 839
+        },
+        {
+          "text": "velishchuk",
+          "label": "PER",
+          "start_char": 982,
+          "end_char": 992
+        },
+        {
+          "text": "die superpixel",
+          "label": "ORG",
+          "start_char": 1013,
+          "end_char": 1027
+        },
+        {
+          "text": "Cesar Tezeta",
+          "label": "PER",
+          "start_char": 1030,
+          "end_char": 1042
+        },
+        {
+          "text": "Leo",
+          "label": "PER",
+          "start_char": 1077,
+          "end_char": 1080
+        }
+      ],
+      "characters": [
+        {
+          "text": "Ihnen",
+          "start": 27,
+          "end": 28,
+          "sent_text": "Informieren Sie sich von der Abfallberatung bis hin zum Zentralen Adressregister über alles, was Ihnen die Stadt Dresden bietet."
+        },
+        {
+          "text": "Wer",
+          "start": 42,
+          "end": 43,
+          "sent_text": "Wer hat wo wieviele Stimmen erhalten Stadtrat im Livestream Stadtratssitzung verpasst?"
+        },
+        {
+          "text": "Schmidt",
+          "start": 68,
+          "end": 69,
+          "sent_text": "© Michael Schmidt"
+        },
+        {
+          "text": "Dirk Hilbert",
+          "start": 70,
+          "end": 72,
+          "sent_text": "Oberbürgermeister Dirk Hilbert"
+        },
+        {
+          "text": "Oberbürgermeister",
+          "start": 73,
+          "end": 74,
+          "sent_text": "Der Oberbürgermeister ist Vorsitzender des Stadtrates und Leiter der Stadtverwaltung."
+        },
+        {
+          "text": "Vorsitzender",
+          "start": 75,
+          "end": 76,
+          "sent_text": "Der Oberbürgermeister ist Vorsitzender des Stadtrates und Leiter der Stadtverwaltung."
+        },
+        {
+          "text": "Oberbügermeisters",
+          "start": 92,
+          "end": 93,
+          "sent_text": "Stöbern Sie in Reden, Veranstaltungen und Themen des Oberbügermeisters."
+        },
+        {
+          "text": "Bewohner",
+          "start": 108,
+          "end": 109,
+          "sent_text": "Eine Auswahl der aktuellen Bewohner stellen wir Ihnen vor."
+        },
+        {
+          "text": "Dresden",
+          "start": 124,
+          "end": 125,
+          "sent_text": "Stadtarchiv Dresden"
+        },
+        {
+          "text": "Cesar Tezeta",
+          "start": 154,
+          "end": 156,
+          "sent_text": "© velishchuk – stock.adobe.com + die superpixel & Cesar Tezeta Mitmachheft für Kinder"
+        },
+        {
+          "text": "Kinder",
+          "start": 158,
+          "end": 159,
+          "sent_text": "© velishchuk – stock.adobe.com + die superpixel & Cesar Tezeta Mitmachheft für Kinder"
+        },
+        {
+          "text": "Leo",
+          "start": 160,
+          "end": 161,
+          "sent_text": "Leo erklärt den Kindern, wozu man ein Rathaus und seine Mitarbeiter braucht."
+        },
+        {
+          "text": "Kindern",
+          "start": 163,
+          "end": 164,
+          "sent_text": "Leo erklärt den Kindern, wozu man ein Rathaus und seine Mitarbeiter braucht."
+        },
+        {
+          "text": "Mitarbeiter",
+          "start": 171,
+          "end": 172,
+          "sent_text": "Leo erklärt den Kindern, wozu man ein Rathaus und seine Mitarbeiter braucht."
+        },
+        {
+          "text": "Köpfen",
+          "start": 205,
+          "end": 206,
+          "sent_text": "Die Einrichtungen, Ämter und Behörden der Stadtverwaltung sind immer auf der Suche nach klugen Köpfen."
+        }
+      ],
+      "coref_clusters": [
+        {
+          "cluster_id": 0,
+          "mentions": [
+            {
+              "text": "Streiflichter",
+              "start": 0,
+              "end": 1
+            }
+          ]
+        },
+        {
+          "cluster_id": 1,
+          "mentions": [
+            {
+              "text": "Ihnen",
+              "start": 27,
+              "end": 28
+            },
+            {
+              "text": "Sie",
+              "start": 56,
+              "end": 57
+            }
+          ]
+        },
+        {
+          "cluster_id": 2,
+          "mentions": [
+            {
+              "text": "Michael Schmidt",
+              "start": 67,
+              "end": 69
+            }
+          ]
+        },
+        {
+          "cluster_id": 3,
+          "mentions": [
+            {
+              "text": "Oberbürgermeister Dirk Hilbert",
+              "start": 69,
+              "end": 72
+            },
+            {
+              "text": "Oberbürgermeister",
+              "start": 73,
+              "end": 74
+            },
+            {
+              "text": "Vorsitzender",
+              "start": 75,
+              "end": 76
+            },
+            {
+              "text": "Oberbügermeisters",
+              "start": 92,
+              "end": 93
+            }
+          ]
+        },
+        {
+          "cluster_id": 4,
+          "mentions": [
+            {
+              "text": "Bewohner",
+              "start": 108,
+              "end": 109
+            }
+          ]
+        },
+        {
+          "cluster_id": 5,
+          "mentions": [
+            {
+              "text": "wir",
+              "start": 110,
+              "end": 111
+            }
+          ]
+        },
+        {
+          "cluster_id": 6,
+          "mentions": [
+            {
+              "text": "Alle",
+              "start": 114,
+              "end": 115
+            },
+            {
+              "text": "sich",
+              "start": 116,
+              "end": 117
+            }
+          ]
+        },
+        {
+          "cluster_id": 7,
+          "mentions": [
+            {
+              "text": "velishchuk",
+              "start": 147,
+              "end": 148
+            }
+          ]
+        },
+        {
+          "cluster_id": 8,
+          "mentions": [
+            {
+              "text": "Kinder",
+              "start": 158,
+              "end": 159
+            },
+            {
+              "text": "Kindern",
+              "start": 163,
+              "end": 164
+            }
+          ]
+        },
+        {
+          "cluster_id": 9,
+          "mentions": [
+            {
+              "text": "Mitarbeiter",
+              "start": 171,
+              "end": 172
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "pair_id": "pair_0002",
+    "source": "dresden.de",
+    "simple": {
+      "text": "Kommunalwahlen Bei den Kommunalwahlen wird der Stadtrat gewählt. Für den Stadtrat werden 70 Menschen gewählt. Es wird alle 5 Jahre gewählt. Die nächste Wahl ist im Jahr 2024. Dresden ist aufgeteilt. Es gibt 11 große und ungefähr 100 kleinere Wahlbezirke. Wählen dürfen Menschen, die Bürgerinnen und Bürger der EU sind, 18 Jahre oder älter sind und seit mindestens 3. Monaten in Dresden wohnen. Auch um gewählt zu werden, gelten diese Regeln. Außerdem muss man Mitglied sein in einer Partei oder einer Wählervereinigung. Oder wenn man mit dem Wahlprogramm einer Partei oder Wählervereinigung einverstanden ist. Neben dem Stadtrat, werden noch der Stadtbezirksrat bzw. der Ortschaftsrat gewählt. Das ist wie eine Stadtratswahl, nur für den Stadtbezirk oder die Ortschaft. Also nicht für ganz Dresden.",
+      "token_count": 139,
+      "sentences": [
+        {
+          "start": 0,
+          "end": 1,
+          "text": "Kommunalwahlen"
+        },
+        {
+          "start": 1,
+          "end": 9,
+          "text": "Bei den Kommunalwahlen wird der Stadtrat gewählt."
+        },
+        {
+          "start": 9,
+          "end": 17,
+          "text": "Für den Stadtrat werden 70 Menschen gewählt."
+        },
+        {
+          "start": 17,
+          "end": 24,
+          "text": "Es wird alle 5 Jahre gewählt."
+        },
+        {
+          "start": 24,
+          "end": 31,
+          "text": "Die nächste Wahl ist im Jahr 2024."
+        },
+        {
+          "start": 31,
+          "end": 35,
+          "text": "Dresden ist aufgeteilt."
+        },
+        {
+          "start": 35,
+          "end": 45,
+          "text": "Es gibt 11 große und ungefähr 100 kleinere Wahlbezirke."
+        },
+        {
+          "start": 45,
+          "end": 71,
+          "text": "Wählen dürfen Menschen, die Bürgerinnen und Bürger der EU sind, 18 Jahre oder älter sind und seit mindestens 3. Monaten in Dresden wohnen."
+        },
+        {
+          "start": 71,
+          "end": 81,
+          "text": "Auch um gewählt zu werden, gelten diese Regeln."
+        },
+        {
+          "start": 81,
+          "end": 93,
+          "text": "Außerdem muss man Mitglied sein in einer Partei oder einer Wählervereinigung."
+        },
+        {
+          "start": 93,
+          "end": 106,
+          "text": "Oder wenn man mit dem Wahlprogramm einer Partei oder Wählervereinigung einverstanden ist."
+        },
+        {
+          "start": 106,
+          "end": 119,
+          "text": "Neben dem Stadtrat, werden noch der Stadtbezirksrat bzw. der Ortschaftsrat gewählt."
+        },
+        {
+          "start": 119,
+          "end": 133,
+          "text": "Das ist wie eine Stadtratswahl, nur für den Stadtbezirk oder die Ortschaft."
+        },
+        {
+          "start": 133,
+          "end": 139,
+          "text": "Also nicht für ganz Dresden."
+        }
+      ],
+      "entities": [
+        {
+          "text": "Dresden",
+          "label": "LOC",
+          "start_char": 175,
+          "end_char": 182
+        },
+        {
+          "text": "EU",
+          "label": "ORG",
+          "start_char": 310,
+          "end_char": 312
+        },
+        {
+          "text": "Dresden",
+          "label": "LOC",
+          "start_char": 378,
+          "end_char": 385
+        },
+        {
+          "text": "Dresden",
+          "label": "LOC",
+          "start_char": 790,
+          "end_char": 797
+        }
+      ],
+      "characters": [
+        {
+          "text": "Menschen",
+          "start": 14,
+          "end": 15,
+          "sent_text": "Für den Stadtrat werden 70 Menschen gewählt."
+        },
+        {
+          "text": "Menschen",
+          "start": 47,
+          "end": 48,
+          "sent_text": "Wählen dürfen Menschen, die Bürgerinnen und Bürger der EU sind, 18 Jahre oder älter sind und seit mindestens 3. Monaten in Dresden wohnen."
+        },
+        {
+          "text": "die",
+          "start": 49,
+          "end": 50,
+          "sent_text": "Wählen dürfen Menschen, die Bürgerinnen und Bürger der EU sind, 18 Jahre oder älter sind und seit mindestens 3. Monaten in Dresden wohnen."
+        },
+        {
+          "text": "Bürgerinnen und Bürger",
+          "start": 50,
+          "end": 53,
+          "sent_text": "Wählen dürfen Menschen, die Bürgerinnen und Bürger der EU sind, 18 Jahre oder älter sind und seit mindestens 3. Monaten in Dresden wohnen."
+        },
+        {
+          "text": "Stadtrat",
+          "start": 108,
+          "end": 109,
+          "sent_text": "Neben dem Stadtrat, werden noch der Stadtbezirksrat bzw. der Ortschaftsrat gewählt."
+        },
+        {
+          "text": "Stadtbezirksrat",
+          "start": 113,
+          "end": 114,
+          "sent_text": "Neben dem Stadtrat, werden noch der Stadtbezirksrat bzw. der Ortschaftsrat gewählt."
+        },
+        {
+          "text": "Ortschaftsrat",
+          "start": 116,
+          "end": 117,
+          "sent_text": "Neben dem Stadtrat, werden noch der Stadtbezirksrat bzw. der Ortschaftsrat gewählt."
+        }
+      ],
+      "coref_clusters": [
+        {
+          "cluster_id": 0,
+          "mentions": [
+            {
+              "text": "Kommunalwahlen",
+              "start": 0,
+              "end": 1
+            }
+          ]
+        },
+        {
+          "cluster_id": 1,
+          "mentions": [
+            {
+              "text": "Menschen",
+              "start": 14,
+              "end": 15
+            },
+            {
+              "text": "Menschen",
+              "start": 47,
+              "end": 48
+            },
+            {
+              "text": "die",
+              "start": 49,
+              "end": 50
+            },
+            {
+              "text": "Bürger",
+              "start": 52,
+              "end": 53
+            },
+            {
+              "text": "man",
+              "start": 95,
+              "end": 96
+            }
+          ]
+        },
+        {
+          "cluster_id": 2,
+          "mentions": [
+            {
+              "text": "Partei",
+              "start": 88,
+              "end": 89
+            }
+          ]
+        }
+      ]
+    },
+    "normal": {
+      "text": "Kommunalwahlen Die Kommunalwahlen fanden am Sonntag, den 9. Juni 2024 statt. An diesem Tag wurden auch die Abgeordneten des Europaparlaments in Dresden gewählt. Infos zu den Kommunalwahlen am 9. Juni 2024 Die Auszählung der Kommunalwahlen wurde am 12. Juni 2024 abgeschlossen. Auf den Unterseiten der Stadtratswahl , Stadtbezirksbeiratswahl und Ortschaftsratswahl können Sie die vorläufigen Ergebnisse einsehen. Das Wahlergebnis wird momentan amtlich geprüft. Das amtliche Endergebnis der Stadtratswahl und der Ortschaftsratswahlen wird am 24. Juni 2024 bekannt gegeben, das amtliche Endergebnis der Stadtbezirksbeiratswahlen am 25. Juni 2024. Allgemeines Die Kommunalwahlen umfassen in der Landeshauptstadt Dresden: die Stadtratswahl, die Ortschaftsratswahlen und die Stadtbezirksbeiratswahlen. Wer darf wählen? Wahlberechtigt sind alle Deutschen und EU-Bürger, die am Wahltag mindestens 18 Jahre alt sind und seit über drei Monaten in Dresden wohnen.",
+      "token_count": 139,
+      "sentences": [
+        {
+          "start": 0,
+          "end": 1,
+          "text": "Kommunalwahlen"
+        },
+        {
+          "start": 1,
+          "end": 13,
+          "text": "Die Kommunalwahlen fanden am Sonntag, den 9. Juni 2024 statt."
+        },
+        {
+          "start": 13,
+          "end": 26,
+          "text": "An diesem Tag wurden auch die Abgeordneten des Europaparlaments in Dresden gewählt."
+        },
+        {
+          "start": 26,
+          "end": 34,
+          "text": "Infos zu den Kommunalwahlen am 9. Juni 2024"
+        },
+        {
+          "start": 34,
+          "end": 45,
+          "text": "Die Auszählung der Kommunalwahlen wurde am 12. Juni 2024 abgeschlossen."
+        },
+        {
+          "start": 45,
+          "end": 61,
+          "text": "Auf den Unterseiten der Stadtratswahl , Stadtbezirksbeiratswahl und Ortschaftsratswahl können Sie die vorläufigen Ergebnisse einsehen."
+        },
+        {
+          "start": 61,
+          "end": 68,
+          "text": "Das Wahlergebnis wird momentan amtlich geprüft."
+        },
+        {
+          "start": 68,
+          "end": 93,
+          "text": "Das amtliche Endergebnis der Stadtratswahl und der Ortschaftsratswahlen wird am 24. Juni 2024 bekannt gegeben, das amtliche Endergebnis der Stadtbezirksbeiratswahlen am 25. Juni 2024."
+        },
+        {
+          "start": 93,
+          "end": 94,
+          "text": "Allgemeines"
+        },
+        {
+          "start": 94,
+          "end": 111,
+          "text": "Die Kommunalwahlen umfassen in der Landeshauptstadt Dresden: die Stadtratswahl, die Ortschaftsratswahlen und die Stadtbezirksbeiratswahlen."
+        },
+        {
+          "start": 111,
+          "end": 115,
+          "text": "Wer darf wählen?"
+        },
+        {
+          "start": 115,
+          "end": 139,
+          "text": "Wahlberechtigt sind alle Deutschen und EU-Bürger, die am Wahltag mindestens 18 Jahre alt sind und seit über drei Monaten in Dresden wohnen."
+        }
+      ],
+      "entities": [
+        {
+          "text": "Dresden",
+          "label": "LOC",
+          "start_char": 144,
+          "end_char": 151
+        },
+        {
+          "text": "Dresden",
+          "label": "LOC",
+          "start_char": 708,
+          "end_char": 715
+        },
+        {
+          "text": "Dresden",
+          "label": "LOC",
+          "start_char": 937,
+          "end_char": 944
+        }
+      ],
+      "characters": [
+        {
+          "text": "Abgeordneten",
+          "start": 19,
+          "end": 20,
+          "sent_text": "An diesem Tag wurden auch die Abgeordneten des Europaparlaments in Dresden gewählt."
+        },
+        {
+          "text": "Deutschen",
+          "start": 118,
+          "end": 119,
+          "sent_text": "Wahlberechtigt sind alle Deutschen und EU-Bürger, die am Wahltag mindestens 18 Jahre alt sind und seit über drei Monaten in Dresden wohnen."
+        },
+        {
+          "text": "EU-Bürger",
+          "start": 120,
+          "end": 121,
+          "sent_text": "Wahlberechtigt sind alle Deutschen und EU-Bürger, die am Wahltag mindestens 18 Jahre alt sind und seit über drei Monaten in Dresden wohnen."
+        },
+        {
+          "text": "die",
+          "start": 122,
+          "end": 123,
+          "sent_text": "Wahlberechtigt sind alle Deutschen und EU-Bürger, die am Wahltag mindestens 18 Jahre alt sind und seit über drei Monaten in Dresden wohnen."
+        }
+      ],
+      "coref_clusters": [
+        {
+          "cluster_id": 0,
+          "mentions": [
+            {
+              "text": "Kommunalwahlen",
+              "start": 0,
+              "end": 1
+            }
+          ]
+        },
+        {
+          "cluster_id": 1,
+          "mentions": [
+            {
+              "text": "Abgeordneten",
+              "start": 19,
+              "end": 20
+            }
+          ]
+        },
+        {
+          "cluster_id": 2,
+          "mentions": [
+            {
+              "text": "Sie",
+              "start": 55,
+              "end": 56
+            }
+          ]
+        },
+        {
+          "cluster_id": 3,
+          "mentions": [
+            {
+              "text": "EU-Bürger",
+              "start": 120,
+              "end": 121
+            },
+            {
+              "text": "die",
+              "start": 122,
+              "end": 123
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "pair_id": "pair_0003",
+    "source": "dresden.de",
+    "simple": {
+      "text": "Der Senioren-Beirat Ältere Menschen heißen auch Seniorinnen und Senioren. Ein Beirat ist eine Gruppe von Personen, die sich in unserer Stadt um etwas kümmern. Der Seniorenbeirat kümmert sich um die Interessen älterer Menschen in Dresden. Was sind die Aufgaben des Seniorenbeirats? Er berät den Bürgermeister und den Stadtrat zur Politik für ältere Menschen. Er setzt sich in allen städtischen Angelegenheiten für ältere Menschen ein. Er trägt dazu bei, dass ältere Menschen am Stadtleben mitwirken. Wie viele ältere Menschen leben in Dresden? Die Gruppe der Menschen über 60 Jahre wächst in Dresden. 2010 waren es fast 140.000 Menschen. Das war etwas weniger als ein Drittel aller Dresdnerinnen und Dresdner. 2020 sind ein Drittel aller Dresdnerinnen und Dresdner über 60 Jahre alt. Viele ältere Menschen in Dresden sind sehr aktiv. Sie kümmern sich um ihre Enkel oder pflegen Familienangehörige. Sie gehen an die Volkshochschule oder in Vereine. Manche arbeiten auch ehrenamtlich. So geben sie anderen Menschen ihr Wissen und ihre Erfahrungen weiter. Aber es gibt auch ältere Menschen, denen es nicht so gut geht. Sie sind allein, krank oder brauchen Pflege. Um diese Menschen müssen wir uns besonders kümmern. Dafür gibt es den Seniorenbeirat.",
+      "token_count": 217,
+      "sentences": [
+        {
+          "start": 0,
+          "end": 2,
+          "text": "Der Senioren-Beirat"
+        },
+        {
+          "start": 2,
+          "end": 10,
+          "text": "Ältere Menschen heißen auch Seniorinnen und Senioren."
+        },
+        {
+          "start": 10,
+          "end": 27,
+          "text": "Ein Beirat ist eine Gruppe von Personen, die sich in unserer Stadt um etwas kümmern."
+        },
+        {
+          "start": 27,
+          "end": 39,
+          "text": "Der Seniorenbeirat kümmert sich um die Interessen älterer Menschen in Dresden."
+        },
+        {
+          "start": 39,
+          "end": 46,
+          "text": "Was sind die Aufgaben des Seniorenbeirats?"
+        },
+        {
+          "start": 46,
+          "end": 59,
+          "text": "Er berät den Bürgermeister und den Stadtrat zur Politik für ältere Menschen."
+        },
+        {
+          "start": 59,
+          "end": 71,
+          "text": "Er setzt sich in allen städtischen Angelegenheiten für ältere Menschen ein."
+        },
+        {
+          "start": 71,
+          "end": 83,
+          "text": "Er trägt dazu bei, dass ältere Menschen am Stadtleben mitwirken."
+        },
+        {
+          "start": 83,
+          "end": 91,
+          "text": "Wie viele ältere Menschen leben in Dresden?"
+        },
+        {
+          "start": 91,
+          "end": 102,
+          "text": "Die Gruppe der Menschen über 60 Jahre wächst in Dresden."
+        },
+        {
+          "start": 102,
+          "end": 109,
+          "text": "2010 waren es fast 140.000 Menschen."
+        },
+        {
+          "start": 109,
+          "end": 121,
+          "text": "Das war etwas weniger als ein Drittel aller Dresdnerinnen und Dresdner."
+        },
+        {
+          "start": 121,
+          "end": 134,
+          "text": "2020 sind ein Drittel aller Dresdnerinnen und Dresdner über 60 Jahre alt."
+        },
+        {
+          "start": 134,
+          "end": 143,
+          "text": "Viele ältere Menschen in Dresden sind sehr aktiv."
+        },
+        {
+          "start": 143,
+          "end": 153,
+          "text": "Sie kümmern sich um ihre Enkel oder pflegen Familienangehörige."
+        },
+        {
+          "start": 153,
+          "end": 162,
+          "text": "Sie gehen an die Volkshochschule oder in Vereine."
+        },
+        {
+          "start": 162,
+          "end": 167,
+          "text": "Manche arbeiten auch ehrenamtlich."
+        },
+        {
+          "start": 167,
+          "end": 179,
+          "text": "So geben sie anderen Menschen ihr Wissen und ihre Erfahrungen weiter."
+        },
+        {
+          "start": 179,
+          "end": 193,
+          "text": "Aber es gibt auch ältere Menschen, denen es nicht so gut geht."
+        },
+        {
+          "start": 193,
+          "end": 202,
+          "text": "Sie sind allein, krank oder brauchen Pflege."
+        },
+        {
+          "start": 202,
+          "end": 211,
+          "text": "Um diese Menschen müssen wir uns besonders kümmern."
+        },
+        {
+          "start": 211,
+          "end": 217,
+          "text": "Dafür gibt es den Seniorenbeirat."
+        }
+      ],
+      "entities": [
+        {
+          "text": "Dresden",
+          "label": "LOC",
+          "start_char": 229,
+          "end_char": 236
+        },
+        {
+          "text": "Dresden",
+          "label": "LOC",
+          "start_char": 534,
+          "end_char": 541
+        },
+        {
+          "text": "Dresden",
+          "label": "LOC",
+          "start_char": 591,
+          "end_char": 598
+        },
+        {
+          "text": "Dresden",
+          "label": "LOC",
+          "start_char": 808,
+          "end_char": 815
+        }
+      ],
+      "characters": [
+        {
+          "text": "Ältere",
+          "start": 2,
+          "end": 3,
+          "sent_text": "Ältere Menschen heißen auch Seniorinnen und Senioren."
+        },
+        {
+          "text": "Menschen",
+          "start": 3,
+          "end": 4,
+          "sent_text": "Ältere Menschen heißen auch Seniorinnen und Senioren."
+        },
+        {
+          "text": "Seniorinnen",
+          "start": 6,
+          "end": 7,
+          "sent_text": "Ältere Menschen heißen auch Seniorinnen und Senioren."
+        },
+        {
+          "text": "Senioren",
+          "start": 8,
+          "end": 9,
+          "sent_text": "Ältere Menschen heißen auch Seniorinnen und Senioren."
+        },
+        {
+          "text": "Beirat",
+          "start": 11,
+          "end": 12,
+          "sent_text": "Ein Beirat ist eine Gruppe von Personen, die sich in unserer Stadt um etwas kümmern."
+        },
+        {
+          "text": "Gruppe",
+          "start": 14,
+          "end": 15,
+          "sent_text": "Ein Beirat ist eine Gruppe von Personen, die sich in unserer Stadt um etwas kümmern."
+        },
+        {
+          "text": "Personen",
+          "start": 16,
+          "end": 17,
+          "sent_text": "Ein Beirat ist eine Gruppe von Personen, die sich in unserer Stadt um etwas kümmern."
+        },
+        {
+          "text": "Seniorenbeirat",
+          "start": 28,
+          "end": 29,
+          "sent_text": "Der Seniorenbeirat kümmert sich um die Interessen älterer Menschen in Dresden."
+        },
+        {
+          "text": "Menschen",
+          "start": 35,
+          "end": 36,
+          "sent_text": "Der Seniorenbeirat kümmert sich um die Interessen älterer Menschen in Dresden."
+        },
+        {
+          "text": "Seniorenbeirats",
+          "start": 44,
+          "end": 45,
+          "sent_text": "Was sind die Aufgaben des Seniorenbeirats?"
+        },
+        {
+          "text": "Bürgermeister",
+          "start": 49,
+          "end": 50,
+          "sent_text": "Er berät den Bürgermeister und den Stadtrat zur Politik für ältere Menschen."
+        },
+        {
+          "text": "Stadtrat",
+          "start": 52,
+          "end": 53,
+          "sent_text": "Er berät den Bürgermeister und den Stadtrat zur Politik für ältere Menschen."
+        },
+        {
+          "text": "Menschen",
+          "start": 57,
+          "end": 58,
+          "sent_text": "Er berät den Bürgermeister und den Stadtrat zur Politik für ältere Menschen."
+        },
+        {
+          "text": "Menschen",
+          "start": 68,
+          "end": 69,
+          "sent_text": "Er setzt sich in allen städtischen Angelegenheiten für ältere Menschen ein."
+        },
+        {
+          "text": "Menschen",
+          "start": 78,
+          "end": 79,
+          "sent_text": "Er trägt dazu bei, dass ältere Menschen am Stadtleben mitwirken."
+        },
+        {
+          "text": "Menschen",
+          "start": 86,
+          "end": 87,
+          "sent_text": "Wie viele ältere Menschen leben in Dresden?"
+        },
+        {
+          "text": "Menschen über 60 Jahre",
+          "start": 94,
+          "end": 98,
+          "sent_text": "Die Gruppe der Menschen über 60 Jahre wächst in Dresden."
+        },
+        {
+          "text": "Menschen",
+          "start": 107,
+          "end": 108,
+          "sent_text": "2010 waren es fast 140.000 Menschen."
+        },
+        {
+          "text": "Dresdnerinnen und",
+          "start": 117,
+          "end": 119,
+          "sent_text": "Das war etwas weniger als ein Drittel aller Dresdnerinnen und Dresdner."
+        },
+        {
+          "text": "Dresdner",
+          "start": 119,
+          "end": 120,
+          "sent_text": "Das war etwas weniger als ein Drittel aller Dresdnerinnen und Dresdner."
+        },
+        {
+          "text": "Dresdnerinnen und",
+          "start": 126,
+          "end": 128,
+          "sent_text": "2020 sind ein Drittel aller Dresdnerinnen und Dresdner über 60 Jahre alt."
+        },
+        {
+          "text": "Dresdner",
+          "start": 128,
+          "end": 129,
+          "sent_text": "2020 sind ein Drittel aller Dresdnerinnen und Dresdner über 60 Jahre alt."
+        },
+        {
+          "text": "Menschen",
+          "start": 136,
+          "end": 137,
+          "sent_text": "Viele ältere Menschen in Dresden sind sehr aktiv."
+        },
+        {
+          "text": "Sie",
+          "start": 143,
+          "end": 144,
+          "sent_text": "Sie kümmern sich um ihre Enkel oder pflegen Familienangehörige."
+        },
+        {
+          "text": "ihre",
+          "start": 147,
+          "end": 148,
+          "sent_text": "Sie kümmern sich um ihre Enkel oder pflegen Familienangehörige."
+        },
+        {
+          "text": "Enkel",
+          "start": 148,
+          "end": 149,
+          "sent_text": "Sie kümmern sich um ihre Enkel oder pflegen Familienangehörige."
+        },
+        {
+          "text": "Familienangehörige",
+          "start": 151,
+          "end": 152,
+          "sent_text": "Sie kümmern sich um ihre Enkel oder pflegen Familienangehörige."
+        },
+        {
+          "text": "Menschen",
+          "start": 171,
+          "end": 172,
+          "sent_text": "So geben sie anderen Menschen ihr Wissen und ihre Erfahrungen weiter."
+        },
+        {
+          "text": "ihre",
+          "start": 175,
+          "end": 176,
+          "sent_text": "So geben sie anderen Menschen ihr Wissen und ihre Erfahrungen weiter."
+        },
+        {
+          "text": "Menschen",
+          "start": 184,
+          "end": 185,
+          "sent_text": "Aber es gibt auch ältere Menschen, denen es nicht so gut geht."
+        },
+        {
+          "text": "denen",
+          "start": 186,
+          "end": 187,
+          "sent_text": "Aber es gibt auch ältere Menschen, denen es nicht so gut geht."
+        },
+        {
+          "text": "Sie",
+          "start": 193,
+          "end": 194,
+          "sent_text": "Sie sind allein, krank oder brauchen Pflege."
+        },
+        {
+          "text": "Menschen",
+          "start": 204,
+          "end": 205,
+          "sent_text": "Um diese Menschen müssen wir uns besonders kümmern."
+        },
+        {
+          "text": "Seniorenbeirat",
+          "start": 215,
+          "end": 216,
+          "sent_text": "Dafür gibt es den Seniorenbeirat."
+        }
+      ],
+      "coref_clusters": [
+        {
+          "cluster_id": 0,
+          "mentions": [
+            {
+              "text": "Der Senioren-Beirat",
+              "start": 0,
+              "end": 2
+            }
+          ]
+        },
+        {
+          "cluster_id": 1,
+          "mentions": [
+            {
+              "text": "Menschen",
+              "start": 3,
+              "end": 4
+            },
+            {
+              "text": "Seniorinnen",
+              "start": 6,
+              "end": 7
+            },
+            {
+              "text": "Senioren",
+              "start": 8,
+              "end": 9
+            },
+            {
+              "text": "Dresdner",
+              "start": 119,
+              "end": 120
+            },
+            {
+              "text": "Dresdner",
+              "start": 128,
+              "end": 129
+            }
+          ]
+        },
+        {
+          "cluster_id": 2,
+          "mentions": [
+            {
+              "text": "Personen",
+              "start": 16,
+              "end": 17
+            },
+            {
+              "text": "die",
+              "start": 18,
+              "end": 19
+            },
+            {
+              "text": "sich",
+              "start": 19,
+              "end": 20
+            }
+          ]
+        },
+        {
+          "cluster_id": 3,
+          "mentions": [
+            {
+              "text": "unserer",
+              "start": 21,
+              "end": 22
+            },
+            {
+              "text": "wir",
+              "start": 206,
+              "end": 207
+            },
+            {
+              "text": "uns",
+              "start": 207,
+              "end": 208
+            }
+          ]
+        },
+        {
+          "cluster_id": 4,
+          "mentions": [
+            {
+              "text": "Bürgermeister",
+              "start": 49,
+              "end": 50
+            }
+          ]
+        },
+        {
+          "cluster_id": 5,
+          "mentions": [
+            {
+              "text": "Stadtrat",
+              "start": 52,
+              "end": 53
+            }
+          ]
+        },
+        {
+          "cluster_id": 6,
+          "mentions": [
+            {
+              "text": "Menschen",
+              "start": 86,
+              "end": 87
+            },
+            {
+              "text": "Menschen",
+              "start": 94,
+              "end": 95
+            },
+            {
+              "text": "Menschen",
+              "start": 107,
+              "end": 108
+            }
+          ]
+        },
+        {
+          "cluster_id": 7,
+          "mentions": [
+            {
+              "text": "Menschen",
+              "start": 136,
+              "end": 137
+            },
+            {
+              "text": "Sie",
+              "start": 143,
+              "end": 144
+            },
+            {
+              "text": "sich",
+              "start": 145,
+              "end": 146
+            },
+            {
+              "text": "ihre",
+              "start": 147,
+              "end": 148
+            },
+            {
+              "text": "Sie",
+              "start": 153,
+              "end": 154
+            }
+          ]
+        },
+        {
+          "cluster_id": 8,
+          "mentions": [
+            {
+              "text": "Enkel",
+              "start": 148,
+              "end": 149
+            }
+          ]
+        },
+        {
+          "cluster_id": 9,
+          "mentions": [
+            {
+              "text": "Familienangehörige",
+              "start": 151,
+              "end": 152
+            }
+          ]
+        },
+        {
+          "cluster_id": 10,
+          "mentions": [
+            {
+              "text": "Manche",
+              "start": 162,
+              "end": 163
+            },
+            {
+              "text": "sie",
+              "start": 169,
+              "end": 170
+            },
+            {
+              "text": "ihr",
+              "start": 172,
+              "end": 173
+            },
+            {
+              "text": "ihre",
+              "start": 175,
+              "end": 176
+            }
+          ]
+        },
+        {
+          "cluster_id": 11,
+          "mentions": [
+            {
+              "text": "Menschen",
+              "start": 171,
+              "end": 172
+            }
+          ]
+        },
+        {
+          "cluster_id": 12,
+          "mentions": [
+            {
+              "text": "Menschen",
+              "start": 184,
+              "end": 185
+            },
+            {
+              "text": "denen",
+              "start": 186,
+              "end": 187
+            },
+            {
+              "text": "Sie",
+              "start": 193,
+              "end": 194
+            },
+            {
+              "text": "Menschen",
+              "start": 204,
+              "end": 205
+            }
+          ]
+        }
+      ]
+    },
+    "normal": {
+      "text": "Seniorenbeirat Im Juni 2023 waren rund 28 Prozent der Dresdner Bevölkerung 60 Jahre alt oder älter. Seniorenbeirat 2024 © Seniorenbeirat Der Seniorenbeirat vertritt als Stadtratsgremium die Interessen dieser älteren Bürgerinnen und Bürger in der Stadtverwaltung und -gesellschaft. Er wird in jeder Legislaturperiode des Stadtrates aller fünf Jahre neu gewählt und wirkt seit 1993 ehrenamtlich. Sie können mehr für Seniorenbelange tun, indem Sie im Seniorenbeirat und seinen Arbeitsgruppen mitwirken. Was macht der Seniorenbeirat? Der Seniorenbeirat berät sachkundig den Oberbürgermeister und die Mitarbeitenden der Ämter sowie den Stadtrat zu den Belangen älterer Menschen in Dresden. Der Seniorenbeirat kann durch sein Engagement die Mitwirkung der Seniorinnen und Senioren am gesellschaftlichen Leben in Dresden fördern Welche Themen werden besprochen? In den Sitzungen des Seniorenbeirats werden die Vorlagen der Verwaltung und Anträge der Fraktionen vorgestellt und diskutiert. Der Seniorenbeirat setzt sich zum Beispiel für eine barrierearme Ausgestaltung der Infrastruktur im öffentlichen Raum ein. Dem Seniorenbeirat ist es auch wichtig, dass es mehr altersgerechte sowie gemeinschaftliche Wohnformen, Quartiershäuser und Nachbarschaftstreffs in Dresden gibt. Der Seniorenbeirat hat dazu beigetragen, dass eine Zentrale Wohnberatungsstelle in Dresden geschaffen wurde Wer sind die Mitglieder? Die Vertretung des Seniorenbeirats nach außen und innerhalb der Stadtverwaltung übernimmt die oder der Vorsitzende und die oder der stellvertretende Vorsitzende. Vorsitz und Stellvertretung wählen die Mitglieder aus den eigenen Reihen. Die Mitglieder sind Vertretungen aus den Fraktionen des Stadtrates der Landeshauptstadt Dresden und sachkundige Bürgerinnen und Bürger aus Dresden. Aktiv mitgestalten in Dresden Der Seniorenbeirat hat Arbeitsgruppen, in die sich Interessierte einbringen können. Es gibt zum Beispiel eine Arbeitsgruppe zum Thema Wohnen oder eine Arbeitsgruppe zum Thema Öffentlichkeitsarbeit. Die Arbeitsgruppen werden je nach Bedarf einberufen. In jedem Stadtbezirk und in jeder Ortschaft in Dresden gibt es einen Facharbeitskreis Seniorenarbeit und Altenhilfe. In jedem dieser Facharbeitskreise sind Vertreterinnen und Vertreter des Seniorenbeirats und arbeiten aktiv mit. Machen Sie mit! Für die Mitarbeit in den Facharbeitskreisen werden Interessierte gesucht. Schreiben Sie eine E-Mail an seniorenbeirat@dresden.de mit Ihren Themenwünschen zur Seniorenpolitik und bringen Sie sich aktiv als Beiratsmitglied oder auch mit Ihren Anliegen ein. Wir freuen uns auf Sie! Für die Arbeit im Seniorenbeirat gibt es die Möglichkeit der Schulung und der gemeinsamen Klausur. Bewerben Sie sich als sachkundige Bürgerin oder sachkundiger Bürger! Denn: Mitmachen ist besser, als abseits zu stehen. Leitziele der Seniorenarbeit und Altenhilfe „Der Seniorenarbeit und Altenhilfe in Dresden liegen Leitziele zugrunde. Die Leitlinien sollen dem gemeinsamen Handeln eine Richtung geben, bildlich im Sinne von Leitplanken. Das partizipative und beteiligungsorientierte Zusammenleben ist eine Aufgabe der Stadtgesellschaft als Gemeinschaft und eine individuelle Aufgabe. Ältere und alte Menschen leben selbstbestimmt und gesund. Dresden verfügt über gute sozialräumliche Begegnungs-und Beratungsangebote für Menschen ab 60 Jahren mit niedrigschwelligem Zugang. Jeder ältere Mensch hat das gleiche Recht auf Teilhabe am gesellschaftlichen Leben, vgl. § 71 SGB XII. Die Landeshauptstadt Dresden/Sozialamt Dresden hat die Steuerungsverantwortung des individuellen Rechtsanspruchs auf Altenhilfe nach § 71 SGB XII Die verfügbaren, begrenzten Ressourcen sind effizient und verteilungsgerecht zu nutzen.\"* *Quelle: Fachplan Seniorenarbeit und Altenhilfe , Mai 2021 (Seite 22, gemäß Beschluss Stadtrat V0813/21) Der Seniorenbeirat unterstützt diese Leitziele. Kontakt Landeshauptstadt Dresden Seniorenbeirat E-Mail seniorenbeirat@dresden.de Postanschrift Postfach 12 00 20 01001 Dresden Die direkte Verbindung zur Stadtverwaltung hat der Seniorenbeirat über: Beauftragte für Menschen mit Behinderungen/ Senioren Besucheranschrift Dr.-Külz-Ring 19 01067 Dresden Zugang für Menschen mit Mobilitätseinschränkungen Themenstadtplan Telefon 0351-4882832",
+      "token_count": 604,
+      "sentences": [
+        {
+          "start": 0,
+          "end": 1,
+          "text": "Seniorenbeirat"
+        },
+        {
+          "start": 1,
+          "end": 17,
+          "text": "Im Juni 2023 waren rund 28 Prozent der Dresdner Bevölkerung 60 Jahre alt oder älter."
+        },
+        {
+          "start": 17,
+          "end": 20,
+          "text": "Seniorenbeirat 2024 ©"
+        },
+        {
+          "start": 20,
+          "end": 21,
+          "text": "Seniorenbeirat"
+        },
+        {
+          "start": 21,
+          "end": 39,
+          "text": "Der Seniorenbeirat vertritt als Stadtratsgremium die Interessen dieser älteren Bürgerinnen und Bürger in der Stadtverwaltung und -gesellschaft."
+        },
+        {
+          "start": 39,
+          "end": 57,
+          "text": "Er wird in jeder Legislaturperiode des Stadtrates aller fünf Jahre neu gewählt und wirkt seit 1993 ehrenamtlich."
+        },
+        {
+          "start": 57,
+          "end": 73,
+          "text": "Sie können mehr für Seniorenbelange tun, indem Sie im Seniorenbeirat und seinen Arbeitsgruppen mitwirken."
+        },
+        {
+          "start": 73,
+          "end": 78,
+          "text": "Was macht der Seniorenbeirat?"
+        },
+        {
+          "start": 78,
+          "end": 100,
+          "text": "Der Seniorenbeirat berät sachkundig den Oberbürgermeister und die Mitarbeitenden der Ämter sowie den Stadtrat zu den Belangen älterer Menschen in Dresden."
+        },
+        {
+          "start": 100,
+          "end": 123,
+          "text": "Der Seniorenbeirat kann durch sein Engagement die Mitwirkung der Seniorinnen und Senioren am gesellschaftlichen Leben in Dresden fördern Welche Themen werden besprochen?"
+        },
+        {
+          "start": 123,
+          "end": 141,
+          "text": "In den Sitzungen des Seniorenbeirats werden die Vorlagen der Verwaltung und Anträge der Fraktionen vorgestellt und diskutiert."
+        },
+        {
+          "start": 141,
+          "end": 158,
+          "text": "Der Seniorenbeirat setzt sich zum Beispiel für eine barrierearme Ausgestaltung der Infrastruktur im öffentlichen Raum ein."
+        },
+        {
+          "start": 158,
+          "end": 180,
+          "text": "Dem Seniorenbeirat ist es auch wichtig, dass es mehr altersgerechte sowie gemeinschaftliche Wohnformen, Quartiershäuser und Nachbarschaftstreffs in Dresden gibt."
+        },
+        {
+          "start": 180,
+          "end": 199,
+          "text": "Der Seniorenbeirat hat dazu beigetragen, dass eine Zentrale Wohnberatungsstelle in Dresden geschaffen wurde Wer sind die Mitglieder?"
+        },
+        {
+          "start": 199,
+          "end": 221,
+          "text": "Die Vertretung des Seniorenbeirats nach außen und innerhalb der Stadtverwaltung übernimmt die oder der Vorsitzende und die oder der stellvertretende Vorsitzende."
+        },
+        {
+          "start": 221,
+          "end": 232,
+          "text": "Vorsitz und Stellvertretung wählen die Mitglieder aus den eigenen Reihen."
+        },
+        {
+          "start": 232,
+          "end": 252,
+          "text": "Die Mitglieder sind Vertretungen aus den Fraktionen des Stadtrates der Landeshauptstadt Dresden und sachkundige Bürgerinnen und Bürger aus Dresden."
+        },
+        {
+          "start": 252,
+          "end": 256,
+          "text": "Aktiv mitgestalten in Dresden"
+        },
+        {
+          "start": 256,
+          "end": 268,
+          "text": "Der Seniorenbeirat hat Arbeitsgruppen, in die sich Interessierte einbringen können."
+        },
+        {
+          "start": 268,
+          "end": 284,
+          "text": "Es gibt zum Beispiel eine Arbeitsgruppe zum Thema Wohnen oder eine Arbeitsgruppe zum Thema Öffentlichkeitsarbeit."
+        },
+        {
+          "start": 284,
+          "end": 292,
+          "text": "Die Arbeitsgruppen werden je nach Bedarf einberufen."
+        },
+        {
+          "start": 292,
+          "end": 309,
+          "text": "In jedem Stadtbezirk und in jeder Ortschaft in Dresden gibt es einen Facharbeitskreis Seniorenarbeit und Altenhilfe."
+        },
+        {
+          "start": 309,
+          "end": 324,
+          "text": "In jedem dieser Facharbeitskreise sind Vertreterinnen und Vertreter des Seniorenbeirats und arbeiten aktiv mit."
+        },
+        {
+          "start": 324,
+          "end": 328,
+          "text": "Machen Sie mit!"
+        },
+        {
+          "start": 328,
+          "end": 338,
+          "text": "Für die Mitarbeit in den Facharbeitskreisen werden Interessierte gesucht."
+        },
+        {
+          "start": 338,
+          "end": 363,
+          "text": "Schreiben Sie eine E-Mail an seniorenbeirat@dresden.de mit Ihren Themenwünschen zur Seniorenpolitik und bringen Sie sich aktiv als Beiratsmitglied oder auch mit Ihren Anliegen ein."
+        },
+        {
+          "start": 363,
+          "end": 369,
+          "text": "Wir freuen uns auf Sie!"
+        },
+        {
+          "start": 369,
+          "end": 385,
+          "text": "Für die Arbeit im Seniorenbeirat gibt es die Möglichkeit der Schulung und der gemeinsamen Klausur."
+        },
+        {
+          "start": 385,
+          "end": 395,
+          "text": "Bewerben Sie sich als sachkundige Bürgerin oder sachkundiger Bürger!"
+        },
+        {
+          "start": 395,
+          "end": 406,
+          "text": "Denn: Mitmachen ist besser, als abseits zu stehen."
+        },
+        {
+          "start": 406,
+          "end": 422,
+          "text": "Leitziele der Seniorenarbeit und Altenhilfe „Der Seniorenarbeit und Altenhilfe in Dresden liegen Leitziele zugrunde."
+        },
+        {
+          "start": 422,
+          "end": 438,
+          "text": "Die Leitlinien sollen dem gemeinsamen Handeln eine Richtung geben, bildlich im Sinne von Leitplanken."
+        },
+        {
+          "start": 438,
+          "end": 455,
+          "text": "Das partizipative und beteiligungsorientierte Zusammenleben ist eine Aufgabe der Stadtgesellschaft als Gemeinschaft und eine individuelle Aufgabe."
+        },
+        {
+          "start": 455,
+          "end": 464,
+          "text": "Ältere und alte Menschen leben selbstbestimmt und gesund."
+        },
+        {
+          "start": 464,
+          "end": 480,
+          "text": "Dresden verfügt über gute sozialräumliche Begegnungs-und Beratungsangebote für Menschen ab 60 Jahren mit niedrigschwelligem Zugang."
+        },
+        {
+          "start": 480,
+          "end": 499,
+          "text": "Jeder ältere Mensch hat das gleiche Recht auf Teilhabe am gesellschaftlichen Leben, vgl. § 71 SGB XII."
+        },
+        {
+          "start": 499,
+          "end": 518,
+          "text": "Die Landeshauptstadt Dresden/Sozialamt Dresden hat die Steuerungsverantwortung des individuellen Rechtsanspruchs auf Altenhilfe nach § 71 SGB XII"
+        },
+        {
+          "start": 518,
+          "end": 530,
+          "text": "Die verfügbaren, begrenzten Ressourcen sind effizient und verteilungsgerecht zu nutzen."
+        },
+        {
+          "start": 530,
+          "end": 553,
+          "text": "\"* *Quelle: Fachplan Seniorenarbeit und Altenhilfe , Mai 2021 (Seite 22, gemäß Beschluss Stadtrat V0813/21)"
+        },
+        {
+          "start": 553,
+          "end": 559,
+          "text": "Der Seniorenbeirat unterstützt diese Leitziele."
+        },
+        {
+          "start": 559,
+          "end": 562,
+          "text": "Kontakt Landeshauptstadt Dresden"
+        },
+        {
+          "start": 562,
+          "end": 566,
+          "text": "Seniorenbeirat E-Mail seniorenbeirat@dresden.de Postanschrift"
+        },
+        {
+          "start": 566,
+          "end": 572,
+          "text": "Postfach 12 00 20 01001 Dresden"
+        },
+        {
+          "start": 572,
+          "end": 582,
+          "text": "Die direkte Verbindung zur Stadtverwaltung hat der Seniorenbeirat über:"
+        },
+        {
+          "start": 582,
+          "end": 588,
+          "text": "Beauftragte für Menschen mit Behinderungen/"
+        },
+        {
+          "start": 588,
+          "end": 589,
+          "text": "Senioren"
+        },
+        {
+          "start": 589,
+          "end": 590,
+          "text": "Besucheranschrift"
+        },
+        {
+          "start": 590,
+          "end": 594,
+          "text": "Dr.-Külz-Ring 19 01067 Dresden"
+        },
+        {
+          "start": 594,
+          "end": 604,
+          "text": "Zugang für Menschen mit Mobilitätseinschränkungen Themenstadtplan Telefon 0351-4882832"
+        }
+      ],
+      "entities": [
+        {
+          "text": "Dresden",
+          "label": "LOC",
+          "start_char": 676,
+          "end_char": 683
+        },
+        {
+          "text": "Dresden",
+          "label": "LOC",
+          "start_char": 806,
+          "end_char": 813
+        },
+        {
+          "text": "Dresden",
+          "label": "LOC",
+          "start_char": 1253,
+          "end_char": 1260
+        },
+        {
+          "text": "Dresden",
+          "label": "LOC",
+          "start_char": 1350,
+          "end_char": 1357
+        },
+        {
+          "text": "Dresden",
+          "label": "LOC",
+          "start_char": 1724,
+          "end_char": 1731
+        },
+        {
+          "text": "Dresden",
+          "label": "LOC",
+          "start_char": 1775,
+          "end_char": 1782
+        },
+        {
+          "text": "Dresden",
+          "label": "LOC",
+          "start_char": 1806,
+          "end_char": 1813
+        },
+        {
+          "text": "Dresden",
+          "label": "LOC",
+          "start_char": 2112,
+          "end_char": 2119
+        },
+        {
+          "text": "Dresden",
+          "label": "LOC",
+          "start_char": 2890,
+          "end_char": 2897
+        },
+        {
+          "text": "Dresden",
+          "label": "LOC",
+          "start_char": 3232,
+          "end_char": 3239
+        },
+        {
+          "text": "SGB XII",
+          "label": "MISC",
+          "start_char": 3458,
+          "end_char": 3465
+        },
+        {
+          "text": "Dresden",
+          "label": "LOC",
+          "start_char": 3488,
+          "end_char": 3495
+        },
+        {
+          "text": "Dresden",
+          "label": "LOC",
+          "start_char": 3506,
+          "end_char": 3513
+        },
+        {
+          "text": "SGB XII",
+          "label": "MISC",
+          "start_char": 3605,
+          "end_char": 3612
+        },
+        {
+          "text": "Dresden",
+          "label": "LOC",
+          "start_char": 3881,
+          "end_char": 3888
+        },
+        {
+          "text": "Dresden",
+          "label": "LOC",
+          "start_char": 3975,
+          "end_char": 3982
+        },
+        {
+          "text": "Dr.-Külz-Ring",
+          "label": "LOC",
+          "start_char": 4126,
+          "end_char": 4139
+        },
+        {
+          "text": "Dresden",
+          "label": "LOC",
+          "start_char": 4149,
+          "end_char": 4156
+        }
+      ],
+      "characters": [
+        {
+          "text": "Bevölkerung",
+          "start": 10,
+          "end": 11,
+          "sent_text": "Im Juni 2023 waren rund 28 Prozent der Dresdner Bevölkerung 60 Jahre alt oder älter."
+        },
+        {
+          "text": "Seniorenbeirat",
+          "start": 22,
+          "end": 23,
+          "sent_text": "Der Seniorenbeirat vertritt als Stadtratsgremium die Interessen dieser älteren Bürgerinnen und Bürger in der Stadtverwaltung und -gesellschaft."
+        },
+        {
+          "text": "Bürgerinnen und",
+          "start": 30,
+          "end": 32,
+          "sent_text": "Der Seniorenbeirat vertritt als Stadtratsgremium die Interessen dieser älteren Bürgerinnen und Bürger in der Stadtverwaltung und -gesellschaft."
+        },
+        {
+          "text": "Bürger",
+          "start": 32,
+          "end": 33,
+          "sent_text": "Der Seniorenbeirat vertritt als Stadtratsgremium die Interessen dieser älteren Bürgerinnen und Bürger in der Stadtverwaltung und -gesellschaft."
+        },
+        {
+          "text": "Seniorenbeirat",
+          "start": 79,
+          "end": 80,
+          "sent_text": "Der Seniorenbeirat berät sachkundig den Oberbürgermeister und die Mitarbeitenden der Ämter sowie den Stadtrat zu den Belangen älterer Menschen in Dresden."
+        },
+        {
+          "text": "Oberbürgermeister",
+          "start": 83,
+          "end": 84,
+          "sent_text": "Der Seniorenbeirat berät sachkundig den Oberbürgermeister und die Mitarbeitenden der Ämter sowie den Stadtrat zu den Belangen älterer Menschen in Dresden."
+        },
+        {
+          "text": "Mitarbeitenden",
+          "start": 86,
+          "end": 87,
+          "sent_text": "Der Seniorenbeirat berät sachkundig den Oberbürgermeister und die Mitarbeitenden der Ämter sowie den Stadtrat zu den Belangen älterer Menschen in Dresden."
+        },
+        {
+          "text": "Stadtrat",
+          "start": 91,
+          "end": 92,
+          "sent_text": "Der Seniorenbeirat berät sachkundig den Oberbürgermeister und die Mitarbeitenden der Ämter sowie den Stadtrat zu den Belangen älterer Menschen in Dresden."
+        },
+        {
+          "text": "Menschen",
+          "start": 96,
+          "end": 97,
+          "sent_text": "Der Seniorenbeirat berät sachkundig den Oberbürgermeister und die Mitarbeitenden der Ämter sowie den Stadtrat zu den Belangen älterer Menschen in Dresden."
+        },
+        {
+          "text": "Seniorenbeirat",
+          "start": 101,
+          "end": 102,
+          "sent_text": "Der Seniorenbeirat kann durch sein Engagement die Mitwirkung der Seniorinnen und Senioren am gesellschaftlichen Leben in Dresden fördern Welche Themen werden besprochen?"
+        },
+        {
+          "text": "Seniorinnen und",
+          "start": 109,
+          "end": 111,
+          "sent_text": "Der Seniorenbeirat kann durch sein Engagement die Mitwirkung der Seniorinnen und Senioren am gesellschaftlichen Leben in Dresden fördern Welche Themen werden besprochen?"
+        },
+        {
+          "text": "Senioren",
+          "start": 111,
+          "end": 112,
+          "sent_text": "Der Seniorenbeirat kann durch sein Engagement die Mitwirkung der Seniorinnen und Senioren am gesellschaftlichen Leben in Dresden fördern Welche Themen werden besprochen?"
+        },
+        {
+          "text": "Seniorenbeirats",
+          "start": 127,
+          "end": 128,
+          "sent_text": "In den Sitzungen des Seniorenbeirats werden die Vorlagen der Verwaltung und Anträge der Fraktionen vorgestellt und diskutiert."
+        },
+        {
+          "text": "Fraktionen",
+          "start": 136,
+          "end": 137,
+          "sent_text": "In den Sitzungen des Seniorenbeirats werden die Vorlagen der Verwaltung und Anträge der Fraktionen vorgestellt und diskutiert."
+        },
+        {
+          "text": "Seniorenbeirat",
+          "start": 142,
+          "end": 143,
+          "sent_text": "Der Seniorenbeirat setzt sich zum Beispiel für eine barrierearme Ausgestaltung der Infrastruktur im öffentlichen Raum ein."
+        },
+        {
+          "text": "Seniorenbeirat",
+          "start": 159,
+          "end": 160,
+          "sent_text": "Dem Seniorenbeirat ist es auch wichtig, dass es mehr altersgerechte sowie gemeinschaftliche Wohnformen, Quartiershäuser und Nachbarschaftstreffs in Dresden gibt."
+        },
+        {
+          "text": "Seniorenbeirat",
+          "start": 181,
+          "end": 182,
+          "sent_text": "Der Seniorenbeirat hat dazu beigetragen, dass eine Zentrale Wohnberatungsstelle in Dresden geschaffen wurde Wer sind die Mitglieder?"
+        },
+        {
+          "text": "Mitglieder",
+          "start": 197,
+          "end": 198,
+          "sent_text": "Der Seniorenbeirat hat dazu beigetragen, dass eine Zentrale Wohnberatungsstelle in Dresden geschaffen wurde Wer sind die Mitglieder?"
+        },
+        {
+          "text": "Seniorenbeirats",
+          "start": 202,
+          "end": 203,
+          "sent_text": "Die Vertretung des Seniorenbeirats nach außen und innerhalb der Stadtverwaltung übernimmt die oder der Vorsitzende und die oder der stellvertretende Vorsitzende."
+        },
+        {
+          "text": "Vorsitzende",
+          "start": 213,
+          "end": 214,
+          "sent_text": "Die Vertretung des Seniorenbeirats nach außen und innerhalb der Stadtverwaltung übernimmt die oder der Vorsitzende und die oder der stellvertretende Vorsitzende."
+        },
+        {
+          "text": "Vorsitzende",
+          "start": 219,
+          "end": 220,
+          "sent_text": "Die Vertretung des Seniorenbeirats nach außen und innerhalb der Stadtverwaltung übernimmt die oder der Vorsitzende und die oder der stellvertretende Vorsitzende."
+        },
+        {
+          "text": "Mitglieder",
+          "start": 226,
+          "end": 227,
+          "sent_text": "Vorsitz und Stellvertretung wählen die Mitglieder aus den eigenen Reihen."
+        },
+        {
+          "text": "Mitglieder",
+          "start": 233,
+          "end": 234,
+          "sent_text": "Die Mitglieder sind Vertretungen aus den Fraktionen des Stadtrates der Landeshauptstadt Dresden und sachkundige Bürgerinnen und Bürger aus Dresden."
+        },
+        {
+          "text": "Vertretungen",
+          "start": 235,
+          "end": 236,
+          "sent_text": "Die Mitglieder sind Vertretungen aus den Fraktionen des Stadtrates der Landeshauptstadt Dresden und sachkundige Bürgerinnen und Bürger aus Dresden."
+        },
+        {
+          "text": "Bürgerinnen und",
+          "start": 246,
+          "end": 248,
+          "sent_text": "Die Mitglieder sind Vertretungen aus den Fraktionen des Stadtrates der Landeshauptstadt Dresden und sachkundige Bürgerinnen und Bürger aus Dresden."
+        },
+        {
+          "text": "Bürger",
+          "start": 248,
+          "end": 249,
+          "sent_text": "Die Mitglieder sind Vertretungen aus den Fraktionen des Stadtrates der Landeshauptstadt Dresden und sachkundige Bürgerinnen und Bürger aus Dresden."
+        },
+        {
+          "text": "Seniorenbeirat",
+          "start": 257,
+          "end": 258,
+          "sent_text": "Der Seniorenbeirat hat Arbeitsgruppen, in die sich Interessierte einbringen können."
+        },
+        {
+          "text": "Interessierte",
+          "start": 264,
+          "end": 265,
+          "sent_text": "Der Seniorenbeirat hat Arbeitsgruppen, in die sich Interessierte einbringen können."
+        },
+        {
+          "text": "Vertreterinnen und",
+          "start": 314,
+          "end": 316,
+          "sent_text": "In jedem dieser Facharbeitskreise sind Vertreterinnen und Vertreter des Seniorenbeirats und arbeiten aktiv mit."
+        },
+        {
+          "text": "Vertreter",
+          "start": 316,
+          "end": 317,
+          "sent_text": "In jedem dieser Facharbeitskreise sind Vertreterinnen und Vertreter des Seniorenbeirats und arbeiten aktiv mit."
+        },
+        {
+          "text": "Seniorenbeirats",
+          "start": 318,
+          "end": 319,
+          "sent_text": "In jedem dieser Facharbeitskreise sind Vertreterinnen und Vertreter des Seniorenbeirats und arbeiten aktiv mit."
+        },
+        {
+          "text": "Interessierte",
+          "start": 335,
+          "end": 336,
+          "sent_text": "Für die Mitarbeit in den Facharbeitskreisen werden Interessierte gesucht."
+        },
+        {
+          "text": "Beiratsmitglied",
+          "start": 355,
+          "end": 356,
+          "sent_text": "Schreiben Sie eine E-Mail an seniorenbeirat@dresden.de mit Ihren Themenwünschen zur Seniorenpolitik und bringen Sie sich aktiv als Beiratsmitglied oder auch mit Ihren Anliegen ein."
+        },
+        {
+          "text": "Bürgerin",
+          "start": 390,
+          "end": 391,
+          "sent_text": "Bewerben Sie sich als sachkundige Bürgerin oder sachkundiger Bürger!"
+        },
+        {
+          "text": "Bürger",
+          "start": 393,
+          "end": 394,
+          "sent_text": "Bewerben Sie sich als sachkundige Bürgerin oder sachkundiger Bürger!"
+        },
+        {
+          "text": "Stadtgesellschaft",
+          "start": 447,
+          "end": 448,
+          "sent_text": "Das partizipative und beteiligungsorientierte Zusammenleben ist eine Aufgabe der Stadtgesellschaft als Gemeinschaft und eine individuelle Aufgabe."
+        },
+        {
+          "text": "Gemeinschaft",
+          "start": 449,
+          "end": 450,
+          "sent_text": "Das partizipative und beteiligungsorientierte Zusammenleben ist eine Aufgabe der Stadtgesellschaft als Gemeinschaft und eine individuelle Aufgabe."
+        },
+        {
+          "text": "Ältere",
+          "start": 455,
+          "end": 456,
+          "sent_text": "Ältere und alte Menschen leben selbstbestimmt und gesund."
+        },
+        {
+          "text": "Menschen",
+          "start": 458,
+          "end": 459,
+          "sent_text": "Ältere und alte Menschen leben selbstbestimmt und gesund."
+        },
+        {
+          "text": "Menschen",
+          "start": 472,
+          "end": 473,
+          "sent_text": "Dresden verfügt über gute sozialräumliche Begegnungs-und Beratungsangebote für Menschen ab 60 Jahren mit niedrigschwelligem Zugang."
+        },
+        {
+          "text": "Jahren",
+          "start": 475,
+          "end": 476,
+          "sent_text": "Dresden verfügt über gute sozialräumliche Begegnungs-und Beratungsangebote für Menschen ab 60 Jahren mit niedrigschwelligem Zugang."
+        },
+        {
+          "text": "Mensch",
+          "start": 482,
+          "end": 483,
+          "sent_text": "Jeder ältere Mensch hat das gleiche Recht auf Teilhabe am gesellschaftlichen Leben, vgl. § 71 SGB XII."
+        },
+        {
+          "text": "Stadtrat",
+          "start": 548,
+          "end": 549,
+          "sent_text": "\"* *Quelle: Fachplan Seniorenarbeit und Altenhilfe , Mai 2021 (Seite 22, gemäß Beschluss Stadtrat V0813/21)"
+        },
+        {
+          "text": "Seniorenbeirat",
+          "start": 554,
+          "end": 555,
+          "sent_text": "Der Seniorenbeirat unterstützt diese Leitziele."
+        },
+        {
+          "text": "Seniorenbeirat",
+          "start": 562,
+          "end": 563,
+          "sent_text": "Seniorenbeirat E-Mail seniorenbeirat@dresden.de Postanschrift"
+        },
+        {
+          "text": "seniorenbeirat@dresden.de",
+          "start": 564,
+          "end": 565,
+          "sent_text": "Seniorenbeirat E-Mail seniorenbeirat@dresden.de Postanschrift"
+        },
+        {
+          "text": "Seniorenbeirat",
+          "start": 579,
+          "end": 580,
+          "sent_text": "Die direkte Verbindung zur Stadtverwaltung hat der Seniorenbeirat über:"
+        },
+        {
+          "text": "Beauftragte",
+          "start": 582,
+          "end": 583,
+          "sent_text": "Beauftragte für Menschen mit Behinderungen/"
+        },
+        {
+          "text": "Menschen mit Behinderungen",
+          "start": 584,
+          "end": 587,
+          "sent_text": "Beauftragte für Menschen mit Behinderungen/"
+        },
+        {
+          "text": "Dr.-Külz-Ring",
+          "start": 590,
+          "end": 591,
+          "sent_text": "Dr.-Külz-Ring 19 01067 Dresden"
+        },
+        {
+          "text": "Menschen",
+          "start": 596,
+          "end": 597,
+          "sent_text": "Zugang für Menschen mit Mobilitätseinschränkungen Themenstadtplan Telefon 0351-4882832"
+        }
+      ],
+      "coref_clusters": [
+        {
+          "cluster_id": 0,
+          "mentions": [
+            {
+              "text": "Seniorenbeirat",
+              "start": 0,
+              "end": 1
+            },
+            {
+              "text": "Seniorenbeirat",
+              "start": 20,
+              "end": 21
+            },
+            {
+              "text": "Seniorenbeirat",
+              "start": 373,
+              "end": 374
+            },
+            {
+              "text": "Seniorenbeirat",
+              "start": 562,
+              "end": 563
+            }
+          ]
+        },
+        {
+          "cluster_id": 1,
+          "mentions": [
+            {
+              "text": "Bevölkerung",
+              "start": 10,
+              "end": 11
+            },
+            {
+              "text": "Menschen",
+              "start": 96,
+              "end": 97
+            },
+            {
+              "text": "Menschen",
+              "start": 458,
+              "end": 459
+            }
+          ]
+        },
+        {
+          "cluster_id": 2,
+          "mentions": [
+            {
+              "text": "Sie",
+              "start": 57,
+              "end": 58
+            },
+            {
+              "text": "Sie",
+              "start": 65,
+              "end": 66
+            },
+            {
+              "text": "sich",
+              "start": 263,
+              "end": 264
+            }
+          ]
+        },
+        {
+          "cluster_id": 3,
+          "mentions": [
+            {
+              "text": "Oberbürgermeister",
+              "start": 83,
+              "end": 84
+            }
+          ]
+        },
+        {
+          "cluster_id": 4,
+          "mentions": [
+            {
+              "text": "Mitarbeitenden",
+              "start": 86,
+              "end": 87
+            }
+          ]
+        },
+        {
+          "cluster_id": 5,
+          "mentions": [
+            {
+              "text": "Fraktionen",
+              "start": 136,
+              "end": 137
+            },
+            {
+              "text": "Fraktionen",
+              "start": 238,
+              "end": 239
+            }
+          ]
+        },
+        {
+          "cluster_id": 6,
+          "mentions": [
+            {
+              "text": "Mitglieder",
+              "start": 197,
+              "end": 198
+            },
+            {
+              "text": "Mitglieder",
+              "start": 226,
+              "end": 227
+            },
+            {
+              "text": "Mitglieder",
+              "start": 233,
+              "end": 234
+            },
+            {
+              "text": "Vertretungen",
+              "start": 235,
+              "end": 236
+            }
+          ]
+        },
+        {
+          "cluster_id": 7,
+          "mentions": [
+            {
+              "text": "Interessierte",
+              "start": 264,
+              "end": 265
+            }
+          ]
+        },
+        {
+          "cluster_id": 8,
+          "mentions": [
+            {
+              "text": "Interessierte",
+              "start": 335,
+              "end": 336
+            },
+            {
+              "text": "Sie",
+              "start": 339,
+              "end": 340
+            },
+            {
+              "text": "Ihren",
+              "start": 345,
+              "end": 346
+            },
+            {
+              "text": "Sie",
+              "start": 351,
+              "end": 352
+            },
+            {
+              "text": "sich",
+              "start": 352,
+              "end": 353
+            },
+            {
+              "text": "Ihren",
+              "start": 359,
+              "end": 360
+            },
+            {
+              "text": "Sie",
+              "start": 367,
+              "end": 368
+            },
+            {
+              "text": "Sie",
+              "start": 386,
+              "end": 387
+            },
+            {
+              "text": "sich",
+              "start": 387,
+              "end": 388
+            }
+          ]
+        },
+        {
+          "cluster_id": 9,
+          "mentions": [
+            {
+              "text": "Beiratsmitglied",
+              "start": 355,
+              "end": 356
+            }
+          ]
+        },
+        {
+          "cluster_id": 10,
+          "mentions": [
+            {
+              "text": "Wir",
+              "start": 363,
+              "end": 364
+            },
+            {
+              "text": "uns",
+              "start": 365,
+              "end": 366
+            }
+          ]
+        },
+        {
+          "cluster_id": 11,
+          "mentions": [
+            {
+              "text": "Bürger",
+              "start": 393,
+              "end": 394
+            }
+          ]
+        },
+        {
+          "cluster_id": 12,
+          "mentions": [
+            {
+              "text": "Menschen",
+              "start": 472,
+              "end": 473
+            }
+          ]
+        },
+        {
+          "cluster_id": 13,
+          "mentions": [
+            {
+              "text": "Stadtverwaltung",
+              "start": 576,
+              "end": 577
+            }
+          ]
+        },
+        {
+          "cluster_id": 14,
+          "mentions": [
+            {
+              "text": "Menschen",
+              "start": 584,
+              "end": 585
+            }
+          ]
+        },
+        {
+          "cluster_id": 15,
+          "mentions": [
+            {
+              "text": "Senioren",
+              "start": 588,
+              "end": 589
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "pair_id": "pair_0004",
+    "source": "dresden.de",
+    "simple": {
+      "text": "Ratsinfosystem Im Ratsinformationssystem finden dort Informationen zu verschiedenen Gremien, wie: Stadtrat, Ortschaftsräte, Ausschüsse, Beiräte, Ortsbeiräte und Fraktionen. Dort finden Sie außerdem die Sitzungstermine, Tagesordnungen und alle öffentlichen Beschlussvorlagen.",
+      "token_count": 37,
+      "sentences": [
+        {
+          "start": 0,
+          "end": 1,
+          "text": "Ratsinfosystem"
+        },
+        {
+          "start": 1,
+          "end": 24,
+          "text": "Im Ratsinformationssystem finden dort Informationen zu verschiedenen Gremien, wie: Stadtrat, Ortschaftsräte, Ausschüsse, Beiräte, Ortsbeiräte und Fraktionen."
+        },
+        {
+          "start": 24,
+          "end": 37,
+          "text": "Dort finden Sie außerdem die Sitzungstermine, Tagesordnungen und alle öffentlichen Beschlussvorlagen."
+        }
+      ],
+      "entities": [],
+      "characters": [
+        {
+          "text": "Stadtrat",
+          "start": 12,
+          "end": 13,
+          "sent_text": "Im Ratsinformationssystem finden dort Informationen zu verschiedenen Gremien, wie: Stadtrat, Ortschaftsräte, Ausschüsse, Beiräte, Ortsbeiräte und Fraktionen."
+        },
+        {
+          "text": "Ortschaftsräte",
+          "start": 14,
+          "end": 15,
+          "sent_text": "Im Ratsinformationssystem finden dort Informationen zu verschiedenen Gremien, wie: Stadtrat, Ortschaftsräte, Ausschüsse, Beiräte, Ortsbeiräte und Fraktionen."
+        },
+        {
+          "text": "Beiräte",
+          "start": 18,
+          "end": 19,
+          "sent_text": "Im Ratsinformationssystem finden dort Informationen zu verschiedenen Gremien, wie: Stadtrat, Ortschaftsräte, Ausschüsse, Beiräte, Ortsbeiräte und Fraktionen."
+        },
+        {
+          "text": "Ortsbeiräte",
+          "start": 20,
+          "end": 21,
+          "sent_text": "Im Ratsinformationssystem finden dort Informationen zu verschiedenen Gremien, wie: Stadtrat, Ortschaftsräte, Ausschüsse, Beiräte, Ortsbeiräte und Fraktionen."
+        },
+        {
+          "text": "Fraktionen",
+          "start": 22,
+          "end": 23,
+          "sent_text": "Im Ratsinformationssystem finden dort Informationen zu verschiedenen Gremien, wie: Stadtrat, Ortschaftsräte, Ausschüsse, Beiräte, Ortsbeiräte und Fraktionen."
+        }
+      ],
+      "coref_clusters": [
+        {
+          "cluster_id": 0,
+          "mentions": [
+            {
+              "text": "Ratsinfosystem",
+              "start": 0,
+              "end": 1
+            },
+            {
+              "text": "Ratsinformationssystem",
+              "start": 2,
+              "end": 3
+            }
+          ]
+        },
+        {
+          "cluster_id": 1,
+          "mentions": [
+            {
+              "text": "Stadtrat",
+              "start": 12,
+              "end": 13
+            }
+          ]
+        },
+        {
+          "cluster_id": 2,
+          "mentions": [
+            {
+              "text": "Ortschaftsräte",
+              "start": 14,
+              "end": 15
+            }
+          ]
+        },
+        {
+          "cluster_id": 3,
+          "mentions": [
+            {
+              "text": "Beiräte",
+              "start": 18,
+              "end": 19
+            }
+          ]
+        },
+        {
+          "cluster_id": 4,
+          "mentions": [
+            {
+              "text": "Fraktionen",
+              "start": 22,
+              "end": 23
+            }
+          ]
+        }
+      ]
+    },
+    "normal": {
+      "text": "Im Ratsinformationssystem können Sie sich über die verschiedenen Gremien (Stadtrat, Ortschaftsräte, Ausschüsse, Beriäte und Ortsbeiräte, Fraktionen), die Sitzungstermine, Tagesordnungen und Beschlüsse sowie alle öffentlichen Beschlussvorlagen informieren. Bitte beachten Sie Alle Beratungsunterlagen sind zunächst Vorschläge, die beispielsweise durch Stadtratsbeschlüsse noch verändert werden können. Den genauen Beschlussinhalt finden Sie in der jeweiligen Niederschrift. Das Ratsinformationssystem ersetzt nicht die öffentlichen Bekanntmachungen im Dresdner Amtsblatt, nur dort finden Sie die rechtsverbindliche Veröffentlichung. Daten stehen aktuell ausschließlich für die Wahlperioden ab dem Jahr 2009 zur Verfügung. Kontakt Haben Sie Hinweise oder Anregungen zum Ratsinformationssystem? E-Mail stadtratsangelegenheiten@dresden.de",
+      "token_count": 107,
+      "sentences": [
+        {
+          "start": 0,
+          "end": 35,
+          "text": "Im Ratsinformationssystem können Sie sich über die verschiedenen Gremien (Stadtrat, Ortschaftsräte, Ausschüsse, Beriäte und Ortsbeiräte, Fraktionen), die Sitzungstermine, Tagesordnungen und Beschlüsse sowie alle öffentlichen Beschlussvorlagen informieren."
+        },
+        {
+          "start": 35,
+          "end": 38,
+          "text": "Bitte beachten Sie"
+        },
+        {
+          "start": 38,
+          "end": 53,
+          "text": "Alle Beratungsunterlagen sind zunächst Vorschläge, die beispielsweise durch Stadtratsbeschlüsse noch verändert werden können."
+        },
+        {
+          "start": 53,
+          "end": 63,
+          "text": "Den genauen Beschlussinhalt finden Sie in der jeweiligen Niederschrift."
+        },
+        {
+          "start": 63,
+          "end": 82,
+          "text": "Das Ratsinformationssystem ersetzt nicht die öffentlichen Bekanntmachungen im Dresdner Amtsblatt, nur dort finden Sie die rechtsverbindliche Veröffentlichung."
+        },
+        {
+          "start": 82,
+          "end": 96,
+          "text": "Daten stehen aktuell ausschließlich für die Wahlperioden ab dem Jahr 2009 zur Verfügung."
+        },
+        {
+          "start": 96,
+          "end": 105,
+          "text": "Kontakt Haben Sie Hinweise oder Anregungen zum Ratsinformationssystem?"
+        },
+        {
+          "start": 105,
+          "end": 107,
+          "text": "E-Mail stadtratsangelegenheiten@dresden.de"
+        }
+      ],
+      "entities": [],
+      "characters": [
+        {
+          "text": "Stadtrat",
+          "start": 10,
+          "end": 11,
+          "sent_text": "Im Ratsinformationssystem können Sie sich über die verschiedenen Gremien (Stadtrat, Ortschaftsräte, Ausschüsse, Beriäte und Ortsbeiräte, Fraktionen), die Sitzungstermine, Tagesordnungen und Beschlüsse sowie alle öffentlichen Beschlussvorlagen informieren."
+        },
+        {
+          "text": "Ortschaftsräte",
+          "start": 12,
+          "end": 13,
+          "sent_text": "Im Ratsinformationssystem können Sie sich über die verschiedenen Gremien (Stadtrat, Ortschaftsräte, Ausschüsse, Beriäte und Ortsbeiräte, Fraktionen), die Sitzungstermine, Tagesordnungen und Beschlüsse sowie alle öffentlichen Beschlussvorlagen informieren."
+        },
+        {
+          "text": "Beriäte und Ortsbeiräte",
+          "start": 16,
+          "end": 19,
+          "sent_text": "Im Ratsinformationssystem können Sie sich über die verschiedenen Gremien (Stadtrat, Ortschaftsräte, Ausschüsse, Beriäte und Ortsbeiräte, Fraktionen), die Sitzungstermine, Tagesordnungen und Beschlüsse sowie alle öffentlichen Beschlussvorlagen informieren."
+        },
+        {
+          "text": "Fraktionen",
+          "start": 20,
+          "end": 21,
+          "sent_text": "Im Ratsinformationssystem können Sie sich über die verschiedenen Gremien (Stadtrat, Ortschaftsräte, Ausschüsse, Beriäte und Ortsbeiräte, Fraktionen), die Sitzungstermine, Tagesordnungen und Beschlüsse sowie alle öffentlichen Beschlussvorlagen informieren."
+        }
+      ],
+      "coref_clusters": [
+        {
+          "cluster_id": 0,
+          "mentions": [
+            {
+              "text": "Ratsinformationssystem",
+              "start": 1,
+              "end": 2
+            },
+            {
+              "text": "Ratsinformationssystem",
+              "start": 103,
+              "end": 104
+            }
+          ]
+        },
+        {
+          "cluster_id": 1,
+          "mentions": [
+            {
+              "text": "Sie",
+              "start": 3,
+              "end": 4
+            },
+            {
+              "text": "sich",
+              "start": 4,
+              "end": 5
+            },
+            {
+              "text": "Sie",
+              "start": 57,
+              "end": 58
+            },
+            {
+              "text": "Sie",
+              "start": 77,
+              "end": 78
+            }
+          ]
+        },
+        {
+          "cluster_id": 2,
+          "mentions": [
+            {
+              "text": "Stadtrat",
+              "start": 10,
+              "end": 11
+            }
+          ]
+        },
+        {
+          "cluster_id": 3,
+          "mentions": [
+            {
+              "text": "Ortschaftsräte",
+              "start": 12,
+              "end": 13
+            }
+          ]
+        },
+        {
+          "cluster_id": 4,
+          "mentions": [
+            {
+              "text": "Fraktionen",
+              "start": 20,
+              "end": 21
+            }
+          ]
+        },
+        {
+          "cluster_id": 5,
+          "mentions": [
+            {
+              "text": "Sie",
+              "start": 98,
+              "end": 99
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "pair_id": "pair_0005",
+    "source": "dresden.de",
+    "simple": {
+      "text": "Stadtrat © Georg Thieme Der Oberbürgermeister oder die Oberbürgermeisterin leitet den Stadtrat. Die Stadträte treffen sich alle 3 Wochen im Rathaus. Sie sprechen über Probleme in der Stadt. Sie stimmen darüber ab, was in der Stadt getan werden muss. Damit etwas entschieden wird, müssen mindestens 36 Menschen mit JA stimmen. Das ist eine einfache Mehrheit. Denn es gibt insgesamt 71 Stimmen. Das sind die Stimmen von 70 Stadträtinnen und Stadträte und eine Stimme des Oberbürgermeisters. Stadträtinnen und Stadträte mit ähnlichen politischen Interessen schließen sich zu Gruppen zusammen. Diese Gruppen heißen Fraktionen. Meistens sind Mitglieder einer Partei auch zusammen in einer Fraktion. Zum Beispiel gibt es die CDU-Fraktion. In einer Fraktion müssen mindestens vier Personen sein. Sie müssen aber nicht aus einer Partei sein, sondern nur gemeinsame Ziele haben. Im Stadtrat gibt es momentan acht Fraktionen: CDU-Fraktion Fraktion Bündnis 90 / Die Grünen AFD-Fraktion Fraktion DIE LINKE SPD-Fraktion FDP-Fraktion Fraktion Freie Wähler/Freie Bürger Dresden Dissidenten-Fraktion Im Dresdner Stadtrat werden wichtige politische Entscheidungen getroffen. Doch wie kommt es von einer Idee zum Beschluss dieser Idee im Stadtrat? Das zeigen wir anhand eines kleinen Beispiels: Frau Vohwieser aus der SPD möchte gern, dass alle Schülerinnen und Schüler einen Laptop besitzen. Die Kinder sollen damit zu Hause für die Schule arbeiten können. Darüber spricht Frau Vohwieser in ihrer Fraktion, der SPD-Fraktion. Finden alle Mitglieder der Fraktion die Idee gut, kämpfen sie gemeinsam dafür. Die Idee wird dann dem gesamten Stadtrat vorgestellt. Die SPD-Fraktion schreibt dafür einen Antrag und stellt ihn den anderen vor. Im Stadtrat sind 70 Menschen. Alle haben unterschiedliche Ideen und Wünsche für Dresden. Die sechs Vertreterinnen und Vertreter aus der SPD-Fraktion brauchen aber eine Mehrheit der Stimmen für ihre Idee. Sie müssen dafür ihre Kolleginnen und Kollegen aus den anderen Fraktionen von ihrer Idee überzeugen. Das versuchen sie in den Ausschusssitzungen. Ausschusssitzungen sind Arbeitsgruppen zu einem Thema. In diesen Gruppen tauschen sich die Spezialistinnen und Spezialisten von allen Fraktionen über bestimmte Fachthemen aus. Zum Beispiel gibt es für das Fachthema Kultur einen Kulturausschuss. Für das Thema Umwelt gibt es den Umweltausschuss und so weiter. Im Dresdner Stadtrat gibt es insgesamt zwölf Ausschüsse. In diesen sind Spezialistinnen und Spezialisten aus den Parteien. Wenn sich jemand gut mit Geld auskennt, arbeitet er oder sie im Finanzausschuss. Wenn sich jemand gut mit Kultur auskennt, arbeitet er oder sie im Kulturausschuss. Die SPD-Fraktion geht nun mit ihrem Antrag in die zuständigen Ausschüsse. In unserem Beispiel sind das der Bildungsausschuss und der Finanzausschuss. Dort beraten die Spezialistinnen und Spezialisten aller Parteien gemeinsam. Ist genügend Geld für die Anschaffung der Laptops da? Ist es sinnvoll, dass alle Schülerinnen und Schüler einen Laptop bekommen? Sie sprechen über diese und ähnliche Fragen. Am Ende schreiben die Spezialistinnen und Spezialisten einen kurzen Bericht. Darin erklären sie, wie sie sich entschieden haben und warum. Diesen Bericht geben sie dem Stadtrat weiter. Dort wird noch mal darüber gesprochen und entschieden, ob die Idee beschlossen wird. Wenn die Idee beschlossen ist, sagt es der Stadtrat der Verwaltung der Stadt. Die Stadtverwaltung setzt die Idee dann um. In diesem Beispiel würden also alle Schülerinnen und Schüler in Dresden einen Laptop bekommen.",
+      "token_count": 581,
+      "sentences": [
+        {
+          "start": 0,
+          "end": 4,
+          "text": "Stadtrat © Georg Thieme"
+        },
+        {
+          "start": 4,
+          "end": 13,
+          "text": "Der Oberbürgermeister oder die Oberbürgermeisterin leitet den Stadtrat."
+        },
+        {
+          "start": 13,
+          "end": 23,
+          "text": "Die Stadträte treffen sich alle 3 Wochen im Rathaus."
+        },
+        {
+          "start": 23,
+          "end": 31,
+          "text": "Sie sprechen über Probleme in der Stadt."
+        },
+        {
+          "start": 31,
+          "end": 44,
+          "text": "Sie stimmen darüber ab, was in der Stadt getan werden muss."
+        },
+        {
+          "start": 44,
+          "end": 57,
+          "text": "Damit etwas entschieden wird, müssen mindestens 36 Menschen mit JA stimmen."
+        },
+        {
+          "start": 57,
+          "end": 63,
+          "text": "Das ist eine einfache Mehrheit."
+        },
+        {
+          "start": 63,
+          "end": 70,
+          "text": "Denn es gibt insgesamt 71 Stimmen."
+        },
+        {
+          "start": 70,
+          "end": 85,
+          "text": "Das sind die Stimmen von 70 Stadträtinnen und Stadträte und eine Stimme des Oberbürgermeisters."
+        },
+        {
+          "start": 85,
+          "end": 98,
+          "text": "Stadträtinnen und Stadträte mit ähnlichen politischen Interessen schließen sich zu Gruppen zusammen."
+        },
+        {
+          "start": 98,
+          "end": 103,
+          "text": "Diese Gruppen heißen Fraktionen."
+        },
+        {
+          "start": 103,
+          "end": 114,
+          "text": "Meistens sind Mitglieder einer Partei auch zusammen in einer Fraktion."
+        },
+        {
+          "start": 114,
+          "end": 121,
+          "text": "Zum Beispiel gibt es die CDU-Fraktion."
+        },
+        {
+          "start": 121,
+          "end": 130,
+          "text": "In einer Fraktion müssen mindestens vier Personen sein."
+        },
+        {
+          "start": 130,
+          "end": 145,
+          "text": "Sie müssen aber nicht aus einer Partei sein, sondern nur gemeinsame Ziele haben."
+        },
+        {
+          "start": 145,
+          "end": 162,
+          "text": "Im Stadtrat gibt es momentan acht Fraktionen: CDU-Fraktion Fraktion Bündnis 90 / Die Grünen AFD-Fraktion Fraktion"
+        },
+        {
+          "start": 162,
+          "end": 164,
+          "text": "DIE LINKE"
+        },
+        {
+          "start": 164,
+          "end": 166,
+          "text": "SPD-Fraktion FDP-Fraktion"
+        },
+        {
+          "start": 166,
+          "end": 167,
+          "text": "Fraktion"
+        },
+        {
+          "start": 167,
+          "end": 173,
+          "text": "Freie Wähler/Freie Bürger Dresden"
+        },
+        {
+          "start": 173,
+          "end": 174,
+          "text": "Dissidenten-Fraktion"
+        },
+        {
+          "start": 174,
+          "end": 183,
+          "text": "Im Dresdner Stadtrat werden wichtige politische Entscheidungen getroffen."
+        },
+        {
+          "start": 183,
+          "end": 197,
+          "text": "Doch wie kommt es von einer Idee zum Beschluss dieser Idee im Stadtrat?"
+        },
+        {
+          "start": 197,
+          "end": 222,
+          "text": "Das zeigen wir anhand eines kleinen Beispiels: Frau Vohwieser aus der SPD möchte gern, dass alle Schülerinnen und Schüler einen Laptop besitzen."
+        },
+        {
+          "start": 222,
+          "end": 234,
+          "text": "Die Kinder sollen damit zu Hause für die Schule arbeiten können."
+        },
+        {
+          "start": 234,
+          "end": 245,
+          "text": "Darüber spricht Frau Vohwieser in ihrer Fraktion, der SPD-Fraktion."
+        },
+        {
+          "start": 245,
+          "end": 259,
+          "text": "Finden alle Mitglieder der Fraktion die Idee gut, kämpfen sie gemeinsam dafür."
+        },
+        {
+          "start": 259,
+          "end": 268,
+          "text": "Die Idee wird dann dem gesamten Stadtrat vorgestellt."
+        },
+        {
+          "start": 268,
+          "end": 281,
+          "text": "Die SPD-Fraktion schreibt dafür einen Antrag und stellt ihn den anderen vor."
+        },
+        {
+          "start": 281,
+          "end": 287,
+          "text": "Im Stadtrat sind 70 Menschen."
+        },
+        {
+          "start": 287,
+          "end": 296,
+          "text": "Alle haben unterschiedliche Ideen und Wünsche für Dresden."
+        },
+        {
+          "start": 296,
+          "end": 314,
+          "text": "Die sechs Vertreterinnen und Vertreter aus der SPD-Fraktion brauchen aber eine Mehrheit der Stimmen für ihre Idee."
+        },
+        {
+          "start": 314,
+          "end": 330,
+          "text": "Sie müssen dafür ihre Kolleginnen und Kollegen aus den anderen Fraktionen von ihrer Idee überzeugen."
+        },
+        {
+          "start": 330,
+          "end": 337,
+          "text": "Das versuchen sie in den Ausschusssitzungen."
+        },
+        {
+          "start": 337,
+          "end": 344,
+          "text": "Ausschusssitzungen sind Arbeitsgruppen zu einem Thema."
+        },
+        {
+          "start": 344,
+          "end": 361,
+          "text": "In diesen Gruppen tauschen sich die Spezialistinnen und Spezialisten von allen Fraktionen über bestimmte Fachthemen aus."
+        },
+        {
+          "start": 361,
+          "end": 372,
+          "text": "Zum Beispiel gibt es für das Fachthema Kultur einen Kulturausschuss."
+        },
+        {
+          "start": 372,
+          "end": 384,
+          "text": "Für das Thema Umwelt gibt es den Umweltausschuss und so weiter."
+        },
+        {
+          "start": 384,
+          "end": 393,
+          "text": "Im Dresdner Stadtrat gibt es insgesamt zwölf Ausschüsse."
+        },
+        {
+          "start": 393,
+          "end": 403,
+          "text": "In diesen sind Spezialistinnen und Spezialisten aus den Parteien."
+        },
+        {
+          "start": 403,
+          "end": 418,
+          "text": "Wenn sich jemand gut mit Geld auskennt, arbeitet er oder sie im Finanzausschuss."
+        },
+        {
+          "start": 418,
+          "end": 433,
+          "text": "Wenn sich jemand gut mit Kultur auskennt, arbeitet er oder sie im Kulturausschuss."
+        },
+        {
+          "start": 433,
+          "end": 445,
+          "text": "Die SPD-Fraktion geht nun mit ihrem Antrag in die zuständigen Ausschüsse."
+        },
+        {
+          "start": 445,
+          "end": 456,
+          "text": "In unserem Beispiel sind das der Bildungsausschuss und der Finanzausschuss."
+        },
+        {
+          "start": 456,
+          "end": 466,
+          "text": "Dort beraten die Spezialistinnen und Spezialisten aller Parteien gemeinsam."
+        },
+        {
+          "start": 466,
+          "end": 476,
+          "text": "Ist genügend Geld für die Anschaffung der Laptops da?"
+        },
+        {
+          "start": 476,
+          "end": 489,
+          "text": "Ist es sinnvoll, dass alle Schülerinnen und Schüler einen Laptop bekommen?"
+        },
+        {
+          "start": 489,
+          "end": 497,
+          "text": "Sie sprechen über diese und ähnliche Fragen."
+        },
+        {
+          "start": 497,
+          "end": 508,
+          "text": "Am Ende schreiben die Spezialistinnen und Spezialisten einen kurzen Bericht."
+        },
+        {
+          "start": 508,
+          "end": 520,
+          "text": "Darin erklären sie, wie sie sich entschieden haben und warum."
+        },
+        {
+          "start": 520,
+          "end": 528,
+          "text": "Diesen Bericht geben sie dem Stadtrat weiter."
+        },
+        {
+          "start": 528,
+          "end": 543,
+          "text": "Dort wird noch mal darüber gesprochen und entschieden, ob die Idee beschlossen wird."
+        },
+        {
+          "start": 543,
+          "end": 558,
+          "text": "Wenn die Idee beschlossen ist, sagt es der Stadtrat der Verwaltung der Stadt."
+        },
+        {
+          "start": 558,
+          "end": 566,
+          "text": "Die Stadtverwaltung setzt die Idee dann um."
+        },
+        {
+          "start": 566,
+          "end": 581,
+          "text": "In diesem Beispiel würden also alle Schülerinnen und Schüler in Dresden einen Laptop bekommen."
+        }
+      ],
+      "entities": [
+        {
+          "text": "Georg Thieme",
+          "label": "PER",
+          "start_char": 11,
+          "end_char": 23
+        },
+        {
+          "text": "Bündnis 90 / Die Grünen",
+          "label": "ORG",
+          "start_char": 938,
+          "end_char": 961
+        },
+        {
+          "text": "Freie Wähler",
+          "label": "ORG",
+          "start_char": 1029,
+          "end_char": 1041
+        },
+        {
+          "text": "Freie Bürger Dresden",
+          "label": "ORG",
+          "start_char": 1042,
+          "end_char": 1062
+        },
+        {
+          "text": "Vohwieser",
+          "label": "PER",
+          "start_char": 1282,
+          "end_char": 1291
+        },
+        {
+          "text": "SPD",
+          "label": "ORG",
+          "start_char": 1300,
+          "end_char": 1303
+        },
+        {
+          "text": "Vohwieser",
+          "label": "PER",
+          "start_char": 1461,
+          "end_char": 1470
+        },
+        {
+          "text": "Dresden",
+          "label": "LOC",
+          "start_char": 1798,
+          "end_char": 1805
+        },
+        {
+          "text": "Dresden",
+          "label": "LOC",
+          "start_char": 3520,
+          "end_char": 3527
+        }
+      ],
+      "characters": [
+        {
+          "text": "Thieme",
+          "start": 3,
+          "end": 4,
+          "sent_text": "Stadtrat © Georg Thieme"
+        },
+        {
+          "text": "Oberbürgermeister",
+          "start": 5,
+          "end": 6,
+          "sent_text": "Der Oberbürgermeister oder die Oberbürgermeisterin leitet den Stadtrat."
+        },
+        {
+          "text": "Oberbürgermeisterin",
+          "start": 8,
+          "end": 9,
+          "sent_text": "Der Oberbürgermeister oder die Oberbürgermeisterin leitet den Stadtrat."
+        },
+        {
+          "text": "Stadträte",
+          "start": 14,
+          "end": 15,
+          "sent_text": "Die Stadträte treffen sich alle 3 Wochen im Rathaus."
+        },
+        {
+          "text": "Menschen",
+          "start": 52,
+          "end": 53,
+          "sent_text": "Damit etwas entschieden wird, müssen mindestens 36 Menschen mit JA stimmen."
+        },
+        {
+          "text": "Stadträtinnen und Stadträte",
+          "start": 76,
+          "end": 79,
+          "sent_text": "Das sind die Stimmen von 70 Stadträtinnen und Stadträte und eine Stimme des Oberbürgermeisters."
+        },
+        {
+          "text": "Oberbürgermeisters",
+          "start": 83,
+          "end": 84,
+          "sent_text": "Das sind die Stimmen von 70 Stadträtinnen und Stadträte und eine Stimme des Oberbürgermeisters."
+        },
+        {
+          "text": "Stadträtinnen",
+          "start": 85,
+          "end": 86,
+          "sent_text": "Stadträtinnen und Stadträte mit ähnlichen politischen Interessen schließen sich zu Gruppen zusammen."
+        },
+        {
+          "text": "Stadträte",
+          "start": 87,
+          "end": 88,
+          "sent_text": "Stadträtinnen und Stadträte mit ähnlichen politischen Interessen schließen sich zu Gruppen zusammen."
+        },
+        {
+          "text": "Mitglieder",
+          "start": 105,
+          "end": 106,
+          "sent_text": "Meistens sind Mitglieder einer Partei auch zusammen in einer Fraktion."
+        },
+        {
+          "text": "Personen",
+          "start": 127,
+          "end": 128,
+          "sent_text": "In einer Fraktion müssen mindestens vier Personen sein."
+        },
+        {
+          "text": "Sie",
+          "start": 130,
+          "end": 131,
+          "sent_text": "Sie müssen aber nicht aus einer Partei sein, sondern nur gemeinsame Ziele haben."
+        },
+        {
+          "text": "Bündnis 90 / Die Grünen",
+          "start": 155,
+          "end": 160,
+          "sent_text": "Im Stadtrat gibt es momentan acht Fraktionen: CDU-Fraktion Fraktion Bündnis 90 / Die Grünen AFD-Fraktion Fraktion"
+        },
+        {
+          "text": "Wähler/",
+          "start": 168,
+          "end": 170,
+          "sent_text": "Freie Wähler/Freie Bürger Dresden"
+        },
+        {
+          "text": "Freie",
+          "start": 170,
+          "end": 171,
+          "sent_text": "Freie Wähler/Freie Bürger Dresden"
+        },
+        {
+          "text": "Bürger",
+          "start": 171,
+          "end": 172,
+          "sent_text": "Freie Wähler/Freie Bürger Dresden"
+        },
+        {
+          "text": "Frau Vohwieser",
+          "start": 205,
+          "end": 207,
+          "sent_text": "Das zeigen wir anhand eines kleinen Beispiels: Frau Vohwieser aus der SPD möchte gern, dass alle Schülerinnen und Schüler einen Laptop besitzen."
+        },
+        {
+          "text": "SPD",
+          "start": 209,
+          "end": 210,
+          "sent_text": "Das zeigen wir anhand eines kleinen Beispiels: Frau Vohwieser aus der SPD möchte gern, dass alle Schülerinnen und Schüler einen Laptop besitzen."
+        },
+        {
+          "text": "Schülerinnen und",
+          "start": 215,
+          "end": 217,
+          "sent_text": "Das zeigen wir anhand eines kleinen Beispiels: Frau Vohwieser aus der SPD möchte gern, dass alle Schülerinnen und Schüler einen Laptop besitzen."
+        },
+        {
+          "text": "Schüler",
+          "start": 217,
+          "end": 218,
+          "sent_text": "Das zeigen wir anhand eines kleinen Beispiels: Frau Vohwieser aus der SPD möchte gern, dass alle Schülerinnen und Schüler einen Laptop besitzen."
+        },
+        {
+          "text": "Kinder",
+          "start": 223,
+          "end": 224,
+          "sent_text": "Die Kinder sollen damit zu Hause für die Schule arbeiten können."
+        },
+        {
+          "text": "Frau Vohwieser",
+          "start": 236,
+          "end": 238,
+          "sent_text": "Darüber spricht Frau Vohwieser in ihrer Fraktion, der SPD-Fraktion."
+        },
+        {
+          "text": "Fraktion",
+          "start": 240,
+          "end": 241,
+          "sent_text": "Darüber spricht Frau Vohwieser in ihrer Fraktion, der SPD-Fraktion."
+        },
+        {
+          "text": "SPD-Fraktion",
+          "start": 243,
+          "end": 244,
+          "sent_text": "Darüber spricht Frau Vohwieser in ihrer Fraktion, der SPD-Fraktion."
+        },
+        {
+          "text": "Mitglieder",
+          "start": 247,
+          "end": 248,
+          "sent_text": "Finden alle Mitglieder der Fraktion die Idee gut, kämpfen sie gemeinsam dafür."
+        },
+        {
+          "text": "Fraktion",
+          "start": 249,
+          "end": 250,
+          "sent_text": "Finden alle Mitglieder der Fraktion die Idee gut, kämpfen sie gemeinsam dafür."
+        },
+        {
+          "text": "sie",
+          "start": 255,
+          "end": 256,
+          "sent_text": "Finden alle Mitglieder der Fraktion die Idee gut, kämpfen sie gemeinsam dafür."
+        },
+        {
+          "text": "Stadtrat",
+          "start": 265,
+          "end": 266,
+          "sent_text": "Die Idee wird dann dem gesamten Stadtrat vorgestellt."
+        },
+        {
+          "text": "SPD-Fraktion",
+          "start": 269,
+          "end": 270,
+          "sent_text": "Die SPD-Fraktion schreibt dafür einen Antrag und stellt ihn den anderen vor."
+        },
+        {
+          "text": "anderen",
+          "start": 278,
+          "end": 279,
+          "sent_text": "Die SPD-Fraktion schreibt dafür einen Antrag und stellt ihn den anderen vor."
+        },
+        {
+          "text": "Menschen",
+          "start": 285,
+          "end": 286,
+          "sent_text": "Im Stadtrat sind 70 Menschen."
+        },
+        {
+          "text": "Vertreterinnen und",
+          "start": 298,
+          "end": 300,
+          "sent_text": "Die sechs Vertreterinnen und Vertreter aus der SPD-Fraktion brauchen aber eine Mehrheit der Stimmen für ihre Idee."
+        },
+        {
+          "text": "Vertreter",
+          "start": 300,
+          "end": 301,
+          "sent_text": "Die sechs Vertreterinnen und Vertreter aus der SPD-Fraktion brauchen aber eine Mehrheit der Stimmen für ihre Idee."
+        },
+        {
+          "text": "SPD-Fraktion",
+          "start": 303,
+          "end": 304,
+          "sent_text": "Die sechs Vertreterinnen und Vertreter aus der SPD-Fraktion brauchen aber eine Mehrheit der Stimmen für ihre Idee."
+        },
+        {
+          "text": "Kolleginnen und Kollegen",
+          "start": 318,
+          "end": 321,
+          "sent_text": "Sie müssen dafür ihre Kolleginnen und Kollegen aus den anderen Fraktionen von ihrer Idee überzeugen."
+        },
+        {
+          "text": "Spezialistinnen und",
+          "start": 350,
+          "end": 352,
+          "sent_text": "In diesen Gruppen tauschen sich die Spezialistinnen und Spezialisten von allen Fraktionen über bestimmte Fachthemen aus."
+        },
+        {
+          "text": "Spezialisten",
+          "start": 352,
+          "end": 353,
+          "sent_text": "In diesen Gruppen tauschen sich die Spezialistinnen und Spezialisten von allen Fraktionen über bestimmte Fachthemen aus."
+        },
+        {
+          "text": "Spezialistinnen",
+          "start": 396,
+          "end": 397,
+          "sent_text": "In diesen sind Spezialistinnen und Spezialisten aus den Parteien."
+        },
+        {
+          "text": "Spezialisten",
+          "start": 398,
+          "end": 399,
+          "sent_text": "In diesen sind Spezialistinnen und Spezialisten aus den Parteien."
+        },
+        {
+          "text": "jemand",
+          "start": 405,
+          "end": 406,
+          "sent_text": "Wenn sich jemand gut mit Geld auskennt, arbeitet er oder sie im Finanzausschuss."
+        },
+        {
+          "text": "er",
+          "start": 412,
+          "end": 413,
+          "sent_text": "Wenn sich jemand gut mit Geld auskennt, arbeitet er oder sie im Finanzausschuss."
+        },
+        {
+          "text": "sie",
+          "start": 414,
+          "end": 415,
+          "sent_text": "Wenn sich jemand gut mit Geld auskennt, arbeitet er oder sie im Finanzausschuss."
+        },
+        {
+          "text": "jemand",
+          "start": 420,
+          "end": 421,
+          "sent_text": "Wenn sich jemand gut mit Kultur auskennt, arbeitet er oder sie im Kulturausschuss."
+        },
+        {
+          "text": "er",
+          "start": 427,
+          "end": 428,
+          "sent_text": "Wenn sich jemand gut mit Kultur auskennt, arbeitet er oder sie im Kulturausschuss."
+        },
+        {
+          "text": "sie",
+          "start": 429,
+          "end": 430,
+          "sent_text": "Wenn sich jemand gut mit Kultur auskennt, arbeitet er oder sie im Kulturausschuss."
+        },
+        {
+          "text": "SPD-Fraktion",
+          "start": 434,
+          "end": 435,
+          "sent_text": "Die SPD-Fraktion geht nun mit ihrem Antrag in die zuständigen Ausschüsse."
+        },
+        {
+          "text": "Spezialistinnen und",
+          "start": 459,
+          "end": 461,
+          "sent_text": "Dort beraten die Spezialistinnen und Spezialisten aller Parteien gemeinsam."
+        },
+        {
+          "text": "Spezialisten",
+          "start": 461,
+          "end": 462,
+          "sent_text": "Dort beraten die Spezialistinnen und Spezialisten aller Parteien gemeinsam."
+        },
+        {
+          "text": "Parteien",
+          "start": 463,
+          "end": 464,
+          "sent_text": "Dort beraten die Spezialistinnen und Spezialisten aller Parteien gemeinsam."
+        },
+        {
+          "text": "Schülerinnen und",
+          "start": 482,
+          "end": 484,
+          "sent_text": "Ist es sinnvoll, dass alle Schülerinnen und Schüler einen Laptop bekommen?"
+        },
+        {
+          "text": "Schüler",
+          "start": 484,
+          "end": 485,
+          "sent_text": "Ist es sinnvoll, dass alle Schülerinnen und Schüler einen Laptop bekommen?"
+        },
+        {
+          "text": "Spezialistinnen und",
+          "start": 501,
+          "end": 503,
+          "sent_text": "Am Ende schreiben die Spezialistinnen und Spezialisten einen kurzen Bericht."
+        },
+        {
+          "text": "Spezialisten",
+          "start": 503,
+          "end": 504,
+          "sent_text": "Am Ende schreiben die Spezialistinnen und Spezialisten einen kurzen Bericht."
+        },
+        {
+          "text": "Stadtrat",
+          "start": 525,
+          "end": 526,
+          "sent_text": "Diesen Bericht geben sie dem Stadtrat weiter."
+        },
+        {
+          "text": "Stadtrat",
+          "start": 552,
+          "end": 553,
+          "sent_text": "Wenn die Idee beschlossen ist, sagt es der Stadtrat der Verwaltung der Stadt."
+        },
+        {
+          "text": "Schülerinnen und",
+          "start": 572,
+          "end": 574,
+          "sent_text": "In diesem Beispiel würden also alle Schülerinnen und Schüler in Dresden einen Laptop bekommen."
+        },
+        {
+          "text": "Schüler",
+          "start": 574,
+          "end": 575,
+          "sent_text": "In diesem Beispiel würden also alle Schülerinnen und Schüler in Dresden einen Laptop bekommen."
+        }
+      ],
+      "coref_clusters": [
+        {
+          "cluster_id": 0,
+          "mentions": [
+            {
+              "text": "Stadtrat",
+              "start": 0,
+              "end": 1
+            },
+            {
+              "text": "Stadtrat",
+              "start": 146,
+              "end": 147
+            },
+            {
+              "text": "Stadtrat",
+              "start": 265,
+              "end": 266
+            },
+            {
+              "text": "Stadtrat",
+              "start": 282,
+              "end": 283
+            },
+            {
+              "text": "Stadtrat",
+              "start": 525,
+              "end": 526
+            },
+            {
+              "text": "Stadtrat",
+              "start": 552,
+              "end": 553
+            }
+          ]
+        },
+        {
+          "cluster_id": 1,
+          "mentions": [
+            {
+              "text": "Oberbürgermeister",
+              "start": 5,
+              "end": 6
+            },
+            {
+              "text": "Oberbürgermeisters",
+              "start": 83,
+              "end": 84
+            }
+          ]
+        },
+        {
+          "cluster_id": 2,
+          "mentions": [
+            {
+              "text": "Stadträte",
+              "start": 14,
+              "end": 15
+            },
+            {
+              "text": "sich",
+              "start": 16,
+              "end": 17
+            },
+            {
+              "text": "Sie",
+              "start": 23,
+              "end": 24
+            },
+            {
+              "text": "Sie",
+              "start": 31,
+              "end": 32
+            }
+          ]
+        },
+        {
+          "cluster_id": 3,
+          "mentions": [
+            {
+              "text": "Menschen",
+              "start": 52,
+              "end": 53
+            },
+            {
+              "text": "Menschen",
+              "start": 285,
+              "end": 286
+            },
+            {
+              "text": "Alle",
+              "start": 287,
+              "end": 288
+            }
+          ]
+        },
+        {
+          "cluster_id": 4,
+          "mentions": [
+            {
+              "text": "Stadträtinnen",
+              "start": 85,
+              "end": 86
+            },
+            {
+              "text": "sich",
+              "start": 93,
+              "end": 94
+            }
+          ]
+        },
+        {
+          "cluster_id": 5,
+          "mentions": [
+            {
+              "text": "Stadträte",
+              "start": 87,
+              "end": 88
+            }
+          ]
+        },
+        {
+          "cluster_id": 6,
+          "mentions": [
+            {
+              "text": "Mitglieder",
+              "start": 105,
+              "end": 106
+            }
+          ]
+        },
+        {
+          "cluster_id": 7,
+          "mentions": [
+            {
+              "text": "Personen",
+              "start": 127,
+              "end": 128
+            },
+            {
+              "text": "Sie",
+              "start": 130,
+              "end": 131
+            }
+          ]
+        },
+        {
+          "cluster_id": 8,
+          "mentions": [
+            {
+              "text": "Bürger",
+              "start": 171,
+              "end": 172
+            }
+          ]
+        },
+        {
+          "cluster_id": 9,
+          "mentions": [
+            {
+              "text": "wir",
+              "start": 199,
+              "end": 200
+            },
+            {
+              "text": "unserem",
+              "start": 446,
+              "end": 447
+            }
+          ]
+        },
+        {
+          "cluster_id": 10,
+          "mentions": [
+            {
+              "text": "Frau Vohwieser",
+              "start": 205,
+              "end": 207
+            },
+            {
+              "text": "Frau Vohwieser",
+              "start": 236,
+              "end": 238
+            },
+            {
+              "text": "ihrer",
+              "start": 239,
+              "end": 240
+            }
+          ]
+        },
+        {
+          "cluster_id": 11,
+          "mentions": [
+            {
+              "text": "Schüler",
+              "start": 217,
+              "end": 218
+            },
+            {
+              "text": "Kinder",
+              "start": 223,
+              "end": 224
+            },
+            {
+              "text": "Schüler",
+              "start": 484,
+              "end": 485
+            },
+            {
+              "text": "Schüler",
+              "start": 574,
+              "end": 575
+            }
+          ]
+        },
+        {
+          "cluster_id": 12,
+          "mentions": [
+            {
+              "text": "Mitglieder",
+              "start": 247,
+              "end": 248
+            },
+            {
+              "text": "sie",
+              "start": 255,
+              "end": 256
+            }
+          ]
+        },
+        {
+          "cluster_id": 13,
+          "mentions": [
+            {
+              "text": "anderen",
+              "start": 278,
+              "end": 279
+            }
+          ]
+        },
+        {
+          "cluster_id": 14,
+          "mentions": [
+            {
+              "text": "ihre",
+              "start": 311,
+              "end": 312
+            },
+            {
+              "text": "Sie",
+              "start": 314,
+              "end": 315
+            },
+            {
+              "text": "ihre",
+              "start": 317,
+              "end": 318
+            },
+            {
+              "text": "ihrer",
+              "start": 326,
+              "end": 327
+            },
+            {
+              "text": "sie",
+              "start": 332,
+              "end": 333
+            }
+          ]
+        },
+        {
+          "cluster_id": 15,
+          "mentions": [
+            {
+              "text": "Kollegen",
+              "start": 320,
+              "end": 321
+            }
+          ]
+        },
+        {
+          "cluster_id": 16,
+          "mentions": [
+            {
+              "text": "sich",
+              "start": 348,
+              "end": 349
+            }
+          ]
+        },
+        {
+          "cluster_id": 17,
+          "mentions": [
+            {
+              "text": "Spezialisten",
+              "start": 352,
+              "end": 353
+            },
+            {
+              "text": "Spezialisten",
+              "start": 398,
+              "end": 399
+            },
+            {
+              "text": "Spezialisten",
+              "start": 503,
+              "end": 504
+            }
+          ]
+        },
+        {
+          "cluster_id": 18,
+          "mentions": [
+            {
+              "text": "Fraktionen",
+              "start": 355,
+              "end": 356
+            }
+          ]
+        },
+        {
+          "cluster_id": 19,
+          "mentions": [
+            {
+              "text": "Parteien",
+              "start": 401,
+              "end": 402
+            },
+            {
+              "text": "Parteien",
+              "start": 463,
+              "end": 464
+            }
+          ]
+        },
+        {
+          "cluster_id": 20,
+          "mentions": [
+            {
+              "text": "jemand",
+              "start": 405,
+              "end": 406
+            }
+          ]
+        },
+        {
+          "cluster_id": 21,
+          "mentions": [
+            {
+              "text": "er",
+              "start": 412,
+              "end": 413
+            },
+            {
+              "text": "er",
+              "start": 427,
+              "end": 428
+            }
+          ]
+        },
+        {
+          "cluster_id": 22,
+          "mentions": [
+            {
+              "text": "sie",
+              "start": 414,
+              "end": 415
+            },
+            {
+              "text": "sie",
+              "start": 429,
+              "end": 430
+            }
+          ]
+        },
+        {
+          "cluster_id": 23,
+          "mentions": [
+            {
+              "text": "jemand",
+              "start": 420,
+              "end": 421
+            }
+          ]
+        },
+        {
+          "cluster_id": 24,
+          "mentions": [
+            {
+              "text": "SPD-Fraktion",
+              "start": 434,
+              "end": 435
+            },
+            {
+              "text": "ihrem",
+              "start": 438,
+              "end": 439
+            }
+          ]
+        },
+        {
+          "cluster_id": 25,
+          "mentions": [
+            {
+              "text": "Sie",
+              "start": 489,
+              "end": 490
+            },
+            {
+              "text": "sie",
+              "start": 510,
+              "end": 511
+            },
+            {
+              "text": "sie",
+              "start": 513,
+              "end": 514
+            },
+            {
+              "text": "sich",
+              "start": 514,
+              "end": 515
+            },
+            {
+              "text": "sie",
+              "start": 523,
+              "end": 524
+            }
+          ]
+        }
+      ]
+    },
+    "normal": {
+      "text": "Stadtrat Der Dresdner Stadtrat ist die gewählte Vertretung der Dresdner Bürgerinnen und Bürger. Vorsitzender des Stadtrates ist nach der sächsischen Gemeindeordnung der/die Oberbürgermeister/-in. Der Stadtrat legt die Grundsätze für die Verwaltung der Landeshauptstadt Dresden fest und entscheidet über alle Angelegenheiten der Landeshauptstadt Dresden, soweit nicht der/die Oberbürgermeister/-in Kraft Gesetz zuständig ist oder ihm/ihr der Stadtrat bestimmte Angelegenheiten übertragen hat. Am 9. Juni 2024 wählten die Dresdnerinnen und Dresdner ihren neuen Stadtrat. Er tritt seine erste Sitzung am 22. August 2024 um 16 Uhr an. Seine Amtszeit dauert bis 2029. Zur Meldung: Neuer Stadtrat konstituiert sich Mit seinen Beschlüssen kann der Stadtrat dem/der Oberbürgermeister/-in als Leiter/-in der Verwaltung Aufträge erteilen und mit dem Erlass von Satzungen und Verordnungen geltendes Stadtrecht schaffen. Die Sitzungen des Stadtrates finden in der Regel alle drei Wochen statt. Besonders wichtige Aufgaben, z. B. den Erlass von Satzungen, kann der Stadtrat seinen beschließenden Ausschüssen nicht übertragen. Eine Wahlperiode beträgt fünf Jahre. Kontakt Stadtratsangelegenheiten (SG) Landeshauptstadt Dresden Direktorium des Oberbürgermeisters Büro des Oberbürgermeisters und Stadtratsangelegenheiten E-Mail direktorium@dresden.de E-Mail direktorium@dresden.de",
+      "token_count": 194,
+      "sentences": [
+        {
+          "start": 0,
+          "end": 1,
+          "text": "Stadtrat"
+        },
+        {
+          "start": 1,
+          "end": 14,
+          "text": "Der Dresdner Stadtrat ist die gewählte Vertretung der Dresdner Bürgerinnen und Bürger."
+        },
+        {
+          "start": 14,
+          "end": 27,
+          "text": "Vorsitzender des Stadtrates ist nach der sächsischen Gemeindeordnung der/die Oberbürgermeister/-in."
+        },
+        {
+          "start": 27,
+          "end": 69,
+          "text": "Der Stadtrat legt die Grundsätze für die Verwaltung der Landeshauptstadt Dresden fest und entscheidet über alle Angelegenheiten der Landeshauptstadt Dresden, soweit nicht der/die Oberbürgermeister/-in Kraft Gesetz zuständig ist oder ihm/ihr der Stadtrat bestimmte Angelegenheiten übertragen hat."
+        },
+        {
+          "start": 69,
+          "end": 82,
+          "text": "Am 9. Juni 2024 wählten die Dresdnerinnen und Dresdner ihren neuen Stadtrat."
+        },
+        {
+          "start": 82,
+          "end": 96,
+          "text": "Er tritt seine erste Sitzung am 22. August 2024 um 16 Uhr an."
+        },
+        {
+          "start": 96,
+          "end": 101,
+          "text": "Seine Amtszeit dauert bis 2029."
+        },
+        {
+          "start": 101,
+          "end": 108,
+          "text": "Zur Meldung: Neuer Stadtrat konstituiert sich"
+        },
+        {
+          "start": 108,
+          "end": 136,
+          "text": "Mit seinen Beschlüssen kann der Stadtrat dem/der Oberbürgermeister/-in als Leiter/-in der Verwaltung Aufträge erteilen und mit dem Erlass von Satzungen und Verordnungen geltendes Stadtrecht schaffen."
+        },
+        {
+          "start": 136,
+          "end": 149,
+          "text": "Die Sitzungen des Stadtrates finden in der Regel alle drei Wochen statt."
+        },
+        {
+          "start": 149,
+          "end": 169,
+          "text": "Besonders wichtige Aufgaben, z. B. den Erlass von Satzungen, kann der Stadtrat seinen beschließenden Ausschüssen nicht übertragen."
+        },
+        {
+          "start": 169,
+          "end": 175,
+          "text": "Eine Wahlperiode beträgt fünf Jahre."
+        },
+        {
+          "start": 175,
+          "end": 181,
+          "text": "Kontakt Stadtratsangelegenheiten (SG) Landeshauptstadt"
+        },
+        {
+          "start": 181,
+          "end": 182,
+          "text": "Dresden"
+        },
+        {
+          "start": 182,
+          "end": 194,
+          "text": "Direktorium des Oberbürgermeisters Büro des Oberbürgermeisters und Stadtratsangelegenheiten E-Mail direktorium@dresden.de E-Mail direktorium@dresden.de"
+        }
+      ],
+      "entities": [
+        {
+          "text": "Dresden",
+          "label": "LOC",
+          "start_char": 269,
+          "end_char": 276
+        },
+        {
+          "text": "Dresden",
+          "label": "LOC",
+          "start_char": 345,
+          "end_char": 352
+        },
+        {
+          "text": "Dresden",
+          "label": "LOC",
+          "start_char": 1205,
+          "end_char": 1212
+        }
+      ],
+      "characters": [
+        {
+          "text": "Bürgerinnen und Bürger",
+          "start": 10,
+          "end": 13,
+          "sent_text": "Der Dresdner Stadtrat ist die gewählte Vertretung der Dresdner Bürgerinnen und Bürger."
+        },
+        {
+          "text": "Oberbürgermeister/-in",
+          "start": 25,
+          "end": 26,
+          "sent_text": "Vorsitzender des Stadtrates ist nach der sächsischen Gemeindeordnung der/die Oberbürgermeister/-in."
+        },
+        {
+          "text": "Stadtrat",
+          "start": 28,
+          "end": 29,
+          "sent_text": "Der Stadtrat legt die Grundsätze für die Verwaltung der Landeshauptstadt Dresden fest und entscheidet über alle Angelegenheiten der Landeshauptstadt Dresden, soweit nicht der/die Oberbürgermeister/-in Kraft Gesetz zuständig ist oder ihm/ihr der Stadtrat bestimmte Angelegenheiten übertragen hat."
+        },
+        {
+          "text": "Oberbürgermeister/-in",
+          "start": 53,
+          "end": 54,
+          "sent_text": "Der Stadtrat legt die Grundsätze für die Verwaltung der Landeshauptstadt Dresden fest und entscheidet über alle Angelegenheiten der Landeshauptstadt Dresden, soweit nicht der/die Oberbürgermeister/-in Kraft Gesetz zuständig ist oder ihm/ihr der Stadtrat bestimmte Angelegenheiten übertragen hat."
+        },
+        {
+          "text": "ihm",
+          "start": 59,
+          "end": 60,
+          "sent_text": "Der Stadtrat legt die Grundsätze für die Verwaltung der Landeshauptstadt Dresden fest und entscheidet über alle Angelegenheiten der Landeshauptstadt Dresden, soweit nicht der/die Oberbürgermeister/-in Kraft Gesetz zuständig ist oder ihm/ihr der Stadtrat bestimmte Angelegenheiten übertragen hat."
+        },
+        {
+          "text": "Stadtrat",
+          "start": 63,
+          "end": 64,
+          "sent_text": "Der Stadtrat legt die Grundsätze für die Verwaltung der Landeshauptstadt Dresden fest und entscheidet über alle Angelegenheiten der Landeshauptstadt Dresden, soweit nicht der/die Oberbürgermeister/-in Kraft Gesetz zuständig ist oder ihm/ihr der Stadtrat bestimmte Angelegenheiten übertragen hat."
+        },
+        {
+          "text": "Dresdnerinnen und",
+          "start": 75,
+          "end": 77,
+          "sent_text": "Am 9. Juni 2024 wählten die Dresdnerinnen und Dresdner ihren neuen Stadtrat."
+        },
+        {
+          "text": "Dresdner",
+          "start": 77,
+          "end": 78,
+          "sent_text": "Am 9. Juni 2024 wählten die Dresdnerinnen und Dresdner ihren neuen Stadtrat."
+        },
+        {
+          "text": "Stadtrat",
+          "start": 113,
+          "end": 114,
+          "sent_text": "Mit seinen Beschlüssen kann der Stadtrat dem/der Oberbürgermeister/-in als Leiter/-in der Verwaltung Aufträge erteilen und mit dem Erlass von Satzungen und Verordnungen geltendes Stadtrecht schaffen."
+        },
+        {
+          "text": "Oberbürgermeister/-in",
+          "start": 117,
+          "end": 118,
+          "sent_text": "Mit seinen Beschlüssen kann der Stadtrat dem/der Oberbürgermeister/-in als Leiter/-in der Verwaltung Aufträge erteilen und mit dem Erlass von Satzungen und Verordnungen geltendes Stadtrecht schaffen."
+        },
+        {
+          "text": "Leiter/-in",
+          "start": 119,
+          "end": 120,
+          "sent_text": "Mit seinen Beschlüssen kann der Stadtrat dem/der Oberbürgermeister/-in als Leiter/-in der Verwaltung Aufträge erteilen und mit dem Erlass von Satzungen und Verordnungen geltendes Stadtrecht schaffen."
+        },
+        {
+          "text": "Stadtrat",
+          "start": 162,
+          "end": 163,
+          "sent_text": "Besonders wichtige Aufgaben, z. B. den Erlass von Satzungen, kann der Stadtrat seinen beschließenden Ausschüssen nicht übertragen."
+        },
+        {
+          "text": "Ausschüssen",
+          "start": 165,
+          "end": 166,
+          "sent_text": "Besonders wichtige Aufgaben, z. B. den Erlass von Satzungen, kann der Stadtrat seinen beschließenden Ausschüssen nicht übertragen."
+        },
+        {
+          "text": "Oberbürgermeisters",
+          "start": 184,
+          "end": 185,
+          "sent_text": "Direktorium des Oberbürgermeisters Büro des Oberbürgermeisters und Stadtratsangelegenheiten E-Mail direktorium@dresden.de E-Mail direktorium@dresden.de"
+        },
+        {
+          "text": "Oberbürgermeisters",
+          "start": 187,
+          "end": 188,
+          "sent_text": "Direktorium des Oberbürgermeisters Büro des Oberbürgermeisters und Stadtratsangelegenheiten E-Mail direktorium@dresden.de E-Mail direktorium@dresden.de"
+        }
+      ],
+      "coref_clusters": [
+        {
+          "cluster_id": 0,
+          "mentions": [
+            {
+              "text": "Stadtrat",
+              "start": 0,
+              "end": 1
+            }
+          ]
+        },
+        {
+          "cluster_id": 1,
+          "mentions": [
+            {
+              "text": "Oberbürgermeister/-in",
+              "start": 53,
+              "end": 54
+            },
+            {
+              "text": "Oberbürgermeister/-in",
+              "start": 117,
+              "end": 118
+            }
+          ]
+        },
+        {
+          "cluster_id": 2,
+          "mentions": [
+            {
+              "text": "ihm",
+              "start": 59,
+              "end": 60
+            }
+          ]
+        },
+        {
+          "cluster_id": 3,
+          "mentions": [
+            {
+              "text": "Dresdner",
+              "start": 77,
+              "end": 78
+            },
+            {
+              "text": "ihren",
+              "start": 78,
+              "end": 79
+            }
+          ]
+        },
+        {
+          "cluster_id": 4,
+          "mentions": [
+            {
+              "text": "Oberbürgermeisters",
+              "start": 184,
+              "end": 185
+            },
+            {
+              "text": "Oberbürgermeisters",
+              "start": 187,
+              "end": 188
+            }
+          ]
+        }
+      ]
+    }
+  }
+]
