@@ -83,11 +83,33 @@ def serialize_doc(doc) -> dict:
     # Characters (from character_recognizer)
     if hasattr(doc._, "characters") and doc._.characters:
         for span in doc._.characters:
+            # Extract morphological gender from head token of the span
+            tokens_info = []
+            for tok in span:
+                morph_str = str(tok.morph) if tok.morph else ""
+                tokens_info.append({
+                    "text": tok.text,
+                    "pos": tok.pos_,
+                    "tag": tok.tag_,
+                    "morph": morph_str,
+                    "lemma": tok.lemma_,
+                })
+
+            # Try to get gender from morphological features of the span's root
+            morph_gender = None
+            for tok in span:
+                gender = tok.morph.get("Gender")
+                if gender:
+                    morph_gender = gender[0] if isinstance(gender, list) else gender
+                    break
+
             result["characters"].append({
                 "text": span.text,
                 "start": span.start,
                 "end": span.end,
                 "sent_text": span.sent.text.strip() if span.sent else "",
+                "morph_gender": morph_gender,
+                "tokens": tokens_info,
             })
 
     # Coreference Clusters (from coref_uhhlt)
@@ -95,10 +117,18 @@ def serialize_doc(doc) -> dict:
         for cluster_idx, cluster in enumerate(doc._.coref_clusters):
             mentions = []
             for span in cluster:
+                # Also extract morph gender for coref mentions (useful for pronouns)
+                morph_gender = None
+                for tok in span:
+                    gender = tok.morph.get("Gender")
+                    if gender:
+                        morph_gender = gender[0] if isinstance(gender, list) else gender
+                        break
                 mentions.append({
                     "text": span.text,
                     "start": span.start,
                     "end": span.end,
+                    "morph_gender": morph_gender,
                 })
             cluster_id = cluster.attrs.get("id", cluster_idx) if hasattr(cluster, "attrs") else cluster_idx
             result["coref_clusters"].append({
