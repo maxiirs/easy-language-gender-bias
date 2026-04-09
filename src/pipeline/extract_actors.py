@@ -66,36 +66,91 @@ def load_pipeline(model: str = "de_core_news_sm") -> spacy.Language:
 
 
 def extract_actors_from_doc(doc) -> list[dict[str, Any]]:
-    """Extract actor-level data from a processed spaCy Doc with LLpro extensions."""
+    """Extract actor-level data from a processed spaCy Doc with LLpro extensions.
+    
+    LLpro's character_recognizer stores detected character mentions as Span objects
+    in doc._.characters. We cluster them by surface form and cross-reference with
+    coreference clusters (doc._.coref_clusters) to infer gender via linked pronouns.
+    """
     actors = []
 
-    # LLpro's character_recognizer stores detected characters in doc._.characters
     if not hasattr(doc._, "characters") or not doc._.characters:
         return actors
 
-    for character in doc._.characters:
-        # Collect all mention spans for this character
-        mention_texts = []
-        sent_indices = set()
-        for mention in character.mentions:
-            mention_texts.append(mention.text.strip())
-            sent_indices.add(mention.sent.start)
+    # 1. Group character mentions by normalized surface text
+    from collections import defaultdict
+    clusters: dict[str, dict[str, Any]] = {}
+    for span in doc._.characters:
+        label = span.text.strip()
+        if not label:
+            continue
+        key = label.lower()
+        if key not in clusters:
+            clusters[key] = {
+                "label": label,
+                "mention_spans": [],
+                "sent_indices": set(),
+            }
+        clusters[key]["mention_spans"].append(span)
+        clusters[key]["sent_indices"].add(span.sent.start)
 
-        # Extract predication sentences (sentences where this character appears)
+    # 2. Infer gender via coreference clusters (if available)
+    FEMININE_PRONOUNS = {"sie", "ihr", "ihre", "ihren", "ihrem", "ihrer", "ihres"}
+    MASCULINE_PRONOUNS = {"er", "ihn", "ihm", "sein", "seine", "seinen", "seinem", "seiner", "seines"}
+
+    coref_clusters = []
+    if hasattr(doc._, "coref_clusters") and doc._.coref_clusters:
+        coref_clusters = doc._.coref_clusters
+
+    for key, cluster in clusters.items():
+        # Try to find coref cluster that overlaps with character mentions
+        gender = "unknown"
+        masc_count = 0
+        fem_count = 0
+
+        for coref_cluster in coref_clusters:
+            # Check if any mention in this coref cluster overlaps with our character
+            has_character_overlap = False
+            for coref_span in coref_cluster.spans:
+                for char_span in cluster["mention_spans"]:
+                    if (coref_span.start < char_span.end and coref_span.end > char_span.start):
+                        has_character_overlap = True
+                        break
+                if has_character_overlap:
+                    break
+
+            if has_character_overlap:
+                # Count pronoun genders in this coref cluster
+                for coref_span in coref_cluster.spans:
+                    span_text = coref_span.text.strip().lower()
+                    if span_text in FEMININE_PRONOUNS:
+                        fem_count += 1
+                    elif span_text in MASCULINE_PRONOUNS:
+                        masc_count += 1
+
+        if masc_count > 0 or fem_count > 0:
+            if masc_count > fem_count:
+                gender = "masculine"
+            elif fem_count > masc_count:
+                gender = "feminine"
+            else:
+                gender = "mixed_or_unclear"
+
+        # 3. Extract predication sentences
         predications = []
         seen_sents = set()
         for sent in doc.sents:
-            if sent.start in sent_indices:
+            if sent.start in cluster["sent_indices"]:
                 sent_text = sent.text.strip()
                 if sent_text and sent_text not in seen_sents:
                     seen_sents.add(sent_text)
                     predications.append(sent_text)
 
         actors.append({
-            "actor_label": character.main_name,
-            "gender": character.gender if hasattr(character, "gender") else "unknown",
-            "mention_count": len(character.mentions),
-            "mentions": " | ".join(sorted(set(mention_texts))),
+            "actor_label": cluster["label"],
+            "gender": gender,
+            "mention_count": len(cluster["mention_spans"]),
+            "mentions": " | ".join(sorted({s.text.strip() for s in cluster["mention_spans"]})),
             "predication_count": len(predications),
             "predications": " || ".join(predications),
         })
