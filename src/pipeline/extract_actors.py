@@ -111,7 +111,7 @@ def extract_actors_from_doc(doc) -> list[dict[str, Any]]:
         for coref_cluster in coref_clusters:
             # Check if any mention in this coref cluster overlaps with our character
             has_character_overlap = False
-            for coref_span in coref_cluster.spans:
+            for coref_span in coref_cluster:
                 for char_span in cluster["mention_spans"]:
                     if (coref_span.start < char_span.end and coref_span.end > char_span.start):
                         has_character_overlap = True
@@ -121,7 +121,7 @@ def extract_actors_from_doc(doc) -> list[dict[str, Any]]:
 
             if has_character_overlap:
                 # Count pronoun genders in this coref cluster
-                for coref_span in coref_cluster.spans:
+                for coref_span in coref_cluster:
                     span_text = coref_span.text.strip().lower()
                     if span_text in FEMININE_PRONOUNS:
                         fem_count += 1
