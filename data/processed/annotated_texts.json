@@ -53,7 +53,8 @@
             {
               "text": "Stadtverwaltung",
               "start": 0,
-              "end": 1
+              "end": 1,
+              "morph_gender": "Fem"
             }
           ]
         },
@@ -63,7 +64,8 @@
             {
               "text": "Stadtrat",
               "start": 33,
-              "end": 34
+              "end": 34,
+              "morph_gender": "Masc"
             }
           ]
         }
@@ -260,91 +262,255 @@
           "text": "Ihnen",
           "start": 27,
           "end": 28,
-          "sent_text": "Informieren Sie sich von der Abfallberatung bis hin zum Zentralen Adressregister über alles, was Ihnen die Stadt Dresden bietet."
+          "sent_text": "Informieren Sie sich von der Abfallberatung bis hin zum Zentralen Adressregister über alles, was Ihnen die Stadt Dresden bietet.",
+          "morph_gender": null,
+          "tokens": [
+            {
+              "text": "Ihnen",
+              "pos": "PRON",
+              "tag": "PPER",
+              "morph": "Case=Dat|Number=Plur|Person=3|PronType=Prs",
+              "lemma": "ihnen"
+            }
+          ]
         },
         {
           "text": "Wer",
           "start": 42,
           "end": 43,
-          "sent_text": "Wer hat wo wieviele Stimmen erhalten Stadtrat im Livestream Stadtratssitzung verpasst?"
+          "sent_text": "Wer hat wo wieviele Stimmen erhalten Stadtrat im Livestream Stadtratssitzung verpasst?",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Wer",
+              "pos": "PRON",
+              "tag": "PWS",
+              "morph": "Case=Nom|Gender=Masc|Number=Sing|PronType=Int",
+              "lemma": "wer"
+            }
+          ]
         },
         {
           "text": "Schmidt",
           "start": 68,
           "end": 69,
-          "sent_text": "© Michael Schmidt"
+          "sent_text": "© Michael Schmidt",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Schmidt",
+              "pos": "PROPN",
+              "tag": "NE",
+              "morph": "Case=Nom|Gender=Masc|Number=Sing",
+              "lemma": "Schmidt"
+            }
+          ]
         },
         {
           "text": "Dirk Hilbert",
           "start": 70,
           "end": 72,
-          "sent_text": "Oberbürgermeister Dirk Hilbert"
+          "sent_text": "Oberbürgermeister Dirk Hilbert",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Dirk",
+              "pos": "PROPN",
+              "tag": "NE",
+              "morph": "Case=Nom|Gender=Masc|Number=Sing",
+              "lemma": "Dirk"
+            },
+            {
+              "text": "Hilbert",
+              "pos": "PROPN",
+              "tag": "NE",
+              "morph": "Case=Nom|Gender=Masc|Number=Sing",
+              "lemma": "Hilbert"
+            }
+          ]
         },
         {
           "text": "Oberbürgermeister",
           "start": 73,
           "end": 74,
-          "sent_text": "Der Oberbürgermeister ist Vorsitzender des Stadtrates und Leiter der Stadtverwaltung."
+          "sent_text": "Der Oberbürgermeister ist Vorsitzender des Stadtrates und Leiter der Stadtverwaltung.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Oberbürgermeister",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Sing",
+              "lemma": "Oberbürgermeister"
+            }
+          ]
         },
         {
           "text": "Vorsitzender",
           "start": 75,
           "end": 76,
-          "sent_text": "Der Oberbürgermeister ist Vorsitzender des Stadtrates und Leiter der Stadtverwaltung."
+          "sent_text": "Der Oberbürgermeister ist Vorsitzender des Stadtrates und Leiter der Stadtverwaltung.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Vorsitzender",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Sing",
+              "lemma": "vorsitzend"
+            }
+          ]
         },
         {
           "text": "Oberbügermeisters",
           "start": 92,
           "end": 93,
-          "sent_text": "Stöbern Sie in Reden, Veranstaltungen und Themen des Oberbügermeisters."
+          "sent_text": "Stöbern Sie in Reden, Veranstaltungen und Themen des Oberbügermeisters.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Oberbügermeisters",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Gen|Gender=Masc|Number=Sing",
+              "lemma": "Oberbügermeister"
+            }
+          ]
         },
         {
           "text": "Bewohner",
           "start": 108,
           "end": 109,
-          "sent_text": "Eine Auswahl der aktuellen Bewohner stellen wir Ihnen vor."
+          "sent_text": "Eine Auswahl der aktuellen Bewohner stellen wir Ihnen vor.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Bewohner",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Gen|Gender=Masc|Number=Plur",
+              "lemma": "Bewohner"
+            }
+          ]
         },
         {
           "text": "Dresden",
           "start": 124,
           "end": 125,
-          "sent_text": "Stadtarchiv Dresden"
+          "sent_text": "Stadtarchiv Dresden",
+          "morph_gender": "Neut",
+          "tokens": [
+            {
+              "text": "Dresden",
+              "pos": "PROPN",
+              "tag": "NE",
+              "morph": "Case=Nom|Gender=Neut|Number=Sing",
+              "lemma": "Dresden"
+            }
+          ]
         },
         {
           "text": "Cesar Tezeta",
           "start": 154,
           "end": 156,
-          "sent_text": "© velishchuk – stock.adobe.com + die superpixel & Cesar Tezeta Mitmachheft für Kinder"
+          "sent_text": "© velishchuk – stock.adobe.com + die superpixel & Cesar Tezeta Mitmachheft für Kinder",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Cesar",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Sing",
+              "lemma": "Cesar"
+            },
+            {
+              "text": "Tezeta",
+              "pos": "PROPN",
+              "tag": "NE",
+              "morph": "Case=Nom|Gender=Masc|Number=Sing",
+              "lemma": "Tezeta"
+            }
+          ]
         },
         {
           "text": "Kinder",
           "start": 158,
           "end": 159,
-          "sent_text": "© velishchuk – stock.adobe.com + die superpixel & Cesar Tezeta Mitmachheft für Kinder"
+          "sent_text": "© velishchuk – stock.adobe.com + die superpixel & Cesar Tezeta Mitmachheft für Kinder",
+          "morph_gender": "Neut",
+          "tokens": [
+            {
+              "text": "Kinder",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Acc|Gender=Neut|Number=Plur",
+              "lemma": "Kind"
+            }
+          ]
         },
         {
           "text": "Leo",
           "start": 160,
           "end": 161,
-          "sent_text": "Leo erklärt den Kindern, wozu man ein Rathaus und seine Mitarbeiter braucht."
+          "sent_text": "Leo erklärt den Kindern, wozu man ein Rathaus und seine Mitarbeiter braucht.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Leo",
+              "pos": "PROPN",
+              "tag": "NE",
+              "morph": "Case=Nom|Gender=Masc|Number=Sing",
+              "lemma": "Leo"
+            }
+          ]
         },
         {
           "text": "Kindern",
           "start": 163,
           "end": 164,
-          "sent_text": "Leo erklärt den Kindern, wozu man ein Rathaus und seine Mitarbeiter braucht."
+          "sent_text": "Leo erklärt den Kindern, wozu man ein Rathaus und seine Mitarbeiter braucht.",
+          "morph_gender": "Neut",
+          "tokens": [
+            {
+              "text": "Kindern",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Dat|Gender=Neut|Number=Plur",
+              "lemma": "Kind"
+            }
+          ]
         },
         {
           "text": "Mitarbeiter",
           "start": 171,
           "end": 172,
-          "sent_text": "Leo erklärt den Kindern, wozu man ein Rathaus und seine Mitarbeiter braucht."
+          "sent_text": "Leo erklärt den Kindern, wozu man ein Rathaus und seine Mitarbeiter braucht.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Mitarbeiter",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Acc|Gender=Masc|Number=Plur",
+              "lemma": "Mitarbeiter"
+            }
+          ]
         },
         {
           "text": "Köpfen",
           "start": 205,
           "end": 206,
-          "sent_text": "Die Einrichtungen, Ämter und Behörden der Stadtverwaltung sind immer auf der Suche nach klugen Köpfen."
+          "sent_text": "Die Einrichtungen, Ämter und Behörden der Stadtverwaltung sind immer auf der Suche nach klugen Köpfen.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Köpfen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Dat|Gender=Masc|Number=Plur",
+              "lemma": "Kopf"
+            }
+          ]
         }
       ],
       "coref_clusters": [
@@ -354,7 +520,8 @@
             {
               "text": "Streiflichter",
               "start": 0,
-              "end": 1
+              "end": 1,
+              "morph_gender": "Masc"
             }
           ]
         },
@@ -364,12 +531,14 @@
             {
               "text": "Ihnen",
               "start": 27,
-              "end": 28
+              "end": 28,
+              "morph_gender": null
             },
             {
               "text": "Sie",
               "start": 56,
-              "end": 57
+              "end": 57,
+              "morph_gender": null
             }
           ]
         },
@@ -379,7 +548,8 @@
             {
               "text": "Michael Schmidt",
               "start": 67,
-              "end": 69
+              "end": 69,
+              "morph_gender": "Masc"
             }
           ]
         },
@@ -389,22 +559,26 @@
             {
               "text": "Oberbürgermeister Dirk Hilbert",
               "start": 69,
-              "end": 72
+              "end": 72,
+              "morph_gender": "Masc"
             },
             {
               "text": "Oberbürgermeister",
               "start": 73,
-              "end": 74
+              "end": 74,
+              "morph_gender": "Masc"
             },
             {
               "text": "Vorsitzender",
               "start": 75,
-              "end": 76
+              "end": 76,
+              "morph_gender": "Masc"
             },
             {
               "text": "Oberbügermeisters",
               "start": 92,
-              "end": 93
+              "end": 93,
+              "morph_gender": "Masc"
             }
           ]
         },
@@ -414,7 +588,8 @@
             {
               "text": "Bewohner",
               "start": 108,
-              "end": 109
+              "end": 109,
+              "morph_gender": "Masc"
             }
           ]
         },
@@ -424,7 +599,8 @@
             {
               "text": "wir",
               "start": 110,
-              "end": 111
+              "end": 111,
+              "morph_gender": null
             }
           ]
         },
@@ -434,12 +610,14 @@
             {
               "text": "Alle",
               "start": 114,
-              "end": 115
+              "end": 115,
+              "morph_gender": null
             },
             {
               "text": "sich",
               "start": 116,
-              "end": 117
+              "end": 117,
+              "morph_gender": null
             }
           ]
         },
@@ -449,7 +627,8 @@
             {
               "text": "velishchuk",
               "start": 147,
-              "end": 148
+              "end": 148,
+              "morph_gender": "Masc"
             }
           ]
         },
@@ -459,12 +638,14 @@
             {
               "text": "Kinder",
               "start": 158,
-              "end": 159
+              "end": 159,
+              "morph_gender": "Neut"
             },
             {
               "text": "Kindern",
               "start": 163,
-              "end": 164
+              "end": 164,
+              "morph_gender": "Neut"
             }
           ]
         },
@@ -474,7 +655,8 @@
             {
               "text": "Mitarbeiter",
               "start": 171,
-              "end": 172
+              "end": 172,
+              "morph_gender": "Masc"
             }
           ]
         }
@@ -590,43 +772,127 @@
           "text": "Menschen",
           "start": 14,
           "end": 15,
-          "sent_text": "Für den Stadtrat werden 70 Menschen gewählt."
+          "sent_text": "Für den Stadtrat werden 70 Menschen gewählt.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Menschen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Plur",
+              "lemma": "Mensch"
+            }
+          ]
         },
         {
           "text": "Menschen",
           "start": 47,
           "end": 48,
-          "sent_text": "Wählen dürfen Menschen, die Bürgerinnen und Bürger der EU sind, 18 Jahre oder älter sind und seit mindestens 3. Monaten in Dresden wohnen."
+          "sent_text": "Wählen dürfen Menschen, die Bürgerinnen und Bürger der EU sind, 18 Jahre oder älter sind und seit mindestens 3. Monaten in Dresden wohnen.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Menschen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Plur",
+              "lemma": "Mensch"
+            }
+          ]
         },
         {
           "text": "die",
           "start": 49,
           "end": 50,
-          "sent_text": "Wählen dürfen Menschen, die Bürgerinnen und Bürger der EU sind, 18 Jahre oder älter sind und seit mindestens 3. Monaten in Dresden wohnen."
+          "sent_text": "Wählen dürfen Menschen, die Bürgerinnen und Bürger der EU sind, 18 Jahre oder älter sind und seit mindestens 3. Monaten in Dresden wohnen.",
+          "morph_gender": null,
+          "tokens": [
+            {
+              "text": "die",
+              "pos": "DET",
+              "tag": "ART",
+              "morph": "Case=Nom|Definite=Def|Number=Plur|PronType=Art",
+              "lemma": "der"
+            }
+          ]
         },
         {
           "text": "Bürgerinnen und Bürger",
           "start": 50,
           "end": 53,
-          "sent_text": "Wählen dürfen Menschen, die Bürgerinnen und Bürger der EU sind, 18 Jahre oder älter sind und seit mindestens 3. Monaten in Dresden wohnen."
+          "sent_text": "Wählen dürfen Menschen, die Bürgerinnen und Bürger der EU sind, 18 Jahre oder älter sind und seit mindestens 3. Monaten in Dresden wohnen.",
+          "morph_gender": "Fem",
+          "tokens": [
+            {
+              "text": "Bürgerinnen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Fem|Number=Plur",
+              "lemma": "Bürgerin"
+            },
+            {
+              "text": "und",
+              "pos": "CCONJ",
+              "tag": "KON",
+              "morph": "",
+              "lemma": "und"
+            },
+            {
+              "text": "Bürger",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Plur",
+              "lemma": "Bürger"
+            }
+          ]
         },
         {
           "text": "Stadtrat",
           "start": 108,
           "end": 109,
-          "sent_text": "Neben dem Stadtrat, werden noch der Stadtbezirksrat bzw. der Ortschaftsrat gewählt."
+          "sent_text": "Neben dem Stadtrat, werden noch der Stadtbezirksrat bzw. der Ortschaftsrat gewählt.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Stadtrat",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Dat|Gender=Masc|Number=Sing",
+              "lemma": "Stadtrat"
+            }
+          ]
         },
         {
           "text": "Stadtbezirksrat",
           "start": 113,
           "end": 114,
-          "sent_text": "Neben dem Stadtrat, werden noch der Stadtbezirksrat bzw. der Ortschaftsrat gewählt."
+          "sent_text": "Neben dem Stadtrat, werden noch der Stadtbezirksrat bzw. der Ortschaftsrat gewählt.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Stadtbezirksrat",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Sing",
+              "lemma": "Stadtbezirksrat"
+            }
+          ]
         },
         {
           "text": "Ortschaftsrat",
           "start": 116,
           "end": 117,
-          "sent_text": "Neben dem Stadtrat, werden noch der Stadtbezirksrat bzw. der Ortschaftsrat gewählt."
+          "sent_text": "Neben dem Stadtrat, werden noch der Stadtbezirksrat bzw. der Ortschaftsrat gewählt.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Ortschaftsrat",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Sing",
+              "lemma": "Ortschaftsrat"
+            }
+          ]
         }
       ],
       "coref_clusters": [
@@ -636,7 +902,8 @@
             {
               "text": "Kommunalwahlen",
               "start": 0,
-              "end": 1
+              "end": 1,
+              "morph_gender": "Fem"
             }
           ]
         },
@@ -646,27 +913,32 @@
             {
               "text": "Menschen",
               "start": 14,
-              "end": 15
+              "end": 15,
+              "morph_gender": "Masc"
             },
             {
               "text": "Menschen",
               "start": 47,
-              "end": 48
+              "end": 48,
+              "morph_gender": "Masc"
             },
             {
               "text": "die",
               "start": 49,
-              "end": 50
+              "end": 50,
+              "morph_gender": null
             },
             {
               "text": "Bürger",
               "start": 52,
-              "end": 53
+              "end": 53,
+              "morph_gender": "Masc"
             },
             {
               "text": "man",
               "start": 95,
-              "end": 96
+              "end": 96,
+              "morph_gender": null
             }
           ]
         },
@@ -676,7 +948,8 @@
             {
               "text": "Partei",
               "start": 88,
-              "end": 89
+              "end": 89,
+              "morph_gender": "Fem"
             }
           ]
         }
@@ -772,25 +1045,65 @@
           "text": "Abgeordneten",
           "start": 19,
           "end": 20,
-          "sent_text": "An diesem Tag wurden auch die Abgeordneten des Europaparlaments in Dresden gewählt."
+          "sent_text": "An diesem Tag wurden auch die Abgeordneten des Europaparlaments in Dresden gewählt.",
+          "morph_gender": null,
+          "tokens": [
+            {
+              "text": "Abgeordneten",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Number=Plur",
+              "lemma": "abgeordneter"
+            }
+          ]
         },
         {
           "text": "Deutschen",
           "start": 118,
           "end": 119,
-          "sent_text": "Wahlberechtigt sind alle Deutschen und EU-Bürger, die am Wahltag mindestens 18 Jahre alt sind und seit über drei Monaten in Dresden wohnen."
+          "sent_text": "Wahlberechtigt sind alle Deutschen und EU-Bürger, die am Wahltag mindestens 18 Jahre alt sind und seit über drei Monaten in Dresden wohnen.",
+          "morph_gender": null,
+          "tokens": [
+            {
+              "text": "Deutschen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Number=Plur",
+              "lemma": "deutsche"
+            }
+          ]
         },
         {
           "text": "EU-Bürger",
           "start": 120,
           "end": 121,
-          "sent_text": "Wahlberechtigt sind alle Deutschen und EU-Bürger, die am Wahltag mindestens 18 Jahre alt sind und seit über drei Monaten in Dresden wohnen."
+          "sent_text": "Wahlberechtigt sind alle Deutschen und EU-Bürger, die am Wahltag mindestens 18 Jahre alt sind und seit über drei Monaten in Dresden wohnen.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "EU-Bürger",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Acc|Gender=Masc|Number=Plur",
+              "lemma": "EU-Bürger"
+            }
+          ]
         },
         {
           "text": "die",
           "start": 122,
           "end": 123,
-          "sent_text": "Wahlberechtigt sind alle Deutschen und EU-Bürger, die am Wahltag mindestens 18 Jahre alt sind und seit über drei Monaten in Dresden wohnen."
+          "sent_text": "Wahlberechtigt sind alle Deutschen und EU-Bürger, die am Wahltag mindestens 18 Jahre alt sind und seit über drei Monaten in Dresden wohnen.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "die",
+              "pos": "PRON",
+              "tag": "PRELS",
+              "morph": "Case=Nom|Gender=Masc|Number=Plur|PronType=Rel",
+              "lemma": "der"
+            }
+          ]
         }
       ],
       "coref_clusters": [
@@ -800,7 +1113,8 @@
             {
               "text": "Kommunalwahlen",
               "start": 0,
-              "end": 1
+              "end": 1,
+              "morph_gender": "Fem"
             }
           ]
         },
@@ -810,7 +1124,8 @@
             {
               "text": "Abgeordneten",
               "start": 19,
-              "end": 20
+              "end": 20,
+              "morph_gender": null
             }
           ]
         },
@@ -820,7 +1135,8 @@
             {
               "text": "Sie",
               "start": 55,
-              "end": 56
+              "end": 56,
+              "morph_gender": null
             }
           ]
         },
@@ -830,12 +1146,14 @@
             {
               "text": "EU-Bürger",
               "start": 120,
-              "end": 121
+              "end": 121,
+              "morph_gender": "Masc"
             },
             {
               "text": "die",
               "start": 122,
-              "end": 123
+              "end": 123,
+              "morph_gender": "Masc"
             }
           ]
         }
@@ -991,205 +1309,580 @@
           "text": "Ältere",
           "start": 2,
           "end": 3,
-          "sent_text": "Ältere Menschen heißen auch Seniorinnen und Senioren."
+          "sent_text": "Ältere Menschen heißen auch Seniorinnen und Senioren.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Ältere",
+              "pos": "ADJ",
+              "tag": "ADJA",
+              "morph": "Case=Nom|Degree=Cmp|Gender=Masc|Number=Plur",
+              "lemma": "Ältere"
+            }
+          ]
         },
         {
           "text": "Menschen",
           "start": 3,
           "end": 4,
-          "sent_text": "Ältere Menschen heißen auch Seniorinnen und Senioren."
+          "sent_text": "Ältere Menschen heißen auch Seniorinnen und Senioren.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Menschen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Plur",
+              "lemma": "Mensch"
+            }
+          ]
         },
         {
           "text": "Seniorinnen",
           "start": 6,
           "end": 7,
-          "sent_text": "Ältere Menschen heißen auch Seniorinnen und Senioren."
+          "sent_text": "Ältere Menschen heißen auch Seniorinnen und Senioren.",
+          "morph_gender": "Fem",
+          "tokens": [
+            {
+              "text": "Seniorinnen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Acc|Gender=Fem|Number=Plur",
+              "lemma": "Seniorin"
+            }
+          ]
         },
         {
           "text": "Senioren",
           "start": 8,
           "end": 9,
-          "sent_text": "Ältere Menschen heißen auch Seniorinnen und Senioren."
+          "sent_text": "Ältere Menschen heißen auch Seniorinnen und Senioren.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Senioren",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Dat|Gender=Masc|Number=Plur",
+              "lemma": "Senior"
+            }
+          ]
         },
         {
           "text": "Beirat",
           "start": 11,
           "end": 12,
-          "sent_text": "Ein Beirat ist eine Gruppe von Personen, die sich in unserer Stadt um etwas kümmern."
+          "sent_text": "Ein Beirat ist eine Gruppe von Personen, die sich in unserer Stadt um etwas kümmern.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Beirat",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Sing",
+              "lemma": "Beirat"
+            }
+          ]
         },
         {
           "text": "Gruppe",
           "start": 14,
           "end": 15,
-          "sent_text": "Ein Beirat ist eine Gruppe von Personen, die sich in unserer Stadt um etwas kümmern."
+          "sent_text": "Ein Beirat ist eine Gruppe von Personen, die sich in unserer Stadt um etwas kümmern.",
+          "morph_gender": "Fem",
+          "tokens": [
+            {
+              "text": "Gruppe",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Fem|Number=Sing",
+              "lemma": "Gruppe"
+            }
+          ]
         },
         {
           "text": "Personen",
           "start": 16,
           "end": 17,
-          "sent_text": "Ein Beirat ist eine Gruppe von Personen, die sich in unserer Stadt um etwas kümmern."
+          "sent_text": "Ein Beirat ist eine Gruppe von Personen, die sich in unserer Stadt um etwas kümmern.",
+          "morph_gender": "Fem",
+          "tokens": [
+            {
+              "text": "Personen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Dat|Gender=Fem|Number=Plur",
+              "lemma": "Person"
+            }
+          ]
         },
         {
           "text": "Seniorenbeirat",
           "start": 28,
           "end": 29,
-          "sent_text": "Der Seniorenbeirat kümmert sich um die Interessen älterer Menschen in Dresden."
+          "sent_text": "Der Seniorenbeirat kümmert sich um die Interessen älterer Menschen in Dresden.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Seniorenbeirat",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Sing",
+              "lemma": "Seniorenbeirat"
+            }
+          ]
         },
         {
           "text": "Menschen",
           "start": 35,
           "end": 36,
-          "sent_text": "Der Seniorenbeirat kümmert sich um die Interessen älterer Menschen in Dresden."
+          "sent_text": "Der Seniorenbeirat kümmert sich um die Interessen älterer Menschen in Dresden.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Menschen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Gen|Gender=Masc|Number=Plur",
+              "lemma": "Mensch"
+            }
+          ]
         },
         {
           "text": "Seniorenbeirats",
           "start": 44,
           "end": 45,
-          "sent_text": "Was sind die Aufgaben des Seniorenbeirats?"
+          "sent_text": "Was sind die Aufgaben des Seniorenbeirats?",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Seniorenbeirats",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Gen|Gender=Masc|Number=Sing",
+              "lemma": "Seniorenbeirat"
+            }
+          ]
         },
         {
           "text": "Bürgermeister",
           "start": 49,
           "end": 50,
-          "sent_text": "Er berät den Bürgermeister und den Stadtrat zur Politik für ältere Menschen."
+          "sent_text": "Er berät den Bürgermeister und den Stadtrat zur Politik für ältere Menschen.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Bürgermeister",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Acc|Gender=Masc|Number=Sing",
+              "lemma": "Bürgermeister"
+            }
+          ]
         },
         {
           "text": "Stadtrat",
           "start": 52,
           "end": 53,
-          "sent_text": "Er berät den Bürgermeister und den Stadtrat zur Politik für ältere Menschen."
+          "sent_text": "Er berät den Bürgermeister und den Stadtrat zur Politik für ältere Menschen.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Stadtrat",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Acc|Gender=Masc|Number=Sing",
+              "lemma": "Stadtrat"
+            }
+          ]
         },
         {
           "text": "Menschen",
           "start": 57,
           "end": 58,
-          "sent_text": "Er berät den Bürgermeister und den Stadtrat zur Politik für ältere Menschen."
+          "sent_text": "Er berät den Bürgermeister und den Stadtrat zur Politik für ältere Menschen.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Menschen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Acc|Gender=Masc|Number=Plur",
+              "lemma": "Mensch"
+            }
+          ]
         },
         {
           "text": "Menschen",
           "start": 68,
           "end": 69,
-          "sent_text": "Er setzt sich in allen städtischen Angelegenheiten für ältere Menschen ein."
+          "sent_text": "Er setzt sich in allen städtischen Angelegenheiten für ältere Menschen ein.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Menschen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Acc|Gender=Masc|Number=Plur",
+              "lemma": "Mensch"
+            }
+          ]
         },
         {
           "text": "Menschen",
           "start": 78,
           "end": 79,
-          "sent_text": "Er trägt dazu bei, dass ältere Menschen am Stadtleben mitwirken."
+          "sent_text": "Er trägt dazu bei, dass ältere Menschen am Stadtleben mitwirken.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Menschen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Plur",
+              "lemma": "Mensch"
+            }
+          ]
         },
         {
           "text": "Menschen",
           "start": 86,
           "end": 87,
-          "sent_text": "Wie viele ältere Menschen leben in Dresden?"
+          "sent_text": "Wie viele ältere Menschen leben in Dresden?",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Menschen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Plur",
+              "lemma": "Mensch"
+            }
+          ]
         },
         {
           "text": "Menschen über 60 Jahre",
           "start": 94,
           "end": 98,
-          "sent_text": "Die Gruppe der Menschen über 60 Jahre wächst in Dresden."
+          "sent_text": "Die Gruppe der Menschen über 60 Jahre wächst in Dresden.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Menschen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Gen|Gender=Masc|Number=Plur",
+              "lemma": "Mensch"
+            },
+            {
+              "text": "über",
+              "pos": "ADP",
+              "tag": "APPR",
+              "morph": "",
+              "lemma": "über"
+            },
+            {
+              "text": "60",
+              "pos": "NUM",
+              "tag": "CARD",
+              "morph": "",
+              "lemma": "60"
+            },
+            {
+              "text": "Jahre",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Acc|Gender=Neut|Number=Plur",
+              "lemma": "Jahr"
+            }
+          ]
         },
         {
           "text": "Menschen",
           "start": 107,
           "end": 108,
-          "sent_text": "2010 waren es fast 140.000 Menschen."
+          "sent_text": "2010 waren es fast 140.000 Menschen.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Menschen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Plur",
+              "lemma": "Mensch"
+            }
+          ]
         },
         {
           "text": "Dresdnerinnen und",
           "start": 117,
           "end": 119,
-          "sent_text": "Das war etwas weniger als ein Drittel aller Dresdnerinnen und Dresdner."
+          "sent_text": "Das war etwas weniger als ein Drittel aller Dresdnerinnen und Dresdner.",
+          "morph_gender": "Fem",
+          "tokens": [
+            {
+              "text": "Dresdnerinnen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Gen|Gender=Fem|Number=Plur",
+              "lemma": "Dresdnerinne"
+            },
+            {
+              "text": "und",
+              "pos": "CCONJ",
+              "tag": "KON",
+              "morph": "",
+              "lemma": "und"
+            }
+          ]
         },
         {
           "text": "Dresdner",
           "start": 119,
           "end": 120,
-          "sent_text": "Das war etwas weniger als ein Drittel aller Dresdnerinnen und Dresdner."
+          "sent_text": "Das war etwas weniger als ein Drittel aller Dresdnerinnen und Dresdner.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Dresdner",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Gen|Gender=Masc|Number=Plur",
+              "lemma": "Dresdner"
+            }
+          ]
         },
         {
           "text": "Dresdnerinnen und",
           "start": 126,
           "end": 128,
-          "sent_text": "2020 sind ein Drittel aller Dresdnerinnen und Dresdner über 60 Jahre alt."
+          "sent_text": "2020 sind ein Drittel aller Dresdnerinnen und Dresdner über 60 Jahre alt.",
+          "morph_gender": "Fem",
+          "tokens": [
+            {
+              "text": "Dresdnerinnen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Gen|Gender=Fem|Number=Plur",
+              "lemma": "Dresdnerinne"
+            },
+            {
+              "text": "und",
+              "pos": "CCONJ",
+              "tag": "KON",
+              "morph": "",
+              "lemma": "und"
+            }
+          ]
         },
         {
           "text": "Dresdner",
           "start": 128,
           "end": 129,
-          "sent_text": "2020 sind ein Drittel aller Dresdnerinnen und Dresdner über 60 Jahre alt."
+          "sent_text": "2020 sind ein Drittel aller Dresdnerinnen und Dresdner über 60 Jahre alt.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Dresdner",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Gen|Gender=Masc|Number=Plur",
+              "lemma": "Dresdner"
+            }
+          ]
         },
         {
           "text": "Menschen",
           "start": 136,
           "end": 137,
-          "sent_text": "Viele ältere Menschen in Dresden sind sehr aktiv."
+          "sent_text": "Viele ältere Menschen in Dresden sind sehr aktiv.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Menschen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Plur",
+              "lemma": "Mensch"
+            }
+          ]
         },
         {
           "text": "Sie",
           "start": 143,
           "end": 144,
-          "sent_text": "Sie kümmern sich um ihre Enkel oder pflegen Familienangehörige."
+          "sent_text": "Sie kümmern sich um ihre Enkel oder pflegen Familienangehörige.",
+          "morph_gender": null,
+          "tokens": [
+            {
+              "text": "Sie",
+              "pos": "PRON",
+              "tag": "PPER",
+              "morph": "Case=Nom|Number=Plur|Person=3|PronType=Prs",
+              "lemma": "sie"
+            }
+          ]
         },
         {
           "text": "ihre",
           "start": 147,
           "end": 148,
-          "sent_text": "Sie kümmern sich um ihre Enkel oder pflegen Familienangehörige."
+          "sent_text": "Sie kümmern sich um ihre Enkel oder pflegen Familienangehörige.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "ihre",
+              "pos": "DET",
+              "tag": "PPOSAT",
+              "morph": "Case=Acc|Gender=Masc|Number=Plur|Poss=Yes|PronType=Prs",
+              "lemma": "ihr"
+            }
+          ]
         },
         {
           "text": "Enkel",
           "start": 148,
           "end": 149,
-          "sent_text": "Sie kümmern sich um ihre Enkel oder pflegen Familienangehörige."
+          "sent_text": "Sie kümmern sich um ihre Enkel oder pflegen Familienangehörige.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Enkel",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Acc|Gender=Masc|Number=Plur",
+              "lemma": "Enkel"
+            }
+          ]
         },
         {
           "text": "Familienangehörige",
           "start": 151,
           "end": 152,
-          "sent_text": "Sie kümmern sich um ihre Enkel oder pflegen Familienangehörige."
+          "sent_text": "Sie kümmern sich um ihre Enkel oder pflegen Familienangehörige.",
+          "morph_gender": null,
+          "tokens": [
+            {
+              "text": "Familienangehörige",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Number=Plur",
+              "lemma": "Familienangehörige"
+            }
+          ]
         },
         {
           "text": "Menschen",
           "start": 171,
           "end": 172,
-          "sent_text": "So geben sie anderen Menschen ihr Wissen und ihre Erfahrungen weiter."
+          "sent_text": "So geben sie anderen Menschen ihr Wissen und ihre Erfahrungen weiter.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Menschen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Dat|Gender=Masc|Number=Plur",
+              "lemma": "Mensch"
+            }
+          ]
         },
         {
           "text": "ihre",
           "start": 175,
           "end": 176,
-          "sent_text": "So geben sie anderen Menschen ihr Wissen und ihre Erfahrungen weiter."
+          "sent_text": "So geben sie anderen Menschen ihr Wissen und ihre Erfahrungen weiter.",
+          "morph_gender": "Fem",
+          "tokens": [
+            {
+              "text": "ihre",
+              "pos": "DET",
+              "tag": "PPOSAT",
+              "morph": "Case=Acc|Gender=Fem|Number=Plur|Poss=Yes|PronType=Prs",
+              "lemma": "ihr"
+            }
+          ]
         },
         {
           "text": "Menschen",
           "start": 184,
           "end": 185,
-          "sent_text": "Aber es gibt auch ältere Menschen, denen es nicht so gut geht."
+          "sent_text": "Aber es gibt auch ältere Menschen, denen es nicht so gut geht.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Menschen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Acc|Gender=Masc|Number=Plur",
+              "lemma": "Mensch"
+            }
+          ]
         },
         {
           "text": "denen",
           "start": 186,
           "end": 187,
-          "sent_text": "Aber es gibt auch ältere Menschen, denen es nicht so gut geht."
+          "sent_text": "Aber es gibt auch ältere Menschen, denen es nicht so gut geht.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "denen",
+              "pos": "PRON",
+              "tag": "PRELS",
+              "morph": "Case=Dat|Gender=Masc|Number=Plur|PronType=Rel",
+              "lemma": "der"
+            }
+          ]
         },
         {
           "text": "Sie",
           "start": 193,
           "end": 194,
-          "sent_text": "Sie sind allein, krank oder brauchen Pflege."
+          "sent_text": "Sie sind allein, krank oder brauchen Pflege.",
+          "morph_gender": null,
+          "tokens": [
+            {
+              "text": "Sie",
+              "pos": "PRON",
+              "tag": "PPER",
+              "morph": "Case=Nom|Number=Plur|Person=3|PronType=Prs",
+              "lemma": "sie"
+            }
+          ]
         },
         {
           "text": "Menschen",
           "start": 204,
           "end": 205,
-          "sent_text": "Um diese Menschen müssen wir uns besonders kümmern."
+          "sent_text": "Um diese Menschen müssen wir uns besonders kümmern.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Menschen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Acc|Gender=Masc|Number=Plur",
+              "lemma": "Mensch"
+            }
+          ]
         },
         {
           "text": "Seniorenbeirat",
           "start": 215,
           "end": 216,
-          "sent_text": "Dafür gibt es den Seniorenbeirat."
+          "sent_text": "Dafür gibt es den Seniorenbeirat.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Seniorenbeirat",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Acc|Gender=Masc|Number=Sing",
+              "lemma": "Seniorenbeirat"
+            }
+          ]
         }
       ],
       "coref_clusters": [
@@ -1199,7 +1892,8 @@
             {
               "text": "Der Senioren-Beirat",
               "start": 0,
-              "end": 2
+              "end": 2,
+              "morph_gender": "Masc"
             }
           ]
         },
@@ -1209,27 +1903,32 @@
             {
               "text": "Menschen",
               "start": 3,
-              "end": 4
+              "end": 4,
+              "morph_gender": "Masc"
             },
             {
               "text": "Seniorinnen",
               "start": 6,
-              "end": 7
+              "end": 7,
+              "morph_gender": "Fem"
             },
             {
               "text": "Senioren",
               "start": 8,
-              "end": 9
+              "end": 9,
+              "morph_gender": "Masc"
             },
             {
               "text": "Dresdner",
               "start": 119,
-              "end": 120
+              "end": 120,
+              "morph_gender": "Masc"
             },
             {
               "text": "Dresdner",
               "start": 128,
-              "end": 129
+              "end": 129,
+              "morph_gender": "Masc"
             }
           ]
         },
@@ -1239,17 +1938,20 @@
             {
               "text": "Personen",
               "start": 16,
-              "end": 17
+              "end": 17,
+              "morph_gender": "Fem"
             },
             {
               "text": "die",
               "start": 18,
-              "end": 19
+              "end": 19,
+              "morph_gender": "Fem"
             },
             {
               "text": "sich",
               "start": 19,
-              "end": 20
+              "end": 20,
+              "morph_gender": null
             }
           ]
         },
@@ -1259,17 +1961,20 @@
             {
               "text": "unserer",
               "start": 21,
-              "end": 22
+              "end": 22,
+              "morph_gender": "Fem"
             },
             {
               "text": "wir",
               "start": 206,
-              "end": 207
+              "end": 207,
+              "morph_gender": null
             },
             {
               "text": "uns",
               "start": 207,
-              "end": 208
+              "end": 208,
+              "morph_gender": null
             }
           ]
         },
@@ -1279,7 +1984,8 @@
             {
               "text": "Bürgermeister",
               "start": 49,
-              "end": 50
+              "end": 50,
+              "morph_gender": "Masc"
             }
           ]
         },
@@ -1289,7 +1995,8 @@
             {
               "text": "Stadtrat",
               "start": 52,
-              "end": 53
+              "end": 53,
+              "morph_gender": "Masc"
             }
           ]
         },
@@ -1299,17 +2006,20 @@
             {
               "text": "Menschen",
               "start": 86,
-              "end": 87
+              "end": 87,
+              "morph_gender": "Masc"
             },
             {
               "text": "Menschen",
               "start": 94,
-              "end": 95
+              "end": 95,
+              "morph_gender": "Masc"
             },
             {
               "text": "Menschen",
               "start": 107,
-              "end": 108
+              "end": 108,
+              "morph_gender": "Masc"
             }
           ]
         },
@@ -1319,27 +2029,32 @@
             {
               "text": "Menschen",
               "start": 136,
-              "end": 137
+              "end": 137,
+              "morph_gender": "Masc"
             },
             {
               "text": "Sie",
               "start": 143,
-              "end": 144
+              "end": 144,
+              "morph_gender": null
             },
             {
               "text": "sich",
               "start": 145,
-              "end": 146
+              "end": 146,
+              "morph_gender": null
             },
             {
               "text": "ihre",
               "start": 147,
-              "end": 148
+              "end": 148,
+              "morph_gender": "Masc"
             },
             {
               "text": "Sie",
               "start": 153,
-              "end": 154
+              "end": 154,
+              "morph_gender": null
             }
           ]
         },
@@ -1349,7 +2064,8 @@
             {
               "text": "Enkel",
               "start": 148,
-              "end": 149
+              "end": 149,
+              "morph_gender": "Masc"
             }
           ]
         },
@@ -1359,7 +2075,8 @@
             {
               "text": "Familienangehörige",
               "start": 151,
-              "end": 152
+              "end": 152,
+              "morph_gender": null
             }
           ]
         },
@@ -1369,22 +2086,26 @@
             {
               "text": "Manche",
               "start": 162,
-              "end": 163
+              "end": 163,
+              "morph_gender": null
             },
             {
               "text": "sie",
               "start": 169,
-              "end": 170
+              "end": 170,
+              "morph_gender": null
             },
             {
               "text": "ihr",
               "start": 172,
-              "end": 173
+              "end": 173,
+              "morph_gender": "Neut"
             },
             {
               "text": "ihre",
               "start": 175,
-              "end": 176
+              "end": 176,
+              "morph_gender": "Fem"
             }
           ]
         },
@@ -1394,7 +2115,8 @@
             {
               "text": "Menschen",
               "start": 171,
-              "end": 172
+              "end": 172,
+              "morph_gender": "Masc"
             }
           ]
         },
@@ -1404,22 +2126,26 @@
             {
               "text": "Menschen",
               "start": 184,
-              "end": 185
+              "end": 185,
+              "morph_gender": "Masc"
             },
             {
               "text": "denen",
               "start": 186,
-              "end": 187
+              "end": 187,
+              "morph_gender": "Masc"
             },
             {
               "text": "Sie",
               "start": 193,
-              "end": 194
+              "end": 194,
+              "morph_gender": null
             },
             {
               "text": "Menschen",
               "start": 204,
-              "end": 205
+              "end": 205,
+              "morph_gender": "Masc"
             }
           ]
         }
@@ -1790,307 +2516,859 @@
           "text": "Bevölkerung",
           "start": 10,
           "end": 11,
-          "sent_text": "Im Juni 2023 waren rund 28 Prozent der Dresdner Bevölkerung 60 Jahre alt oder älter."
+          "sent_text": "Im Juni 2023 waren rund 28 Prozent der Dresdner Bevölkerung 60 Jahre alt oder älter.",
+          "morph_gender": "Fem",
+          "tokens": [
+            {
+              "text": "Bevölkerung",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Gen|Gender=Fem|Number=Sing",
+              "lemma": "Bevölkerung"
+            }
+          ]
         },
         {
           "text": "Seniorenbeirat",
           "start": 22,
           "end": 23,
-          "sent_text": "Der Seniorenbeirat vertritt als Stadtratsgremium die Interessen dieser älteren Bürgerinnen und Bürger in der Stadtverwaltung und -gesellschaft."
+          "sent_text": "Der Seniorenbeirat vertritt als Stadtratsgremium die Interessen dieser älteren Bürgerinnen und Bürger in der Stadtverwaltung und -gesellschaft.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Seniorenbeirat",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Sing",
+              "lemma": "Seniorenbeirat"
+            }
+          ]
         },
         {
           "text": "Bürgerinnen und",
           "start": 30,
           "end": 32,
-          "sent_text": "Der Seniorenbeirat vertritt als Stadtratsgremium die Interessen dieser älteren Bürgerinnen und Bürger in der Stadtverwaltung und -gesellschaft."
+          "sent_text": "Der Seniorenbeirat vertritt als Stadtratsgremium die Interessen dieser älteren Bürgerinnen und Bürger in der Stadtverwaltung und -gesellschaft.",
+          "morph_gender": "Fem",
+          "tokens": [
+            {
+              "text": "Bürgerinnen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Gen|Gender=Fem|Number=Plur",
+              "lemma": "Bürgerin"
+            },
+            {
+              "text": "und",
+              "pos": "CCONJ",
+              "tag": "KON",
+              "morph": "",
+              "lemma": "und"
+            }
+          ]
         },
         {
           "text": "Bürger",
           "start": 32,
           "end": 33,
-          "sent_text": "Der Seniorenbeirat vertritt als Stadtratsgremium die Interessen dieser älteren Bürgerinnen und Bürger in der Stadtverwaltung und -gesellschaft."
+          "sent_text": "Der Seniorenbeirat vertritt als Stadtratsgremium die Interessen dieser älteren Bürgerinnen und Bürger in der Stadtverwaltung und -gesellschaft.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Bürger",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Gen|Gender=Masc|Number=Plur",
+              "lemma": "Bürger"
+            }
+          ]
         },
         {
           "text": "Seniorenbeirat",
           "start": 79,
           "end": 80,
-          "sent_text": "Der Seniorenbeirat berät sachkundig den Oberbürgermeister und die Mitarbeitenden der Ämter sowie den Stadtrat zu den Belangen älterer Menschen in Dresden."
+          "sent_text": "Der Seniorenbeirat berät sachkundig den Oberbürgermeister und die Mitarbeitenden der Ämter sowie den Stadtrat zu den Belangen älterer Menschen in Dresden.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Seniorenbeirat",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Sing",
+              "lemma": "Seniorenbeirat"
+            }
+          ]
         },
         {
           "text": "Oberbürgermeister",
           "start": 83,
           "end": 84,
-          "sent_text": "Der Seniorenbeirat berät sachkundig den Oberbürgermeister und die Mitarbeitenden der Ämter sowie den Stadtrat zu den Belangen älterer Menschen in Dresden."
+          "sent_text": "Der Seniorenbeirat berät sachkundig den Oberbürgermeister und die Mitarbeitenden der Ämter sowie den Stadtrat zu den Belangen älterer Menschen in Dresden.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Oberbürgermeister",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Acc|Gender=Masc|Number=Sing",
+              "lemma": "Oberbürgermeister"
+            }
+          ]
         },
         {
           "text": "Mitarbeitenden",
           "start": 86,
           "end": 87,
-          "sent_text": "Der Seniorenbeirat berät sachkundig den Oberbürgermeister und die Mitarbeitenden der Ämter sowie den Stadtrat zu den Belangen älterer Menschen in Dresden."
+          "sent_text": "Der Seniorenbeirat berät sachkundig den Oberbürgermeister und die Mitarbeitenden der Ämter sowie den Stadtrat zu den Belangen älterer Menschen in Dresden.",
+          "morph_gender": "Fem",
+          "tokens": [
+            {
+              "text": "Mitarbeitenden",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Acc|Gender=Fem|Number=Plur",
+              "lemma": "Mitarbeitende"
+            }
+          ]
         },
         {
           "text": "Stadtrat",
           "start": 91,
           "end": 92,
-          "sent_text": "Der Seniorenbeirat berät sachkundig den Oberbürgermeister und die Mitarbeitenden der Ämter sowie den Stadtrat zu den Belangen älterer Menschen in Dresden."
+          "sent_text": "Der Seniorenbeirat berät sachkundig den Oberbürgermeister und die Mitarbeitenden der Ämter sowie den Stadtrat zu den Belangen älterer Menschen in Dresden.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Stadtrat",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Acc|Gender=Masc|Number=Sing",
+              "lemma": "Stadtrat"
+            }
+          ]
         },
         {
           "text": "Menschen",
           "start": 96,
           "end": 97,
-          "sent_text": "Der Seniorenbeirat berät sachkundig den Oberbürgermeister und die Mitarbeitenden der Ämter sowie den Stadtrat zu den Belangen älterer Menschen in Dresden."
+          "sent_text": "Der Seniorenbeirat berät sachkundig den Oberbürgermeister und die Mitarbeitenden der Ämter sowie den Stadtrat zu den Belangen älterer Menschen in Dresden.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Menschen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Gen|Gender=Masc|Number=Plur",
+              "lemma": "Mensch"
+            }
+          ]
         },
         {
           "text": "Seniorenbeirat",
           "start": 101,
           "end": 102,
-          "sent_text": "Der Seniorenbeirat kann durch sein Engagement die Mitwirkung der Seniorinnen und Senioren am gesellschaftlichen Leben in Dresden fördern Welche Themen werden besprochen?"
+          "sent_text": "Der Seniorenbeirat kann durch sein Engagement die Mitwirkung der Seniorinnen und Senioren am gesellschaftlichen Leben in Dresden fördern Welche Themen werden besprochen?",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Seniorenbeirat",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Sing",
+              "lemma": "Seniorenbeirat"
+            }
+          ]
         },
         {
           "text": "Seniorinnen und",
           "start": 109,
           "end": 111,
-          "sent_text": "Der Seniorenbeirat kann durch sein Engagement die Mitwirkung der Seniorinnen und Senioren am gesellschaftlichen Leben in Dresden fördern Welche Themen werden besprochen?"
+          "sent_text": "Der Seniorenbeirat kann durch sein Engagement die Mitwirkung der Seniorinnen und Senioren am gesellschaftlichen Leben in Dresden fördern Welche Themen werden besprochen?",
+          "morph_gender": "Fem",
+          "tokens": [
+            {
+              "text": "Seniorinnen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Gen|Gender=Fem|Number=Plur",
+              "lemma": "Seniorin"
+            },
+            {
+              "text": "und",
+              "pos": "CCONJ",
+              "tag": "KON",
+              "morph": "",
+              "lemma": "und"
+            }
+          ]
         },
         {
           "text": "Senioren",
           "start": 111,
           "end": 112,
-          "sent_text": "Der Seniorenbeirat kann durch sein Engagement die Mitwirkung der Seniorinnen und Senioren am gesellschaftlichen Leben in Dresden fördern Welche Themen werden besprochen?"
+          "sent_text": "Der Seniorenbeirat kann durch sein Engagement die Mitwirkung der Seniorinnen und Senioren am gesellschaftlichen Leben in Dresden fördern Welche Themen werden besprochen?",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Senioren",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Gen|Gender=Masc|Number=Plur",
+              "lemma": "Senior"
+            }
+          ]
         },
         {
           "text": "Seniorenbeirats",
           "start": 127,
           "end": 128,
-          "sent_text": "In den Sitzungen des Seniorenbeirats werden die Vorlagen der Verwaltung und Anträge der Fraktionen vorgestellt und diskutiert."
+          "sent_text": "In den Sitzungen des Seniorenbeirats werden die Vorlagen der Verwaltung und Anträge der Fraktionen vorgestellt und diskutiert.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Seniorenbeirats",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Gen|Gender=Masc|Number=Sing",
+              "lemma": "Seniorenbeirat"
+            }
+          ]
         },
         {
           "text": "Fraktionen",
           "start": 136,
           "end": 137,
-          "sent_text": "In den Sitzungen des Seniorenbeirats werden die Vorlagen der Verwaltung und Anträge der Fraktionen vorgestellt und diskutiert."
+          "sent_text": "In den Sitzungen des Seniorenbeirats werden die Vorlagen der Verwaltung und Anträge der Fraktionen vorgestellt und diskutiert.",
+          "morph_gender": "Fem",
+          "tokens": [
+            {
+              "text": "Fraktionen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Gen|Gender=Fem|Number=Plur",
+              "lemma": "Fraktion"
+            }
+          ]
         },
         {
           "text": "Seniorenbeirat",
           "start": 142,
           "end": 143,
-          "sent_text": "Der Seniorenbeirat setzt sich zum Beispiel für eine barrierearme Ausgestaltung der Infrastruktur im öffentlichen Raum ein."
+          "sent_text": "Der Seniorenbeirat setzt sich zum Beispiel für eine barrierearme Ausgestaltung der Infrastruktur im öffentlichen Raum ein.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Seniorenbeirat",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Sing",
+              "lemma": "Seniorenbeirat"
+            }
+          ]
         },
         {
           "text": "Seniorenbeirat",
           "start": 159,
           "end": 160,
-          "sent_text": "Dem Seniorenbeirat ist es auch wichtig, dass es mehr altersgerechte sowie gemeinschaftliche Wohnformen, Quartiershäuser und Nachbarschaftstreffs in Dresden gibt."
+          "sent_text": "Dem Seniorenbeirat ist es auch wichtig, dass es mehr altersgerechte sowie gemeinschaftliche Wohnformen, Quartiershäuser und Nachbarschaftstreffs in Dresden gibt.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Seniorenbeirat",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Dat|Gender=Masc|Number=Sing",
+              "lemma": "Seniorenbeirat"
+            }
+          ]
         },
         {
           "text": "Seniorenbeirat",
           "start": 181,
           "end": 182,
-          "sent_text": "Der Seniorenbeirat hat dazu beigetragen, dass eine Zentrale Wohnberatungsstelle in Dresden geschaffen wurde Wer sind die Mitglieder?"
+          "sent_text": "Der Seniorenbeirat hat dazu beigetragen, dass eine Zentrale Wohnberatungsstelle in Dresden geschaffen wurde Wer sind die Mitglieder?",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Seniorenbeirat",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Sing",
+              "lemma": "Seniorenbeirat"
+            }
+          ]
         },
         {
           "text": "Mitglieder",
           "start": 197,
           "end": 198,
-          "sent_text": "Der Seniorenbeirat hat dazu beigetragen, dass eine Zentrale Wohnberatungsstelle in Dresden geschaffen wurde Wer sind die Mitglieder?"
+          "sent_text": "Der Seniorenbeirat hat dazu beigetragen, dass eine Zentrale Wohnberatungsstelle in Dresden geschaffen wurde Wer sind die Mitglieder?",
+          "morph_gender": "Neut",
+          "tokens": [
+            {
+              "text": "Mitglieder",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Neut|Number=Plur",
+              "lemma": "Mitglied"
+            }
+          ]
         },
         {
           "text": "Seniorenbeirats",
           "start": 202,
           "end": 203,
-          "sent_text": "Die Vertretung des Seniorenbeirats nach außen und innerhalb der Stadtverwaltung übernimmt die oder der Vorsitzende und die oder der stellvertretende Vorsitzende."
+          "sent_text": "Die Vertretung des Seniorenbeirats nach außen und innerhalb der Stadtverwaltung übernimmt die oder der Vorsitzende und die oder der stellvertretende Vorsitzende.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Seniorenbeirats",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Gen|Gender=Masc|Number=Sing",
+              "lemma": "Seniorenbeirat"
+            }
+          ]
         },
         {
           "text": "Vorsitzende",
           "start": 213,
           "end": 214,
-          "sent_text": "Die Vertretung des Seniorenbeirats nach außen und innerhalb der Stadtverwaltung übernimmt die oder der Vorsitzende und die oder der stellvertretende Vorsitzende."
+          "sent_text": "Die Vertretung des Seniorenbeirats nach außen und innerhalb der Stadtverwaltung übernimmt die oder der Vorsitzende und die oder der stellvertretende Vorsitzende.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Vorsitzende",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Sing",
+              "lemma": "vorsitzend"
+            }
+          ]
         },
         {
           "text": "Vorsitzende",
           "start": 219,
           "end": 220,
-          "sent_text": "Die Vertretung des Seniorenbeirats nach außen und innerhalb der Stadtverwaltung übernimmt die oder der Vorsitzende und die oder der stellvertretende Vorsitzende."
+          "sent_text": "Die Vertretung des Seniorenbeirats nach außen und innerhalb der Stadtverwaltung übernimmt die oder der Vorsitzende und die oder der stellvertretende Vorsitzende.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Vorsitzende",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Sing",
+              "lemma": "vorsitzend"
+            }
+          ]
         },
         {
           "text": "Mitglieder",
           "start": 226,
           "end": 227,
-          "sent_text": "Vorsitz und Stellvertretung wählen die Mitglieder aus den eigenen Reihen."
+          "sent_text": "Vorsitz und Stellvertretung wählen die Mitglieder aus den eigenen Reihen.",
+          "morph_gender": "Neut",
+          "tokens": [
+            {
+              "text": "Mitglieder",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Acc|Gender=Neut|Number=Plur",
+              "lemma": "Mitglied"
+            }
+          ]
         },
         {
           "text": "Mitglieder",
           "start": 233,
           "end": 234,
-          "sent_text": "Die Mitglieder sind Vertretungen aus den Fraktionen des Stadtrates der Landeshauptstadt Dresden und sachkundige Bürgerinnen und Bürger aus Dresden."
+          "sent_text": "Die Mitglieder sind Vertretungen aus den Fraktionen des Stadtrates der Landeshauptstadt Dresden und sachkundige Bürgerinnen und Bürger aus Dresden.",
+          "morph_gender": "Neut",
+          "tokens": [
+            {
+              "text": "Mitglieder",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Neut|Number=Plur",
+              "lemma": "Mitglied"
+            }
+          ]
         },
         {
           "text": "Vertretungen",
           "start": 235,
           "end": 236,
-          "sent_text": "Die Mitglieder sind Vertretungen aus den Fraktionen des Stadtrates der Landeshauptstadt Dresden und sachkundige Bürgerinnen und Bürger aus Dresden."
+          "sent_text": "Die Mitglieder sind Vertretungen aus den Fraktionen des Stadtrates der Landeshauptstadt Dresden und sachkundige Bürgerinnen und Bürger aus Dresden.",
+          "morph_gender": "Fem",
+          "tokens": [
+            {
+              "text": "Vertretungen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Fem|Number=Plur",
+              "lemma": "Vertretung"
+            }
+          ]
         },
         {
           "text": "Bürgerinnen und",
           "start": 246,
           "end": 248,
-          "sent_text": "Die Mitglieder sind Vertretungen aus den Fraktionen des Stadtrates der Landeshauptstadt Dresden und sachkundige Bürgerinnen und Bürger aus Dresden."
+          "sent_text": "Die Mitglieder sind Vertretungen aus den Fraktionen des Stadtrates der Landeshauptstadt Dresden und sachkundige Bürgerinnen und Bürger aus Dresden.",
+          "morph_gender": "Fem",
+          "tokens": [
+            {
+              "text": "Bürgerinnen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Fem|Number=Plur",
+              "lemma": "Bürgerin"
+            },
+            {
+              "text": "und",
+              "pos": "CCONJ",
+              "tag": "KON",
+              "morph": "",
+              "lemma": "und"
+            }
+          ]
         },
         {
           "text": "Bürger",
           "start": 248,
           "end": 249,
-          "sent_text": "Die Mitglieder sind Vertretungen aus den Fraktionen des Stadtrates der Landeshauptstadt Dresden und sachkundige Bürgerinnen und Bürger aus Dresden."
+          "sent_text": "Die Mitglieder sind Vertretungen aus den Fraktionen des Stadtrates der Landeshauptstadt Dresden und sachkundige Bürgerinnen und Bürger aus Dresden.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Bürger",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Plur",
+              "lemma": "Bürger"
+            }
+          ]
         },
         {
           "text": "Seniorenbeirat",
           "start": 257,
           "end": 258,
-          "sent_text": "Der Seniorenbeirat hat Arbeitsgruppen, in die sich Interessierte einbringen können."
+          "sent_text": "Der Seniorenbeirat hat Arbeitsgruppen, in die sich Interessierte einbringen können.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Seniorenbeirat",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Sing",
+              "lemma": "Seniorenbeirat"
+            }
+          ]
         },
         {
           "text": "Interessierte",
           "start": 264,
           "end": 265,
-          "sent_text": "Der Seniorenbeirat hat Arbeitsgruppen, in die sich Interessierte einbringen können."
+          "sent_text": "Der Seniorenbeirat hat Arbeitsgruppen, in die sich Interessierte einbringen können.",
+          "morph_gender": null,
+          "tokens": [
+            {
+              "text": "Interessierte",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Acc|Number=Plur",
+              "lemma": "interessierter"
+            }
+          ]
         },
         {
           "text": "Vertreterinnen und",
           "start": 314,
           "end": 316,
-          "sent_text": "In jedem dieser Facharbeitskreise sind Vertreterinnen und Vertreter des Seniorenbeirats und arbeiten aktiv mit."
+          "sent_text": "In jedem dieser Facharbeitskreise sind Vertreterinnen und Vertreter des Seniorenbeirats und arbeiten aktiv mit.",
+          "morph_gender": "Fem",
+          "tokens": [
+            {
+              "text": "Vertreterinnen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Fem|Number=Plur",
+              "lemma": "Vertreterin"
+            },
+            {
+              "text": "und",
+              "pos": "CCONJ",
+              "tag": "KON",
+              "morph": "",
+              "lemma": "und"
+            }
+          ]
         },
         {
           "text": "Vertreter",
           "start": 316,
           "end": 317,
-          "sent_text": "In jedem dieser Facharbeitskreise sind Vertreterinnen und Vertreter des Seniorenbeirats und arbeiten aktiv mit."
+          "sent_text": "In jedem dieser Facharbeitskreise sind Vertreterinnen und Vertreter des Seniorenbeirats und arbeiten aktiv mit.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Vertreter",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Plur",
+              "lemma": "Vertreter"
+            }
+          ]
         },
         {
           "text": "Seniorenbeirats",
           "start": 318,
           "end": 319,
-          "sent_text": "In jedem dieser Facharbeitskreise sind Vertreterinnen und Vertreter des Seniorenbeirats und arbeiten aktiv mit."
+          "sent_text": "In jedem dieser Facharbeitskreise sind Vertreterinnen und Vertreter des Seniorenbeirats und arbeiten aktiv mit.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Seniorenbeirats",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Gen|Gender=Masc|Number=Sing",
+              "lemma": "Seniorenbeirat"
+            }
+          ]
         },
         {
           "text": "Interessierte",
           "start": 335,
           "end": 336,
-          "sent_text": "Für die Mitarbeit in den Facharbeitskreisen werden Interessierte gesucht."
+          "sent_text": "Für die Mitarbeit in den Facharbeitskreisen werden Interessierte gesucht.",
+          "morph_gender": null,
+          "tokens": [
+            {
+              "text": "Interessierte",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Number=Plur",
+              "lemma": "interessierter"
+            }
+          ]
         },
         {
           "text": "Beiratsmitglied",
           "start": 355,
           "end": 356,
-          "sent_text": "Schreiben Sie eine E-Mail an seniorenbeirat@dresden.de mit Ihren Themenwünschen zur Seniorenpolitik und bringen Sie sich aktiv als Beiratsmitglied oder auch mit Ihren Anliegen ein."
+          "sent_text": "Schreiben Sie eine E-Mail an seniorenbeirat@dresden.de mit Ihren Themenwünschen zur Seniorenpolitik und bringen Sie sich aktiv als Beiratsmitglied oder auch mit Ihren Anliegen ein.",
+          "morph_gender": "Neut",
+          "tokens": [
+            {
+              "text": "Beiratsmitglied",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Acc|Gender=Neut|Number=Sing",
+              "lemma": "Beiratsmitglied"
+            }
+          ]
         },
         {
           "text": "Bürgerin",
           "start": 390,
           "end": 391,
-          "sent_text": "Bewerben Sie sich als sachkundige Bürgerin oder sachkundiger Bürger!"
+          "sent_text": "Bewerben Sie sich als sachkundige Bürgerin oder sachkundiger Bürger!",
+          "morph_gender": "Fem",
+          "tokens": [
+            {
+              "text": "Bürgerin",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Fem|Number=Sing",
+              "lemma": "Bürgerin"
+            }
+          ]
         },
         {
           "text": "Bürger",
           "start": 393,
           "end": 394,
-          "sent_text": "Bewerben Sie sich als sachkundige Bürgerin oder sachkundiger Bürger!"
+          "sent_text": "Bewerben Sie sich als sachkundige Bürgerin oder sachkundiger Bürger!",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Bürger",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Gen|Gender=Masc|Number=Plur",
+              "lemma": "Bürger"
+            }
+          ]
         },
         {
           "text": "Stadtgesellschaft",
           "start": 447,
           "end": 448,
-          "sent_text": "Das partizipative und beteiligungsorientierte Zusammenleben ist eine Aufgabe der Stadtgesellschaft als Gemeinschaft und eine individuelle Aufgabe."
+          "sent_text": "Das partizipative und beteiligungsorientierte Zusammenleben ist eine Aufgabe der Stadtgesellschaft als Gemeinschaft und eine individuelle Aufgabe.",
+          "morph_gender": "Fem",
+          "tokens": [
+            {
+              "text": "Stadtgesellschaft",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Gen|Gender=Fem|Number=Sing",
+              "lemma": "Stadtgesellschaft"
+            }
+          ]
         },
         {
           "text": "Gemeinschaft",
           "start": 449,
           "end": 450,
-          "sent_text": "Das partizipative und beteiligungsorientierte Zusammenleben ist eine Aufgabe der Stadtgesellschaft als Gemeinschaft und eine individuelle Aufgabe."
+          "sent_text": "Das partizipative und beteiligungsorientierte Zusammenleben ist eine Aufgabe der Stadtgesellschaft als Gemeinschaft und eine individuelle Aufgabe.",
+          "morph_gender": "Fem",
+          "tokens": [
+            {
+              "text": "Gemeinschaft",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Acc|Gender=Fem|Number=Sing",
+              "lemma": "Gemeinschaft"
+            }
+          ]
         },
         {
           "text": "Ältere",
           "start": 455,
           "end": 456,
-          "sent_text": "Ältere und alte Menschen leben selbstbestimmt und gesund."
+          "sent_text": "Ältere und alte Menschen leben selbstbestimmt und gesund.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Ältere",
+              "pos": "ADJ",
+              "tag": "ADJA",
+              "morph": "Case=Nom|Degree=Cmp|Gender=Masc|Number=Plur",
+              "lemma": "Ältere"
+            }
+          ]
         },
         {
           "text": "Menschen",
           "start": 458,
           "end": 459,
-          "sent_text": "Ältere und alte Menschen leben selbstbestimmt und gesund."
+          "sent_text": "Ältere und alte Menschen leben selbstbestimmt und gesund.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Menschen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Plur",
+              "lemma": "Mensch"
+            }
+          ]
         },
         {
           "text": "Menschen",
           "start": 472,
           "end": 473,
-          "sent_text": "Dresden verfügt über gute sozialräumliche Begegnungs-und Beratungsangebote für Menschen ab 60 Jahren mit niedrigschwelligem Zugang."
+          "sent_text": "Dresden verfügt über gute sozialräumliche Begegnungs-und Beratungsangebote für Menschen ab 60 Jahren mit niedrigschwelligem Zugang.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Menschen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Acc|Gender=Masc|Number=Plur",
+              "lemma": "Mensch"
+            }
+          ]
         },
         {
           "text": "Jahren",
           "start": 475,
           "end": 476,
-          "sent_text": "Dresden verfügt über gute sozialräumliche Begegnungs-und Beratungsangebote für Menschen ab 60 Jahren mit niedrigschwelligem Zugang."
+          "sent_text": "Dresden verfügt über gute sozialräumliche Begegnungs-und Beratungsangebote für Menschen ab 60 Jahren mit niedrigschwelligem Zugang.",
+          "morph_gender": "Neut",
+          "tokens": [
+            {
+              "text": "Jahren",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Dat|Gender=Neut|Number=Plur",
+              "lemma": "Jahr"
+            }
+          ]
         },
         {
           "text": "Mensch",
           "start": 482,
           "end": 483,
-          "sent_text": "Jeder ältere Mensch hat das gleiche Recht auf Teilhabe am gesellschaftlichen Leben, vgl. § 71 SGB XII."
+          "sent_text": "Jeder ältere Mensch hat das gleiche Recht auf Teilhabe am gesellschaftlichen Leben, vgl. § 71 SGB XII.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Mensch",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Sing",
+              "lemma": "Mensch"
+            }
+          ]
         },
         {
           "text": "Stadtrat",
           "start": 548,
           "end": 549,
-          "sent_text": "\"* *Quelle: Fachplan Seniorenarbeit und Altenhilfe , Mai 2021 (Seite 22, gemäß Beschluss Stadtrat V0813/21)"
+          "sent_text": "\"* *Quelle: Fachplan Seniorenarbeit und Altenhilfe , Mai 2021 (Seite 22, gemäß Beschluss Stadtrat V0813/21)",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Stadtrat",
+              "pos": "PROPN",
+              "tag": "NE",
+              "morph": "Case=Dat|Gender=Masc|Number=Sing",
+              "lemma": "Stadtrat"
+            }
+          ]
         },
         {
           "text": "Seniorenbeirat",
           "start": 554,
           "end": 555,
-          "sent_text": "Der Seniorenbeirat unterstützt diese Leitziele."
+          "sent_text": "Der Seniorenbeirat unterstützt diese Leitziele.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Seniorenbeirat",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Sing",
+              "lemma": "Seniorenbeirat"
+            }
+          ]
         },
         {
           "text": "Seniorenbeirat",
           "start": 562,
           "end": 563,
-          "sent_text": "Seniorenbeirat E-Mail seniorenbeirat@dresden.de Postanschrift"
+          "sent_text": "Seniorenbeirat E-Mail seniorenbeirat@dresden.de Postanschrift",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Seniorenbeirat",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Sing",
+              "lemma": "Seniorenbeirat"
+            }
+          ]
         },
         {
           "text": "seniorenbeirat@dresden.de",
           "start": 564,
           "end": 565,
-          "sent_text": "Seniorenbeirat E-Mail seniorenbeirat@dresden.de Postanschrift"
+          "sent_text": "Seniorenbeirat E-Mail seniorenbeirat@dresden.de Postanschrift",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "seniorenbeirat@dresden.de",
+              "pos": "PROPN",
+              "tag": "NE",
+              "morph": "Case=Nom|Gender=Masc|Number=Sing",
+              "lemma": "seniorenbeirat@dresden.de"
+            }
+          ]
         },
         {
           "text": "Seniorenbeirat",
           "start": 579,
           "end": 580,
-          "sent_text": "Die direkte Verbindung zur Stadtverwaltung hat der Seniorenbeirat über:"
+          "sent_text": "Die direkte Verbindung zur Stadtverwaltung hat der Seniorenbeirat über:",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Seniorenbeirat",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Sing",
+              "lemma": "Seniorenbeirat"
+            }
+          ]
         },
         {
           "text": "Beauftragte",
           "start": 582,
           "end": 583,
-          "sent_text": "Beauftragte für Menschen mit Behinderungen/"
+          "sent_text": "Beauftragte für Menschen mit Behinderungen/",
+          "morph_gender": "Fem",
+          "tokens": [
+            {
+              "text": "Beauftragte",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Fem|Number=Sing",
+              "lemma": "beauftragter"
+            }
+          ]
         },
         {
           "text": "Menschen mit Behinderungen",
           "start": 584,
           "end": 587,
-          "sent_text": "Beauftragte für Menschen mit Behinderungen/"
+          "sent_text": "Beauftragte für Menschen mit Behinderungen/",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Menschen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Acc|Gender=Masc|Number=Plur",
+              "lemma": "Mensch"
+            },
+            {
+              "text": "mit",
+              "pos": "ADP",
+              "tag": "APPR",
+              "morph": "",
+              "lemma": "mit"
+            },
+            {
+              "text": "Behinderungen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Dat|Gender=Fem|Number=Plur",
+              "lemma": "Behinderung"
+            }
+          ]
         },
         {
           "text": "Dr.-Külz-Ring",
           "start": 590,
           "end": 591,
-          "sent_text": "Dr.-Külz-Ring 19 01067 Dresden"
+          "sent_text": "Dr.-Külz-Ring 19 01067 Dresden",
+          "morph_gender": null,
+          "tokens": [
+            {
+              "text": "Dr.-Külz-Ring",
+              "pos": "PROPN",
+              "tag": "NE",
+              "morph": "Case=Nom|Number=Sing",
+              "lemma": "Dr.-Külz-Ring"
+            }
+          ]
         },
         {
           "text": "Menschen",
           "start": 596,
           "end": 597,
-          "sent_text": "Zugang für Menschen mit Mobilitätseinschränkungen Themenstadtplan Telefon 0351-4882832"
+          "sent_text": "Zugang für Menschen mit Mobilitätseinschränkungen Themenstadtplan Telefon 0351-4882832",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Menschen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Acc|Gender=Masc|Number=Plur",
+              "lemma": "Mensch"
+            }
+          ]
         }
       ],
       "coref_clusters": [
@@ -2100,22 +3378,26 @@
             {
               "text": "Seniorenbeirat",
               "start": 0,
-              "end": 1
+              "end": 1,
+              "morph_gender": "Masc"
             },
             {
               "text": "Seniorenbeirat",
               "start": 20,
-              "end": 21
+              "end": 21,
+              "morph_gender": "Masc"
             },
             {
               "text": "Seniorenbeirat",
               "start": 373,
-              "end": 374
+              "end": 374,
+              "morph_gender": "Masc"
             },
             {
               "text": "Seniorenbeirat",
               "start": 562,
-              "end": 563
+              "end": 563,
+              "morph_gender": "Masc"
             }
           ]
         },
@@ -2125,17 +3407,20 @@
             {
               "text": "Bevölkerung",
               "start": 10,
-              "end": 11
+              "end": 11,
+              "morph_gender": "Fem"
             },
             {
               "text": "Menschen",
               "start": 96,
-              "end": 97
+              "end": 97,
+              "morph_gender": "Masc"
             },
             {
               "text": "Menschen",
               "start": 458,
-              "end": 459
+              "end": 459,
+              "morph_gender": "Masc"
             }
           ]
         },
@@ -2145,17 +3430,20 @@
             {
               "text": "Sie",
               "start": 57,
-              "end": 58
+              "end": 58,
+              "morph_gender": null
             },
             {
               "text": "Sie",
               "start": 65,
-              "end": 66
+              "end": 66,
+              "morph_gender": null
             },
             {
               "text": "sich",
               "start": 263,
-              "end": 264
+              "end": 264,
+              "morph_gender": null
             }
           ]
         },
@@ -2165,7 +3453,8 @@
             {
               "text": "Oberbürgermeister",
               "start": 83,
-              "end": 84
+              "end": 84,
+              "morph_gender": "Masc"
             }
           ]
         },
@@ -2175,7 +3464,8 @@
             {
               "text": "Mitarbeitenden",
               "start": 86,
-              "end": 87
+              "end": 87,
+              "morph_gender": "Fem"
             }
           ]
         },
@@ -2185,12 +3475,14 @@
             {
               "text": "Fraktionen",
               "start": 136,
-              "end": 137
+              "end": 137,
+              "morph_gender": "Fem"
             },
             {
               "text": "Fraktionen",
               "start": 238,
-              "end": 239
+              "end": 239,
+              "morph_gender": "Fem"
             }
           ]
         },
@@ -2200,22 +3492,26 @@
             {
               "text": "Mitglieder",
               "start": 197,
-              "end": 198
+              "end": 198,
+              "morph_gender": "Neut"
             },
             {
               "text": "Mitglieder",
               "start": 226,
-              "end": 227
+              "end": 227,
+              "morph_gender": "Neut"
             },
             {
               "text": "Mitglieder",
               "start": 233,
-              "end": 234
+              "end": 234,
+              "morph_gender": "Neut"
             },
             {
               "text": "Vertretungen",
               "start": 235,
-              "end": 236
+              "end": 236,
+              "morph_gender": "Fem"
             }
           ]
         },
@@ -2225,7 +3521,8 @@
             {
               "text": "Interessierte",
               "start": 264,
-              "end": 265
+              "end": 265,
+              "morph_gender": null
             }
           ]
         },
@@ -2235,47 +3532,56 @@
             {
               "text": "Interessierte",
               "start": 335,
-              "end": 336
+              "end": 336,
+              "morph_gender": null
             },
             {
               "text": "Sie",
               "start": 339,
-              "end": 340
+              "end": 340,
+              "morph_gender": "Fem"
             },
             {
               "text": "Ihren",
               "start": 345,
-              "end": 346
+              "end": 346,
+              "morph_gender": "Fem"
             },
             {
               "text": "Sie",
               "start": 351,
-              "end": 352
+              "end": 352,
+              "morph_gender": null
             },
             {
               "text": "sich",
               "start": 352,
-              "end": 353
+              "end": 353,
+              "morph_gender": null
             },
             {
               "text": "Ihren",
               "start": 359,
-              "end": 360
+              "end": 360,
+              "morph_gender": "Neut"
             },
             {
               "text": "Sie",
               "start": 367,
-              "end": 368
+              "end": 368,
+              "morph_gender": null
             },
             {
               "text": "Sie",
               "start": 386,
-              "end": 387
+              "end": 387,
+              "morph_gender": null
             },
             {
               "text": "sich",
               "start": 387,
-              "end": 388
+              "end": 388,
+              "morph_gender": null
             }
           ]
         },
@@ -2285,7 +3591,8 @@
             {
               "text": "Beiratsmitglied",
               "start": 355,
-              "end": 356
+              "end": 356,
+              "morph_gender": "Neut"
             }
           ]
         },
@@ -2295,12 +3602,14 @@
             {
               "text": "Wir",
               "start": 363,
-              "end": 364
+              "end": 364,
+              "morph_gender": null
             },
             {
               "text": "uns",
               "start": 365,
-              "end": 366
+              "end": 366,
+              "morph_gender": null
             }
           ]
         },
@@ -2310,7 +3619,8 @@
             {
               "text": "Bürger",
               "start": 393,
-              "end": 394
+              "end": 394,
+              "morph_gender": "Masc"
             }
           ]
         },
@@ -2320,7 +3630,8 @@
             {
               "text": "Menschen",
               "start": 472,
-              "end": 473
+              "end": 473,
+              "morph_gender": "Masc"
             }
           ]
         },
@@ -2330,7 +3641,8 @@
             {
               "text": "Stadtverwaltung",
               "start": 576,
-              "end": 577
+              "end": 577,
+              "morph_gender": "Fem"
             }
           ]
         },
@@ -2340,7 +3652,8 @@
             {
               "text": "Menschen",
               "start": 584,
-              "end": 585
+              "end": 585,
+              "morph_gender": "Masc"
             }
           ]
         },
@@ -2350,7 +3663,8 @@
             {
               "text": "Senioren",
               "start": 588,
-              "end": 589
+              "end": 589,
+              "morph_gender": "Masc"
             }
           ]
         }
@@ -2386,31 +3700,81 @@
           "text": "Stadtrat",
           "start": 12,
           "end": 13,
-          "sent_text": "Im Ratsinformationssystem finden dort Informationen zu verschiedenen Gremien, wie: Stadtrat, Ortschaftsräte, Ausschüsse, Beiräte, Ortsbeiräte und Fraktionen."
+          "sent_text": "Im Ratsinformationssystem finden dort Informationen zu verschiedenen Gremien, wie: Stadtrat, Ortschaftsräte, Ausschüsse, Beiräte, Ortsbeiräte und Fraktionen.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Stadtrat",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Sing",
+              "lemma": "Stadtrat"
+            }
+          ]
         },
         {
           "text": "Ortschaftsräte",
           "start": 14,
           "end": 15,
-          "sent_text": "Im Ratsinformationssystem finden dort Informationen zu verschiedenen Gremien, wie: Stadtrat, Ortschaftsräte, Ausschüsse, Beiräte, Ortsbeiräte und Fraktionen."
+          "sent_text": "Im Ratsinformationssystem finden dort Informationen zu verschiedenen Gremien, wie: Stadtrat, Ortschaftsräte, Ausschüsse, Beiräte, Ortsbeiräte und Fraktionen.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Ortschaftsräte",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Plur",
+              "lemma": "Ortschaftsrat"
+            }
+          ]
         },
         {
           "text": "Beiräte",
           "start": 18,
           "end": 19,
-          "sent_text": "Im Ratsinformationssystem finden dort Informationen zu verschiedenen Gremien, wie: Stadtrat, Ortschaftsräte, Ausschüsse, Beiräte, Ortsbeiräte und Fraktionen."
+          "sent_text": "Im Ratsinformationssystem finden dort Informationen zu verschiedenen Gremien, wie: Stadtrat, Ortschaftsräte, Ausschüsse, Beiräte, Ortsbeiräte und Fraktionen.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Beiräte",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Plur",
+              "lemma": "Beirät"
+            }
+          ]
         },
         {
           "text": "Ortsbeiräte",
           "start": 20,
           "end": 21,
-          "sent_text": "Im Ratsinformationssystem finden dort Informationen zu verschiedenen Gremien, wie: Stadtrat, Ortschaftsräte, Ausschüsse, Beiräte, Ortsbeiräte und Fraktionen."
+          "sent_text": "Im Ratsinformationssystem finden dort Informationen zu verschiedenen Gremien, wie: Stadtrat, Ortschaftsräte, Ausschüsse, Beiräte, Ortsbeiräte und Fraktionen.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Ortsbeiräte",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Plur",
+              "lemma": "Ortsbeirät"
+            }
+          ]
         },
         {
           "text": "Fraktionen",
           "start": 22,
           "end": 23,
-          "sent_text": "Im Ratsinformationssystem finden dort Informationen zu verschiedenen Gremien, wie: Stadtrat, Ortschaftsräte, Ausschüsse, Beiräte, Ortsbeiräte und Fraktionen."
+          "sent_text": "Im Ratsinformationssystem finden dort Informationen zu verschiedenen Gremien, wie: Stadtrat, Ortschaftsräte, Ausschüsse, Beiräte, Ortsbeiräte und Fraktionen.",
+          "morph_gender": "Fem",
+          "tokens": [
+            {
+              "text": "Fraktionen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Acc|Gender=Fem|Number=Plur",
+              "lemma": "Fraktion"
+            }
+          ]
         }
       ],
       "coref_clusters": [
@@ -2420,12 +3784,14 @@
             {
               "text": "Ratsinfosystem",
               "start": 0,
-              "end": 1
+              "end": 1,
+              "morph_gender": "Neut"
             },
             {
               "text": "Ratsinformationssystem",
               "start": 2,
-              "end": 3
+              "end": 3,
+              "morph_gender": "Neut"
             }
           ]
         },
@@ -2435,7 +3801,8 @@
             {
               "text": "Stadtrat",
               "start": 12,
-              "end": 13
+              "end": 13,
+              "morph_gender": "Masc"
             }
           ]
         },
@@ -2445,7 +3812,8 @@
             {
               "text": "Ortschaftsräte",
               "start": 14,
-              "end": 15
+              "end": 15,
+              "morph_gender": "Masc"
             }
           ]
         },
@@ -2455,7 +3823,8 @@
             {
               "text": "Beiräte",
               "start": 18,
-              "end": 19
+              "end": 19,
+              "morph_gender": "Masc"
             }
           ]
         },
@@ -2465,7 +3834,8 @@
             {
               "text": "Fraktionen",
               "start": 22,
-              "end": 23
+              "end": 23,
+              "morph_gender": "Fem"
             }
           ]
         }
@@ -2522,25 +3892,79 @@
           "text": "Stadtrat",
           "start": 10,
           "end": 11,
-          "sent_text": "Im Ratsinformationssystem können Sie sich über die verschiedenen Gremien (Stadtrat, Ortschaftsräte, Ausschüsse, Beriäte und Ortsbeiräte, Fraktionen), die Sitzungstermine, Tagesordnungen und Beschlüsse sowie alle öffentlichen Beschlussvorlagen informieren."
+          "sent_text": "Im Ratsinformationssystem können Sie sich über die verschiedenen Gremien (Stadtrat, Ortschaftsräte, Ausschüsse, Beriäte und Ortsbeiräte, Fraktionen), die Sitzungstermine, Tagesordnungen und Beschlüsse sowie alle öffentlichen Beschlussvorlagen informieren.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Stadtrat",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Sing",
+              "lemma": "Stadtrat"
+            }
+          ]
         },
         {
           "text": "Ortschaftsräte",
           "start": 12,
           "end": 13,
-          "sent_text": "Im Ratsinformationssystem können Sie sich über die verschiedenen Gremien (Stadtrat, Ortschaftsräte, Ausschüsse, Beriäte und Ortsbeiräte, Fraktionen), die Sitzungstermine, Tagesordnungen und Beschlüsse sowie alle öffentlichen Beschlussvorlagen informieren."
+          "sent_text": "Im Ratsinformationssystem können Sie sich über die verschiedenen Gremien (Stadtrat, Ortschaftsräte, Ausschüsse, Beriäte und Ortsbeiräte, Fraktionen), die Sitzungstermine, Tagesordnungen und Beschlüsse sowie alle öffentlichen Beschlussvorlagen informieren.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Ortschaftsräte",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Plur",
+              "lemma": "Ortschaftsrat"
+            }
+          ]
         },
         {
           "text": "Beriäte und Ortsbeiräte",
           "start": 16,
           "end": 19,
-          "sent_text": "Im Ratsinformationssystem können Sie sich über die verschiedenen Gremien (Stadtrat, Ortschaftsräte, Ausschüsse, Beriäte und Ortsbeiräte, Fraktionen), die Sitzungstermine, Tagesordnungen und Beschlüsse sowie alle öffentlichen Beschlussvorlagen informieren."
+          "sent_text": "Im Ratsinformationssystem können Sie sich über die verschiedenen Gremien (Stadtrat, Ortschaftsräte, Ausschüsse, Beriäte und Ortsbeiräte, Fraktionen), die Sitzungstermine, Tagesordnungen und Beschlüsse sowie alle öffentlichen Beschlussvorlagen informieren.",
+          "morph_gender": "Neut",
+          "tokens": [
+            {
+              "text": "Beriäte",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Neut|Number=Plur",
+              "lemma": "Beriat"
+            },
+            {
+              "text": "und",
+              "pos": "CCONJ",
+              "tag": "KON",
+              "morph": "",
+              "lemma": "und"
+            },
+            {
+              "text": "Ortsbeiräte",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Plur",
+              "lemma": "Ortsbeirät"
+            }
+          ]
         },
         {
           "text": "Fraktionen",
           "start": 20,
           "end": 21,
-          "sent_text": "Im Ratsinformationssystem können Sie sich über die verschiedenen Gremien (Stadtrat, Ortschaftsräte, Ausschüsse, Beriäte und Ortsbeiräte, Fraktionen), die Sitzungstermine, Tagesordnungen und Beschlüsse sowie alle öffentlichen Beschlussvorlagen informieren."
+          "sent_text": "Im Ratsinformationssystem können Sie sich über die verschiedenen Gremien (Stadtrat, Ortschaftsräte, Ausschüsse, Beriäte und Ortsbeiräte, Fraktionen), die Sitzungstermine, Tagesordnungen und Beschlüsse sowie alle öffentlichen Beschlussvorlagen informieren.",
+          "morph_gender": "Fem",
+          "tokens": [
+            {
+              "text": "Fraktionen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Acc|Gender=Fem|Number=Plur",
+              "lemma": "Fraktion"
+            }
+          ]
         }
       ],
       "coref_clusters": [
@@ -2550,12 +3974,14 @@
             {
               "text": "Ratsinformationssystem",
               "start": 1,
-              "end": 2
+              "end": 2,
+              "morph_gender": "Neut"
             },
             {
               "text": "Ratsinformationssystem",
               "start": 103,
-              "end": 104
+              "end": 104,
+              "morph_gender": "Neut"
             }
           ]
         },
@@ -2565,22 +3991,26 @@
             {
               "text": "Sie",
               "start": 3,
-              "end": 4
+              "end": 4,
+              "morph_gender": null
             },
             {
               "text": "sich",
               "start": 4,
-              "end": 5
+              "end": 5,
+              "morph_gender": null
             },
             {
               "text": "Sie",
               "start": 57,
-              "end": 58
+              "end": 58,
+              "morph_gender": null
             },
             {
               "text": "Sie",
               "start": 77,
-              "end": 78
+              "end": 78,
+              "morph_gender": null
             }
           ]
         },
@@ -2590,7 +4020,8 @@
             {
               "text": "Stadtrat",
               "start": 10,
-              "end": 11
+              "end": 11,
+              "morph_gender": "Masc"
             }
           ]
         },
@@ -2600,7 +4031,8 @@
             {
               "text": "Ortschaftsräte",
               "start": 12,
-              "end": 13
+              "end": 13,
+              "morph_gender": "Masc"
             }
           ]
         },
@@ -2610,7 +4042,8 @@
             {
               "text": "Fraktionen",
               "start": 20,
-              "end": 21
+              "end": 21,
+              "morph_gender": "Fem"
             }
           ]
         },
@@ -2620,7 +4053,8 @@
             {
               "text": "Sie",
               "start": 98,
-              "end": 99
+              "end": 99,
+              "morph_gender": null
             }
           ]
         }
@@ -2971,343 +4405,1039 @@
           "text": "Thieme",
           "start": 3,
           "end": 4,
-          "sent_text": "Stadtrat © Georg Thieme"
+          "sent_text": "Stadtrat © Georg Thieme",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Thieme",
+              "pos": "PROPN",
+              "tag": "NE",
+              "morph": "Case=Nom|Gender=Masc|Number=Sing",
+              "lemma": "Thieme"
+            }
+          ]
         },
         {
           "text": "Oberbürgermeister",
           "start": 5,
           "end": 6,
-          "sent_text": "Der Oberbürgermeister oder die Oberbürgermeisterin leitet den Stadtrat."
+          "sent_text": "Der Oberbürgermeister oder die Oberbürgermeisterin leitet den Stadtrat.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Oberbürgermeister",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Sing",
+              "lemma": "Oberbürgermeister"
+            }
+          ]
         },
         {
           "text": "Oberbürgermeisterin",
           "start": 8,
           "end": 9,
-          "sent_text": "Der Oberbürgermeister oder die Oberbürgermeisterin leitet den Stadtrat."
+          "sent_text": "Der Oberbürgermeister oder die Oberbürgermeisterin leitet den Stadtrat.",
+          "morph_gender": "Fem",
+          "tokens": [
+            {
+              "text": "Oberbürgermeisterin",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Fem|Number=Sing",
+              "lemma": "Oberbürgermeisterin"
+            }
+          ]
         },
         {
           "text": "Stadträte",
           "start": 14,
           "end": 15,
-          "sent_text": "Die Stadträte treffen sich alle 3 Wochen im Rathaus."
+          "sent_text": "Die Stadträte treffen sich alle 3 Wochen im Rathaus.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Stadträte",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Plur",
+              "lemma": "Stadtrat"
+            }
+          ]
         },
         {
           "text": "Menschen",
           "start": 52,
           "end": 53,
-          "sent_text": "Damit etwas entschieden wird, müssen mindestens 36 Menschen mit JA stimmen."
+          "sent_text": "Damit etwas entschieden wird, müssen mindestens 36 Menschen mit JA stimmen.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Menschen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Plur",
+              "lemma": "Mensch"
+            }
+          ]
         },
         {
           "text": "Stadträtinnen und Stadträte",
           "start": 76,
           "end": 79,
-          "sent_text": "Das sind die Stimmen von 70 Stadträtinnen und Stadträte und eine Stimme des Oberbürgermeisters."
+          "sent_text": "Das sind die Stimmen von 70 Stadträtinnen und Stadträte und eine Stimme des Oberbürgermeisters.",
+          "morph_gender": "Fem",
+          "tokens": [
+            {
+              "text": "Stadträtinnen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Dat|Gender=Fem|Number=Plur",
+              "lemma": "Stadträtinne"
+            },
+            {
+              "text": "und",
+              "pos": "CCONJ",
+              "tag": "KON",
+              "morph": "",
+              "lemma": "und"
+            },
+            {
+              "text": "Stadträte",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Plur",
+              "lemma": "Stadtrat"
+            }
+          ]
         },
         {
           "text": "Oberbürgermeisters",
           "start": 83,
           "end": 84,
-          "sent_text": "Das sind die Stimmen von 70 Stadträtinnen und Stadträte und eine Stimme des Oberbürgermeisters."
+          "sent_text": "Das sind die Stimmen von 70 Stadträtinnen und Stadträte und eine Stimme des Oberbürgermeisters.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Oberbürgermeisters",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Gen|Gender=Masc|Number=Sing",
+              "lemma": "Oberbürgermeister"
+            }
+          ]
         },
         {
           "text": "Stadträtinnen",
           "start": 85,
           "end": 86,
-          "sent_text": "Stadträtinnen und Stadträte mit ähnlichen politischen Interessen schließen sich zu Gruppen zusammen."
+          "sent_text": "Stadträtinnen und Stadträte mit ähnlichen politischen Interessen schließen sich zu Gruppen zusammen.",
+          "morph_gender": "Fem",
+          "tokens": [
+            {
+              "text": "Stadträtinnen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Fem|Number=Plur",
+              "lemma": "Stadträtinne"
+            }
+          ]
         },
         {
           "text": "Stadträte",
           "start": 87,
           "end": 88,
-          "sent_text": "Stadträtinnen und Stadträte mit ähnlichen politischen Interessen schließen sich zu Gruppen zusammen."
+          "sent_text": "Stadträtinnen und Stadträte mit ähnlichen politischen Interessen schließen sich zu Gruppen zusammen.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Stadträte",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Plur",
+              "lemma": "Stadtrat"
+            }
+          ]
         },
         {
           "text": "Mitglieder",
           "start": 105,
           "end": 106,
-          "sent_text": "Meistens sind Mitglieder einer Partei auch zusammen in einer Fraktion."
+          "sent_text": "Meistens sind Mitglieder einer Partei auch zusammen in einer Fraktion.",
+          "morph_gender": "Neut",
+          "tokens": [
+            {
+              "text": "Mitglieder",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Neut|Number=Plur",
+              "lemma": "Mitglied"
+            }
+          ]
         },
         {
           "text": "Personen",
           "start": 127,
           "end": 128,
-          "sent_text": "In einer Fraktion müssen mindestens vier Personen sein."
+          "sent_text": "In einer Fraktion müssen mindestens vier Personen sein.",
+          "morph_gender": "Fem",
+          "tokens": [
+            {
+              "text": "Personen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Fem|Number=Plur",
+              "lemma": "Person"
+            }
+          ]
         },
         {
           "text": "Sie",
           "start": 130,
           "end": 131,
-          "sent_text": "Sie müssen aber nicht aus einer Partei sein, sondern nur gemeinsame Ziele haben."
+          "sent_text": "Sie müssen aber nicht aus einer Partei sein, sondern nur gemeinsame Ziele haben.",
+          "morph_gender": null,
+          "tokens": [
+            {
+              "text": "Sie",
+              "pos": "PRON",
+              "tag": "PPER",
+              "morph": "Case=Nom|Number=Plur|Person=3|PronType=Prs",
+              "lemma": "sie"
+            }
+          ]
         },
         {
           "text": "Bündnis 90 / Die Grünen",
           "start": 155,
           "end": 160,
-          "sent_text": "Im Stadtrat gibt es momentan acht Fraktionen: CDU-Fraktion Fraktion Bündnis 90 / Die Grünen AFD-Fraktion Fraktion"
+          "sent_text": "Im Stadtrat gibt es momentan acht Fraktionen: CDU-Fraktion Fraktion Bündnis 90 / Die Grünen AFD-Fraktion Fraktion",
+          "morph_gender": "Neut",
+          "tokens": [
+            {
+              "text": "Bündnis",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Neut|Number=Sing",
+              "lemma": "Bündnis"
+            },
+            {
+              "text": "90",
+              "pos": "NUM",
+              "tag": "CARD",
+              "morph": "",
+              "lemma": "90"
+            },
+            {
+              "text": "/",
+              "pos": "PUNCT",
+              "tag": "$(",
+              "morph": "",
+              "lemma": "--"
+            },
+            {
+              "text": "Die",
+              "pos": "DET",
+              "tag": "ART",
+              "morph": "Case=Nom|Definite=Def|Number=Plur|PronType=Art",
+              "lemma": "der"
+            },
+            {
+              "text": "Grünen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Number=Plur",
+              "lemma": "grüne"
+            }
+          ]
         },
         {
           "text": "Wähler/",
           "start": 168,
           "end": 170,
-          "sent_text": "Freie Wähler/Freie Bürger Dresden"
+          "sent_text": "Freie Wähler/Freie Bürger Dresden",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Wähler",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Plur",
+              "lemma": "Wähler"
+            },
+            {
+              "text": "/",
+              "pos": "PUNCT",
+              "tag": "$(",
+              "morph": "",
+              "lemma": "--"
+            }
+          ]
         },
         {
           "text": "Freie",
           "start": 170,
           "end": 171,
-          "sent_text": "Freie Wähler/Freie Bürger Dresden"
+          "sent_text": "Freie Wähler/Freie Bürger Dresden",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Freie",
+              "pos": "ADJ",
+              "tag": "ADJA",
+              "morph": "Case=Nom|Degree=Pos|Gender=Masc|Number=Plur",
+              "lemma": "frei"
+            }
+          ]
         },
         {
           "text": "Bürger",
           "start": 171,
           "end": 172,
-          "sent_text": "Freie Wähler/Freie Bürger Dresden"
+          "sent_text": "Freie Wähler/Freie Bürger Dresden",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Bürger",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Plur",
+              "lemma": "Bürger"
+            }
+          ]
         },
         {
           "text": "Frau Vohwieser",
           "start": 205,
           "end": 207,
-          "sent_text": "Das zeigen wir anhand eines kleinen Beispiels: Frau Vohwieser aus der SPD möchte gern, dass alle Schülerinnen und Schüler einen Laptop besitzen."
+          "sent_text": "Das zeigen wir anhand eines kleinen Beispiels: Frau Vohwieser aus der SPD möchte gern, dass alle Schülerinnen und Schüler einen Laptop besitzen.",
+          "morph_gender": "Fem",
+          "tokens": [
+            {
+              "text": "Frau",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Fem|Number=Sing",
+              "lemma": "Frau"
+            },
+            {
+              "text": "Vohwieser",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Neut|Number=Plur",
+              "lemma": "Vohwieser"
+            }
+          ]
         },
         {
           "text": "SPD",
           "start": 209,
           "end": 210,
-          "sent_text": "Das zeigen wir anhand eines kleinen Beispiels: Frau Vohwieser aus der SPD möchte gern, dass alle Schülerinnen und Schüler einen Laptop besitzen."
+          "sent_text": "Das zeigen wir anhand eines kleinen Beispiels: Frau Vohwieser aus der SPD möchte gern, dass alle Schülerinnen und Schüler einen Laptop besitzen.",
+          "morph_gender": "Fem",
+          "tokens": [
+            {
+              "text": "SPD",
+              "pos": "PROPN",
+              "tag": "NE",
+              "morph": "Case=Dat|Gender=Fem|Number=Sing",
+              "lemma": "SPD"
+            }
+          ]
         },
         {
           "text": "Schülerinnen und",
           "start": 215,
           "end": 217,
-          "sent_text": "Das zeigen wir anhand eines kleinen Beispiels: Frau Vohwieser aus der SPD möchte gern, dass alle Schülerinnen und Schüler einen Laptop besitzen."
+          "sent_text": "Das zeigen wir anhand eines kleinen Beispiels: Frau Vohwieser aus der SPD möchte gern, dass alle Schülerinnen und Schüler einen Laptop besitzen.",
+          "morph_gender": "Fem",
+          "tokens": [
+            {
+              "text": "Schülerinnen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Fem|Number=Plur",
+              "lemma": "Schülerin"
+            },
+            {
+              "text": "und",
+              "pos": "CCONJ",
+              "tag": "KON",
+              "morph": "",
+              "lemma": "und"
+            }
+          ]
         },
         {
           "text": "Schüler",
           "start": 217,
           "end": 218,
-          "sent_text": "Das zeigen wir anhand eines kleinen Beispiels: Frau Vohwieser aus der SPD möchte gern, dass alle Schülerinnen und Schüler einen Laptop besitzen."
+          "sent_text": "Das zeigen wir anhand eines kleinen Beispiels: Frau Vohwieser aus der SPD möchte gern, dass alle Schülerinnen und Schüler einen Laptop besitzen.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Schüler",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Plur",
+              "lemma": "Schüler"
+            }
+          ]
         },
         {
           "text": "Kinder",
           "start": 223,
           "end": 224,
-          "sent_text": "Die Kinder sollen damit zu Hause für die Schule arbeiten können."
+          "sent_text": "Die Kinder sollen damit zu Hause für die Schule arbeiten können.",
+          "morph_gender": "Neut",
+          "tokens": [
+            {
+              "text": "Kinder",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Neut|Number=Plur",
+              "lemma": "Kind"
+            }
+          ]
         },
         {
           "text": "Frau Vohwieser",
           "start": 236,
           "end": 238,
-          "sent_text": "Darüber spricht Frau Vohwieser in ihrer Fraktion, der SPD-Fraktion."
+          "sent_text": "Darüber spricht Frau Vohwieser in ihrer Fraktion, der SPD-Fraktion.",
+          "morph_gender": "Fem",
+          "tokens": [
+            {
+              "text": "Frau",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Fem|Number=Sing",
+              "lemma": "Frau"
+            },
+            {
+              "text": "Vohwieser",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Neut|Number=Plur",
+              "lemma": "Vohwieser"
+            }
+          ]
         },
         {
           "text": "Fraktion",
           "start": 240,
           "end": 241,
-          "sent_text": "Darüber spricht Frau Vohwieser in ihrer Fraktion, der SPD-Fraktion."
+          "sent_text": "Darüber spricht Frau Vohwieser in ihrer Fraktion, der SPD-Fraktion.",
+          "morph_gender": "Fem",
+          "tokens": [
+            {
+              "text": "Fraktion",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Dat|Gender=Fem|Number=Sing",
+              "lemma": "Fraktion"
+            }
+          ]
         },
         {
           "text": "SPD-Fraktion",
           "start": 243,
           "end": 244,
-          "sent_text": "Darüber spricht Frau Vohwieser in ihrer Fraktion, der SPD-Fraktion."
+          "sent_text": "Darüber spricht Frau Vohwieser in ihrer Fraktion, der SPD-Fraktion.",
+          "morph_gender": "Fem",
+          "tokens": [
+            {
+              "text": "SPD-Fraktion",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Gen|Gender=Fem|Number=Sing",
+              "lemma": "SPD-Fraktion"
+            }
+          ]
         },
         {
           "text": "Mitglieder",
           "start": 247,
           "end": 248,
-          "sent_text": "Finden alle Mitglieder der Fraktion die Idee gut, kämpfen sie gemeinsam dafür."
+          "sent_text": "Finden alle Mitglieder der Fraktion die Idee gut, kämpfen sie gemeinsam dafür.",
+          "morph_gender": "Neut",
+          "tokens": [
+            {
+              "text": "Mitglieder",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Neut|Number=Plur",
+              "lemma": "Mitglied"
+            }
+          ]
         },
         {
           "text": "Fraktion",
           "start": 249,
           "end": 250,
-          "sent_text": "Finden alle Mitglieder der Fraktion die Idee gut, kämpfen sie gemeinsam dafür."
+          "sent_text": "Finden alle Mitglieder der Fraktion die Idee gut, kämpfen sie gemeinsam dafür.",
+          "morph_gender": "Fem",
+          "tokens": [
+            {
+              "text": "Fraktion",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Gen|Gender=Fem|Number=Sing",
+              "lemma": "Fraktion"
+            }
+          ]
         },
         {
           "text": "sie",
           "start": 255,
           "end": 256,
-          "sent_text": "Finden alle Mitglieder der Fraktion die Idee gut, kämpfen sie gemeinsam dafür."
+          "sent_text": "Finden alle Mitglieder der Fraktion die Idee gut, kämpfen sie gemeinsam dafür.",
+          "morph_gender": null,
+          "tokens": [
+            {
+              "text": "sie",
+              "pos": "PRON",
+              "tag": "PPER",
+              "morph": "Case=Nom|Number=Plur|Person=3|PronType=Prs",
+              "lemma": "sie"
+            }
+          ]
         },
         {
           "text": "Stadtrat",
           "start": 265,
           "end": 266,
-          "sent_text": "Die Idee wird dann dem gesamten Stadtrat vorgestellt."
+          "sent_text": "Die Idee wird dann dem gesamten Stadtrat vorgestellt.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Stadtrat",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Dat|Gender=Masc|Number=Sing",
+              "lemma": "Stadtrat"
+            }
+          ]
         },
         {
           "text": "SPD-Fraktion",
           "start": 269,
           "end": 270,
-          "sent_text": "Die SPD-Fraktion schreibt dafür einen Antrag und stellt ihn den anderen vor."
+          "sent_text": "Die SPD-Fraktion schreibt dafür einen Antrag und stellt ihn den anderen vor.",
+          "morph_gender": "Fem",
+          "tokens": [
+            {
+              "text": "SPD-Fraktion",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Fem|Number=Sing",
+              "lemma": "SPD-Fraktion"
+            }
+          ]
         },
         {
           "text": "anderen",
           "start": 278,
           "end": 279,
-          "sent_text": "Die SPD-Fraktion schreibt dafür einen Antrag und stellt ihn den anderen vor."
+          "sent_text": "Die SPD-Fraktion schreibt dafür einen Antrag und stellt ihn den anderen vor.",
+          "morph_gender": null,
+          "tokens": [
+            {
+              "text": "anderen",
+              "pos": "PRON",
+              "tag": "PIS",
+              "morph": "Case=Dat|Number=Plur|PronType=Ind",
+              "lemma": "anderer"
+            }
+          ]
         },
         {
           "text": "Menschen",
           "start": 285,
           "end": 286,
-          "sent_text": "Im Stadtrat sind 70 Menschen."
+          "sent_text": "Im Stadtrat sind 70 Menschen.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Menschen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Plur",
+              "lemma": "Mensch"
+            }
+          ]
         },
         {
           "text": "Vertreterinnen und",
           "start": 298,
           "end": 300,
-          "sent_text": "Die sechs Vertreterinnen und Vertreter aus der SPD-Fraktion brauchen aber eine Mehrheit der Stimmen für ihre Idee."
+          "sent_text": "Die sechs Vertreterinnen und Vertreter aus der SPD-Fraktion brauchen aber eine Mehrheit der Stimmen für ihre Idee.",
+          "morph_gender": "Fem",
+          "tokens": [
+            {
+              "text": "Vertreterinnen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Fem|Number=Plur",
+              "lemma": "Vertreterin"
+            },
+            {
+              "text": "und",
+              "pos": "CCONJ",
+              "tag": "KON",
+              "morph": "",
+              "lemma": "und"
+            }
+          ]
         },
         {
           "text": "Vertreter",
           "start": 300,
           "end": 301,
-          "sent_text": "Die sechs Vertreterinnen und Vertreter aus der SPD-Fraktion brauchen aber eine Mehrheit der Stimmen für ihre Idee."
+          "sent_text": "Die sechs Vertreterinnen und Vertreter aus der SPD-Fraktion brauchen aber eine Mehrheit der Stimmen für ihre Idee.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Vertreter",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Plur",
+              "lemma": "Vertreter"
+            }
+          ]
         },
         {
           "text": "SPD-Fraktion",
           "start": 303,
           "end": 304,
-          "sent_text": "Die sechs Vertreterinnen und Vertreter aus der SPD-Fraktion brauchen aber eine Mehrheit der Stimmen für ihre Idee."
+          "sent_text": "Die sechs Vertreterinnen und Vertreter aus der SPD-Fraktion brauchen aber eine Mehrheit der Stimmen für ihre Idee.",
+          "morph_gender": "Fem",
+          "tokens": [
+            {
+              "text": "SPD-Fraktion",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Dat|Gender=Fem|Number=Sing",
+              "lemma": "SPD-Fraktion"
+            }
+          ]
         },
         {
           "text": "Kolleginnen und Kollegen",
           "start": 318,
           "end": 321,
-          "sent_text": "Sie müssen dafür ihre Kolleginnen und Kollegen aus den anderen Fraktionen von ihrer Idee überzeugen."
+          "sent_text": "Sie müssen dafür ihre Kolleginnen und Kollegen aus den anderen Fraktionen von ihrer Idee überzeugen.",
+          "morph_gender": "Fem",
+          "tokens": [
+            {
+              "text": "Kolleginnen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Acc|Gender=Fem|Number=Plur",
+              "lemma": "Kollegin"
+            },
+            {
+              "text": "und",
+              "pos": "CCONJ",
+              "tag": "KON",
+              "morph": "",
+              "lemma": "und"
+            },
+            {
+              "text": "Kollegen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Plur",
+              "lemma": "Kollege"
+            }
+          ]
         },
         {
           "text": "Spezialistinnen und",
           "start": 350,
           "end": 352,
-          "sent_text": "In diesen Gruppen tauschen sich die Spezialistinnen und Spezialisten von allen Fraktionen über bestimmte Fachthemen aus."
+          "sent_text": "In diesen Gruppen tauschen sich die Spezialistinnen und Spezialisten von allen Fraktionen über bestimmte Fachthemen aus.",
+          "morph_gender": "Fem",
+          "tokens": [
+            {
+              "text": "Spezialistinnen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Fem|Number=Plur",
+              "lemma": "Spezialistin"
+            },
+            {
+              "text": "und",
+              "pos": "CCONJ",
+              "tag": "KON",
+              "morph": "",
+              "lemma": "und"
+            }
+          ]
         },
         {
           "text": "Spezialisten",
           "start": 352,
           "end": 353,
-          "sent_text": "In diesen Gruppen tauschen sich die Spezialistinnen und Spezialisten von allen Fraktionen über bestimmte Fachthemen aus."
+          "sent_text": "In diesen Gruppen tauschen sich die Spezialistinnen und Spezialisten von allen Fraktionen über bestimmte Fachthemen aus.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Spezialisten",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Plur",
+              "lemma": "Spezialist"
+            }
+          ]
         },
         {
           "text": "Spezialistinnen",
           "start": 396,
           "end": 397,
-          "sent_text": "In diesen sind Spezialistinnen und Spezialisten aus den Parteien."
+          "sent_text": "In diesen sind Spezialistinnen und Spezialisten aus den Parteien.",
+          "morph_gender": "Fem",
+          "tokens": [
+            {
+              "text": "Spezialistinnen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Fem|Number=Plur",
+              "lemma": "Spezialistin"
+            }
+          ]
         },
         {
           "text": "Spezialisten",
           "start": 398,
           "end": 399,
-          "sent_text": "In diesen sind Spezialistinnen und Spezialisten aus den Parteien."
+          "sent_text": "In diesen sind Spezialistinnen und Spezialisten aus den Parteien.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Spezialisten",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Plur",
+              "lemma": "Spezialist"
+            }
+          ]
         },
         {
           "text": "jemand",
           "start": 405,
           "end": 406,
-          "sent_text": "Wenn sich jemand gut mit Geld auskennt, arbeitet er oder sie im Finanzausschuss."
+          "sent_text": "Wenn sich jemand gut mit Geld auskennt, arbeitet er oder sie im Finanzausschuss.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "jemand",
+              "pos": "PRON",
+              "tag": "PIS",
+              "morph": "Case=Nom|Gender=Masc|Number=Sing|PronType=Ind",
+              "lemma": "jemand"
+            }
+          ]
         },
         {
           "text": "er",
           "start": 412,
           "end": 413,
-          "sent_text": "Wenn sich jemand gut mit Geld auskennt, arbeitet er oder sie im Finanzausschuss."
+          "sent_text": "Wenn sich jemand gut mit Geld auskennt, arbeitet er oder sie im Finanzausschuss.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "er",
+              "pos": "PRON",
+              "tag": "PPER",
+              "morph": "Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs",
+              "lemma": "er"
+            }
+          ]
         },
         {
           "text": "sie",
           "start": 414,
           "end": 415,
-          "sent_text": "Wenn sich jemand gut mit Geld auskennt, arbeitet er oder sie im Finanzausschuss."
+          "sent_text": "Wenn sich jemand gut mit Geld auskennt, arbeitet er oder sie im Finanzausschuss.",
+          "morph_gender": null,
+          "tokens": [
+            {
+              "text": "sie",
+              "pos": "PRON",
+              "tag": "PPER",
+              "morph": "Case=Acc|Person=3|PronType=Prs",
+              "lemma": "sie"
+            }
+          ]
         },
         {
           "text": "jemand",
           "start": 420,
           "end": 421,
-          "sent_text": "Wenn sich jemand gut mit Kultur auskennt, arbeitet er oder sie im Kulturausschuss."
+          "sent_text": "Wenn sich jemand gut mit Kultur auskennt, arbeitet er oder sie im Kulturausschuss.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "jemand",
+              "pos": "PRON",
+              "tag": "PIS",
+              "morph": "Case=Nom|Gender=Masc|Number=Sing|PronType=Ind",
+              "lemma": "jemand"
+            }
+          ]
         },
         {
           "text": "er",
           "start": 427,
           "end": 428,
-          "sent_text": "Wenn sich jemand gut mit Kultur auskennt, arbeitet er oder sie im Kulturausschuss."
+          "sent_text": "Wenn sich jemand gut mit Kultur auskennt, arbeitet er oder sie im Kulturausschuss.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "er",
+              "pos": "PRON",
+              "tag": "PPER",
+              "morph": "Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs",
+              "lemma": "er"
+            }
+          ]
         },
         {
           "text": "sie",
           "start": 429,
           "end": 430,
-          "sent_text": "Wenn sich jemand gut mit Kultur auskennt, arbeitet er oder sie im Kulturausschuss."
+          "sent_text": "Wenn sich jemand gut mit Kultur auskennt, arbeitet er oder sie im Kulturausschuss.",
+          "morph_gender": null,
+          "tokens": [
+            {
+              "text": "sie",
+              "pos": "PRON",
+              "tag": "PPER",
+              "morph": "Case=Acc|Person=3|PronType=Prs",
+              "lemma": "sie"
+            }
+          ]
         },
         {
           "text": "SPD-Fraktion",
           "start": 434,
           "end": 435,
-          "sent_text": "Die SPD-Fraktion geht nun mit ihrem Antrag in die zuständigen Ausschüsse."
+          "sent_text": "Die SPD-Fraktion geht nun mit ihrem Antrag in die zuständigen Ausschüsse.",
+          "morph_gender": "Fem",
+          "tokens": [
+            {
+              "text": "SPD-Fraktion",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Fem|Number=Sing",
+              "lemma": "SPD-Fraktion"
+            }
+          ]
         },
         {
           "text": "Spezialistinnen und",
           "start": 459,
           "end": 461,
-          "sent_text": "Dort beraten die Spezialistinnen und Spezialisten aller Parteien gemeinsam."
+          "sent_text": "Dort beraten die Spezialistinnen und Spezialisten aller Parteien gemeinsam.",
+          "morph_gender": "Fem",
+          "tokens": [
+            {
+              "text": "Spezialistinnen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Fem|Number=Plur",
+              "lemma": "Spezialistin"
+            },
+            {
+              "text": "und",
+              "pos": "CCONJ",
+              "tag": "KON",
+              "morph": "",
+              "lemma": "und"
+            }
+          ]
         },
         {
           "text": "Spezialisten",
           "start": 461,
           "end": 462,
-          "sent_text": "Dort beraten die Spezialistinnen und Spezialisten aller Parteien gemeinsam."
+          "sent_text": "Dort beraten die Spezialistinnen und Spezialisten aller Parteien gemeinsam.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Spezialisten",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Plur",
+              "lemma": "Spezialist"
+            }
+          ]
         },
         {
           "text": "Parteien",
           "start": 463,
           "end": 464,
-          "sent_text": "Dort beraten die Spezialistinnen und Spezialisten aller Parteien gemeinsam."
+          "sent_text": "Dort beraten die Spezialistinnen und Spezialisten aller Parteien gemeinsam.",
+          "morph_gender": "Fem",
+          "tokens": [
+            {
+              "text": "Parteien",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Gen|Gender=Fem|Number=Plur",
+              "lemma": "Partei"
+            }
+          ]
         },
         {
           "text": "Schülerinnen und",
           "start": 482,
           "end": 484,
-          "sent_text": "Ist es sinnvoll, dass alle Schülerinnen und Schüler einen Laptop bekommen?"
+          "sent_text": "Ist es sinnvoll, dass alle Schülerinnen und Schüler einen Laptop bekommen?",
+          "morph_gender": "Fem",
+          "tokens": [
+            {
+              "text": "Schülerinnen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Fem|Number=Plur",
+              "lemma": "Schülerin"
+            },
+            {
+              "text": "und",
+              "pos": "CCONJ",
+              "tag": "KON",
+              "morph": "",
+              "lemma": "und"
+            }
+          ]
         },
         {
           "text": "Schüler",
           "start": 484,
           "end": 485,
-          "sent_text": "Ist es sinnvoll, dass alle Schülerinnen und Schüler einen Laptop bekommen?"
+          "sent_text": "Ist es sinnvoll, dass alle Schülerinnen und Schüler einen Laptop bekommen?",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Schüler",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Plur",
+              "lemma": "Schüler"
+            }
+          ]
         },
         {
           "text": "Spezialistinnen und",
           "start": 501,
           "end": 503,
-          "sent_text": "Am Ende schreiben die Spezialistinnen und Spezialisten einen kurzen Bericht."
+          "sent_text": "Am Ende schreiben die Spezialistinnen und Spezialisten einen kurzen Bericht.",
+          "morph_gender": "Fem",
+          "tokens": [
+            {
+              "text": "Spezialistinnen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Fem|Number=Plur",
+              "lemma": "Spezialistin"
+            },
+            {
+              "text": "und",
+              "pos": "CCONJ",
+              "tag": "KON",
+              "morph": "",
+              "lemma": "und"
+            }
+          ]
         },
         {
           "text": "Spezialisten",
           "start": 503,
           "end": 504,
-          "sent_text": "Am Ende schreiben die Spezialistinnen und Spezialisten einen kurzen Bericht."
+          "sent_text": "Am Ende schreiben die Spezialistinnen und Spezialisten einen kurzen Bericht.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Spezialisten",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Plur",
+              "lemma": "Spezialist"
+            }
+          ]
         },
         {
           "text": "Stadtrat",
           "start": 525,
           "end": 526,
-          "sent_text": "Diesen Bericht geben sie dem Stadtrat weiter."
+          "sent_text": "Diesen Bericht geben sie dem Stadtrat weiter.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Stadtrat",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Dat|Gender=Masc|Number=Sing",
+              "lemma": "Stadtrat"
+            }
+          ]
         },
         {
           "text": "Stadtrat",
           "start": 552,
           "end": 553,
-          "sent_text": "Wenn die Idee beschlossen ist, sagt es der Stadtrat der Verwaltung der Stadt."
+          "sent_text": "Wenn die Idee beschlossen ist, sagt es der Stadtrat der Verwaltung der Stadt.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Stadtrat",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Sing",
+              "lemma": "Stadtrat"
+            }
+          ]
         },
         {
           "text": "Schülerinnen und",
           "start": 572,
           "end": 574,
-          "sent_text": "In diesem Beispiel würden also alle Schülerinnen und Schüler in Dresden einen Laptop bekommen."
+          "sent_text": "In diesem Beispiel würden also alle Schülerinnen und Schüler in Dresden einen Laptop bekommen.",
+          "morph_gender": "Fem",
+          "tokens": [
+            {
+              "text": "Schülerinnen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Fem|Number=Plur",
+              "lemma": "Schülerin"
+            },
+            {
+              "text": "und",
+              "pos": "CCONJ",
+              "tag": "KON",
+              "morph": "",
+              "lemma": "und"
+            }
+          ]
         },
         {
           "text": "Schüler",
           "start": 574,
           "end": 575,
-          "sent_text": "In diesem Beispiel würden also alle Schülerinnen und Schüler in Dresden einen Laptop bekommen."
+          "sent_text": "In diesem Beispiel würden also alle Schülerinnen und Schüler in Dresden einen Laptop bekommen.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Schüler",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Plur",
+              "lemma": "Schüler"
+            }
+          ]
         }
       ],
       "coref_clusters": [
@@ -3317,32 +5447,38 @@
             {
               "text": "Stadtrat",
               "start": 0,
-              "end": 1
+              "end": 1,
+              "morph_gender": "Masc"
             },
             {
               "text": "Stadtrat",
               "start": 146,
-              "end": 147
+              "end": 147,
+              "morph_gender": "Masc"
             },
             {
               "text": "Stadtrat",
               "start": 265,
-              "end": 266
+              "end": 266,
+              "morph_gender": "Masc"
             },
             {
               "text": "Stadtrat",
               "start": 282,
-              "end": 283
+              "end": 283,
+              "morph_gender": "Masc"
             },
             {
               "text": "Stadtrat",
               "start": 525,
-              "end": 526
+              "end": 526,
+              "morph_gender": "Masc"
             },
             {
               "text": "Stadtrat",
               "start": 552,
-              "end": 553
+              "end": 553,
+              "morph_gender": "Masc"
             }
           ]
         },
@@ -3352,12 +5488,14 @@
             {
               "text": "Oberbürgermeister",
               "start": 5,
-              "end": 6
+              "end": 6,
+              "morph_gender": "Masc"
             },
             {
               "text": "Oberbürgermeisters",
               "start": 83,
-              "end": 84
+              "end": 84,
+              "morph_gender": "Masc"
             }
           ]
         },
@@ -3367,22 +5505,26 @@
             {
               "text": "Stadträte",
               "start": 14,
-              "end": 15
+              "end": 15,
+              "morph_gender": "Masc"
             },
             {
               "text": "sich",
               "start": 16,
-              "end": 17
+              "end": 17,
+              "morph_gender": null
             },
             {
               "text": "Sie",
               "start": 23,
-              "end": 24
+              "end": 24,
+              "morph_gender": null
             },
             {
               "text": "Sie",
               "start": 31,
-              "end": 32
+              "end": 32,
+              "morph_gender": null
             }
           ]
         },
@@ -3392,17 +5534,20 @@
             {
               "text": "Menschen",
               "start": 52,
-              "end": 53
+              "end": 53,
+              "morph_gender": "Masc"
             },
             {
               "text": "Menschen",
               "start": 285,
-              "end": 286
+              "end": 286,
+              "morph_gender": "Masc"
             },
             {
               "text": "Alle",
               "start": 287,
-              "end": 288
+              "end": 288,
+              "morph_gender": null
             }
           ]
         },
@@ -3412,12 +5557,14 @@
             {
               "text": "Stadträtinnen",
               "start": 85,
-              "end": 86
+              "end": 86,
+              "morph_gender": "Fem"
             },
             {
               "text": "sich",
               "start": 93,
-              "end": 94
+              "end": 94,
+              "morph_gender": null
             }
           ]
         },
@@ -3427,7 +5574,8 @@
             {
               "text": "Stadträte",
               "start": 87,
-              "end": 88
+              "end": 88,
+              "morph_gender": "Masc"
             }
           ]
         },
@@ -3437,7 +5585,8 @@
             {
               "text": "Mitglieder",
               "start": 105,
-              "end": 106
+              "end": 106,
+              "morph_gender": "Neut"
             }
           ]
         },
@@ -3447,12 +5596,14 @@
             {
               "text": "Personen",
               "start": 127,
-              "end": 128
+              "end": 128,
+              "morph_gender": "Fem"
             },
             {
               "text": "Sie",
               "start": 130,
-              "end": 131
+              "end": 131,
+              "morph_gender": null
             }
           ]
         },
@@ -3462,7 +5613,8 @@
             {
               "text": "Bürger",
               "start": 171,
-              "end": 172
+              "end": 172,
+              "morph_gender": "Masc"
             }
           ]
         },
@@ -3472,12 +5624,14 @@
             {
               "text": "wir",
               "start": 199,
-              "end": 200
+              "end": 200,
+              "morph_gender": null
             },
             {
               "text": "unserem",
               "start": 446,
-              "end": 447
+              "end": 447,
+              "morph_gender": "Neut"
             }
           ]
         },
@@ -3487,17 +5641,20 @@
             {
               "text": "Frau Vohwieser",
               "start": 205,
-              "end": 207
+              "end": 207,
+              "morph_gender": "Fem"
             },
             {
               "text": "Frau Vohwieser",
               "start": 236,
-              "end": 238
+              "end": 238,
+              "morph_gender": "Fem"
             },
             {
               "text": "ihrer",
               "start": 239,
-              "end": 240
+              "end": 240,
+              "morph_gender": "Fem"
             }
           ]
         },
@@ -3507,22 +5664,26 @@
             {
               "text": "Schüler",
               "start": 217,
-              "end": 218
+              "end": 218,
+              "morph_gender": "Masc"
             },
             {
               "text": "Kinder",
               "start": 223,
-              "end": 224
+              "end": 224,
+              "morph_gender": "Neut"
             },
             {
               "text": "Schüler",
               "start": 484,
-              "end": 485
+              "end": 485,
+              "morph_gender": "Masc"
             },
             {
               "text": "Schüler",
               "start": 574,
-              "end": 575
+              "end": 575,
+              "morph_gender": "Masc"
             }
           ]
         },
@@ -3532,12 +5693,14 @@
             {
               "text": "Mitglieder",
               "start": 247,
-              "end": 248
+              "end": 248,
+              "morph_gender": "Neut"
             },
             {
               "text": "sie",
               "start": 255,
-              "end": 256
+              "end": 256,
+              "morph_gender": null
             }
           ]
         },
@@ -3547,7 +5710,8 @@
             {
               "text": "anderen",
               "start": 278,
-              "end": 279
+              "end": 279,
+              "morph_gender": null
             }
           ]
         },
@@ -3557,27 +5721,32 @@
             {
               "text": "ihre",
               "start": 311,
-              "end": 312
+              "end": 312,
+              "morph_gender": "Fem"
             },
             {
               "text": "Sie",
               "start": 314,
-              "end": 315
+              "end": 315,
+              "morph_gender": null
             },
             {
               "text": "ihre",
               "start": 317,
-              "end": 318
+              "end": 318,
+              "morph_gender": "Fem"
             },
             {
               "text": "ihrer",
               "start": 326,
-              "end": 327
+              "end": 327,
+              "morph_gender": "Fem"
             },
             {
               "text": "sie",
               "start": 332,
-              "end": 333
+              "end": 333,
+              "morph_gender": null
             }
           ]
         },
@@ -3587,7 +5756,8 @@
             {
               "text": "Kollegen",
               "start": 320,
-              "end": 321
+              "end": 321,
+              "morph_gender": "Masc"
             }
           ]
         },
@@ -3597,7 +5767,8 @@
             {
               "text": "sich",
               "start": 348,
-              "end": 349
+              "end": 349,
+              "morph_gender": null
             }
           ]
         },
@@ -3607,17 +5778,20 @@
             {
               "text": "Spezialisten",
               "start": 352,
-              "end": 353
+              "end": 353,
+              "morph_gender": "Masc"
             },
             {
               "text": "Spezialisten",
               "start": 398,
-              "end": 399
+              "end": 399,
+              "morph_gender": "Masc"
             },
             {
               "text": "Spezialisten",
               "start": 503,
-              "end": 504
+              "end": 504,
+              "morph_gender": "Masc"
             }
           ]
         },
@@ -3627,7 +5801,8 @@
             {
               "text": "Fraktionen",
               "start": 355,
-              "end": 356
+              "end": 356,
+              "morph_gender": "Fem"
             }
           ]
         },
@@ -3637,12 +5812,14 @@
             {
               "text": "Parteien",
               "start": 401,
-              "end": 402
+              "end": 402,
+              "morph_gender": "Fem"
             },
             {
               "text": "Parteien",
               "start": 463,
-              "end": 464
+              "end": 464,
+              "morph_gender": "Fem"
             }
           ]
         },
@@ -3652,7 +5829,8 @@
             {
               "text": "jemand",
               "start": 405,
-              "end": 406
+              "end": 406,
+              "morph_gender": "Masc"
             }
           ]
         },
@@ -3662,12 +5840,14 @@
             {
               "text": "er",
               "start": 412,
-              "end": 413
+              "end": 413,
+              "morph_gender": "Masc"
             },
             {
               "text": "er",
               "start": 427,
-              "end": 428
+              "end": 428,
+              "morph_gender": "Masc"
             }
           ]
         },
@@ -3677,12 +5857,14 @@
             {
               "text": "sie",
               "start": 414,
-              "end": 415
+              "end": 415,
+              "morph_gender": null
             },
             {
               "text": "sie",
               "start": 429,
-              "end": 430
+              "end": 430,
+              "morph_gender": null
             }
           ]
         },
@@ -3692,7 +5874,8 @@
             {
               "text": "jemand",
               "start": 420,
-              "end": 421
+              "end": 421,
+              "morph_gender": "Masc"
             }
           ]
         },
@@ -3702,12 +5885,14 @@
             {
               "text": "SPD-Fraktion",
               "start": 434,
-              "end": 435
+              "end": 435,
+              "morph_gender": "Fem"
             },
             {
               "text": "ihrem",
               "start": 438,
-              "end": 439
+              "end": 439,
+              "morph_gender": "Masc"
             }
           ]
         },
@@ -3717,27 +5902,32 @@
             {
               "text": "Sie",
               "start": 489,
-              "end": 490
+              "end": 490,
+              "morph_gender": null
             },
             {
               "text": "sie",
               "start": 510,
-              "end": 511
+              "end": 511,
+              "morph_gender": null
             },
             {
               "text": "sie",
               "start": 513,
-              "end": 514
+              "end": 514,
+              "morph_gender": "Masc"
             },
             {
               "text": "sich",
               "start": 514,
-              "end": 515
+              "end": 515,
+              "morph_gender": null
             },
             {
               "text": "sie",
               "start": 523,
-              "end": 524
+              "end": 524,
+              "morph_gender": null
             }
           ]
         }
@@ -3848,91 +6038,262 @@
           "text": "Bürgerinnen und Bürger",
           "start": 10,
           "end": 13,
-          "sent_text": "Der Dresdner Stadtrat ist die gewählte Vertretung der Dresdner Bürgerinnen und Bürger."
+          "sent_text": "Der Dresdner Stadtrat ist die gewählte Vertretung der Dresdner Bürgerinnen und Bürger.",
+          "morph_gender": "Fem",
+          "tokens": [
+            {
+              "text": "Bürgerinnen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Gen|Gender=Fem|Number=Plur",
+              "lemma": "Bürgerin"
+            },
+            {
+              "text": "und",
+              "pos": "CCONJ",
+              "tag": "KON",
+              "morph": "",
+              "lemma": "und"
+            },
+            {
+              "text": "Bürger",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Gen|Gender=Masc|Number=Plur",
+              "lemma": "Bürger"
+            }
+          ]
         },
         {
           "text": "Oberbürgermeister/-in",
           "start": 25,
           "end": 26,
-          "sent_text": "Vorsitzender des Stadtrates ist nach der sächsischen Gemeindeordnung der/die Oberbürgermeister/-in."
+          "sent_text": "Vorsitzender des Stadtrates ist nach der sächsischen Gemeindeordnung der/die Oberbürgermeister/-in.",
+          "morph_gender": "Fem",
+          "tokens": [
+            {
+              "text": "Oberbürgermeister/-in",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Fem|Number=Plur",
+              "lemma": "Oberbürgermeister/-in"
+            }
+          ]
         },
         {
           "text": "Stadtrat",
           "start": 28,
           "end": 29,
-          "sent_text": "Der Stadtrat legt die Grundsätze für die Verwaltung der Landeshauptstadt Dresden fest und entscheidet über alle Angelegenheiten der Landeshauptstadt Dresden, soweit nicht der/die Oberbürgermeister/-in Kraft Gesetz zuständig ist oder ihm/ihr der Stadtrat bestimmte Angelegenheiten übertragen hat."
+          "sent_text": "Der Stadtrat legt die Grundsätze für die Verwaltung der Landeshauptstadt Dresden fest und entscheidet über alle Angelegenheiten der Landeshauptstadt Dresden, soweit nicht der/die Oberbürgermeister/-in Kraft Gesetz zuständig ist oder ihm/ihr der Stadtrat bestimmte Angelegenheiten übertragen hat.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Stadtrat",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Sing",
+              "lemma": "Stadtrat"
+            }
+          ]
         },
         {
           "text": "Oberbürgermeister/-in",
           "start": 53,
           "end": 54,
-          "sent_text": "Der Stadtrat legt die Grundsätze für die Verwaltung der Landeshauptstadt Dresden fest und entscheidet über alle Angelegenheiten der Landeshauptstadt Dresden, soweit nicht der/die Oberbürgermeister/-in Kraft Gesetz zuständig ist oder ihm/ihr der Stadtrat bestimmte Angelegenheiten übertragen hat."
+          "sent_text": "Der Stadtrat legt die Grundsätze für die Verwaltung der Landeshauptstadt Dresden fest und entscheidet über alle Angelegenheiten der Landeshauptstadt Dresden, soweit nicht der/die Oberbürgermeister/-in Kraft Gesetz zuständig ist oder ihm/ihr der Stadtrat bestimmte Angelegenheiten übertragen hat.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Oberbürgermeister/-in",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Sing",
+              "lemma": "Oberbürgermeister/-in"
+            }
+          ]
         },
         {
           "text": "ihm",
           "start": 59,
           "end": 60,
-          "sent_text": "Der Stadtrat legt die Grundsätze für die Verwaltung der Landeshauptstadt Dresden fest und entscheidet über alle Angelegenheiten der Landeshauptstadt Dresden, soweit nicht der/die Oberbürgermeister/-in Kraft Gesetz zuständig ist oder ihm/ihr der Stadtrat bestimmte Angelegenheiten übertragen hat."
+          "sent_text": "Der Stadtrat legt die Grundsätze für die Verwaltung der Landeshauptstadt Dresden fest und entscheidet über alle Angelegenheiten der Landeshauptstadt Dresden, soweit nicht der/die Oberbürgermeister/-in Kraft Gesetz zuständig ist oder ihm/ihr der Stadtrat bestimmte Angelegenheiten übertragen hat.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "ihm",
+              "pos": "PRON",
+              "tag": "PPER",
+              "morph": "Case=Dat|Gender=Masc|Number=Sing|Person=3|PronType=Prs",
+              "lemma": "ihm"
+            }
+          ]
         },
         {
           "text": "Stadtrat",
           "start": 63,
           "end": 64,
-          "sent_text": "Der Stadtrat legt die Grundsätze für die Verwaltung der Landeshauptstadt Dresden fest und entscheidet über alle Angelegenheiten der Landeshauptstadt Dresden, soweit nicht der/die Oberbürgermeister/-in Kraft Gesetz zuständig ist oder ihm/ihr der Stadtrat bestimmte Angelegenheiten übertragen hat."
+          "sent_text": "Der Stadtrat legt die Grundsätze für die Verwaltung der Landeshauptstadt Dresden fest und entscheidet über alle Angelegenheiten der Landeshauptstadt Dresden, soweit nicht der/die Oberbürgermeister/-in Kraft Gesetz zuständig ist oder ihm/ihr der Stadtrat bestimmte Angelegenheiten übertragen hat.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Stadtrat",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Sing",
+              "lemma": "Stadtrat"
+            }
+          ]
         },
         {
           "text": "Dresdnerinnen und",
           "start": 75,
           "end": 77,
-          "sent_text": "Am 9. Juni 2024 wählten die Dresdnerinnen und Dresdner ihren neuen Stadtrat."
+          "sent_text": "Am 9. Juni 2024 wählten die Dresdnerinnen und Dresdner ihren neuen Stadtrat.",
+          "morph_gender": "Fem",
+          "tokens": [
+            {
+              "text": "Dresdnerinnen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Acc|Gender=Fem|Number=Plur",
+              "lemma": "Dresdnerin"
+            },
+            {
+              "text": "und",
+              "pos": "CCONJ",
+              "tag": "KON",
+              "morph": "",
+              "lemma": "und"
+            }
+          ]
         },
         {
           "text": "Dresdner",
           "start": 77,
           "end": 78,
-          "sent_text": "Am 9. Juni 2024 wählten die Dresdnerinnen und Dresdner ihren neuen Stadtrat."
+          "sent_text": "Am 9. Juni 2024 wählten die Dresdnerinnen und Dresdner ihren neuen Stadtrat.",
+          "morph_gender": null,
+          "tokens": [
+            {
+              "text": "Dresdner",
+              "pos": "ADJ",
+              "tag": "NN",
+              "morph": "Degree=Pos",
+              "lemma": "Dresdner"
+            }
+          ]
         },
         {
           "text": "Stadtrat",
           "start": 113,
           "end": 114,
-          "sent_text": "Mit seinen Beschlüssen kann der Stadtrat dem/der Oberbürgermeister/-in als Leiter/-in der Verwaltung Aufträge erteilen und mit dem Erlass von Satzungen und Verordnungen geltendes Stadtrecht schaffen."
+          "sent_text": "Mit seinen Beschlüssen kann der Stadtrat dem/der Oberbürgermeister/-in als Leiter/-in der Verwaltung Aufträge erteilen und mit dem Erlass von Satzungen und Verordnungen geltendes Stadtrecht schaffen.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Stadtrat",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Sing",
+              "lemma": "Stadtrat"
+            }
+          ]
         },
         {
           "text": "Oberbürgermeister/-in",
           "start": 117,
           "end": 118,
-          "sent_text": "Mit seinen Beschlüssen kann der Stadtrat dem/der Oberbürgermeister/-in als Leiter/-in der Verwaltung Aufträge erteilen und mit dem Erlass von Satzungen und Verordnungen geltendes Stadtrecht schaffen."
+          "sent_text": "Mit seinen Beschlüssen kann der Stadtrat dem/der Oberbürgermeister/-in als Leiter/-in der Verwaltung Aufträge erteilen und mit dem Erlass von Satzungen und Verordnungen geltendes Stadtrecht schaffen.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Oberbürgermeister/-in",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Sing",
+              "lemma": "Oberbürgermeister/-in"
+            }
+          ]
         },
         {
           "text": "Leiter/-in",
           "start": 119,
           "end": 120,
-          "sent_text": "Mit seinen Beschlüssen kann der Stadtrat dem/der Oberbürgermeister/-in als Leiter/-in der Verwaltung Aufträge erteilen und mit dem Erlass von Satzungen und Verordnungen geltendes Stadtrecht schaffen."
+          "sent_text": "Mit seinen Beschlüssen kann der Stadtrat dem/der Oberbürgermeister/-in als Leiter/-in der Verwaltung Aufträge erteilen und mit dem Erlass von Satzungen und Verordnungen geltendes Stadtrecht schaffen.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Leiter/-in",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Sing",
+              "lemma": "Leiter/-in"
+            }
+          ]
         },
         {
           "text": "Stadtrat",
           "start": 162,
           "end": 163,
-          "sent_text": "Besonders wichtige Aufgaben, z. B. den Erlass von Satzungen, kann der Stadtrat seinen beschließenden Ausschüssen nicht übertragen."
+          "sent_text": "Besonders wichtige Aufgaben, z. B. den Erlass von Satzungen, kann der Stadtrat seinen beschließenden Ausschüssen nicht übertragen.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Stadtrat",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Nom|Gender=Masc|Number=Sing",
+              "lemma": "Stadtrat"
+            }
+          ]
         },
         {
           "text": "Ausschüssen",
           "start": 165,
           "end": 166,
-          "sent_text": "Besonders wichtige Aufgaben, z. B. den Erlass von Satzungen, kann der Stadtrat seinen beschließenden Ausschüssen nicht übertragen."
+          "sent_text": "Besonders wichtige Aufgaben, z. B. den Erlass von Satzungen, kann der Stadtrat seinen beschließenden Ausschüssen nicht übertragen.",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Ausschüssen",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Dat|Gender=Masc|Number=Plur",
+              "lemma": "Ausschüsse"
+            }
+          ]
         },
         {
           "text": "Oberbürgermeisters",
           "start": 184,
           "end": 185,
-          "sent_text": "Direktorium des Oberbürgermeisters Büro des Oberbürgermeisters und Stadtratsangelegenheiten E-Mail direktorium@dresden.de E-Mail direktorium@dresden.de"
+          "sent_text": "Direktorium des Oberbürgermeisters Büro des Oberbürgermeisters und Stadtratsangelegenheiten E-Mail direktorium@dresden.de E-Mail direktorium@dresden.de",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Oberbürgermeisters",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Gen|Gender=Masc|Number=Sing",
+              "lemma": "Oberbürgermeister"
+            }
+          ]
         },
         {
           "text": "Oberbürgermeisters",
           "start": 187,
           "end": 188,
-          "sent_text": "Direktorium des Oberbürgermeisters Büro des Oberbürgermeisters und Stadtratsangelegenheiten E-Mail direktorium@dresden.de E-Mail direktorium@dresden.de"
+          "sent_text": "Direktorium des Oberbürgermeisters Büro des Oberbürgermeisters und Stadtratsangelegenheiten E-Mail direktorium@dresden.de E-Mail direktorium@dresden.de",
+          "morph_gender": "Masc",
+          "tokens": [
+            {
+              "text": "Oberbürgermeisters",
+              "pos": "NOUN",
+              "tag": "NN",
+              "morph": "Case=Gen|Gender=Masc|Number=Sing",
+              "lemma": "Oberbürgermeister"
+            }
+          ]
         }
       ],
       "coref_clusters": [
@@ -3942,7 +6303,8 @@
             {
               "text": "Stadtrat",
               "start": 0,
-              "end": 1
+              "end": 1,
+              "morph_gender": "Masc"
             }
           ]
         },
@@ -3952,12 +6314,14 @@
             {
               "text": "Oberbürgermeister/-in",
               "start": 53,
-              "end": 54
+              "end": 54,
+              "morph_gender": "Masc"
             },
             {
               "text": "Oberbürgermeister/-in",
               "start": 117,
-              "end": 118
+              "end": 118,
+              "morph_gender": "Masc"
             }
           ]
         },
@@ -3967,7 +6331,8 @@
             {
               "text": "ihm",
               "start": 59,
-              "end": 60
+              "end": 60,
+              "morph_gender": "Masc"
             }
           ]
         },
@@ -3977,12 +6342,14 @@
             {
               "text": "Dresdner",
               "start": 77,
-              "end": 78
+              "end": 78,
+              "morph_gender": null
             },
             {
               "text": "ihren",
               "start": 78,
-              "end": 79
+              "end": 79,
+              "morph_gender": "Masc"
             }
           ]
         },
@@ -3992,12 +6359,14 @@
             {
               "text": "Oberbürgermeisters",
               "start": 184,
-              "end": 185
+              "end": 185,
+              "morph_gender": "Masc"
             },
             {
               "text": "Oberbürgermeisters",
               "start": 187,
-              "end": 188
+              "end": 188,
+              "morph_gender": "Masc"
             }
           ]
         }
