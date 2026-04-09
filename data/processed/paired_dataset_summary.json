@@ -1,0 +1,14 @@
+{
+  "total_scored_pairs": 585,
+  "by_label": {
+    "rejected": 158,
+    "accepted": 427
+  },
+  "filter_spec": {
+    "hard_exclusions": {
+      "minimum_tokens_per_side": 20,
+      "url_term_filtering": true
+    },
+    "ratio_outlier_detection": "Rejected if length_ratio modified Z-Score >= 3.5"
+  }
+}
