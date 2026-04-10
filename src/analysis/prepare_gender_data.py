@@ -1,19 +1,21 @@
 #!/usr/bin/env python3
-"""Prepare image-ready gender labels from LLpro-annotated texts.
+"""Prepare text-side gender analysis data and review queues.
 
-The script is designed for comparative bias analysis between Easy Language
-and Standard German. It maps person mentions to compact labels that can be
-reused later for MiVOLO-based image analysis:
+This script applies automatic rules to LLpro + Kaikki data, writes one row per
+mention, and exports the remaining ambiguous cases for manual review.
 
-    f1  -> one female person
-    m1  -> one male person
-    fg  -> female group
-    mg  -> male group
-    mx  -> mixed / generic group
-    ux  -> unresolved
+Automatic fine-grained frames:
+    fem
+    male_specific
+    gmasc_generic
+    epic_individual
+    epic_group
+    pair
+    named_person
+    unk
 
-The code keeps lexical assumptions outside Python source code. Open lexical
-resources should be stored under ``data/resources/`` with explicit provenance.
+Image-ready labels:
+    f1, m1, fg, mg, mx, ux
 """
 
 from __future__ import annotations
@@ -22,36 +24,87 @@ import argparse
 import csv
 import json
 import re
-from collections import Counter, defaultdict
+from collections import Counter
 from dataclasses import dataclass
 from pathlib import Path
 
 DEFAULT_INPUT = Path("data/processed/annotated_texts.json")
-DEFAULT_OUTPUT = Path("data/processed/gender_analysis.csv")
-DEFAULT_SUMMARY = Path("data/processed/gender_analysis_summary.json")
-DEFAULT_PERSON_LEXICON = Path("data/resources/person_lexicon.csv")
+DEFAULT_OUTPUT = Path("data/processed/gender_analysis_auto.csv")
+DEFAULT_SUMMARY = Path("data/processed/gender_analysis_auto_summary.json")
+DEFAULT_REVIEW = Path("data/annotations/gender_review.csv")
+DEFAULT_KAIKKI_CACHE = Path("data/resources/kaikki_de_lookup.jsonl")
+DEFAULT_WIKIDATA_COLLECTIVES = Path("data/resources/wikidata_collective_nouns.csv")
 
 PAIR_FORM_RE = re.compile(
-    r"\b\w+innen\b\s+und\s+\b\w+\b|\b\w+\b\s+und\s+\b\w+innen\b|\b\w+innen\b\s+und\b",
+    r"\b\w+innen\b\s+und\s+\b\w+\b|"
+    r"\b\w+\b\s+und\s+\b\w+innen\b|"
+    r"\b\w+innen\b\s+und\b|"
+    r"\b\w+/\s*innen\b",
     re.IGNORECASE,
 )
 WHITESPACE_RE = re.compile(r"\s+")
+HUMAN_GLOSS_RE = re.compile(r"\b(mensch(?:en)?|person(?:en)?)\b", re.IGNORECASE)
+COLLECTIVE_GLOSS_RE = re.compile(
+    r"\b("
+    r"gruppe\b.*\bpersonen|"
+    r"aus mehreren personen|"
+    r"gremium|"
+    r"organisationseinheit|"
+    r"eltern und kinder|"
+    r"großeltern|"
+    r"partnern mit nachwuchs|"
+    r"kammer des parlaments|"
+    r"entscheidungsgremium|"
+    r"verwaltungsbehörde|"
+    r"regierungsbehörde|"
+    r"gemeinschaft\b.*\bpersonen"
+    r")\b",
+    re.IGNORECASE,
+)
+EMAIL_RE = re.compile(r"\b[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}\b")
+PERSON_NAME_TOKEN_RE = re.compile(r"^[A-ZÄÖÜ][A-Za-zÄÖÜäöüß'-]+\.?$")
+DOT_COMPACT_RE = re.compile(r"\S\.\S")
+METADATA_SENTENCE_RE = re.compile(
+    r"(hat den text in leichter sprache geschrieben|"
+    r"hat den text geschrieben|"
+    r"hat die bilder gemalt|"
+    r"hat die bilder gemacht|"
+    r"hat den text geprüft|"
+    r"hat die bilder gezeichnet|"
+    r"text in leichter sprache|"
+    r"bilder gemalt|"
+    r"stock\.adobe\.com|"
+    r"pexels/|"
+    r"©|"
+    r"copyright)",
+    re.IGNORECASE,
+)
 
 PERSON_ENTITY_LABEL = "PER"
+NON_PERSON_ENTITY_LABELS = {"LOC", "ORG"}
 GENDERED_PRONOUN_TAGS = {"PPER", "PPOSAT", "PPOSS", "PRELS"}
-PERSON_NOUN_SUFFIXES = ("er", "erin", "ist", "ent", "ant", "eur", "oge", "ling")
-PERSON_PARTICIPLE_SUFFIXES = ("ende", "enden", "ender", "endem")
-UMLAUT_REVERSE = {"ä": "a", "ö": "o", "ü": "u"}
+AUTO_FRAME_VALUES = {
+    "fem",
+    "male_specific",
+    "gmasc_generic",
+    "epic_individual",
+    "epic_group",
+    "pair",
+    "named_person",
+    "unk",
+}
 
 
 @dataclass(frozen=True)
-class PersonLexicon:
-    """External lexical resources with explicit provenance on disk."""
+class KaikkiLexicon:
+    """Compact lexical signals derived from the local Kaikki cache."""
 
+    human_nouns: frozenset[str]
+    kaikki_collective_nouns: frozenset[str]
     explicit_female: frozenset[str]
-    explicit_male: frozenset[str]
-    collectives: frozenset[str]
-    person_hints: frozenset[str]
+    gmasc_candidates: frozenset[str]
+    female_names: frozenset[str]
+    male_names: frozenset[str]
 
 
 def normalize_text(text: str) -> str:
@@ -71,37 +124,101 @@ def parse_morph(token: dict, feature: str) -> str | None:
     return None
 
 
-def load_person_lexicon(path: Path) -> PersonLexicon:
-    """Load a person lexicon with transparent provenance fields."""
+def load_kaikki_cache(path: Path) -> KaikkiLexicon:
+    """Load a local Kaikki cache and derive lexical sets."""
     if not path.exists():
         raise FileNotFoundError(
-            f"Missing lexicon resource: {path}. "
-            "Create it under data/resources/ before running the analysis."
+            f"Missing Kaikki cache: {path}. "
+            "Build it first with src/resources/build_kaikki_lookup.py."
         )
 
-    grouped: dict[str, set[str]] = defaultdict(set)
-    with path.open(encoding="utf-8", newline="") as handle:
-        reader = csv.DictReader(handle)
-        required = {"lemma", "class", "source", "license"}
-        if not reader.fieldnames or not required.issubset(reader.fieldnames):
-            raise ValueError(
-                f"{path} must contain at least the columns: "
-                f"{', '.join(sorted(required))}"
+    human_nouns: set[str] = set()
+    kaikki_collective_nouns: set[str] = set()
+    explicit_female: set[str] = set()
+    gmasc_candidates: set[str] = set()
+    female_names: set[str] = set()
+    male_names: set[str] = set()
+
+    with path.open(encoding="utf-8") as handle:
+        for line in handle:
+            line = line.strip()
+            if not line:
+                continue
+            entry = json.loads(line)
+            if entry.get("lang") != "Deutsch":
+                continue
+
+            lemma = normalize_text(entry.get("word", ""))
+            if not lemma:
+                continue
+
+            tags = {normalize_text(tag) for tag in entry.get("tags", [])}
+            pos = entry.get("pos")
+
+            if pos == "name":
+                if "feminine" in tags and "masculine" not in tags:
+                    female_names.add(lemma)
+                elif "masculine" in tags and "feminine" not in tags:
+                    male_names.add(lemma)
+                continue
+
+            if pos != "noun":
+                continue
+
+            forms = entry.get("forms", [])
+            glosses = []
+            for sense in entry.get("senses", []):
+                glosses.extend(sense.get("glosses", []))
+            gloss_text = normalize_text(" ".join(glosses))
+            is_human_noun = bool(HUMAN_GLOSS_RE.search(gloss_text))
+            is_collective_noun = bool(COLLECTIVE_GLOSS_RE.search(gloss_text))
+
+            if is_human_noun:
+                human_nouns.add(lemma)
+            if is_collective_noun:
+                kaikki_collective_nouns.add(lemma)
+
+            has_feminine_counterpart = any(
+                "feminine" in {normalize_text(tag) for tag in form.get("tags", [])}
+                and normalize_text(form.get("form", "")) != lemma
+                for form in forms
+            )
+            has_masculine_counterpart = any(
+                "masculine" in {normalize_text(tag) for tag in form.get("tags", [])}
+                and normalize_text(form.get("form", "")) != lemma
+                for form in forms
             )
 
-        for row in reader:
-            lemma = normalize_text(row.get("lemma", ""))
-            entry_class = normalize_text(row.get("class", ""))
-            if not lemma or not entry_class:
-                continue
-            grouped[entry_class].add(lemma)
+            if "feminine" in tags and has_masculine_counterpart:
+                explicit_female.add(lemma)
+            if "masculine" in tags and has_feminine_counterpart:
+                gmasc_candidates.add(lemma)
 
-    return PersonLexicon(
-        explicit_female=frozenset(grouped["explicit_female"]),
-        explicit_male=frozenset(grouped["explicit_male"]),
-        collectives=frozenset(grouped["collective"]),
-        person_hints=frozenset(grouped["person_hint"]),
+    return KaikkiLexicon(
+        human_nouns=frozenset(human_nouns),
+        kaikki_collective_nouns=frozenset(kaikki_collective_nouns),
+        explicit_female=frozenset(explicit_female),
+        gmasc_candidates=frozenset(gmasc_candidates),
+        female_names=frozenset(female_names),
+        male_names=frozenset(male_names),
     )
+
+
+def load_wikidata_collective_nouns(path: Path) -> frozenset[str]:
+    """Load lemma-level Wikidata collective overrides."""
+    if not path.exists():
+        return frozenset()
+
+    lemmas: set[str] = set()
+    with path.open(newline="", encoding="utf-8") as handle:
+        for row in csv.DictReader(handle):
+            lemma = normalize_text(row.get("lemma", ""))
+            if not lemma:
+                continue
+            collective_flag = normalize_text(row.get("is_collective", ""))
+            if collective_flag in {"1", "true", "yes"}:
+                lemmas.add(lemma)
+    return frozenset(lemmas)
 
 
 def get_head_token(character: dict) -> dict:
@@ -124,40 +241,23 @@ def get_number(character: dict) -> str:
     return ""
 
 
-def looks_like_person_name(text: str) -> bool:
-    """Detect simple multi-token names such as 'Dirk Hilbert'."""
-    parts = [part for part in re.split(r"[\s-]+", text.strip()) if part]
-    if len(parts) < 2:
-        return False
-    uppercase_parts = sum(part[:1].isupper() for part in parts)
-    return uppercase_parts >= 2
+def has_disallowed_surface(text: str) -> bool:
+    """Reject obvious non-actor surface forms such as emails or handles."""
+    lowered = text.strip().lower()
+    if not lowered:
+        return True
+    if EMAIL_RE.search(text):
+        return True
+    if "@" in text or "_" in text or "://" in text or lowered.startswith("www."):
+        return True
+    if DOT_COMPACT_RE.search(text):
+        return True
+    return False
 
 
-def build_movable_set(pairs: list[dict]) -> set[str]:
-    """Build a corpus-internal set of movable masculine lemmas."""
-    all_lemmas: set[str] = set()
-
-    for pair in pairs:
-        for side in ("simple", "normal"):
-            data = pair.get(side)
-            if not data:
-                continue
-            for character in data.get("characters", []):
-                for token in character.get("tokens", []):
-                    lemma = normalize_text(token.get("lemma", ""))
-                    if lemma:
-                        all_lemmas.add(lemma)
-
-    movable: set[str] = set()
-    for lemma in all_lemmas:
-        if lemma.endswith("in") and len(lemma) > 3:
-            base = lemma[:-2]
-            movable.add(base)
-            for umlaut, plain in UMLAUT_REVERSE.items():
-                if umlaut in base:
-                    movable.add(base.replace(umlaut, plain, 1))
-
-    return movable
+def is_metadata_sentence(text: str) -> bool:
+    """Detect credit/footer sentences that should not enter actor analysis."""
+    return bool(METADATA_SENTENCE_RE.search(text or ""))
 
 
 def get_person_entity_texts(data: dict) -> set[str]:
@@ -171,13 +271,49 @@ def get_person_entity_texts(data: dict) -> set[str]:
     return person_entities
 
 
-def is_person_name(character: dict, person_entities: set[str]) -> bool:
+def has_propn_token(character: dict) -> bool:
+    """Return True if the mention contains at least one proper noun token."""
+    return any(token.get("pos") == "PROPN" for token in character.get("tokens", []))
+
+
+def looks_like_person_name(character: dict) -> bool:
+    """Detect person-like proper-name spans without relying on lemma lists."""
+    if has_disallowed_surface(character.get("text", "")):
+        return False
+
+    content_tokens = [
+        token for token in character.get("tokens", [])
+        if token.get("pos") != "PUNCT" and token.get("text", "").strip()
+    ]
+    if len(content_tokens) < 2:
+        return False
+    if not all(token.get("pos") == "PROPN" for token in content_tokens):
+        return False
+
+    matched_tokens = 0
+    for token in content_tokens:
+        token_text = token.get("text", "")
+        if token_text.isupper() and len(token_text) > 1:
+            return False
+        if not PERSON_NAME_TOKEN_RE.match(token_text):
+            return False
+        matched_tokens += 1
+    return matched_tokens >= 2
+
+
+def is_person_name(character: dict, person_entities: set[str], entity_conflict: str) -> bool:
     """Return True for person names backed by NER or name-like formatting."""
     text = normalize_text(character.get("text", ""))
     if not text:
         return False
+    if has_disallowed_surface(character.get("text", "")):
+        return False
+    if entity_conflict:
+        return False
     if text in person_entities:
         return True
+    if not has_propn_token(character):
+        return False
 
     text_parts = text.split()
     if len(text_parts) == 1 and len(text_parts[0]) >= 3:
@@ -187,7 +323,30 @@ def is_person_name(character: dict, person_entities: set[str]) -> bool:
         if any(text in entity or entity in text for entity in person_entities):
             return True
 
-    return looks_like_person_name(character.get("text", ""))
+    return looks_like_person_name(character)
+
+
+def get_non_person_entity_conflict(character: dict, entities: list[dict]) -> str:
+    """Return LOC/ORG label if the mention appears to be embedded in a non-person entity."""
+    mention_text = normalize_text(character.get("text", ""))
+    sent_text = normalize_text(character.get("sent_text", ""))
+    if not mention_text:
+        return ""
+
+    for entity in entities:
+        label = entity.get("label", "")
+        if label not in NON_PERSON_ENTITY_LABELS:
+            continue
+        entity_text = normalize_text(entity.get("text", ""))
+        if not entity_text:
+            continue
+        if sent_text and entity_text not in sent_text:
+            continue
+        if mention_text == entity_text:
+            return label.lower()
+        if len(mention_text) >= 4 and mention_text in entity_text:
+            return label.lower()
+    return ""
 
 
 def infer_coref_gender(character: dict, coref_clusters: list[dict]) -> str:
@@ -230,56 +389,68 @@ def infer_coref_gender(character: dict, coref_clusters: list[dict]) -> str:
     return ""
 
 
+def infer_named_person_gender(character: dict, lexicon: KaikkiLexicon) -> str:
+    """Infer a named person's referential gender from LLpro or Kaikki name data."""
+    morph_genders = {
+        parse_morph(token, "Gender")
+        for token in character.get("tokens", [])
+        if token.get("pos") == "PROPN" and parse_morph(token, "Gender")
+    }
+    if len(morph_genders) == 1:
+        gender = next(iter(morph_genders))
+        if gender == "Fem":
+            return "fem"
+        if gender == "Masc":
+            return "male"
+
+    span_gender = character.get("morph_gender")
+    if span_gender == "Fem":
+        return "fem"
+    if span_gender == "Masc":
+        return "male"
+
+    first_propn = next(
+        (
+            normalize_text(token.get("lemma", "") or token.get("text", ""))
+            for token in character.get("tokens", [])
+            if token.get("pos") == "PROPN"
+        ),
+        "",
+    )
+    if not first_propn:
+        return ""
+    if first_propn in lexicon.female_names and first_propn not in lexicon.male_names:
+        return "fem"
+    if first_propn in lexicon.male_names and first_propn not in lexicon.female_names:
+        return "male"
+    return ""
+
+
 def is_pair_form(text: str) -> bool:
     """Detect explicit paired forms such as 'Bürgerinnen und Bürger'."""
     return bool(PAIR_FORM_RE.search(text))
 
 
-def looks_like_person_noun(
-    character: dict,
-    movable: set[str],
-    lexicon: PersonLexicon,
-    coref_gender: str,
-) -> bool:
-    """Heuristically keep only person-denoting common nouns."""
-    text = character.get("text", "")
-    head = get_head_token(character)
-    lemma = normalize_text(head.get("lemma", ""))
-
-    if is_pair_form(text):
-        return True
-    if coref_gender:
-        return True
-    if lemma in lexicon.collectives:
-        return True
-    if lemma in lexicon.explicit_female or lemma in lexicon.explicit_male:
-        return True
-    if lemma in lexicon.person_hints:
-        return True
-    if lemma in movable:
-        return True
-    if lemma.endswith("in") and len(lemma) > 3:
-        return True
-    if lemma.endswith(PERSON_NOUN_SUFFIXES):
-        return True
-    if lemma.endswith(PERSON_PARTICIPLE_SUFFIXES):
-        return True
-    return False
-
-
 def is_human_actor(
     character: dict,
+    entities: list[dict],
     person_entities: set[str],
-    movable: set[str],
-    lexicon: PersonLexicon,
+    lexicon: KaikkiLexicon,
+    wikidata_collective_nouns: frozenset[str],
     coref_gender: str,
 ) -> bool:
-    """Keep likely person-denoting spans and remove obvious prompt noise."""
+    """Keep likely human actor mentions."""
     head = get_head_token(character)
     if not head:
         return False
+    if is_metadata_sentence(character.get("sent_text", "")):
+        return False
+    if has_disallowed_surface(character.get("text", "")):
+        return False
 
-    if is_person_name(character, person_entities):
+    entity_conflict = get_non_person_entity_conflict(character, entities)
+
+    if is_person_name(character, person_entities, entity_conflict):
         return True
 
     pos = head.get("pos", "")
@@ -287,78 +458,161 @@ def is_human_actor(
         return False
     if pos == "PRON":
         return False
+    if is_pair_form(character.get("text", "")):
+        return True
+    if coref_gender:
+        return True
     if pos == "NOUN" or head.get("tag") == "NN":
-        return looks_like_person_noun(character, movable, lexicon, coref_gender)
+        lemma = normalize_text(head.get("lemma", ""))
+        is_human = (
+            lemma in lexicon.human_nouns
+            or lemma in wikidata_collective_nouns
+            or lemma in lexicon.kaikki_collective_nouns
+        )
+        if entity_conflict and not is_human:
+            return False
+        return is_human
     return False
 
 
-def is_collective_group(lemma: str, number: str, lexicon: PersonLexicon) -> bool:
-    """Treat plural mentions and curated collectives as group prompts."""
-    return number == "Plur" or lemma in lexicon.collectives
-
-
-def infer_form(
-    character: dict,
-    movable: set[str],
-    person_entities: set[str],
-    lexicon: PersonLexicon,
-    coref_gender: str,
-) -> tuple[str, str, str, str]:
-    """Infer linguistic frame, number, group flag, and reason."""
-    text = character.get("text", "")
-    head = get_head_token(character)
-    lemma = normalize_text(head.get("lemma", ""))
-    pos = head.get("pos", "")
-    number = get_number(character)
-    group = "g" if is_collective_group(lemma, number, lexicon) or is_pair_form(text) else "1"
-
-    if is_pair_form(text):
-        return "pair", number or "Plur", "g", "pair_form"
-
-    if is_person_name(character, person_entities):
-        if group == "1" and coref_gender == "fem":
-            return "fem", number or "Sing", group, "coref_name_fem"
-        if group == "1" and coref_gender == "male":
-            return "male", number or "Sing", group, "coref_name_male"
-        return "name", number or "Sing", group, "person_name"
-
-    if group == "1" and coref_gender == "fem":
-        return "fem", number or "Sing", group, "coref_fem"
-    if group == "1" and coref_gender == "male":
-        return "male", number or "Sing", group, "coref_male"
-
-    if lemma in lexicon.explicit_female:
-        return "fem", number or "Sing", group, "lexicon_fem"
-    if lemma in lexicon.explicit_male:
-        return "male", number or "Sing", group, "lexicon_male"
-
-    if pos == "NOUN" and lemma.endswith("in") and len(lemma) > 3:
-        return "fem", number or "Sing", group, "suffix_in"
-
-    if character.get("morph_gender") == "Masc" and lemma in movable:
-        return "gmasc", number or "Sing", group, "movable_masc"
-
-    if group == "g":
-        return "epic", number or "Plur", group, "collective_or_plural"
-
-    return "unk", number or "", group, "no_signal"
-
-
-def map_form_to_label(form: str, group: str) -> str:
-    """Map linguistic frames to compact image-ready labels."""
-    if form == "fem":
-        return "fg" if group == "g" else "f1"
-    if form == "male":
-        return "mg" if group == "g" else "m1"
-    if form in {"pair", "epic"}:
+def map_frame_to_t2i(frame: str, is_group: bool, is_named_person: bool) -> str:
+    """Map fine-grained text frames to compact image-ready labels."""
+    if is_named_person:
+        return "ux"
+    if frame == "fem":
+        return "fg" if is_group else "f1"
+    if frame == "male_specific":
+        return "mg" if is_group else "m1"
+    if frame in {"pair", "epic_group"}:
         return "mx"
-    if form == "gmasc":
-        return "mx" if group == "g" else "ux"
+    if frame in {"gmasc_generic", "epic_individual", "named_person", "unk"}:
+        return "ux"
     return "ux"
 
 
-def process_pair(pair: dict, movable: set[str], lexicon: PersonLexicon) -> list[dict]:
-    """Convert one text pair into analysis rows."""
+def needs_review(auto_frame: str, is_named_person: bool, is_group: bool) -> bool:
+    """Decide whether a mention should be exported for manual review."""
+    if auto_frame == "unk":
+        return True
+    if auto_frame == "named_person":
+        return True
+    if auto_frame == "gmasc_generic" and not is_group:
+        return True
+    return False
+
+
+def get_review_reason(auto_frame: str, is_named_person: bool, is_group: bool) -> str:
+    """Explain why a mention was exported for manual review."""
+    if auto_frame == "unk":
+        return "no_automatic_signal"
+    if auto_frame == "named_person":
+        return "named_person_separate_text_track"
+    if auto_frame == "gmasc_generic" and not is_group:
+        return "singular_gmasc_needs_generic_vs_specific_decision"
+    return ""
+
+
+def classify_mention(
+    *,
+    character: dict,
+    pair_id: str,
+    source: str,
+    side: str,
+    person_entities: set[str],
+    lexicon: KaikkiLexicon,
+    wikidata_collective_nouns: frozenset[str],
+    coref_clusters: list[dict],
+    entities: list[dict],
+) -> dict:
+    """Classify one mention and return a flat row."""
+    head = get_head_token(character)
+    lemma = normalize_text(head.get("lemma", ""))
+    text = character.get("text", "")
+    number = get_number(character)
+    is_group = number == "Plur" or is_pair_form(text)
+    entity_conflict = get_non_person_entity_conflict(character, entities)
+    named_person = is_person_name(character, person_entities, entity_conflict)
+    coref_gender = infer_coref_gender(character, coref_clusters)
+    named_person_gender = infer_named_person_gender(character, lexicon) if named_person else ""
+
+    if is_pair_form(text):
+        auto_frame = "pair"
+        auto_reason = "pair_form"
+    elif coref_gender == "male":
+        auto_frame = "male_specific"
+        auto_reason = "coref_male"
+    elif coref_gender == "fem":
+        auto_frame = "fem"
+        auto_reason = "coref_fem"
+    elif named_person and named_person_gender == "male":
+        auto_frame = "male_specific"
+        auto_reason = "name_signal_male"
+    elif named_person and named_person_gender == "fem":
+        auto_frame = "fem"
+        auto_reason = "name_signal_fem"
+    elif named_person:
+        auto_frame = "named_person"
+        auto_reason = "person_name_unresolved"
+    elif lemma in lexicon.explicit_female:
+        auto_frame = "fem"
+        auto_reason = "kaikki_fem"
+    elif lemma in lexicon.gmasc_candidates and character.get("morph_gender") == "Masc":
+        auto_frame = "gmasc_generic"
+        auto_reason = "kaikki_gmasc"
+    elif lemma in wikidata_collective_nouns:
+        auto_frame = "epic_group"
+        auto_reason = "wikidata_collective_noun"
+    elif lemma in lexicon.kaikki_collective_nouns:
+        auto_frame = "epic_group"
+        auto_reason = "kaikki_collective_noun"
+    elif lemma in lexicon.human_nouns:
+        auto_frame = "epic_group" if is_group else "epic_individual"
+        auto_reason = "kaikki_human_noun"
+    elif entity_conflict:
+        auto_frame = "unk"
+        auto_reason = f"entity_conflict_{entity_conflict}"
+    else:
+        auto_frame = "unk"
+        auto_reason = "no_signal"
+
+    if auto_frame not in AUTO_FRAME_VALUES:
+        raise ValueError(f"Unexpected auto frame: {auto_frame}")
+
+    mention_id = f"{pair_id}:{side}:{character.get('start')}:{character.get('end')}"
+    review_flag = needs_review(auto_frame, named_person, is_group)
+    review_reason = get_review_reason(auto_frame, named_person, is_group) if review_flag else ""
+
+    return {
+        "mention_id": mention_id,
+        "pair_id": pair_id,
+        "source": source,
+        "side": side,
+        "start": character.get("start", ""),
+        "end": character.get("end", ""),
+        "text": text,
+        "lemma": head.get("lemma", ""),
+        "pos": head.get("pos", ""),
+        "morph_gender": character.get("morph_gender") or "",
+        "number": number,
+        "is_group": int(is_group),
+        "is_named_person": int(named_person),
+        "coref_gender": coref_gender,
+        "entity_conflict": entity_conflict,
+        "auto_frame": auto_frame,
+        "auto_t2i_label": map_frame_to_t2i(auto_frame, is_group, named_person),
+        "auto_reason": auto_reason,
+        "review_needed": int(review_flag),
+        "review_reason": review_reason,
+        "sent_text": character.get("sent_text", ""),
+    }
+
+
+def process_pair(
+    pair: dict,
+    lexicon: KaikkiLexicon,
+    wikidata_collective_nouns: frozenset[str],
+) -> list[dict]:
+    """Convert one text pair into mention-level analysis rows."""
     rows: list[dict] = []
     pair_id = pair.get("pair_id", "")
     source = pair.get("source", "")
@@ -369,38 +623,34 @@ def process_pair(pair: dict, movable: set[str], lexicon: PersonLexicon) -> list[
             continue
 
         person_entities = get_person_entity_texts(data)
+        entities = data.get("entities", [])
         coref_clusters = data.get("coref_clusters", [])
 
         for character in data.get("characters", []):
             coref_gender = infer_coref_gender(character, coref_clusters)
-            if not is_human_actor(character, person_entities, movable, lexicon, coref_gender):
+            if not is_human_actor(
+                character,
+                entities,
+                person_entities,
+                lexicon,
+                wikidata_collective_nouns,
+                coref_gender,
+            ):
                 continue
 
-            head = get_head_token(character)
-            form, number, group, reason = infer_form(
-                character=character,
-                movable=movable,
-                person_entities=person_entities,
-                lexicon=lexicon,
-                coref_gender=coref_gender,
+            rows.append(
+                classify_mention(
+                    character=character,
+                    pair_id=pair_id,
+                    source=source,
+                    side=side,
+                    person_entities=person_entities,
+                    lexicon=lexicon,
+                    wikidata_collective_nouns=wikidata_collective_nouns,
+                    coref_clusters=coref_clusters,
+                    entities=entities,
+                )
             )
-
-            rows.append({
-                "pair_id": pair_id,
-                "source": source,
-                "side": side,
-                "text": character.get("text", ""),
-                "lemma": head.get("lemma", ""),
-                "pos": head.get("pos", ""),
-                "morph_gender": character.get("morph_gender") or "",
-                "number": number,
-                "group": group,
-                "coref_gender": coref_gender,
-                "frame": form,
-                "label": map_form_to_label(form, group),
-                "reason": reason,
-                "sent_text": character.get("sent_text", ""),
-            })
 
     return rows
 
@@ -417,28 +667,113 @@ def has_coref_token_features(pairs: list[dict]) -> bool:
     return False
 
 
-def build_summary(rows: list[dict], movable_count: int, lexicon_path: Path) -> dict:
+def write_csv(path: Path, rows: list[dict], fieldnames: list[str] | None = None) -> None:
+    """Write a list of dict rows to CSV."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    if not rows:
+        return
+    if fieldnames is None:
+        fieldnames = list(rows[0].keys())
+    with path.open("w", newline="", encoding="utf-8") as handle:
+        writer = csv.DictWriter(handle, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+def build_review_rows(rows: list[dict]) -> list[dict]:
+    """Create a lemma-level manual review template for uncertain cases."""
+    grouped: dict[tuple[str, str, str], dict] = {}
+    for row in rows:
+        if not int(row["review_needed"]):
+            continue
+        key = (row["lemma"], row["auto_frame"], row["review_reason"])
+        entry = grouped.setdefault(
+            key,
+            {
+                "review_key": f"{row['lemma']}|{row['auto_frame']}|{row['review_reason']}",
+                "lemma": row["lemma"],
+                "auto_frame": row["auto_frame"],
+                "auto_t2i_label": row["auto_t2i_label"],
+                "review_reason": row["review_reason"],
+                "is_group": row["is_group"],
+                "is_named_person": row["is_named_person"],
+                "example_count": 0,
+                "example_texts": [],
+                "example_sentences": [],
+                "manual_frame": "",
+                "manual_t2i_label": "",
+                "manual_note": "",
+            },
+        )
+        entry["example_count"] += 1
+        if row["text"] not in entry["example_texts"] and len(entry["example_texts"]) < 5:
+            entry["example_texts"].append(row["text"])
+        if row["sent_text"] not in entry["example_sentences"] and len(entry["example_sentences"]) < 5:
+            entry["example_sentences"].append(row["sent_text"])
+
+    review_rows = []
+    for entry in grouped.values():
+        review_rows.append(
+            {
+                "review_key": entry["review_key"],
+                "lemma": entry["lemma"],
+                "auto_frame": entry["auto_frame"],
+                "auto_t2i_label": entry["auto_t2i_label"],
+                "review_reason": entry["review_reason"],
+                "is_group": entry["is_group"],
+                "is_named_person": entry["is_named_person"],
+                "example_count": entry["example_count"],
+                "example_texts": " || ".join(entry["example_texts"]),
+                "example_sentences": " || ".join(entry["example_sentences"]),
+                "manual_frame": "",
+                "manual_t2i_label": "",
+                "manual_note": "",
+            }
+        )
+    review_rows.sort(key=lambda row: (-int(row["example_count"]), row["lemma"].lower(), row["review_reason"]))
+    return review_rows
+
+
+def build_summary(
+    rows: list[dict],
+    lexicon: KaikkiLexicon,
+    cache_path: Path,
+    wikidata_collective_path: Path,
+    wikidata_collective_nouns: frozenset[str],
+    review_rows: list[dict],
+) -> dict:
     """Create compact summary statistics for later analysis."""
     summary = {
         "total_mentions": len(rows),
-        "mapped_mentions": sum(row["label"] != "ux" for row in rows),
-        "movable_lemmas": movable_count,
-        "person_lexicon": str(lexicon_path),
+        "mapped_mentions": sum(row["auto_t2i_label"] != "ux" for row in rows),
+        "review_mentions": len(review_rows),
+        "kaikki_cache": str(cache_path),
+        "wikidata_collective_cache": str(wikidata_collective_path),
+        "lexicon_counts": {
+            "human_nouns": len(lexicon.human_nouns),
+            "kaikki_collective_nouns": len(lexicon.kaikki_collective_nouns),
+            "wikidata_collective_nouns": len(wikidata_collective_nouns),
+            "explicit_female": len(lexicon.explicit_female),
+            "gmasc_candidate": len(lexicon.gmasc_candidates),
+        },
         "by_side": {},
-        "by_side_label": {},
+        "by_side_t2i": {},
         "by_side_frame": {},
     }
 
     for side in ("simple", "normal"):
         side_rows = [row for row in rows if row["side"] == side]
         summary["by_side"][side] = len(side_rows)
-        summary["by_side_label"][side] = dict(
-            Counter(row["label"] for row in side_rows).most_common()
+        summary["by_side_t2i"][side] = dict(
+            Counter(row["auto_t2i_label"] for row in side_rows).most_common()
         )
         summary["by_side_frame"][side] = dict(
-            Counter(row["frame"] for row in side_rows).most_common()
+            Counter(row["auto_frame"] for row in side_rows).most_common()
         )
 
+    summary["review_reasons"] = dict(
+        Counter(row["review_reason"] for row in review_rows).most_common()
+    )
     return summary
 
 
@@ -447,32 +782,52 @@ def print_summary(summary: dict) -> None:
     print("\n" + "=" * 60)
     print("TEXT LABEL DISTRIBUTION")
     print("=" * 60)
-    print(f"Total mentions:  {summary['total_mentions']}")
-    print(f"Mapped mentions: {summary['mapped_mentions']}")
-    print(f"Movable lemmas:  {summary['movable_lemmas']}")
-    print(f"Lexicon:         {summary['person_lexicon']}")
+    print(f"Total mentions:   {summary['total_mentions']}")
+    print(f"Mapped mentions:  {summary['mapped_mentions']}")
+    print(f"Review mentions:  {summary['review_mentions']}")
+    print(f"Kaikki cache:     {summary['kaikki_cache']}")
+    print(f"Wikidata cache:   {summary['wikidata_collective_cache']}")
+    print(
+        "Lexicon counts:   "
+        f"human={summary['lexicon_counts']['human_nouns']} "
+        f"wd_collective={summary['lexicon_counts']['wikidata_collective_nouns']} "
+        f"kaikki_collective={summary['lexicon_counts']['kaikki_collective_nouns']} "
+        f"f={summary['lexicon_counts']['explicit_female']} "
+        f"gmasc={summary['lexicon_counts']['gmasc_candidate']}"
+    )
 
     for side, label in (("simple", "Easy Language"), ("normal", "Standard German")):
         total = summary["by_side"][side]
         print(f"\n{label}: {total} mentions")
-        print("  Labels:")
-        for key, count in summary["by_side_label"][side].items():
+        print("  T2I labels:")
+        for key, count in summary["by_side_t2i"][side].items():
             share = count / total * 100 if total else 0
             print(f"    {key:>2}: {count:5d} ({share:5.1f}%)")
-        print("  Frames:")
+        print("  Fine frames:")
         for key, count in summary["by_side_frame"][side].items():
             share = count / total * 100 if total else 0
-            print(f"    {key:>5}: {count:5d} ({share:5.1f}%)")
+            print(f"    {key:>15}: {count:5d} ({share:5.1f}%)")
+
+    if summary["review_reasons"]:
+        print("\nReview reasons:")
+        for key, count in summary["review_reasons"].items():
+            print(f"  {key}: {count}")
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Prepare image-ready gender labels from annotated texts."
+        description="Prepare mention-level gender analysis data and review queues."
     )
     parser.add_argument("--input", type=Path, default=DEFAULT_INPUT)
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument("--summary", type=Path, default=DEFAULT_SUMMARY)
-    parser.add_argument("--person-lexicon", type=Path, default=DEFAULT_PERSON_LEXICON)
+    parser.add_argument("--review-output", type=Path, default=DEFAULT_REVIEW)
+    parser.add_argument("--kaikki-cache", type=Path, default=DEFAULT_KAIKKI_CACHE)
+    parser.add_argument(
+        "--wikidata-collectives",
+        type=Path,
+        default=DEFAULT_WIKIDATA_COLLECTIVES,
+    )
     args = parser.parse_args()
 
     with args.input.open(encoding="utf-8") as handle:
@@ -486,29 +841,33 @@ def main() -> None:
             "Re-run src/pipeline/annotate_texts.py for full morphology-based coref evidence."
         )
 
-    lexicon = load_person_lexicon(args.person_lexicon)
-    movable = build_movable_set(pairs)
-    print(f"Corpus-internal movable lemmas: {len(movable)}")
-
+    lexicon = load_kaikki_cache(args.kaikki_cache)
+    wikidata_collective_nouns = load_wikidata_collective_nouns(args.wikidata_collectives)
     rows: list[dict] = []
     for pair in pairs:
-        rows.extend(process_pair(pair, movable, lexicon))
+        rows.extend(process_pair(pair, lexicon, wikidata_collective_nouns))
     print(f"Kept mentions: {len(rows)}")
 
-    args.output.parent.mkdir(parents=True, exist_ok=True)
-    if rows:
-        with args.output.open("w", newline="", encoding="utf-8") as handle:
-            writer = csv.DictWriter(handle, fieldnames=list(rows[0].keys()))
-            writer.writeheader()
-            writer.writerows(rows)
+    review_rows = build_review_rows(rows)
+    write_csv(args.output, rows)
+    write_csv(args.review_output, review_rows)
 
-    summary = build_summary(rows, len(movable), args.person_lexicon)
+    summary = build_summary(
+        rows,
+        lexicon,
+        args.kaikki_cache,
+        args.wikidata_collectives,
+        wikidata_collective_nouns,
+        review_rows,
+    )
+    args.summary.parent.mkdir(parents=True, exist_ok=True)
     with args.summary.open("w", encoding="utf-8") as handle:
         json.dump(summary, handle, ensure_ascii=False, indent=2)
 
     print_summary(summary)
-    print(f"\nCSV:     {args.output}")
-    print(f"Summary: {args.summary}")
+    print(f"\nAuto CSV:   {args.output}")
+    print(f"Review CSV: {args.review_output}")
+    print(f"Summary:    {args.summary}")
 
 
 if __name__ == "__main__":
