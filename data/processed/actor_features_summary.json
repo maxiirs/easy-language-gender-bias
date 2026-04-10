@@ -1,27 +1,18 @@
 {
-  "actor_row_count": 1810,
-  "sources": {
-    "dresden.de": 192,
-    "hamburg.de": 346,
-    "hannover.de": 557,
-    "hessen.de": 27,
-    "ms.niedersachsen.de": 22,
-    "saarbruecken.de": 16,
-    "stadt-koeln.de": 484,
-    "stuttgart.de": 166
+  "total_actor_rows": 124,
+  "pairs_processed": 5,
+  "by_side": {
+    "normal": 61,
+    "simple": 63
   },
-  "sides": {
-    "normal": 1015,
-    "simple": 795
+  "by_source": {
+    "dresden.de": 124
   },
-  "actor_types": {
-    "bert_person_noun": 1309,
-    "generic_person_noun": 213,
-    "person_entity": 288
+  "by_gender": {
+    "feminine": 13,
+    "unknown": 109,
+    "masculine": 2
   },
-  "main_pronoun_classes": {
-    "unknown": 1810
-  },
-  "spacy_model": "de_core_news_sm",
-  "coreference_enabled": false
+  "pipeline": "LLpro (ner_flair + coref_uhhlt + character_recognizer)",
+  "spacy_model": "de_core_news_sm"
 }

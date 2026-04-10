@@ -76,7 +76,6 @@ GENERIC_PERSON_NOUNS = {
     "kandidat", "kandidatin", "kandidatinnen", "kandidaten"
 }
 
-EXCLUDED_URL_TERMS = {"impressum", "datenschutz", "agb", "kontakt", "newsletter", "haftungsausschluss", "cookie", "login", "registrierung", "privacy", "index_de", "index.php"}
 
 
 ENTITY_NOISE_PATTERNS = ("©", "stock.adobe", "pixel-shot", "|")
@@ -490,11 +489,6 @@ def main() -> None:
 
     doc_inputs: list[tuple[str, str, dict[str, str], str]] = []
     for index, row in enumerate(rows, start=1):
-        simple_url = row.get("simple_url", "").lower()
-        normal_url = row.get("normal_url", "").lower()
-        if any(term in simple_url or term in normal_url for term in EXCLUDED_URL_TERMS):
-            continue
-
         pair_id = f"pair_{index:04d}"
         for side in ("simple", "normal"):
             text = row.get(f"{side}_text", "")
