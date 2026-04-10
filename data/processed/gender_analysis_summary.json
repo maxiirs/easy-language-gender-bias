@@ -1,0 +1,48 @@
+{
+  "total_mentions": 13846,
+  "mapped_mentions": 9951,
+  "movable_lemmas": 317,
+  "person_lexicon": "data/resources/person_lexicon.csv",
+  "by_side": {
+    "simple": 8019,
+    "normal": 5827
+  },
+  "by_side_label": {
+    "simple": {
+      "mx": 5416,
+      "ux": 2105,
+      "f1": 244,
+      "fg": 140,
+      "m1": 70,
+      "mg": 44
+    },
+    "normal": {
+      "mx": 3434,
+      "ux": 1790,
+      "f1": 283,
+      "fg": 212,
+      "mg": 89,
+      "m1": 19
+    }
+  },
+  "by_side_frame": {
+    "simple": {
+      "epic": 4831,
+      "name": 1476,
+      "gmasc": 986,
+      "fem": 384,
+      "unk": 178,
+      "male": 114,
+      "pair": 50
+    },
+    "normal": {
+      "epic": 2772,
+      "name": 1160,
+      "gmasc": 719,
+      "fem": 495,
+      "unk": 304,
+      "pair": 269,
+      "male": 108
+    }
+  }
+}

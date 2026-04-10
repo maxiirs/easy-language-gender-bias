@@ -117,18 +117,33 @@ def serialize_doc(doc) -> dict:
         for cluster_idx, cluster in enumerate(doc._.coref_clusters):
             mentions = []
             for span in cluster:
-                # Also extract morph gender for coref mentions (useful for pronouns)
+                # Store token-level morph data so downstream code can infer
+                # pronoun-based gender from closed grammatical features.
                 morph_gender = None
+                morph_number = None
+                tokens_info = []
                 for tok in span:
+                    morph_str = str(tok.morph) if tok.morph else ""
+                    tokens_info.append({
+                        "text": tok.text,
+                        "pos": tok.pos_,
+                        "tag": tok.tag_,
+                        "morph": morph_str,
+                        "lemma": tok.lemma_,
+                    })
                     gender = tok.morph.get("Gender")
                     if gender:
                         morph_gender = gender[0] if isinstance(gender, list) else gender
-                        break
+                    number = tok.morph.get("Number")
+                    if number:
+                        morph_number = number[0] if isinstance(number, list) else number
                 mentions.append({
                     "text": span.text,
                     "start": span.start,
                     "end": span.end,
                     "morph_gender": morph_gender,
+                    "morph_number": morph_number,
+                    "tokens": tokens_info,
                 })
             cluster_id = cluster.attrs.get("id", cluster_idx) if hasattr(cluster, "attrs") else cluster_idx
             result["coref_clusters"].append({
