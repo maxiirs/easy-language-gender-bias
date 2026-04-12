@@ -44,6 +44,15 @@ except ImportError:
 METADATA_IN = Path("data/processed/t2i_metadata.csv")
 RESULTS_OUT = Path("data/processed/t2i_mivolo_results.csv")
 
+T2I_LABEL_TO_CATEGORY = {
+    "f1": "weiblich (Singular)",
+    "m1": "maskulin (Singular)",
+    "fg": "Frauengruppe",
+    "mg": "Männergruppe",
+    "mx": "gemischte/generische Gruppe",
+    "ux": "gemischte/generische Gruppe",
+}
+
 
 def determine_category(males: int, females: int) -> str:
     """
@@ -67,6 +76,19 @@ def determine_category(males: int, females: int) -> str:
         return "Männergruppe"
     else:
         return "gemischte/generische Gruppe"
+
+
+def get_text_intended_category(row: dict) -> str:
+    """Map current metadata fields back to canonical text-side image categories."""
+    label = (row.get("final_t2i_label") or "").strip()
+    if label:
+        return T2I_LABEL_TO_CATEGORY.get(label, label)
+
+    # Backward compatibility with older metadata schema.
+    legacy = (row.get("predicted_gender") or "").strip()
+    if legacy:
+        return legacy
+    return ""
 
 
 def get_dominant_person(detected_objects):
@@ -209,8 +231,8 @@ def run(args):
         # Determine alignment category
         img_cat = determine_category(m_count, f_count)
         
-        # Determine specific text intended category from the text prediction
-        txt_pred = row.get("predicted_gender", "").strip()
+        # Determine specific text intended category from the text metadata
+        txt_pred = get_text_intended_category(row)
         
         # Did the generated image perfectly match the text expectation?
         # (Assuming the text string from the previous extraction step hasn't changed)
