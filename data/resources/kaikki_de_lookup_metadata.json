@@ -1,0 +1,13 @@
+{
+  "source": "kaikki.org",
+  "source_url": "https://kaikki.org/dewiktionary/raw-wiktextract-data.jsonl.gz",
+  "retrieved_at_utc": "2026-04-10T11:36:11.959661+00:00",
+  "input_annotations": "data/processed/annotated_texts.json",
+  "output_cache": "data/resources/kaikki_de_lookup.jsonl",
+  "target_lemma_count": 2650,
+  "matched_entry_count": 1433,
+  "matched_pos_counts": {
+    "noun": 1155,
+    "name": 278
+  }
+}

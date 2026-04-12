@@ -59,9 +59,6 @@ def build_records() -> list[dict[str, Any]]:
             simple_text = row.get("simple_text", "").strip()
             normal_text = row.get("normal_text", "").strip()
 
-            if not simple_text or not normal_text:
-                continue
-
             source = row.get("source", "unknown")
             simple_tokens = tokenize(simple_text)
             normal_tokens = tokenize(normal_text)

@@ -1,0 +1,60 @@
+{
+  "total_mentions": 9175,
+  "mapped_mentions": 4734,
+  "review_mentions": 133,
+  "kaikki_cache": "data/resources/kaikki_de_lookup.jsonl",
+  "wikidata_collective_cache": "data/resources/wikidata_collective_nouns.csv",
+  "lexicon_counts": {
+    "human_nouns": 424,
+    "kaikki_collective_nouns": 27,
+    "wikidata_collective_nouns": 0,
+    "explicit_female": 164,
+    "gmasc_candidate": 389
+  },
+  "by_side": {
+    "simple": 4938,
+    "normal": 4237
+  },
+  "by_side_t2i": {
+    "simple": {
+      "ux": 2584,
+      "mx": 1118,
+      "f1": 376,
+      "fg": 353,
+      "m1": 351,
+      "mg": 156
+    },
+    "normal": {
+      "ux": 1857,
+      "mx": 1423,
+      "fg": 365,
+      "f1": 307,
+      "m1": 203,
+      "mg": 82
+    }
+  },
+  "by_side_frame": {
+    "simple": {
+      "epic_individual": 1173,
+      "epic_group": 1067,
+      "male_specific": 875,
+      "fem": 845,
+      "gmasc_generic": 827,
+      "named_person": 100,
+      "pair": 51
+    },
+    "normal": {
+      "epic_group": 1155,
+      "fem": 812,
+      "male_specific": 703,
+      "gmasc_generic": 642,
+      "epic_individual": 622,
+      "pair": 269,
+      "named_person": 34
+    }
+  },
+  "review_reasons": {
+    "singular_gmasc_needs_generic_vs_specific_decision": 100,
+    "named_person_separate_text_track": 33
+  }
+}
