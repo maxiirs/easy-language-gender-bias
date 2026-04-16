@@ -1,0 +1,13 @@
+side,category,count,share
+simple,female (singular),584,0.226357
+simple,male (singular),434,0.168217
+simple,female group,192,0.074419
+simple,male group,186,0.072093
+simple,mixed/generic group,999,0.387209
+simple,no person,185,0.071705
+normal,female (singular),600,0.232558
+normal,male (singular),353,0.136822
+normal,female group,165,0.063953
+normal,male group,157,0.060853
+normal,mixed/generic group,1026,0.397674
+normal,no person,279,0.10814

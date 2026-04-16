@@ -8,24 +8,21 @@ Current status:
 
 - The intended primary source is Kaikki.org machine-readable data extracted from
   the German Wiktionary.
-- Collective/group overrides can additionally be derived from Wikidata and
-  stored in a separate local cache.
 - The local cache should be rebuilt from the current annotated corpus whenever
   the corpus changes substantially.
 - Do not maintain a hidden manual fallback list in Python code.
 
 Recommended workflow:
 
-1. Run `src/pipeline/annotate_texts.py`.
-2. Run `src/resources/build_kaikki_lookup.py`.
-3. Optionally run `src/resources/build_wikidata_collectives.py`.
-4. Run `src/analysis/prepare_gender_data.py`.
-5. Report the Kaikki source URL and retrieval timestamp from the metadata file
+1. Run `src/annotation/annotate_texts.py`.
+2. Run `src/lexicon/build_kaikki_lookup.py`.
+3. Run `src/text_analysis/prepare_gender_data.py`.
+4. Report the Kaikki source URL and retrieval timestamp from the metadata file
    in the method section.
 
 Kaikki cache build:
 
-- Use [build_kaikki_lookup.py](/home/max/projects/easy-language-gender-bias/src/resources/build_kaikki_lookup.py)
+- Use [build_kaikki_lookup.py](/home/max/projects/easy-language-gender-bias/src/lexicon/build_kaikki_lookup.py)
   to collect the lemmas from `annotated_texts.json`, download the current
   German Kaikki raw data, and write a local filtered JSONL cache.
 - The script writes:
@@ -35,7 +32,6 @@ Kaikki cache build:
 Example:
 
 ```bash
-python src/resources/build_kaikki_lookup.py
-python src/resources/build_wikidata_collectives.py
-python src/analysis/prepare_gender_data.py
+python src/lexicon/build_kaikki_lookup.py
+python src/text_analysis/prepare_gender_data.py
 ```

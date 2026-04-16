@@ -1,0 +1,11 @@
+side,text_category,total,female (singular),female (singular)_share,male (singular),male (singular)_share,female group,female group_share,male group,male group_share,mixed/generic group,mixed/generic group_share,no person,no person_share
+simple,female (singular),195,150,0.769231,21,0.107692,8,0.041026,1,0.005128,7,0.035897,8,0.041026
+simple,male (singular),60,29,0.483333,20,0.333333,0,0.0,4,0.066667,7,0.116667,0,0.0
+simple,female group,190,24,0.126316,15,0.078947,5,0.026316,18,0.094737,112,0.589474,16,0.084211
+simple,male group,80,10,0.125,9,0.1125,6,0.075,11,0.1375,40,0.5,4,0.05
+simple,mixed/generic group,2055,371,0.180535,369,0.179562,173,0.084185,152,0.073966,833,0.405353,157,0.076399
+normal,female (singular),175,130,0.742857,21,0.12,9,0.051429,1,0.005714,5,0.028571,9,0.051429
+normal,male (singular),10,4,0.4,6,0.6,0,0.0,0,0.0,0,0.0,0,0.0
+normal,female group,230,13,0.056522,20,0.086957,18,0.078261,39,0.169565,111,0.482609,29,0.126087
+normal,male group,50,1,0.02,10,0.2,4,0.08,8,0.16,26,0.52,1,0.02
+normal,mixed/generic group,2115,452,0.213712,296,0.139953,134,0.063357,109,0.051537,884,0.417967,240,0.113475

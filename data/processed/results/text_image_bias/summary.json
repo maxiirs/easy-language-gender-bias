@@ -1,0 +1,41 @@
+{
+  "input_file": "/home/max/projects/easy-language-gender-bias/data/processed/t2i_mivolo_results.csv",
+  "exclude_no_person": false,
+  "rows_total": 5160,
+  "text_categories": [
+    "female (singular)",
+    "male (singular)",
+    "female group",
+    "male group",
+    "mixed/generic group"
+  ],
+  "final_frames": [
+    "fem",
+    "male_specific",
+    "gmasc_generic",
+    "epic_individual",
+    "epic_group",
+    "pair"
+  ],
+  "overview": [
+    {
+      "side": "simple",
+      "rows": 2580,
+      "no_person": 185,
+      "semantic_matches": 1019,
+      "semantic_match_share": 0.394961
+    },
+    {
+      "side": "normal",
+      "rows": 2580,
+      "no_person": 279,
+      "semantic_matches": 1046,
+      "semantic_match_share": 0.405426
+    }
+  ],
+  "paired": {
+    "matched_actor_seed_pairs": 2580,
+    "same_image_category": 1343,
+    "same_image_category_share": 0.520543
+  }
+}

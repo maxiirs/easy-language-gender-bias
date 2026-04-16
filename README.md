@@ -1,28 +1,56 @@
 # easy-language-gender-bias
 
-Arbeitsordner fuer ein eigenstaendiges Folgeprojekt zur Untersuchung von Gender-Bias in deutscher Leichter Sprache vs. Standardsprache sowie zum spaeteren Transfer auf Text-to-Image-Prompts.
+Pipeline for analyzing gender representation in German Easy Language and Standard German, and for evaluating how actor-level text categories are translated into text-to-image outputs.
 
-## Inhalt
+## Final Pipeline
 
-- `data/raw/parallel`: Hauptkorpus mit Paralleltexten aus Standardsprache und Leichter Sprache
-- `data/raw/aligned`: zusaetzliches breiteres aligned Korpus
-- `data/raw/crawl_snapshots`: Roh-Crawl-Ausgaben aus dem internen Projektstand
-- `data/processed`: erste spaCy-basierte Arbeitsdaten fuer die Bias-Analyse
-- `data/processed/actor_features.csv`: actor-level Tabelle mit Nominations- und Predication-Information
-- `src/pipeline`: bisherige Datenaufbereitungs- und Filter-Skripte
-- `src/bias_analysis`: neue Analyseschicht fuer actor-level und Gender-Bias-Extraktion
-- `src/adapted_from_paper`: Platz fuer adaptierten Code aus dem Paper-Repo
-- `docs`: Projekt- und Provenance-Notizen
+Run the steps from the repository root:
 
-## Aktuell wichtigste Dateien
+```bash
+python src/corpus/filter_paired_dataset.py
+python src/annotation/annotate_texts.py
+python src/lexicon/build_kaikki_lookup.py
+python src/text_analysis/prepare_gender_data.py
+python src/text_analysis/merge_gender_reviews.py
+python src/t2i/build_actor_prompts.py
+python src/t2i/generate_t2i_images.py
+python src/image_analysis/evaluate_mivolo_images.py
+python src/results/analyze_text_bias.py
+python src/results/analyze_image_bias.py
+python src/results/analyze_text_image_bias.py
+```
 
-- `data/raw/parallel/simple-german-articles.csv`
-- `data/processed/bias_doc_features.csv`
-- `data/processed/bias_pair_features.csv`
-- `data/processed/actor_features.csv`
-- `src/pipeline/build_bias_working_dataset.py`
-- `src/bias_analysis/extract_actors.py`
+## Source Layout
 
-## Hinweis zum Paper-Repo
+- `src/corpus/`: corpus filtering and pair selection
+- `src/annotation/`: LLpro/spaCy annotation
+- `src/lexicon/`: Kaikki lookup construction
+- `src/text_analysis/`: text-side actor and gender-category preparation
+- `src/t2i/`: actor prompt construction and image generation
+- `src/image_analysis/`: MiVOLO image evaluation
+- `src/results/`: final text, image, and text-image analyses
 
-Der lokale Klon von `corpus_pipeline` war beim Einsammeln dieses Arbeitsordners leer und enthielt noch keine Commits. Deshalb wurde daraus noch kein Code uebernommen. Die vorgesehene Zielstelle fuer spaetere Adaptionen ist `src/adapted_from_paper/`.
+## Main Inputs
+
+- `data/simple-german-articles.csv`: source corpus with Easy Language and Standard German article pairs
+- `data/annotations/gender_review.csv`: manual review overrides for gender/category assignment
+- `data/resources/kaikki_de_lookup.jsonl`: local Kaikki cache for corpus lemmas
+
+## Main Outputs
+
+- `data/processed/paired_dataset_accepted.csv`: filtered article pairs
+- `data/processed/annotated_texts.json`: LLpro/spaCy annotations
+- `data/processed/gender_analysis_final.csv`: final mention-level actor/gender labels
+- `data/processed/actor_prompts.csv`: actor-level prompts
+- `data/processed/actor_prompts_paired.csv`: aligned actor prompts across both language varieties
+- `data/processed/t2i_metadata.csv`: generated image metadata
+- `data/processed/t2i_mivolo_results.csv`: MiVOLO image evaluation output
+- `data/processed/results/text_bias/`: structured text-side bias results
+- `data/processed/results/image_bias/`: structured image-side bias results
+- `data/processed/results/text_image_bias/`: structured text-to-image alignment results
+
+Each result directory contains a `summary.json`, CSV tables, and a `plots/` subdirectory.
+
+## Notes
+
+Generated T2I images are stored under `data/processed/t2i_images/` and tracked with Git LFS. Use `git lfs pull` after cloning if image files are needed locally.

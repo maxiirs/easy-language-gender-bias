@@ -1,0 +1,134 @@
+{
+  "input_files": {
+    "actors": "/home/max/projects/easy-language-gender-bias/data/processed/actor_prompts.csv",
+    "paired": "/home/max/projects/easy-language-gender-bias/data/processed/actor_prompts_paired.csv"
+  },
+  "dataset": {
+    "actor_rows": 3872,
+    "paired_actor_rows": 3315,
+    "paired_actor_rows_with_both_sides": 557,
+    "by_side": {
+      "simple": {
+        "actors": 1647,
+        "named_persons": 396,
+        "groups": 745,
+        "included_in_t2i_default": 1251
+      },
+      "normal": {
+        "actors": 2225,
+        "named_persons": 408,
+        "groups": 1276,
+        "included_in_t2i_default": 1817
+      }
+    }
+  },
+  "chi_square": {
+    "final_frame": {
+      "labels": [
+        "fem",
+        "male_specific",
+        "gmasc_generic",
+        "epic_individual",
+        "epic_group",
+        "pair"
+      ],
+      "table": [
+        [
+          330,
+          375,
+          382,
+          194,
+          328,
+          38
+        ],
+        [
+          467,
+          361,
+          464,
+          175,
+          535,
+          223
+        ]
+      ],
+      "available": true,
+      "chi2": 130.14165776385158,
+      "p": 2.2208214278035331e-26,
+      "dof": 5,
+      "expected": [
+        [
+          339.0131714876033,
+          313.06611570247935,
+          359.85588842975204,
+          156.9584194214876,
+          367.0870351239669,
+          111.01936983471074
+        ],
+        [
+          457.9868285123967,
+          422.93388429752065,
+          486.14411157024796,
+          212.0415805785124,
+          495.9129648760331,
+          149.98063016528926
+        ]
+      ]
+    },
+    "final_t2i_label": {
+      "labels": [
+        "f1",
+        "m1",
+        "fg",
+        "mg",
+        "mx",
+        "ux"
+      ],
+      "table": [
+        [
+          190,
+          330,
+          140,
+          45,
+          366,
+          576
+        ],
+        [
+          234,
+          324,
+          233,
+          37,
+          758,
+          639
+        ]
+      ],
+      "available": true,
+      "chi2": 84.16103381393742,
+      "p": 1.1285893797487232e-16,
+      "dof": 5,
+      "expected": [
+        [
+          180.35330578512398,
+          278.18646694214874,
+          158.65986570247935,
+          34.87964876033058,
+          478.1064049586777,
+          516.8143078512396
+        ],
+        [
+          243.64669421487602,
+          375.81353305785126,
+          214.34013429752065,
+          47.12035123966942,
+          645.8935950413223,
+          698.1856921487604
+        ]
+      ]
+    }
+  },
+  "paired": {
+    "paired_actors_with_both_sides": 557,
+    "same_final_frame": 464,
+    "same_final_frame_share": 0.833034,
+    "same_final_t2i_label": 460,
+    "same_final_t2i_label_share": 0.825853
+  }
+}
