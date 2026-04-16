@@ -1,0 +1,9 @@
+label,simple_count,simple_share,normal_count,normal_share
+fem,330,0.200364,467,0.209888
+male_specific,375,0.227687,361,0.162247
+gmasc_generic,382,0.231937,464,0.208539
+epic_individual,194,0.11779,175,0.078652
+epic_group,328,0.19915,535,0.240449
+pair,38,0.023072,223,0.100225
+named_person,0,0.0,0,0.0
+unk,0,0.0,0,0.0

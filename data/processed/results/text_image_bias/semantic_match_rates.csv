@@ -1,0 +1,11 @@
+side,text_category,total,matches,match_share
+simple,female (singular),195,150,0.769231
+simple,male (singular),60,20,0.333333
+simple,female group,190,5,0.026316
+simple,male group,80,11,0.1375
+simple,mixed/generic group,2055,833,0.405353
+normal,female (singular),175,130,0.742857
+normal,male (singular),10,6,0.6
+normal,female group,230,18,0.078261
+normal,male group,50,8,0.16
+normal,mixed/generic group,2115,884,0.417967

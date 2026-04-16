@@ -1,0 +1,6 @@
+text_category,simple_total,normal_total,active_categories,chi2,dof,p
+female (singular),195,175,female (singular)|male (singular)|female group|male group|mixed/generic group|no person,0.800810580642513,5,0.9769816135567329
+male (singular),60,10,female (singular)|male (singular)|male group|mixed/generic group,3.6006216006216003,3,0.3079444048095522
+female group,190,230,female (singular)|male (singular)|female group|male group|mixed/generic group|no person,19.19383395980184,5,0.0017686967838658658
+male group,80,50,female (singular)|male (singular)|female group|male group|mixed/generic group|no person,6.481754385964911,5,0.2621213391388474
+mixed/generic group,2055,2115,female (singular)|male (singular)|female group|male group|mixed/generic group|no person,46.03799403075612,5,8.921774871235027e-09

@@ -3,11 +3,9 @@
   "mapped_mentions": 4734,
   "review_mentions": 133,
   "kaikki_cache": "data/resources/kaikki_de_lookup.jsonl",
-  "wikidata_collective_cache": "data/resources/wikidata_collective_nouns.csv",
   "lexicon_counts": {
     "human_nouns": 424,
     "kaikki_collective_nouns": 27,
-    "wikidata_collective_nouns": 0,
     "explicit_female": 164,
     "gmasc_candidate": 389
   },

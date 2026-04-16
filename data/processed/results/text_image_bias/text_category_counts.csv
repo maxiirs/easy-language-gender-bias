@@ -1,0 +1,11 @@
+side,text_category,count,share
+simple,female (singular),195,0.075581
+simple,male (singular),60,0.023256
+simple,female group,190,0.073643
+simple,male group,80,0.031008
+simple,mixed/generic group,2055,0.796512
+normal,female (singular),175,0.067829
+normal,male (singular),10,0.003876
+normal,female group,230,0.089147
+normal,male group,50,0.01938
+normal,mixed/generic group,2115,0.819767

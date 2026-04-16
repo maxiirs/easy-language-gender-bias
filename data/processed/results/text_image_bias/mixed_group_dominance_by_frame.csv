@@ -1,0 +1,13 @@
+side,final_frame,mixed_group_images,dominant_male,dominant_female,avg_male_count_ratio
+simple,fem,119,75,43,0.577632
+simple,male_specific,47,31,15,0.606715
+simple,gmasc_generic,213,144,62,0.602436
+simple,epic_individual,100,56,43,0.516873
+simple,epic_group,498,268,224,0.514889
+simple,pair,22,10,12,0.531232
+normal,fem,116,74,40,0.57926
+normal,male_specific,26,16,10,0.586386
+normal,gmasc_generic,265,152,110,0.568602
+normal,epic_individual,76,33,43,0.489262
+normal,epic_group,529,315,212,0.538279
+normal,pair,14,3,11,0.581767

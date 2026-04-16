@@ -1,0 +1,85 @@
+{
+  "input_file": "/home/max/projects/easy-language-gender-bias/data/processed/t2i_mivolo_results.csv",
+  "exclude_no_person": false,
+  "rows_total": 5160,
+  "rows_by_side": {
+    "simple": 2580,
+    "normal": 2580
+  },
+  "overall_image_category_chi_square": {
+    "categories": [
+      "female (singular)",
+      "male (singular)",
+      "female group",
+      "male group",
+      "mixed/generic group",
+      "no person"
+    ],
+    "table": [
+      [
+        584,
+        434,
+        192,
+        186,
+        999,
+        185
+      ],
+      [
+        600,
+        353,
+        165,
+        157,
+        1026,
+        279
+      ]
+    ],
+    "available": true,
+    "chi2": 32.44995324302786,
+    "p": 4.838634447396382e-06,
+    "dof": 5,
+    "expected": [
+      [
+        592.0,
+        393.5,
+        178.5,
+        171.5,
+        1012.5,
+        232.0
+      ],
+      [
+        592.0,
+        393.5,
+        178.5,
+        171.5,
+        1012.5,
+        232.0
+      ]
+    ]
+  },
+  "paired": {
+    "matched_pairs": 1225,
+    "same_image_category": 611,
+    "same_image_category_share": 0.498776
+  },
+  "mixed_group_tests": {
+    "dominant_gender_chi_square": {
+      "chi2": 0.25708618882893675,
+      "p": 0.6121290863428128,
+      "dof": 1,
+      "table": [
+        [
+          584,
+          399
+        ],
+        [
+          593,
+          426
+        ]
+      ]
+    },
+    "male_count_ratio_mann_whitney_u": {
+      "u": 508256.5,
+      "p": 0.7463646691804361
+    }
+  }
+}

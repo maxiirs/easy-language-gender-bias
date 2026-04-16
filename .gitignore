@@ -3,9 +3,11 @@
 __pycache__/
 *.pyc
 .env
+.ipynb_checkpoints/
 
 data/processed/*_sample.csv
 data/processed/*_sample.json
+docs/paper/
 
 # Exclude external cloned repositories and heavy model weights
 MiVOLO/
