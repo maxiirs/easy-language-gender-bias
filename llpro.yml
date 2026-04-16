@@ -1,4 +1,4 @@
-name: /home/jovyan/conda-envs/llpro_env
+name: llpro
 channels:
   - conda-forge
 dependencies:
@@ -263,4 +263,3 @@ dependencies:
       - xxhash==3.5.0
       - yarl==1.20.1
       - zstandard==0.25.0
-prefix: /home/jovyan/conda-envs/llpro_env

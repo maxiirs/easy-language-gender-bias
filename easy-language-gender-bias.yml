@@ -1,4 +1,4 @@
-name: /home/jovyan/conda-envs/easy-language
+name: easy-language-gender-bias
 channels:
   - conda-forge
 dependencies:
@@ -342,4 +342,3 @@ dependencies:
       - torchvision==0.25.0+cu126
       - transformers==5.3.0
       - triton==3.6.0
-prefix: /home/jovyan/conda-envs/easy-language

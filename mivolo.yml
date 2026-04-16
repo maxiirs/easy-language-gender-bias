@@ -1,4 +1,4 @@
-name: /home/jovyan/conda-envs/mivolo_env
+name: mivolo
 channels:
   - pytorch
   - nvidia
@@ -172,4 +172,3 @@ dependencies:
       - tzdata==2026.1
       - ultralytics==8.1.0
       - yt-dlp==2026.3.17
-prefix: /home/jovyan/conda-envs/mivolo_env
