@@ -4,6 +4,25 @@ Pipeline for analyzing gender representation in German Easy Language and Standar
 
 Tested on Ubuntu 24.04.1 LTS.
 
+## Paper
+
+The project report that this pipeline accompanies is included in the repository:
+[Impact of German Easy Language on Gender Representation in Text-to-Image Generation](Impact-of-German-Easy-Language-on-Gender-Representation-in-Text-to-Image-Generation.pdf)
+(Maximilian Buchmann, Hamburg University of Applied Sciences, 2026).
+
+## Citation
+
+```bibtex
+@unpublished{buchmann2026easylanguage,
+  author = {Buchmann, Maximilian},
+  title  = {{Impact of German Easy Language on Gender Representation in Text-to-Image Generation}},
+  note   = {Unpublished project report, Hamburg University of Applied Sciences},
+  year   = {2026},
+  month  = apr,
+  url    = {https://github.com/maxiirs/easy-language-gender-bias/blob/main/Impact-of-German-Easy-Language-on-Gender-Representation-in-Text-to-Image-Generation.pdf}
+}
+```
+
 ## Environments
 
 The pipeline uses three Conda environments:
